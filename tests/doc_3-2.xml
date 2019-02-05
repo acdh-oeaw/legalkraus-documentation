@@ -141,6 +141,7 @@
                  <district>I</district>
                  <settlement>Wien</settlement>
               </address>
+              <!-- es gibt einen Eingangsstempel auf der Rückseite -->
            </correspAction>
         
         </correspDesc>
@@ -174,6 +175,7 @@
                <!-- das ist echt deppert, warum <street> alleine nicht gültig ist, aber OK. --> 
             </dateline>
             
+            <!-- Wie diese Empfängeradresse im Fließtext kodieren? -->
             <lb/>Herrn
             <lb/>Rechtsanwalt Dr. Oscar Samek
             <lb/>Wien I.
