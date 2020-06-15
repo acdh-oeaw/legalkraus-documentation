@@ -5,11 +5,13 @@
     <fileDesc>
       <titleStmt>
         <title>Kraus Gerichtsakten: Kodierrichtlinien Transkriptionen</title>
-        <author>Ingo Börner</author>
-        <author>Vanessa Hannesschläger</author>
+        <author xml:id="IB">Ingo Börner</author>
+        <author xml:id="VH">Vanessa Hannesschläger</author>
+        <author xml:id="IL">Isabell Langkabel</author>
       </titleStmt>
       <publicationStmt>
         <publisher>ACDH-CH OEAW</publisher>
+        <ref type="URL" target="https://gitlab.com/acdh-oeaw/legalkraus/documentation/legalkraus_transcr.odd">https://gitlab.com/acdh-oeaw/legalkraus/documentation/legalkraus_transcr.odd</ref>
       </publicationStmt>
       <sourceDesc>
         <p>born digital</p>
@@ -31,12 +33,435 @@
     <body>
       
       <div xml:id="div_intro">
-        <p>...</p>
+        <head>Intro</head>
+        <p>Dieses Dokument ...</p>
       </div>
+      <!-- /intro -->
+      
+      <div xml:id="workflow">
+        <head>Workflow</head>
+        <p>Der Workflow zur Erstellung eines Dokuments umfasst folgende Schritte:</p>
+        <list>
+          <item>Auswahl des zu transkirbierenden Dokuments</item>
+          <item>Transkribus - Upload, Erstellen der Transkription</item>
+          <item>Bildzuordnung</item>
+          <item>Erstellen des TEI Dokuments</item>
+          <item>Bearbeiten des TEI Dokuments</item>
+        </list>
+      </div>
+      <!-- /workflow -->
+      
+      <div xml:id="metadata-tei-doc">
+        <head>Metadaten - des TEI Dokuments</head>
+        <p>
+          Das Element <gi>fileDesc</gi> enthält die Metadaten zum elektronischen Dokument.
+        </p>
+        
+        <div xml:id="titleStmt">
+          <head>Titel, VerfasserIn, HerausgeberIn und weitere Beteiligte</head>
+        <p>
+          <gi>titleStmt</gi> enthält Informationen zu Titel <gi>title</gi> und Verfasser <gi>author</gi>, sowie den Namen der/des verantwortlichen Herausgeber/in <gi>editor</gi>. Innerhalb von
+          <gi>respStmt</gi> werden weitere Angaben zu an der Erstellung des Dokuments beteiligten Personen hinterlegt, bspw. dazu, wer das Dokument transkribiert und kodiert hat.
+        </p>
+          
+        <p>Ein Beispiel für ein <gi>titleStmt</gi>:</p>
+        
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <titleStmt>
+              <title>Brief Samek an Reichspost (verantw. Red. Karl Schiffleitner)</title>
+          <author ref="https://pmb.acdh.oeaw.ac.at/entity/38909">Oskar Samek</author>
+          <editor ref="#IL">Isabell Langkabel</editor>
+          <respStmt>
+            <resp>Transkription</resp>
+            <name ref="#IL">Isabell Langkabel</name>
+          </respStmt>
+          <respStmt>
+            <resp>TEI-Encoding</resp>
+            <name ref="#IB">Ingo Börner</name>
+            <name ref="#VH">Vanessa Hannesschläger</name>
+          </respStmt>
+          </titleStmt>
+        </egXML>
+        <p>
+          Das Dokument wurde von <q>Oskar Samek</q> verfasst und wird von <q>Isabell Langkabel</q> hauptverantwortlich herausgegeben. Das von ihr transkribierte Dokument wurde von <q>Ingo Börner</q> und <q>Vanessa Hannesschläger</q> entsprechend den Kodierrichtlinien kodiert.
+        </p>
+          <p>
+            Das <att>ref</att> dient zur Verknüpfung mit einem zentral verwalteten Datensatz. Bspw. wird der Verfasser des Briefes, <q>Oskar Samek</q> mittels <att>ref</att>  mit dem entsprechenden Datensatz (<val>https://pmb.acdh.oeaw.ac.at/entity/38909</val>) in der <ref target="https://pmb.acdh.oeaw.ac.at">PMB</ref> verlinkt.
+          </p>
+        </div>
+        <!-- /titleStmt -->
+        
+        <div xml:id="publicationStmt">
+          <head>Herausgeber (Institutionen)</head>
+          <p>Im Element <gi>publisher</gi> im <gi>publicationStmt</gi> findet sich die Information zum Herausgeber des Dokuments. Im folgenden Beispiel sind es drei Institutionen. Das Element <gi>availability</gi> enthält im Element <gi>licence</gi> einen Verweis <gi>ref</gi> auf die Creative Commons-Lizenz, unter der die Daten bereitgestellt werden. Die <gi>idno</gi> Elemente geben interne und externe Identifier an.</p>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <publicationStmt>
+              <publisher>
+                <name>ACDH-CH</name>
+                <name>LBI-DH</name>
+                <name>Wienbibliothek im Rathaus</name>
+              </publisher>
+              <availability>
+                <licence>
+                  <ref target="http://creativecommons.org/licenses/by/4.0">Creative Commons Namensnennung 4.0 International Lizenz</ref>
+                </licence>
+              </availability>
+              <idno type="URL" subtype="legalkraus">https://legalkraus.acdh.oeaw.ac.at/id/D_000002-002-000</idno>
+              <idno type="URL" subtype="krausonline">http://www.kraus.wienbibliothek.at/node/1540</idno>
+              <idno type="ID" subtype="transkribus">365566</idno>
+            </publicationStmt>
+          </egXML>
+        </div>
+        <!-- /publicationStmt -->
+        
+        <div xml:id="respStmt">
+          <head>Status des Dokuments, Arbeitsstand</head>
+          <p>
+            <gi>revisionDesc</gi>
+          </p>
+        </div>
+        
+      </div>
+      <!-- /metadata-doc -->
+      
+      <div xml:id="metadata-hist-doc">
+        <head>Metadaten - des historischen Dokuments</head>
+        <p>Ebenfalls im <gi>teiHeader</gi> werden Metadaten zum historischen Dokument hinterlegt.</p>
+        
+        <div xml:id="sourceDesc">
+          <head>Quelle</head>
+          <p>
+            Informationen zur Quelle finden sich im Element <gi>sourceDesc</gi>.
+          </p>
+        </div>
+        <!-- /sourceDesc -->
+        
+        <div xml:id="listWit">
+          <head>Textzeugen</head>
+          <p>
+            Das Element <gi>listWit</gi> listet vorliegende Textzeugen auf.
+          </p>
+        </div>
+        <!-- /listWit -->
+        
+        
+        <div xml:id="app">
+          <head>Selektiver Apparat</head>
+          <p>
+            ...
+          </p>
+        </div>
+        <!-- /selektiver Apparat -->
+        
+        <div xml:id="profileDesc">
+          <head>Kontextinformationen</head>
+          <p>Im Element <gi>profileDesc</gi> lassen sich Kontextinformationen zum Dokument, etwa den beteiligten Personen, dem Entstehungsdatum, usw. hinterlegen.</p>
+          
+          <div xml:id="creation">
+            <head>Datierung</head>
+            <p>Zur Datierung (und als Grundlage für eine Sortierung) wird innerhalb von <gi>creation</gi> ein Datum im ISO-Format (JJJJ-MM-TT) im Attribut <att>when-iso</att> angegeben.</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <creation>
+                <date type="sortDate" when-iso="1922-11-30">30.11.1922</date>
+              </creation>
+            </egXML>
+            <p>[Welches Datum wird hier notiert? Jenes, das am Dokument in einer Datumszeile angegeben ist?] Beispiele und Entscheidungshilfen...</p>
+          </div>
+          <!-- /creation -->
+          
+          <div xml:id="textClass">
+            <head>Klassifizierung des Dokuments</head>
+            <p>
+              <gi>textClass</gi>
+            </p>
+            <p>[Verweis auf die Taxonomie auf <ref target="https://vocabs.acdh-dev.oeaw.ac.at">https://vocabs.acdh-dev.oeaw.ac.at</ref>].</p>
+            <p>Zur Klassifikation von Dokumenten steht eine Taxonomie bereit. Dazu wird die <term>URI</term> im Attriut <att>target</att> von <gi>catRef</gi> angebeben.</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <textClass>
+                <catRef target="https://vocabs.acdh.oeaw.ac.at/legalkraus-doctypes/v1.0/D.K.BRF"/> 
+              </textClass>
+            </egXML>
+            <p>Im obigen Beispiel klassifiziert <val>https://vocabs.acdh.oeaw.ac.at/legalkraus-doctypes/v1.0/D.K.BRF</val> das kodierte Dokument als Brief.</p>
+          </div>
+          <!-- /textClass -->
+          
+          <div xml:id="particDesc">
+            <head>Beteiligte Personen und Institutionen</head>
+            <p>
+              In der <gi>particDesc</gi> werden beteiligte Personen und Institutionen (im Unterschied zu rein namentlich genannten) in ihrer Rolle <att>role</att> verzeichnet. 
+            </p>
+            <p>(Für den Fall ergeben sich die Rollen aus den einzelnen Dokumenten.)</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <particDesc>
+                <person role="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/plaintiff">
+                  <name>Karl Kraus</name>
+                </person>
+                <person role="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/defendant">
+                  <name>Karl Schiffleitner</name>
+                </person>
+                <org role="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/defendant">
+                  <name>Reichspost</name>
+                </org>
+              </particDesc>
+            </egXML>
+            <p>Achtung: Die Werte in <att>role</att> sind noch vorläufig. Idealerweise werden diese aus einer noch zu erstellenden Taxonomie entnommen.</p>
+            <p>Denkbar (und sinnvoll) wäre es auch Personen und Institutionen mittels <att>ref</att> mit einem Normdatensatz (oder der PMB) zu verknüpfen.</p>
+          </div>
+          <!-- /particDesc -->
+          
+          <div xml:id="correspDesc">
+            <head>Brief-Metadaten</head>
+            <p>
+              <gi>correspDesc</gi> 
+            </p>
+            <p>gibt es nur bei Korrespondenzstücken</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <correspDesc>
+                <correspAction type="sent">
+                  <rs type="person" ref="https://pmb.acdh.oeaw.ac.at/entity/38909">Oskar Samek</rs>
+                  <rs type="place" ref="https://pmb.acdh.oeaw.ac.at/entity/50">Wien</rs>
+                  <!-- hier nach (Post-)Stempel? -->
+                  <date when-iso="1922-11-30">30.11.1922</date>
+                </correspAction>
+                <correspAction type="received">
+                  <rs type="institution" ref="https://pmb.acdh.oeaw.ac.at/entity/29637">Reichspost</rs>
+                  <rs type="person" ref="https://pmb.acdh.oeaw.ac.at/entity/40703">Karl Schiffleitner <!-- zitat aus dem Text oder auflösen? --></rs>
+                  <rs type="place" ref="https://pmb.acdh.oeaw.ac.at/entity/50">Wien</rs>
+                </correspAction>
+              </correspDesc>
+            </egXML>
+          </div>
+          <!-- correspDesc -->
+          
+          <div xml:id="handNotes">
+            <head>Schreiberhände</head>
+            <p>
+              <gi>handNotes</gi>
+            </p>
+            <p>Das Schreibmedium immer an eine Schreiberhand geknüpft. <gi>handNote</gi> mit <att>medium</att> (Bleistift,...) Kriterium für die Ansetzung einer Schreiberhand als <gi>handNote</gi> ist jedenfalls ein anderes Schreibmedium.
+              Schreiberhände können, sofern sie Text beisteuern, identifiziert und per <att>scribeRef</att> mit dem Schreiber verknüpft werden (optional).  Bei Anstreichungen ist dies in der Regel nicht möglich, dennoch sind bei materiell unterschiedlichen Anstreichungen auch die entsprechenden Hände anzulegen.
+            </p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <handNotes>
+                <handNote xml:id="D_000002-002-000-hand01" medium="pencil"></handNote>
+              </handNotes>
+            </egXML>
+          </div>
+          
+        </div>
+        <!-- /profileDesc -->
+          
+            
+      </div>
+      <!-- /metadata-hist-doc -->
+      
+      <div xml:id="facsimile">
+        <head>Bilddaten</head>
+        <p>
+          <gi>facsimile</gi>, <gi>surfaceGrp</gi>, <gi>surface</gi> und so weiter. Zuordnung von Bildern zu Blatt und Seite; ...
+        </p>
+      </div>
+      <!-- /facsimile -->
+      
+      <div xml:id="transciption">
+        <head>Transkription des Dokuments</head>
+        <p>Die Transkription erfolgt im Element <gi>body</gi> des Elements <gi>text</gi>.</p>
+        
+        <div xml:id="ed-einrichtungsfragen" resp="#IL">
+          <head>Editorische Einrichtungsfragen</head>
+          <p>Folgende Prinzipien wurden bei der Erstellung der Transkriptionen mit Transkribus berücksichtigt:</p>
+          <!-- Isas Text, muss man gegebenfalls prüfen, was davon aktuell ist -->
+          <p>Spatien zwischen Abkürzungen, <q>Z.A.</q> oder <q>Z. A.</q>, <q>St.P.O.</q>, <q>P.A.</q>, <q>Urh.Ges.</q> etc., <q>Art. IX</q> oder <q>Art.IX</q>, bei Datumsangaben, Komposita wie <q>Kronos-Verlag</q> (<q>Kronos - Verlag</q>) werden grundsätzlich nicht gesetzt.</p>
+          <p>Paginierungen im Typoskript werden nicht transkribiert.</p>
+          <p>Der Umgang mit Aktenzeichen, tabeller. Darstellung, muss mit einem Editionsbeispiel geklärt und auch mit dem Staatsarchiv geklärt werden, 35.13. 4. Seite - Check Formatierung Tabelle / Zeilen</p>
+          <p>Vorgefertigte Briefköpfe (Adressen etc.) werden erst einmal nicht zeilengetreu transkribiert bzw. nicht wiedergegeben; Durchsuchbarkeit durch Angabe im TEI-Header möglich</p>
+          <p>Interpunktion erfolgt zunächst streng nach Typoskript (selbst wenn dort eine Struktur erkennbar ist, die nicht konsequent eingehalten wird [etwa bei Aufzählungen etc.]) und wird nicht korrigiert, Bsp: 27.5, S. 4: Dr. Josef Szekely Wien, IX. Canisiusgasse 8 (Stunde)</p>
+          <p>Falsche Apostrophierung wird ebenfalls nicht korrigiert: Bsp. Ely’s in Elys -> Tippfehler werden allerdings korrigiert, ebenso Anführungszeichen nach typographischen Regeln übernommen (öffnende und schließende sowie normale und einfache entsprechend angleichen), hingegen wird Grammatik/Rechtschreibung übernommen, aber Durchsuchbarkeit sollte stets gewährleistet bleiben</p>
+          <p>Bei Hochstellung von Zahlen und Buchstaben wird verzichtet: bspw. Hochstellung bei Dr wird immer mit Dr. wiedergeben, bei Uhrzeiten ebenfalls auf Hochstellung verzichten</p>
+          <p>Abkürzungen in hs. Protokollen werden aufgelöst: bspw. Zge -> Zeuge</p>
+          <p>Problem bei Korrektur der Rechtschreibung: nach zeitgenössischen Rechtschreibregeln -> wahrscheinlich brauchen wir einfach klare Regeln, wann man in Rechtschreibung u.  Interpunktion eingreift, ansonsten greift man in Sprachgebrauch zu sehr ein oder man erstellt künstliche Texte, die es gar nicht gibt: Angenommenes Beispiel: Kraus beruft sich in einem Anschreiben auf fehlerhafte Schreibweise und gründet seine Thesen darauf, an der Stelle dürfte man natürlich nicht die fehlerhafte Schreibweise korrigieren, das Problem ist dann aber, dass wir dies konsequent tun, damit die Lesbarkeit bzw. Recherche nicht beeinträchtigt ist -> inkonsequente Vorgehensweise durch vernünftige Regeln möglichst vermeiden: sollte man bspw. den Rechtschreibfehler „dass“ nicht korrigieren, da an der Stelle eigentlich ein Relativsatz gemeint ist und kein konsekutiver oder „einer strengerer Behandlung unterliegen würde“ nicht in „einer strengeren Behandlung unterliegen würde“? Hier handelt es sich ja nicht um Tippfehler</p>
+          <p>Unterführungszeichen " werden aufgelöst, da wir Texte nicht standgenau wiedergeben</p>
+          <p>Bei Darstellung „Beschwerde ……………………   S 4.–“ werden Punkte ebenfalls weggelassen</p>
+          <p>Datumsangaben bei Durchschlägen wie bspw. 11. November 7 sollten nicht unvollständig, also mimetisch, wiedergegeben, sondern vollständig, 11. November 1927 (nach dem wahrscheinlich nicht mehr vorhandenen Original), angegeben werden; in Edition als Hinzufügung wiedergeben?</p>
+          <p>Wie werden Dokumente mit Tabellen dargestellt? Bsp: 31.15: nicht tabellarisch, siehe 134.71: wieviele tabell. Dok. gibt es? Wiedergabe überlegen</p>
+          <p>Bei Verwendung von J anstelle des I wird der Buchstabe entsprechend angeglichen, Bsp.: Jch in Ich, ein entsprechender Hinweis und erläuternder Kommentar sollte aber im Header erfolgen. Interessanterweise tritt diese Schreibweise v.a. bei Botho Laserstein auf, der offenbar für Schriftfragen sensibilisiert zu sein schien. So benutzte Laserstein u.a. eine Schreibmaschine, die keine Monospace, sondern Schwabacher Schrift verwendete, zudem setzte er in seinen Briefen Kustoden, die eigentlich primär für den Buchdruck vorgesehen waren. Diese wenigen Merkmale weisen darauf hin, dass Laserstein auf die Lesbarkeit seiner Briefe achtete. Unter Umständen ist so auch die eigentümliche J-Schreibung zu erklären: In der Monospace ähnelt das Versal-I dem Minuskel-L; durch die J-Schreibung, die in Handschriften noch durchaus üblich war, da in der Kurrentschrift das versale J und versale I kaum zu unterscheiden waren sowie bis in das 17./18. Jahrhundert die Buchstaben äquivalent verwendet wurden, konnte deutlich zwischen Versal-I und dem kleinen l differenziert werden.</p>  
+          <p>Sehr geehrter Herr Kollege ! wird zu Sehr geehrter Herr Kollege! Abstand wird nicht übernommen.</p>
+          <p>Deckblätter bei Anträgen, Urteilen etc. werden stets ediert</p>
+          <p>falsche Schreibweise von Eigennamen bleibt erhalten, wenn es sich um keine Tippfehler handelt bzw. nur bei eindeutigen Tippfehlern wie Buchstabendrehern wird in den Text eingegriffen</p>
+          <p>Stempel werden in Transkribus mit eigener Textregion (tag mit element stamp) erfasst: d.h. sie werden nicht transkribiert bzw. wichtige Informationen wie Eingangsdatum im Header erfasst; Stempel werden aber ausgeschnitten, so dass jede Stempelart der Akten einsehbar ist. Arbeit könnte von den nächsten Praktikantinnen übernommen werden?</p>
+          <p>auch Beschreibungen wie Blatt 2 werden. nicht gesetzt, weil Paginierungen nicht ediert werden</p>
+          <p>Umgang mit zweispaltigen Satz? Bsp.: 70.3, besonders schwierig: 70.5 mit: news-eye können mehrere Spalten mit Text aufgezogen werden</p> 
+          <p>Kustoden werden im Header kommentiert bzw. erläutert, nicht aber in der Transkription aufgenommen</p>
+          <p>Umgang mit zwei Fassungen einer Seite in einem Schriftsatz, Bsp.: 68.62, Seite 8 und Seite 9 (einmal mit handschriftlichen Korrekturen, einmal ohne) – funktioniert das hier mit Editionsrichtlinien Punkt 5 (Varianten aus Vorstufen mitgeteilt): an der betreffenden Stelle ist die Grundlage die späte Fassung; aufgenommen wird aber auch die frühe Fassung mit den Änderungen, die als Streichungen und Hinzufügungen dargestellt werden; schließlich wird es so für die betreffenden Zeilen zwei mögliche Versionen geben: den Entwurf als frühe Fassung und die Umsetzung des Entwurfs als späte Fassung; diese Lösung scheint besser als etwa die Darstellung der frühen Fassung in einem Variantenapparat, da so die Änderungen besser nachvollziehbar sind. </p>
+          <!-- Ende Isas Text -->
+          
+        </div><!-- /ed-einrichtungsfragen -->
+        
+        <div xml:id="structure">
+          <head>Textstruktur</head>
+          <p>Trennstriche usw. werden nicht kodiert, stattdessen, wenn möglich, Struktureinheiten ansetzen</p>
+          <div xml:id="div">
+            <head>Abschnitte</head>
+            <p><gi>div</gi></p>
+          </div>
+          <!-- /div -->
+          
+          <div xml:id="p">
+            <head>Absätze</head>
+            <p>
+              <gi>p</gi>
+            </p>
+          </div>
+          <!-- /p -->
+          
+          <div xml:id="pb">
+            <head>Seitenwechsel</head>
+            <p>
+              <gi>pb</gi>
+            </p>
+            <p>Verknüpfung mit Bilddaten beschreiben</p>
+          </div>
+          <!-- /pb -->
+          
+          <div xml:id="lb">
+            <head>Zeilenfall</head>
+            <p>
+              <gi>lb</gi>
+            </p>
+          </div>
+          <!-- /lb -->
+          
+          <div xml:id="marginalia">
+            <head>Marginalien</head>
+            <p>
+              Marginalien werden generell als <gi>note</gi> erfasst, ev. mit <att>place</att> o.ä. positioniert; sinnvoll wäre eine Klassifizierung mittels <att>type</att> von Marginalien, die auf eine Beilage verweisen; auf diese Weise lassen sich zumindest die Stellen im Dokument finden, in denen sich dann im Fließtext ein Verweis auf die Beilage findet
+            </p>
+          </div>
+          
+          
+        </div><!-- /structure -->
+        
+        <div xml:id="typography">
+          <head>Typografische Hervorhebungen</head>
+          <p>
+            <gi>hi</gi>
+          </p>
+          <p>
+            Unterstreichung
+            Sperrung
+            Unterstreichung + Sperrung
+            [Böhm: Kursive und Fette]
+            Tag <gi>hi</gi> mit Attributen (vermutlich <att>rend</att> mit Werteliste)
+              »Hervorhebung« vs. »Markierung«
+              Medium immer an Hand (Attribut <att>hand</att>) geknüpft (im Header) <gi>handNote</gi> mit <att>medium</att> (Bleistift,...) Kriterium für die Ansetzung einer Schreiberhand im Header ist jedenfalls ein anderes Schreibmedium
+                Schreiberhände bei Text identifizieren, nicht notwendigerweise bei Anstreichungen
+                bei materiell unterschiedlichen Anstreichungen im Header auch zwei Hände anlegen
+                Argument: Unterstreichungen immer semantisch relevant, daher werden sie im Gegensatz zu Sofortkorrekturen immer ausgezeichnet   
+          </p>
+        </div>
+        <!-- /typography -->
+        
+        <div xml:id="modifications">
+          <head>Eingriffe in den Text</head>
+          <p>Sofort- und Spätkorrekturen</p>
+          <p>kodiert werden ausschließlich »semantisch relevante« Änderungen (siehe Einrichtung?): Beispiele finden
+            sehr sparsam einsetzen...
+            ex negativo definieren: keine orthographischen Änderungen, keine auf Interpunktion bezogene Änderungen, nicht, wenn Buchstaben nachgezogen werden (Lesbarkeit)
+            bei semantisch relevanten Änderungen in unterschiedlichen Schreibschichten:
+            Hinzufügung <gi>add</gi> , <gi>del</gi> … <gi>subst</gi> <gi>gap</gi> Textverlust <gi>supplied</gi>
+              
+              Zeilenfall in Hinzufügungen <gi>add</gi> werden nicht kodiert (kein <gi>lb</gi> in <gi>add</gi>) Frage ist, wie das Randanmerkungen betrifft (soll man in der Marginalie <gi>add</gi> verwenden oder @hand auf die <gi>note</gi> setzen = bevorzugte Variante) → <gi>lb</gi>
+                
+                Spätkorrekturen nur dann erfasst, wenn inhaltlich relevant sind. Bsp. für inhaltlich nicht relevante Spätkorrektur aus 2.3 (Anklageschrift):
+                “solliim”
+          </p>
+          
+        </div>
+        <!-- /modifications -->
+        
+      </div><!-- /transciption -->
+      
+      <div xml:id="semantic-annotation">
+        <head>Annotation und semantische Erschließung</head>
+        
+        <div xml:id="div-types">
+          <head>Klassifizierung der Abschnitte</head>
+          <p>Beipielsweise im Urteil <att>type</att>.</p>
+        </div>
+        <!-- /div-types -->
+        
+        <div xml:id="entites">
+          <head>Verweise auf Entitäten</head>
+          <p><gi>rs</gi> mit <att>type</att>.</p>
+          <p>Schachtelungen von <gi>rs</gi> sollen gemacht werden, Beispiel:</p>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <rs type="person">Regisseur des <rs type="institution">Volkstheaters</rs></rs>
+          </egXML>
+          <p>eher großzügiger taggen, als zu wenig</p>
+          <p>Personal- und Possessivpronomen nicht taggen; Kriterium sind Namen bzw. Substantive, die Rollen bezeichnen</p>
+          
+          <div xml:id="persons">
+            <head>Personen</head>
+            <p>erwähnte Personen im Unterschied zu 'beteiligten' Personen, vgl. X</p>
+            <p>historische Personen werden ausgezeichnet</p> 
+            <p><att>type</att> <val>person</val></p>
+            <p>Aufnahme von am Dokument beteiligten Personen in der <gi>particDesc</gi> mit <att>role</att> im <gi>teiHeader</gi> des Dokuments (für den Fall ergeben sich die Rollen aus den einzelnen Dokumenten).</p>
+            <p>keine literarischen Figuren auszeichnen; gegebenenfalls als Werke (Bsp. “Hamlet”, nicht Ophelia, Claudius, ….), aber Nero als historische Person soll getaggt werden; historische Personen in Zitaten werden getaggt</p>
+          </div>
+          <!-- /persons -->
+          
+          <div xml:id="insitutions">
+            <head>Institutionen</head>
+            <p><att>type</att> <val>institution</val></p>
+          </div>
+          <!-- /institutions -->
+          
+          <div xml:id="places">
+            <head>Orte</head>
+            <p><att>type</att> <val>place</val></p>
+          </div>
+          <!-- /places -->
+          
+          <div xml:id="works">
+            <head>Werke</head>
+            <p>
+              <att>type</att> <val>works</val>
+            </p>
+          </div>
+          <!-- /works -->
+          
+        </div>
+        <!-- entities -->
+        
+        <div xml:id="law">
+          <head>Gesetzestexte</head>
+          <p>
+            <gi>rs</gi> <att>type</att> <val>law</val>
+          </p>
+        </div>
+        
+        <div xml:id="citations">
+          <head>Zitate</head>
+          <p><gi>q</gi> und <gi>quote</gi></p>
+          <p>generell <gi>q</gi> für Text unter Anführungszeichen; <gi>quote</gi> für alles, was als Zitat identifiziert wurde; die Ausgabe kann man überlegen (Bsp. Doppelte und einfache Anführungszeichen). Anführungszeichen wurden bei der Transkription ohnehin schon normalisiert.
+          </p>
+        </div>
+        <!-- citations -->
+        
+        
+        
+      </div><!-- /semantic-annoation -->
+      
+      <div xml:id="identifier">
+        <head>IDs</head>
+        <p>IDs, Identifier werden wie folgt vergeben...</p>
+      </div>
+      
       
       
       <!-- Schema -->
       <div>
+        <head>TEI Modifikation</head>
         <schemaSpec ident="legalkraus_transcr" start="TEI">
           <!-- anpassen! -->
           <moduleRef key="header"/>
