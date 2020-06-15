@@ -400,6 +400,20 @@
           <p>eher großzügiger taggen, als zu wenig</p>
           <p>Personal- und Possessivpronomen nicht taggen; Kriterium sind Namen bzw. Substantive, die Rollen bezeichnen</p>
           
+          <elementSpec ident="rs" module="core" mode="change">
+            <attList>
+              <attDef ident="type" mode="replace" usage="req">
+                <valList mode="replace" type="closed">
+                  <valItem ident="person"/>
+                  <valItem ident="institution"/>
+                  <valItem ident="place"/>
+                  <valItem ident="work"/>
+                  <valItem ident="law"/>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+          
           <div xml:id="persons">
             <head>Personen</head>
             <p>erwähnte Personen im Unterschied zu 'beteiligten' Personen, vgl. X</p>
@@ -464,12 +478,76 @@
         <head>TEI Modifikation</head>
         <schemaSpec ident="legalkraus_transcr" start="TEI">
           <!-- anpassen! -->
-          <moduleRef key="header"/>
-          <moduleRef key="core" include="pb p lb head note hi choice sic corr"/>
+          <moduleRef key="header" include="availability catRef change correspAction correspDesc creation fileDesc handNote idno licence profileDesc publicationStmt revisionDesc sourceDesc teiHeader textClass titleStmt"/>
+          <moduleRef key="core" include="add author date del editor gap graphic hi lb note p pb publisher q quote ref resp respStmt rs textClass title"/>
+          <moduleRef key="corpus" include="particDesc"/>
+          <moduleRef key="namesdates" include="org person"/>
           <moduleRef key="tei"/>
-          <moduleRef key="textstructure" include="div"/>
-          <moduleRef key="transcr" include="fw"/>
+          <moduleRef key="textstructure" include="body dateline div opener TEI text"/>
+          <moduleRef key="textcrit" include="listWit witness"/>
+          <moduleRef key="transcr" include="facsimile handNotes subst supplied surface surfaceGrp"/>
         </schemaSpec>
+        
+        <!-- 
+        
+TEI
+teiHeader [header]
+fileDesc [header]
+titleStmt [header]
+title [core]
+author [core]
+editor [core]
+respStmt [core]
+resp [core]
+name [core]
+publicationStmt [header]
+publisher [core]
+availability [header]
+licence [header]
+ref [core]
+idno [header]
+sourceDesc [header]
+listWit [textcrit]
+witness [textcrit]
+profileDesc [header]
+creation [header]
+date [core]
+textClass [header]
+catRef [header]
+particDesc [corpus]
+person [namesdates]
+org [namesdates]
+correspDesc [header]
+correspAction [header]
+rs [core]
+handNotes [transcr]
+handNote [header]
+revisionDesc [header]
+change [header]
+facsimile [transcr]
+surfaceGrp [transcr]
+surface [transcr]
+graphic [core]
+text [textstructure]
+body [textstructure]
+opener [textstructure]
+pb [core]
+dateline [textstructure]
+lb [core]
+add [core]
+p [core]
+hi [core]
+quote [core]
+q [core]
+del [core]
+subst [transcr]
+gap [core]
+supplied [transcr]
+note [core]
+
+        -->
+        
+        
         
         <!-- Bsp -->
         <!-- 
