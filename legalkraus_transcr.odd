@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Kraus Gerichtsakten: Kodierrichtlinien Transkriptionen</title>
+        <author>Ingo Börner</author>
+        <author>Vanessa Hannesschläger</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>ACDH-CH OEAW</publisher>
+      </publicationStmt>
+      <sourceDesc>
+        <p>born digital</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <titlePage>
+        <docTitle>
+          <titlePart type="main">Karl Kraus Rechtsakten</titlePart>
+          <titlePart type="sub">Kodierrichtlinien</titlePart>
+        </docTitle>
+        <docAuthor>Ingo Börner</docAuthor>
+        <docAuthor>Vanessa Hannesschläger</docAuthor>
+      </titlePage>
+      <docDate>Juni 2020</docDate>
+    </front>
+    <body>
+      
+      <div xml:id="div_intro">
+        <p>...</p>
+      </div>
+      
+      
+      <!-- Schema -->
+      <div>
+        <schemaSpec ident="legalkraus_transcr" start="TEI">
+          <!-- anpassen! -->
+          <moduleRef key="header"/>
+          <moduleRef key="core" include="pb p lb head note hi choice sic corr"/>
+          <moduleRef key="tei"/>
+          <moduleRef key="textstructure" include="div"/>
+          <moduleRef key="transcr" include="fw"/>
+        </schemaSpec>
+        
+        <!-- Bsp -->
+        <!-- 
+        <elementSpec ident="div" module="textstructure">
+          <attList>
+            <attDef ident="xml:ns" mode="change" usage="req"/>
+            <attDef ident="type" mode="change" usage="req">
+              <valList mode="replace" type="closed">
+                <valItem ident="page"/>
+              </valList>
+            </attDef>
+            <attDef ident="n" mode="change" usage="req">
+              <desc>enthält den Dateinamen</desc>
+            </attDef>
+          </attList>
+        </elementSpec>
+        -->
+        
+      </div>
+      
+      
+    </body>
+
+      
+    
+  </text>
+</TEI>
