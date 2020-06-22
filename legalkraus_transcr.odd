@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"
-  xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0">
+  xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0"
+  xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+  >
   <teiHeader>
     <fileDesc>
       <titleStmt>
@@ -400,20 +402,6 @@
           <p>eher großzügiger taggen, als zu wenig</p>
           <p>Personal- und Possessivpronomen nicht taggen; Kriterium sind Namen bzw. Substantive, die Rollen bezeichnen</p>
           
-          <elementSpec ident="rs" module="core" mode="change">
-            <attList>
-              <attDef ident="type" mode="replace" usage="req">
-                <valList mode="replace" type="closed">
-                  <valItem ident="person"/>
-                  <valItem ident="institution"/>
-                  <valItem ident="place"/>
-                  <valItem ident="work"/>
-                  <valItem ident="law"/>
-                </valList>
-              </attDef>
-            </attList>
-          </elementSpec>
-          
           <div xml:id="persons">
             <head>Personen</head>
             <p>erwähnte Personen im Unterschied zu 'beteiligten' Personen, vgl. X</p>
@@ -486,68 +474,226 @@
           <moduleRef key="textstructure" include="body dateline div opener TEI text"/>
           <moduleRef key="textcrit" include="listWit witness"/>
           <moduleRef key="transcr" include="facsimile handNotes subst supplied surface surfaceGrp"/>
+          
+          <!-- Validierung -->
+         <!--  contraintSpec -->
+          
+
+
         </schemaSpec>
         
-        <!-- 
         
-TEI
-teiHeader [header]
-fileDesc [header]
-titleStmt [header]
-title [core]
-author [core]
-editor [core]
-respStmt [core]
-resp [core]
-name [core]
-publicationStmt [header]
-publisher [core]
-availability [header]
-licence [header]
-ref [core]
-idno [header]
-sourceDesc [header]
-listWit [textcrit]
-witness [textcrit]
-profileDesc [header]
-creation [header]
-date [core]
-textClass [header]
-catRef [header]
-particDesc [corpus]
-person [namesdates]
-org [namesdates]
-correspDesc [header]
-correspAction [header]
-rs [core]
-handNotes [transcr]
-handNote [header]
-revisionDesc [header]
-change [header]
-facsimile [transcr]
-surfaceGrp [transcr]
-surface [transcr]
-graphic [core]
-text [textstructure]
-body [textstructure]
-opener [textstructure]
-pb [core]
-dateline [textstructure]
-lb [core]
-add [core]
-p [core]
-hi [core]
-quote [core]
-q [core]
-del [core]
-subst [transcr]
-gap [core]
-supplied [transcr]
-note [core]
+        
+        <!-- Elemente -->
+        
+     
+        
+<!-- TEI -->
+        <elementSpec ident="TEI" module="textstructure" mode="change">
+          <attList>
+            <attDef ident="xml:id" mode="change" usage="req"/>
+          </attList>
+        </elementSpec>
+        
+        <!--<constraintSpec ident="TEI-xmlid" scheme="schematron">
+          <desc>Werte in <att>xml:id</att> von <gi>TEI</gi> müssen dem Muster D_000002-002-000 entsprechen.</desc>
+          <constraint>
+            <sch:assert test="matches(tei:TEI/@xml:id/string(),'D_[0-9]{6}-[0-9]{3}-[0-9]{3}')">Der Wert in xml:id von TEI entspricht nicht den Vorgaben.</sch:assert>
+          </constraint>
+        </constraintSpec>-->
+        
+        
 
-        -->
+        
+<!-- teiHeader [header] -->
+        <elementSpec ident="teiHeader" module="header" mode="change"/>
+        
+<!-- fileDesc [header] -->
+        <elementSpec ident="fileDesc" module="header" mode="change"/>
+        
+<!--titleStmt [header]-->
+        <elementSpec ident="titleStmt" module="header" mode="change"/>
+        
+<!--title [core]-->
+        <elementSpec ident="title" module="core" mode="change"/>    
+    
+<!--author [core]-->
+        <elementSpec ident="author" module="core" mode="change"/>
+        
+<!--editor [core]-->
+        <elementSpec ident="editor" module="core" mode="change"/>    
+    
+<!--respStmt [core]-->
+        <elementSpec ident="respStmt" module="core" mode="change"/>    
+    
+<!--resp [core]-->
+        <elementSpec ident="resp" module="core" mode="change"/>
+        
+<!--name [core]-->
+        <elementSpec ident="name" module="core" mode="change"/>    
+    
+<!--publicationStmt [header]-->
+        <elementSpec ident="publicationStmt" module="header" mode="change"/>
+        
+<!--publisher [core]-->
+        <elementSpec ident="publisher" module="core" mode="change"/>    
+    
+<!--availability [header]-->
+        <elementSpec ident="availability" module="header" mode="change"/>    
+    
+<!--licence [header]-->
+        <elementSpec ident="licence" module="header" mode="change"/>    
+    
+<!--ref [core]-->
+        <elementSpec ident="ref" module="core" mode="change"/>
+        
+<!--idno [header]-->
+        <elementSpec ident="idno" module="header" mode="change"/>
+        
+<!--sourceDesc [header]-->
+        <elementSpec ident="sourceDesc" module="header" mode="change"/>
+        
+<!--listWit [textcrit]-->
+        <elementSpec ident="listWit" module="textcrit" mode="change"/>
+        
+<!--witness [textcrit]-->
+        <elementSpec ident="witness" module="textcrit" mode="change"/>
+        
+<!--profileDesc [header]-->
+        <elementSpec ident="profileDesc" module="header" mode="change"/>
+        
+<!--creation [header]-->
+        <elementSpec ident="creation" module="header" mode="change"/>
+        
+<!--date [core]-->
+        <elementSpec ident="date" module="core" mode="change"/>
+        
+<!--textClass [header]-->
+        <elementSpec ident="textClass" module="header" mode="change"/>
+        
+<!--catRef [header]-->
+        <elementSpec ident="catRef" module="header" mode="change"/>
+        
+<!--particDesc [corpus]-->
+        <elementSpec ident="particDesc" module="corpus" mode="change"/>
+        
+<!--person [namesdates]-->
+        <elementSpec ident="person" module="namesdates" mode="change"/>
+        
+<!--org [namesdates]-->
+        <elementSpec ident="org" module="namesdates" mode="change"/>
+        
+<!--correspDesc [header]-->
+        <elementSpec ident="correspDesc" module="header" mode="change"/>
+        
+<!--correspAction [header]-->
+        <elementSpec ident="correspAction" module="header" mode="change"/>
+        
+<!--rs [core]-->
+
+        <elementSpec ident="rs" module="core" mode="change">
+          <attList>
+            <attDef ident="type" mode="replace" usage="req">
+              <valList mode="replace" type="closed">
+                <valItem ident="person">
+                  <desc>Person</desc>
+                </valItem>
+                <valItem ident="institution">
+                  <desc>Insititution</desc>
+                </valItem>
+                <valItem ident="place">
+                  <desc>Ort</desc>
+                </valItem>
+                <valItem ident="work">
+                  <desc>Werk</desc>
+                </valItem>
+                <valItem ident="law">
+                  <desc>Gesetzestext</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        
+
+
+<!--handNotes [transcr]-->
+        <elementSpec ident="handNotes" module="transcr" mode="change"/>
+        
+<!--handNote [header]-->
+        <elementSpec ident="handNote" module="header" mode="change"/>
+        
+<!--revisionDesc [header]-->
+        <elementSpec ident="revisionDesc" module="header" mode="change"/>
+        
+<!--change [header]-->
+        <elementSpec ident="change" module="header" mode="change"/>
+        
+<!--facsimile [transcr]-->
+        <elementSpec ident="facsimile" module="transcr" mode="change"/>
+        
+<!--surfaceGrp [transcr]-->
+        <elementSpec ident="surfaceGrp" module="transcr" mode="change"/>
+        
+<!--surface [transcr]-->
+        <elementSpec ident="surface" module="transcr" mode="change"/>
+        
+<!--graphic [core]-->
+        <elementSpec ident="graphic" module="core" mode="change"/>
+        
+<!--text [textstructure]-->
+        <elementSpec ident="text" module="textstructure" mode="change"/>
+        
+<!--body [textstructure]-->
+        <elementSpec ident="body" module="textstructure" mode="change"/>
+        
+<!--opener [textstructure]-->
+        <elementSpec ident="opener" module="textstructure" mode="change"/>
+        
+<!--pb [core]-->
+        <elementSpec ident="pb" module="core" mode="change"/>
+        
+<!--dateline [textstructure]-->
+        <elementSpec ident="dateline" module="textstructure" mode="change"/>
+        
+<!--lb [core]-->
+        <elementSpec ident="lb" module="core" mode="change"/>
+
+<!--add [core]-->
+        <elementSpec ident="add" module="core" mode="change"/>
+
+<!--p [core]-->
+    <elementSpec ident="p" module="core" mode="change"/>
+        
+<!--hi [core]-->
+        <elementSpec ident="hi" module="core" mode="change"/>
+
+<!--quote [core]-->
+        <elementSpec ident="quote" module="core" mode="change"/>
+        
+<!--q [core]-->
+        <elementSpec ident="q" module="core" mode="change"/>
+        
+<!--del [core]-->
+        <elementSpec ident="del" module="core" mode="change"/>
+        
+<!--subst [transcr]-->
+        <elementSpec ident="subst" module="transcr" mode="change"/>
+
+<!--gap [core]-->
+        <elementSpec ident="gap" module="core" mode="change"/>
+        
+<!--supplied [transcr]-->
+        <elementSpec ident="supplied" module="transcr" mode="change"/>
+        
+<!--note [core]-->
+        <elementSpec ident="note" module="core" mode="change"/>
+
+     
         
         
+        
+    
         
         <!-- Bsp -->
         <!-- 
