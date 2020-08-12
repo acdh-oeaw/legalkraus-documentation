@@ -559,7 +559,7 @@
           </div>
           <!-- /persons -->
 
-          <div xml:id="insitutions">
+          <div xml:id="institutions">
             <head>Institutionen</head>
             <p><att>type</att>
               <val>institution</val></p>
@@ -631,6 +631,7 @@
           <moduleRef key="textstructure" include="body dateline div opener TEI text"/>
           <moduleRef key="textcrit" include="listWit witness"/>
           <moduleRef key="transcr" include="facsimile handNotes subst supplied surface surfaceGrp"/>
+          <moduleRef key="figures" include="table row cell"/>
           
           <!-- es fehlt irgendein Modul, damit ich die Attribute @ana, @corresp usw. bekomme -->
 
@@ -1921,7 +1922,16 @@
         <!--note [core]-->
         <elementSpec ident="note" module="core" mode="change"/>
 
-
+        <!-- table [figures] -->
+        <elementSpec ident="table" module="figures" mode="change"/>
+        
+        <!-- row [figures] -->
+        <elementSpec ident="row" module="figures" mode="change"/>
+        
+        <!-- cell [figures] -->
+        <elementSpec ident="cell" module="figures" mode="change"/>
+        
+        <!-- msDesc -->
 
 
 
