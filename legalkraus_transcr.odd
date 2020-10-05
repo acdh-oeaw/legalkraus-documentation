@@ -631,7 +631,7 @@
           <moduleRef key="textstructure" include="body dateline div opener TEI text"/>
           <moduleRef key="textcrit" include="listWit witness"/>
           <moduleRef key="transcr" include="facsimile handNotes subst supplied surface surfaceGrp"/>
-          
+
           <!-- es fehlt irgendein Modul, damit ich die Attribute @ana, @corresp usw. bekomme -->
 
           <!-- Validierung -->
@@ -1285,7 +1285,7 @@
             </constraint>
           </constraintSpec>
           -->
-          
+
           <attList>
             <attDef ident="xml:id" mode="delete"/>
             <attDef ident="n" mode="delete"/>
@@ -1492,7 +1492,7 @@
                   <!-- optional: Sprachen -->
                 </langUsage>
                 <textClass>
-                  <!-- Klassifizierung des Dokuments --> 
+                  <!-- Klassifizierung des Dokuments -->
                 </textClass>
                 <particDesc>
                   <!-- aktiv handelnde Personen -->
@@ -1511,7 +1511,7 @@
         <!--creation [header]-->
         <elementSpec ident="creation" module="header" mode="change">
           <attList>
-            
+
             <attDef ident="xml:id" mode="delete"/>
             <attDef ident="n" mode="delete"/>
             <attDef ident="xml:lang" mode="delete"/>
@@ -1557,7 +1557,7 @@
         <!--date [core]-->
         <elementSpec ident="date" module="core" mode="change">
           <attList>
-            
+
             <attDef ident="xml:id" mode="delete"/>
             <attDef ident="n" mode="delete"/>
             <attDef ident="xml:lang" mode="delete"/>
@@ -1571,7 +1571,7 @@
             <attDef ident="cert" mode="delete"/>
             <attDef ident="resp" mode="delete"/>
             <attDef ident="source" mode="delete"/>
-           
+
             <attDef ident="calendar" mode="delete"/>
             <attDef ident="period" mode="delete"/>
             <attDef ident="when" mode="delete"/>
@@ -1579,9 +1579,9 @@
             <attDef ident="notAfter" mode="delete"/>
             <attDef ident="from" mode="delete"/>
             <attDef ident="to" mode="delete"/>
-            
+
             <!-- @when-iso usw sind drin -->
-            
+
             <attDef ident="when-custom" mode="delete"/>
             <attDef ident="notBefore-custom" mode="delete"/>
             <attDef ident="notAfter-custom" mode="delete"/>
@@ -1589,9 +1589,9 @@
             <attDef ident="to-custom" mode="delete"/>
             <attDef ident="datingPoint" mode="delete"/>
             <attDef ident="datingMethod" mode="delete"/>
-            
+
             <!-- @type, @subtype -->
-            
+
             <attDef ident="evidence" mode="delete"/>
             <attDef ident="instant" mode="delete"/>
             <attDef ident="unit" mode="delete"/>
@@ -1604,8 +1604,8 @@
             <attDef ident="min" mode="delete"/>
             <attDef ident="max" mode="delete"/>
             <attDef ident="confidence" mode="delete"/>
-            
-            
+
+
           </attList>
           <exemplum>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -1635,7 +1635,7 @@
           <exemplum>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <textClass>
-                <catRef target="https://vocabs.acdh.oeaw.ac.at/legalkraus-doctypes/v1.0/D.K.BRF"/> 
+                <catRef target="https://vocabs.acdh.oeaw.ac.at/legalkraus-doctypes/v1.0/D.K.BRF"/>
               </textClass>
             </egXML>
           </exemplum>
@@ -1658,11 +1658,13 @@
             <attDef ident="resp" mode="delete"/>
             <attDef ident="source" mode="delete"/>
             <attDef ident="targetLang" mode="delete"/>
-            
+
             <attDef ident="target" mode="change" usage="req">
-              <remarks><p>Werte müssen aus legalkraus-doctypes kommen!</p></remarks>
+              <remarks>
+                <p>Werte müssen aus legalkraus-doctypes kommen!</p>
+              </remarks>
             </attDef>
-            
+
             <attDef ident="evaluate" mode="delete"/>
             <attDef ident="scheme" mode="delete"/>
           </attList>
@@ -1781,7 +1783,7 @@
             <attDef ident="cert" mode="delete"/>
             <attDef ident="resp" mode="delete"/>
             <attDef ident="source" mode="delete"/>
-            
+
             <attDef ident="type" mode="change" usage="req">
               <desc>Typ des Arbeitsschritts</desc>
               <valList type="closed" mode="replace">
@@ -1790,7 +1792,7 @@
                 </valItem>
               </valList>
             </attDef>
-            
+
             <attDef ident="subtype" mode="delete"/>
             <attDef ident="calendar" mode="delete"/>
             <attDef ident="period" mode="delete"/>
@@ -1815,7 +1817,8 @@
           </attList>
           <exemplum>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <change when-iso="2020-04-23T07:44:20.525Z" who="#IB">Replaced Text with Transcription of Transkribus Document 365566.</change>
+              <change when-iso="2020-04-23T07:44:20.525Z" who="#IB">Replaced Text with Transcription
+                of Transkribus Document 365566.</change>
             </egXML>
           </exemplum>
 
@@ -1845,9 +1848,9 @@
         <elementSpec ident="surfaceGrp" module="transcr" mode="change">
           <attList>
             <attDef ident="xml:id" mode="change" usage="req"/>
-          <attDef ident="n" mode="delete"/>
-          <attDef ident="xml:lang" mode="delete"/>
-          <attDef ident="xml:base" mode="delete"/>
+            <attDef ident="n" mode="delete"/>
+            <attDef ident="xml:lang" mode="delete"/>
+            <attDef ident="xml:base" mode="delete"/>
             <attDef ident="xml:space" mode="delete"/>
             <attDef ident="rend" mode="delete"/>
             <attDef ident="style" mode="delete"/>
@@ -1860,36 +1863,221 @@
             <attDef ident="decls" mode="delete"/>
             <attDef ident="type" mode="delete"/>
             <attDef ident="subtype" mode="delete"/>
-            
+
             <!-- @corresp fehlt; da muss ich noch ein Modul einbinden, damit ich @ana und @corresp global bekomme 
             
             -->
-            </attList>
+          </attList>
         </elementSpec>
 
         <!--surface [transcr]-->
-        <elementSpec ident="surface" module="transcr" mode="change"/>
+        <elementSpec ident="surface" module="transcr" mode="change">
+          <attList>
+            <attDef ident="xml:id" mode="change" usage="req"/>
+            <attDef ident="n" mode="delete"/>
+            <attDef ident="xml:lang" mode="delete"/>
+            <attDef ident="xml:base" mode="delete"/>
+            <attDef ident="xml:space" mode="delete"/>
+            <attDef ident="rend" mode="delete"/>
+            <attDef ident="style" mode="delete"/>
+            <attDef ident="rendition" mode="delete"/>
+            <attDef ident="facs" mode="delete"/>
+            <attDef ident="change" mode="delete"/>
+            <attDef ident="cert" mode="delete"/>
+            <attDef ident="resp" mode="delete"/>
+            <attDef ident="source" mode="delete"/>
+            <attDef ident="start" mode="delete"/>
+            <attDef ident="ulx" mode="delete"/>
+            <attDef ident="uly" mode="delete"/>
+            <attDef ident="lrx" mode="delete"/>
+            <attDef ident="lry" mode="delete"/>
+            <attDef ident="points" mode="delete"/>
+            <attDef ident="decls" mode="delete"/>
+            <attDef ident="type" mode="change" usage="req">
+              <valList type="closed" mode="replace">
+                <valItem ident="recto">
+                  <desc>Vorderseite</desc>
+                </valItem>
+                <valItem ident="verso">
+                  <desc>Rückseite</desc>
+                </valItem>
+              </valList>
+            </attDef>
+            <attDef ident="subtype" mode="delete"/>
+            <attDef ident="attachment" mode="delete"/>
+            <attDef ident="flipping" mode="delete"/>
+          </attList>
+          <!-- @corresp fehlt -->
+        </elementSpec>
 
         <!--graphic [core]-->
-        <elementSpec ident="graphic" module="core" mode="change"/>
+        <elementSpec ident="graphic" module="core" mode="change">
+          <attList>
+            <attDef ident="xml:id" mode="delete"/>
+            <attDef ident="n" mode="delete"/>
+            <attDef ident="xml:lang" mode="delete"/>
+            <attDef ident="xml:base" mode="delete"/>
+            <attDef ident="xml:space" mode="delete"/>
+            <attDef ident="rend" mode="delete"/>
+            <attDef ident="style" mode="delete"/>
+            <attDef ident="rendition" mode="delete"/>
+            <attDef ident="facs" mode="delete"/>
+            <attDef ident="change" mode="delete"/>
+            <attDef ident="cert" mode="delete"/>
+            <attDef ident="resp" mode="delete"/>
+            <attDef ident="source" mode="change" usage="req">
+              <valList mode="replace" type="closed">
+                <valItem ident="krausonline">
+                  <desc>Kraus online</desc>
+                </valItem>
+                <valItem ident="wienbibliothek">
+                  <desc>Wienbibliothek</desc>
+                </valItem>
+                <valItem ident="scans">
+                  <desc>Scans</desc>
+                </valItem>
+              </valList>
+            </attDef>
+            <attDef ident="width" mode="delete"/>
+            <attDef ident="height" mode="delete"/>
+            <attDef ident="scale" mode="delete"/>
+            <attDef ident="mimeType" mode="delete"/>
+            <attDef ident="url" mode="delete" usage="req"/>
+            <attDef ident="decls" mode="delete"/>
+          </attList>
+        </elementSpec>
 
         <!--text [textstructure]-->
-        <elementSpec ident="text" module="textstructure" mode="change"/>
+        <elementSpec ident="text" module="textstructure" mode="change">
+          <attList>
+            <attDef ident="xml:id" mode="delete"/>
+            <attDef ident="n" mode="delete"/>
+            <attDef ident="xml:lang" mode="delete"/>
+            <attDef ident="xml:base" mode="delete"/>
+            <attDef ident="xml:space" mode="delete"/>
+            <attDef ident="rend" mode="delete"/>
+            <attDef ident="style" mode="delete"/>
+            <attDef ident="rendition" mode="delete"/>
+            <attDef ident="facs" mode="delete"/>
+            <attDef ident="change" mode="delete"/>
+            <attDef ident="cert" mode="delete"/>
+            <attDef ident="resp" mode="delete"/>
+            <!-- source -->
+            <attDef ident="decls" mode="delete"/>
+            <attDef ident="type" mode="delete"/>
+            <attDef ident="subtype" mode="delete"/>
+            <attDef ident="hand" mode="delete"/>
+          </attList>
+        </elementSpec>
 
         <!--body [textstructure]-->
-        <elementSpec ident="body" module="textstructure" mode="change"/>
+        <elementSpec ident="body" module="textstructure" mode="change">
+          <attList>
+            <attDef ident="xml:id" mode="delete"/>
+            <attDef ident="n" mode="delete"/>
+            <attDef ident="xml:lang" mode="delete"/>
+            <attDef ident="xml:base" mode="delete"/>
+            <attDef ident="xml:space" mode="delete"/>
+            <attDef ident="rend" mode="delete"/>
+            <attDef ident="style" mode="delete"/>
+            <attDef ident="rendition" mode="delete"/>
+            <attDef ident="facs" mode="delete"/>
+            <attDef ident="change" mode="delete"/>
+            <attDef ident="cert" mode="delete"/>
+            <attDef ident="resp" mode="delete"/>
+            <attDef ident="source" mode="delete"/>
+            <attDef ident="decls" mode="delete"/>
+            <attDef ident="type" mode="delete"/>
+            <attDef ident="subtype" mode="delete"/>
+            <attDef ident="hand" mode="delete"/>
+          </attList>
+        </elementSpec>
 
         <!--opener [textstructure]-->
-        <elementSpec ident="opener" module="textstructure" mode="change"/>
+        <elementSpec ident="opener" module="textstructure" mode="change">
+          <attList>
+            <attDef ident="xml:id" mode="change" usage="req"/>
+            <attDef ident="n" mode="delete"/>
+            <attDef ident="xml:lang" mode="delete"/>
+            <attDef ident="xml:base" mode="delete"/>
+            <attDef ident="xml:space" mode="delete"/>
+            <attDef ident="rend" mode="delete"/>
+            <attDef ident="style" mode="delete"/>
+            <attDef ident="rendition" mode="delete"/>
+            <attDef ident="facs" mode="delete"/>
+            <attDef ident="change" mode="delete"/>
+            <attDef ident="cert" mode="delete"/>
+            <attDef ident="resp" mode="delete"/>
+            <attDef ident="source" mode="delete"/>
+            <attDef ident="hand" mode="delete"/>
+          </attList>
+          <exemplum>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <opener>
+                <pb n="1" facs="#D_000002-002-000-facs002-l001-p001"/>
+                <dateline>
+                  <lb xml:id="uuid_dae436d5-37af-4aa7-a436-d537af9aa7ff"/><date
+                    when-iso="1922-11-30">30. November <lb
+                      xml:id="uuid_756f53a6-b252-4f1b-af53-a6b2527f1b8b"/><add
+                      hand="#D_000002-002-000-hand01">1922</add></date>
+                </dateline>
+                <lb xml:id="uuid_d52e8c20-824b-4837-ae8c-20824b7837bf"/>An den <rs type="person"
+                  >verantwortlichen Redakteur der <rs type="institution">„Reichspost“</rs></rs>
+                <lb xml:id="uuid_11a18a50-af1e-46ae-a18a-50af1ea6aeda"/><rs type="place">Wien VIII.
+                  Strozzigasse</rs>
+              </opener>
+            </egXML>
+          </exemplum>
+        </elementSpec>
 
         <!--pb [core]-->
-        <elementSpec ident="pb" module="core" mode="change"/>
+        <elementSpec ident="pb" module="core" mode="change">
+          <attList>
+            <attDef ident="xml:id" mode="change" usage="req"/>
+            <attDef ident="n" mode="delete"/>
+            <attDef ident="xml:lang" mode="delete"/>
+            <attDef ident="xml:base" mode="delete"/>
+            <attDef ident="xml:space" mode="delete"/>
+            <attDef ident="rend" mode="delete"/>
+            <attDef ident="style" mode="delete"/>
+            <attDef ident="rendition" mode="delete"/>
+            <attDef ident="facs" mode="delete"/>
+            <attDef ident="change" mode="delete"/>
+            <attDef ident="cert" mode="delete"/>
+            <attDef ident="resp" mode="delete"/>
+            <attDef ident="source" mode="delete"/>
+            <attDef ident="type" mode="delete"/>
+            <attDef ident="subtype" mode="delete"/>
+            <attDef ident="ed" mode="delete"/>
+            <attDef ident="edRef" mode="delete"/>
+            <attDef ident="spanTo" mode="delete"/>
+            <!-- <attDef ident="break" mode="delete"/> -->
+          </attList>
+        </elementSpec>
 
         <!--dateline [textstructure]-->
-        <elementSpec ident="dateline" module="textstructure" mode="change"/>
+        <elementSpec ident="dateline" module="textstructure" mode="change">
+          <attList>
+            <attDef ident="xml:id" mode="change" usage="req"/>
+            <attDef ident="n" mode="delete"/>
+            <attDef ident="xml:lang" mode="delete"/>
+            <attDef ident="xml:base" mode="delete"/>
+            <attDef ident="xml:space" mode="delete"/>
+            <attDef ident="rend" mode="delete"/>
+            <attDef ident="style" mode="delete"/>
+            <attDef ident="rendition" mode="delete"/>
+            <attDef ident="facs" mode="delete"/>
+            <attDef ident="change" mode="delete"/>
+            <attDef ident="cert" mode="delete"/>
+            <attDef ident="resp" mode="delete"/>
+            <attDef ident="source" mode="delete"/>
+          </attList>
+        </elementSpec>
 
         <!--lb [core]-->
-        <elementSpec ident="lb" module="core" mode="change"/>
+        <elementSpec ident="lb" module="core" mode="change">
+          
+        </elementSpec>
 
         <!--add [core]-->
         <elementSpec ident="add" module="core" mode="change"/>
