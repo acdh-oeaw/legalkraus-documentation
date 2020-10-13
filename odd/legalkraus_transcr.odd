@@ -1738,7 +1738,7 @@
             <attDef ident="cert" mode="delete"/>
             <attDef ident="resp" mode="delete"/>
             <attDef ident="source" mode="delete"/>
-            <attDef ident="scheme" module="change">
+            <attDef ident="scheme" mode="change">
               <valList mode="replace" type="closed">
                 <valItem ident="https://vocabs.acdh.oeaw.ac.at/legalkraus-doctypes/v1.0/"/>
               </valList>
@@ -2488,7 +2488,7 @@
             <attDef ident="xml:space" mode="delete"/>
             <attDef ident="rend" mode="change">
               <valList type="closed" mode="replace">
-                
+                <valItem ident="undefined"/>
               </valList>
             </attDef>
             <attDef ident="style" mode="delete"/>
