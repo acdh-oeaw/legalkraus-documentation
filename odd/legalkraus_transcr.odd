@@ -2624,7 +2624,9 @@
             <attDef ident="xml:space" mode="delete"/>
             <attDef ident="rend" mode="change">
               <valList type="closed" mode="replace">
-                <valItem ident="undefined"/>
+                <valItem ident="underlined">
+                  <desc>Unterstreichung</desc>
+                </valItem>
               </valList>
             </attDef>
             <attDef ident="style" mode="delete"/>
