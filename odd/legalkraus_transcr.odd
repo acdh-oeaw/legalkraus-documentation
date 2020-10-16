@@ -2627,6 +2627,9 @@
                 <valItem ident="underlined">
                   <desc>Unterstreichung</desc>
                 </valItem>
+                <valItem ident="spaced">
+                  <desc>Sperrung</desc>
+                </valItem>
               </valList>
             </attDef>
             <attDef ident="style" mode="delete"/>
