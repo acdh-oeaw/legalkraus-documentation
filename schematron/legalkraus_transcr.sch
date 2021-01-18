@@ -73,6 +73,11 @@
             <report test=".[preceding-sibling::text()[1][ends-with(.,'-')]]" role="warning">Bindestrich vor dem Umbruch im Wort entfernen.</report>
         </rule>
         
+        <!-- quote -->
+        <rule context="tei:quote">
+            <assert test="@xml:id" role="warning">Element quote hat kein Attribut @xml:id</assert>
+            <report test="@xml:id/string() eq ''" role="warning">'' ist kein gültiger Wert von dem Attribut @xml:id</report>
+        </rule>
         
     </pattern>
 </schema>
