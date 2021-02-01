@@ -57,10 +57,10 @@
             <report test="@ref/string() eq ''" role="warning">Fehlender Wert des Attributs "ref".</report>
         </rule>
         
-        <!-- rs in rs -->
+        <!-- rs in rs 
         <rule context="tei:rs">
-            <assert test="tei:rs" role="warning">Element rs in rs überprüfen, doppelte Verlinkung.</assert>
-        </rule>
+            <assert test="tei:rs/tei:rs" role="warning">Element rs in rs überprüfen, doppelte Verlinkung.</assert>
+        </rule> -->
         
         <!-- Personen -->
         <rule context="tei:rs[@type='person']">
@@ -81,12 +81,13 @@
         
         <!-- quote -->
         <rule context="tei:quote">
-            <assert test="@xml:id" role="warning">Element quote hat kein Attribut @xml:id.</assert>
+            <assert test="@xml:id" role="warning">Element quote hat kein Attribut "xml:id".</assert>
+            <report test="@xml:id/string() eq ''" role="warning">Fehlender Wert des Attributs "xml:id".</report>
+            <assert test="matches(@xml:id,'https://')">Wert in Attribut "ref" ist kein Verweis.</assert>
+            <report test="starts-with(@xml:id,'#')" role="warning">Attribut "xml:id" zuerst definieren, dann darauf verweisen.</report>
             <assert test="@ref" role="warning">Attribut "ref" fehlt.</assert>
             <report test="@ref/string() eq ''" role="warning">Fehlender Wert des Attributs "ref".</report>
             <assert test="matches(@ref,'https://') or starts-with(@ref,'#')">Wert in Attribut "ref" ist kein Verweis.</assert>
-            <report test="@xml:id/string() eq ''" role="warning">Fehlender Wert des Attributs "xml:id".</report>
-            <assert test="matches(@xml:id,'https://') or starts-with(@xml:id,'#')">Wert in Attribut "ref" ist kein Verweis.</assert>
         </rule>
         
         <!-- hi -->
