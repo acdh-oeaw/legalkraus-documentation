@@ -2039,6 +2039,7 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Gesetzestext</a:documentation>
             </choice>
          </attribute>
+         <ref name="att.global.analytic.attribute.ana"></ref>
          <empty/>
       </element>
    </define>
