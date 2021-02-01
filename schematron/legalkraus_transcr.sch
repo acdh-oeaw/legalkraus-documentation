@@ -53,10 +53,16 @@
         <!-- rs -->
         <rule context="tei:rs[@type= 'person' or @type= 'place' or @type= 'institution']">
             <assert test="matches(@ref,'https://') or starts-with(@ref,'#')">Wert in Attribut "ref" ist kein Verweis.</assert>
+            <assert test="@ref" role="warning">Attribut "ref" fehlt.</assert>
+            <report test="@ref/string() eq ''" role="warning">Fehlender Wert des Attributs "ref".</report>
+        </rule>
+        
+        <!-- rs in rs -->
+        <rule context="tei:rs">
+            <assert test="tei:rs" role="warning">Element rs in rs überprüfen, doppelte Verlinkung.</assert>
         </rule>
         
         <!-- Personen -->
-        
         <rule context="tei:rs[@type='person']">
             <assert test="matches(@ref,'https://pmb.acdh.oeaw.ac.at/entity/')" role="warning">Verweis auf Person nicht mit der PMB verknüpft.</assert>
         </rule>
@@ -75,11 +81,23 @@
         
         <!-- quote -->
         <rule context="tei:quote">
-            <assert test="@xml:id" role="warning">Element quote hat kein Attribut @xml:id</assert>
-            <report test="@xml:id/string() eq ''" role="warning">'' ist kein gültiger Wert von dem Attribut @xml:id</report>
+            <assert test="@xml:id" role="warning">Element quote hat kein Attribut @xml:id.</assert>
+            <assert test="@ref" role="warning">Attribut "ref" fehlt.</assert>
+            <report test="@ref/string() eq ''" role="warning">Fehlender Wert des Attributs "ref".</report>
+            <assert test="matches(@ref,'https://') or starts-with(@ref,'#')">Wert in Attribut "ref" ist kein Verweis.</assert>
+            <report test="@xml:id/string() eq ''" role="warning">Fehlender Wert des Attributs "xml:id".</report>
+            <assert test="matches(@xml:id,'https://') or starts-with(@xml:id,'#')">Wert in Attribut "ref" ist kein Verweis.</assert>
+        </rule>
+        
+        <!-- hi -->
+        <rule context= "tei:hi">
+            <assert test="@rend" role="warning">Das Attribut “rend” fehlt.</assert>
+        </rule>
+        
+        <!-- date when-iso -->
+        <rule context="tei:date">
+            <assert test="matches(@when-iso,'[0-9]{4}-[0-9]{2}-[0-9]{2}')">Form ungültig. Muss dem Schema YYYY-MM-DD entsprechen.</assert>
         </rule>
         
     </pattern>
 </schema>
-
-
