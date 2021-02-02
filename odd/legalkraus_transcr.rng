@@ -1870,6 +1870,18 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
                         <value>underlined</value>
                         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Unterstreichung</a:documentation>
                      </choice>
+                     <choice>
+                        <value>bold</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Fettdruck</a:documentation>
+                     </choice>
+                     <choice>
+                        <value>italics</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Kursiv</a:documentation>
+                     </choice>
+                     <choice>
+                        <value>spaced</value>
+                        <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Sperrung</a:documentation>
+                     </choice>
                   </oneOrMore>
                </list>
             </attribute>
