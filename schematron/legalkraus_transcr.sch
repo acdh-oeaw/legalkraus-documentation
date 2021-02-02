@@ -96,8 +96,8 @@
         </rule>
         
         <!-- date when-iso -->
-        <rule context="tei:date">
-            <assert test="matches(@when-iso,'[0-9]{4}-[0-9]{2}-[0-9]{2}')">Form ungültig. Muss dem Schema YYYY-MM-DD entsprechen.</assert>
+        <rule context="tei:date[@when-iso]">
+            <assert test="matches(@when-iso,'[0-9]{4}-[0-9]{2}-[0-9]{2}')" role="warning">Form ungültig. Muss dem Schema YYYY-MM-DD entsprechen.</assert>
         </rule>
         
     </pattern>
