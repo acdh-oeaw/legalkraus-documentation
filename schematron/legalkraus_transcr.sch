@@ -57,11 +57,11 @@
             <report test="@ref/string() eq ''" role="warning">Fehlender Wert des Attributs "ref".</report>
         </rule>
         
-        <!-- rs in rs 
+        <!-- doppelte Verlinkung -->
         <rule context="tei:rs">
-            <assert test="tei:rs/tei:rs" role="warning">Element rs in rs überprüfen, doppelte Verlinkung.</assert>
-        </rule> -->
-        
+            <assert test="count(tei:rs) = count(tei:rs[not(@ref=parent::tei:rs/@ref)])" role="warning">Element rs in rs überprüfen, doppelte Verlinkung.</assert>
+        </rule>
+                
         <!-- Personen -->
         <rule context="tei:rs[@type='person']">
             <assert test="matches(@ref,'https://pmb.acdh.oeaw.ac.at/entity/')" role="warning">Verweis auf Person nicht mit der PMB verknüpft.</assert>
