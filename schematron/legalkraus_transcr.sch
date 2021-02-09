@@ -90,6 +90,13 @@
             <assert test="matches(@ref,'https://') or starts-with(@ref,'#')">Wert in Attribut "ref" ist kein Verweis.</assert>
         </rule>
         
+        <!-- wörtliche Rede -->
+        <rule context="tei:q[type='spoken']">
+            <assert test="matches(@who,'https://') or starts-with(@who,'#')">Wert in Attribut "who" ist kein Verweis.</assert>
+            <assert test="@who" role="warning">Attribut "who" fehlt.</assert>
+            <report test="@who/string() eq ''" role="warning">Fehlender Wert des Attributs "who".</report>
+        </rule>
+        
         <!-- hi -->
         <rule context= "tei:hi">
             <assert test="@rend" role="warning">Das Attribut “rend” fehlt.</assert>
