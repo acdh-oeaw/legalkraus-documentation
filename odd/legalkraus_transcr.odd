@@ -2704,6 +2704,14 @@
         <!--q [core]-->
         <elementSpec ident="q" module="core" mode="change">
           <attList>
+            <attDef ident="who" mode="change"/>
+            <attDef ident="type" mode="change">
+              <valList type="closed" mode="replace">
+                <valItem ident="written">
+                  <desc>wörtliche Rede</desc>
+                </valItem>
+              </valList>
+            </attDef>
             <attDef ident="xml:id" mode="delete"/>
             <attDef ident="n" mode="delete"/>
             <attDef ident="xml:lang" mode="delete"/>
@@ -2728,7 +2736,6 @@
             <attDef ident="resp" mode="delete"/>
             <attDef ident="source" mode="delete"/>
             <attDef ident="toWhom" mode="delete"/>
-            <attDef ident="who" mode="delete"/>
           </attList>
         </elementSpec>
 
