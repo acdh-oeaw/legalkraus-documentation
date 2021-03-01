@@ -95,9 +95,9 @@
             <report test="@xml:id/string() eq ''" role="warning">Fehlender Wert des Attributs "xml:id".</report>
             <assert test="matches(@xml:id,'https://')">Wert in Attribut "ref" ist kein Verweis.</assert>
             <report test="starts-with(@xml:id,'#')" role="warning">Attribut "xml:id" zuerst definieren, dann darauf verweisen.</report>
-            <assert test="@source" role="warning">Attribut "ref" fehlt.</assert>
-            <report test="@source/string() eq ''" role="warning">Fehlender Wert des Attributs "ref".</report>
-            <assert test="matches(@source,'https://') or starts-with(@source,'#')">Wert in Attribut "ref" ist kein Verweis.</assert>
+            <assert test="@source" role="warning">Attribut "source" fehlt.</assert>
+            <report test="@source/string() eq ''" role="warning">Fehlender Wert des Attributs "source".</report>
+            <assert test="matches(@source,'https://') or starts-with(@source,'#')">Wert in Attribut "source" ist kein Verweis.</assert>
         </rule>
         
         <!-- wörtliche Rede -->
@@ -131,6 +131,18 @@
             <assert test="tei:change[@type, 'typographisches']">Arbeitsschritt "Typographisches" ausstehend.</assert>
             <assert test="tei:change[@type, 'intertexte']">Arbeitsschritt "Intertexte" ausstehend.</assert>
             <assert test="tei:change[@type, 'korrekturen']">Arbeitsschritt "Korrekturen" ausstehend.</assert>
+        </rule>
+        
+        <!-- Verlinkung von Intertexten -->
+        <rule context="tei:note[type='intertext']">
+            <assert test="@ref" role="warning">Attribut "ref" fehlt.</assert>
+            <report test="@ref/string() eq ''" role="warning">Fehlender Wert des Attributs "ref".</report>
+            <assert test="matches(@ref,'https://fackel.oeaw.ac.at/f/')">Wert in Attribut "source" ist kein Verweis auf die "Fackel".</assert>
+        </rule>
+        
+        <!-- Paratexte -->
+        <rule context="tei:note[type='paratext']">
+            <assert test="@resp" role="warning">Attribut "resp" fehlt.</assert>
         </rule>
         
     </pattern>
