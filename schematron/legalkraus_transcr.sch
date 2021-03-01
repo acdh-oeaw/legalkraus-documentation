@@ -79,6 +79,16 @@
             <report test=".[preceding-sibling::text()[1][ends-with(.,'-')]]" role="warning">Bindestrich vor dem Umbruch im Wort entfernen.</report>
         </rule>
         
+        <!-- xml:id für Zeilenumbruch -->
+        <rule context="tei:lb">
+            <assert test="@xml:id" role="warning">Element lb hat kein Attribut "xml:id".</assert>
+        </rule>
+        
+        <!-- xml:id für Paragraphen -->
+        <rule context="tei:p">
+            <assert test="@xml:id" role="warning">Element p hat kein Attribut "xml:id".</assert>
+        </rule>
+        
         <!-- quote -->
         <rule context="tei:quote">
             <assert test="@xml:id" role="warning">Element quote hat kein Attribut "xml:id".</assert>
@@ -97,15 +107,20 @@
             <report test="@who/string() eq ''" role="warning">Fehlender Wert des Attributs "who".</report>
         </rule>
         
-        <!-- hi -->
+        <!-- rend für hi -->
         <rule context= "tei:hi">
             <assert test="@rend" role="warning">Das Attribut “rend” fehlt.</assert>
         </rule>
         
-        <!-- date when-iso -->
+        <!-- ISO-Format -->
         <rule context="tei:date[@when-iso]">
-            <assert test="@sortDate" role="warning">Attribut "sortDate" fehlt.</assert>
             <assert test="matches(@when-iso,'[0-9]{4}-[0-9]{2}-[0-9]{2}')" role="warning">Form ungültig. Muss dem Schema YYYY-MM-DD entsprechen.</assert>
+        </rule>
+        
+        <!-- sortDate bei creation -->
+        <rule context="tei:creation">
+            <assert test="date[@when-iso]" role="warning">Attribut "when-iso" fehlt.</assert>
+            <assert test="date[@sortDate]" role="warning">Attribut "sortDate" fehlt.</assert>
         </rule>
         
     </pattern>
