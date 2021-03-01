@@ -120,7 +120,7 @@
         <!-- sortDate bei creation -->
         <rule context="tei:creation">
             <assert test="date[@when-iso]" role="warning">Attribut "when-iso" fehlt.</assert>
-            <assert test="date[@sortDate]" role="warning">Attribut "sortDate" fehlt.</assert>
+            <assert test="date[@type, 'sortDate']" role="warning">"sortDate" fehlt.</assert>
         </rule>
         
     </pattern>
