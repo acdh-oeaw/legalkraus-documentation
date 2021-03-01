@@ -145,5 +145,10 @@
             <assert test="@resp" role="warning">Attribut "resp" fehlt.</assert>
         </rule>
         
+        <!-- Stempel -->
+        <rule context="tei:stamp">
+            <assert test="@ref" role="warning">Attribut "ref" fehlt.</assert>
+        </rule>
+        
     </pattern>
 </schema>
