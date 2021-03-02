@@ -3446,9 +3446,11 @@
         
         <!-- msDesc -->
         
-
-
-
+        <!-- dictation (neu) -->
+        
+        <elementSpec ident="dictation" module="header" mode="change">
+          <desc>Diktat-Sigle.</desc>
+        </elementSpec>
 
         <!-- Bsp -->
         <!-- 
