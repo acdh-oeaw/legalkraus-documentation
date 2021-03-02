@@ -137,12 +137,13 @@
         <rule context="tei:note[type='intertext']">
             <assert test="@ref" role="warning">Attribut "ref" fehlt.</assert>
             <report test="@ref/string() eq ''" role="warning">Fehlender Wert des Attributs "ref".</report>
-            <assert test="matches(@ref,'https://fackel.oeaw.ac.at/f/')">Wert in Attribut "source" ist kein Verweis auf die "Fackel".</assert>
+            <assert test="matches(@ref,'https://fackel.oeaw.ac.at/f/')">Wert in Attribut "ref" ist kein Verweis auf die "Fackel".</assert>
         </rule>
         
         <!-- Paratexte -->
         <rule context="tei:note[type='paratext']">
             <assert test="@resp" role="warning">Attribut "resp" fehlt.</assert>
+            <assert test="matches(@resp,'law-firm')">Wert in Attribut "resp" ist kein Verweis auf Sameks Kanzlei.</assert>
         </rule>
         
         <!-- Stempel -->
