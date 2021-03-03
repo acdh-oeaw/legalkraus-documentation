@@ -125,12 +125,12 @@
         
         <!-- Arbeitsschritte revisionDesc -->
         <rule context="tei:revisionDesc">
-            <assert test="tei:change[@type, 'header_faksimile']">Arbeitsschritt "TEI-Header und Faksimile" ausstehend.</assert>
-            <assert test="tei:change[@type, 'textgliederung']">Arbeitsschritt "Textgliederung" ausstehend.</assert>
-            <assert test="tei:change[@type, 'referenzen']">Arbeitsschritt "Referenzen" ausstehend.</assert>
-            <assert test="tei:change[@type, 'typographisches']">Arbeitsschritt "Typographisches" ausstehend.</assert>
-            <assert test="tei:change[@type, 'intertexte']">Arbeitsschritt "Intertexte" ausstehend.</assert>
-            <assert test="tei:change[@type, 'korrekturen']">Arbeitsschritt "Korrekturen" ausstehend.</assert>
+            <assert test="tei:change[@type, 'header_facsimile']">Arbeitsschritt "TEI-Header und Faksimile" ausstehend.</assert>
+            <assert test="tei:change[@type, 'structure']">Arbeitsschritt "Textgliederung" ausstehend.</assert>
+            <assert test="tei:change[@type, 'references']">Arbeitsschritt "Referenzen" ausstehend.</assert>
+            <assert test="tei:change[@type, 'typography']">Arbeitsschritt "Typographisches" ausstehend.</assert>
+            <assert test="tei:change[@type, 'intertexts']">Arbeitsschritt "Intertexte" ausstehend.</assert>
+            <assert test="tei:change[@type, 'corrections']">Arbeitsschritt "Korrekturen" ausstehend.</assert>
         </rule>
         
         <!-- Verlinkung von Intertexten -->
