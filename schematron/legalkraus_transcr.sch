@@ -135,9 +135,9 @@
         
         <!-- Verlinkung von Intertexten -->
         <rule context="tei:note[type='intertext']">
-            <assert test="@ref" role="warning">Attribut "ref" fehlt.</assert>
-            <report test="@ref/string() eq ''" role="warning">Fehlender Wert des Attributs "ref".</report>
-            <assert test="matches(@ref,'https://fackel.oeaw.ac.at/f/')">Wert in Attribut "ref" ist kein Verweis auf die "Fackel".</assert>
+            <assert test="@source" role="warning">Attribut "source" fehlt.</assert>
+            <report test="@source/string() eq ''" role="warning">Fehlender Wert des Attributs "source".</report>
+            <assert test="matches(@source,'https://fackel.oeaw.ac.at/f/')">Wert in Attribut "source" ist kein Verweis auf die "Fackel".</assert>
         </rule>
         
         <!-- Paratexte -->
