@@ -2994,10 +2994,10 @@
                 <valItem ident="paratext">
                   <desc>Paratext</desc>
                 </valItem>
-              </valList>
               <valItem ident="intertext">
                 <desc>Intertext</desc>
               </valItem>
+              </valList>
             </attDef>
             <!-- <attDef ident="subtype" mode="delete"/> -->
             <!-- <attDef ident="hand" mode="delete"/> -->
@@ -3542,7 +3542,7 @@
             <attDef ident="change" mode="delete"/>
             <attDef ident="cert" mode="delete"/>
             <attDef ident="resp" mode="delete"/>
-            <attDef ident="source" mode="change" usage="required"/>
+            <attDef ident="source" mode="change" usage="req"/>
             <attDef ident="type" mode="delete"/>
             <attDef ident="subtype" mode="delete"/>
             <attDef ident="calendar" mode="delete"/>
@@ -3568,7 +3568,7 @@
         </elementSpec>
         
         <!-- ab [header] -->
-        <elementSpec ident="ab" module="header" mode="change">
+        <elementSpec ident="ab" module="linking" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
             <attDef ident="n" mode="delete"/>
