@@ -622,7 +622,7 @@
         <schemaSpec ident="legalkraus_transcr" start="TEI" xml:lang="de">
           <!-- anpassen! -->
           <moduleRef key="header"
-            include="availability change classCode correspAction correspDesc creation fileDesc handNote idno keywords language langUsage licence profileDesc publicationStmt revisionDesc sourceDesc teiHeader textClass titleStmt"/>
+            include="availability change classCode correspAction correspDesc creation fileDesc handNote idno keywords language langUsage licence profileDesc publicationStmt revisionDesc sourceDesc teiHeader textClass titleStmt msDesc"/>
           <moduleRef key="core"
             include="add address author date del editor gap graphic head hi lb name note p pb postCode publisher pubPlace q quote ref resp respStmt rs street term textClass title"/>
           <moduleRef key="corpus" include="particDesc"/>
@@ -3444,13 +3444,30 @@
           </attList>
         </elementSpec>
         
-        <!-- msDesc -->
+        <!-- msDesc [header] -->
+        <elementSpec ident="msDesc" module="header" mode="change">
+          <attList>
+            <attDef ident="xml:id" mode="delete"/>
+            <attDef ident="n" mode="delete"/>
+            <attDef ident="xml:lang" mode="delete"/>
+            <attDef ident="xml:base" mode="delete"/>
+            <attDef ident="xml:space" mode="delete"/>
+            <attDef ident="rend" mode="delete"/>
+            <attDef ident="style" mode="delete"/>
+            <attDef ident="rendition" mode="delete"/>
+            <attDef ident="facs" mode="delete"/>
+            <attDef ident="change" mode="delete"/>
+            <attDef ident="cert" mode="delete"/>
+            <attDef ident="resp" mode="delete"/>
+            <attDef ident="source" mode="delete"/>
+          </attList>
+        </elementSpec>        
         
-        <!-- dictation (neu) -->
+        <!-- dictation (neu)
         
         <elementSpec ident="dictation" module="header" mode="change">
           <desc>Diktat-Sigle.</desc>
-        </elementSpec>
+        </elementSpec> -->
 
         <!-- Bsp -->
         <!-- 
