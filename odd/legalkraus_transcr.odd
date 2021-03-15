@@ -2128,7 +2128,7 @@
             <attDef ident="who" mode="change" usage="req">
               <valList mode="replace" type="closed">
                 <valItem ident="JK">
-                  <desc>Johannes Knüchl</desc>
+                  <desc>Johannes Knüchel</desc>
                 </valItem>
                 <valItem ident="IL">
                   <desc>Isabel Langkabel</desc>
