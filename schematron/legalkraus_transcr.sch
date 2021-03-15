@@ -148,7 +148,8 @@
         
         <!-- Stempel -->
         <rule context="tei:stamp">
-            <assert test="@ref" role="warning">Attribut "ref" fehlt.</assert>
+            <assert test="@source" role="warning">Attribut "source" fehlt.</assert>
+            <report test="@source/string() eq ''" role="warning">Fehlender Wert des Attributs "source".</report>
         </rule>
         
     </pattern>
