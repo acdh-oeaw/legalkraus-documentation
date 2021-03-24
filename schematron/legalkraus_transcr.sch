@@ -160,5 +160,10 @@
             <report test="@source/string() eq ''" role="warning">Fehlender Wert des Attributs "source".</report>
         </rule>
         
+        <!-- Appendix-ID -->
+        <rule context="tei:note[type='appendix']">
+            <assert test="matches(@xml:id,'D_[0-9]{6}-[0-9]{3}-[0-9]{3}')">Attribut "xml:id" von TEI ungültig. Muss dem Muster D_[0-9]{6}-[0-9]{3}-[0-9]{3} entsprechen.</assert>
+        </rule>
+        
     </pattern>
 </schema>
