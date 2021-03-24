@@ -226,7 +226,10 @@
             <head>Datierung</head>
             <p>Zur Datierung (und als Grundlage für eine Sortierung) wird innerhalb von
                 <gi>creation</gi> ein Datum im ISO-Format (JJJJ-MM-TT) im Attribut
-                <att>when-iso</att> angegeben.</p>
+                <att>when-iso</att> angegeben. Für die Sortierung wird <att>sortDate</att> hinzugefügt. Ist das Datum nicht eindeutig,
+            so werden <att>notBefore-iso</att> und <att>notAfter-iso</att> verwendet. 
+              Wenn eine Datierung nicht möglich ist, ist weder <att>sortDate</att> noch ein ISO-Wert vorhanden.
+            Zur Klassifizierung des Datums wird <att>type</att> definiert. Zur Auswahl stehen die Werte "produced" und "received".</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <creation>
                 <date type="sortDate" when-iso="1922-11-30">30.11.1922</date>
@@ -1633,10 +1636,7 @@
             <attDef ident="change" mode="delete"/>
             <attDef ident="cert" mode="delete"/>
             <attDef ident="resp" mode="delete"/>
-            
-            <attDef ident="source" mode="change" usage="opt"/>
-            
-
+            <attDef ident="source" mode="delete"/>
             <attDef ident="calendar" mode="delete"/>
             <attDef ident="period" mode="delete"/>
             <attDef ident="when" mode="delete"/>
@@ -1655,11 +1655,21 @@
             <attDef ident="datingPoint" mode="delete"/>
             <attDef ident="datingMethod" mode="delete"/>
 
+            <attDef ident="when-iso" mode="change" usage="opt"/>
+            <attDef ident="notBefore-iso" mode="change" usage="opt"/>
+            <attDef ident="notAfter-iso" mode="change" usage="opt"/>
+
             <!-- @type, @subtype -->
             <attDef ident="type" mode="change" usage="opt">
               <valList mode="replace" type="closed">
                 <valItem ident="sortDate">
                   <desc>Datum für Sortierung</desc>
+                </valItem>
+                <valItem ident="produced">
+                  <desc>Klassifizierung des Datums (produziert)</desc>
+                </valItem>
+                <valItem ident="received">
+                  <desc>Klassifizierung des Datums (empfangen)</desc>
                 </valItem>
               </valList>
             </attDef>
@@ -2997,6 +3007,15 @@
               <valItem ident="intertext">
                 <desc>Intertext</desc>
               </valItem>
+              <valItem ident="subject">
+                <desc>Betreff</desc>
+              </valItem>
+              <valItem ident="dictation">
+                <desc>Diktatsigle</desc>
+              </valItem>
+              <valItem ident="appendix">
+                <desc>Anlage</desc>
+              </valItem>  
               </valList>
             </attDef>
             <!-- <attDef ident="subtype" mode="delete"/> -->
@@ -3005,6 +3024,9 @@
             <attDef ident="targetEnd" mode="delete"/>
           </attList>
         </elementSpec>
+        
+        <!--noteGrp [core]-->
+        <elementSpec ident="noteGrp" module="core" mode="change"/>
 
         <!-- table [figures] -->
         <elementSpec ident="table" module="figures" mode="change">
@@ -3521,7 +3543,7 @@
         <!-- stamp [header] -->
         <elementSpec ident="stamp" module="header" mode="change">
           <attList>
-            <attDef ident="xml:id" mode="delete"/>
+            <attDef ident="xml:id" mode="change" usage="req"/>
             <attDef ident="n" mode="delete"/>
             <attDef ident="xml:lang" mode="delete"/>
             <attDef ident="xml:base" mode="delete"/>
