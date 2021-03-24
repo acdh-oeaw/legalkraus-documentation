@@ -117,6 +117,14 @@
             <assert test="matches(@when-iso,'[0-9]{4}-[0-9]{2}-[0-9]{2}')" role="warning">Form ungültig. Muss dem Schema YYYY-MM-DD entsprechen.</assert>
         </rule>
         
+        <rule context="tei:date[@notBefore-iso]">
+            <assert test="matches(@notBefore-iso,'[0-9]{4}-[0-9]{2}-[0-9]{2}')" role="warning">Form ungültig. Muss dem Schema YYYY-MM-DD entsprechen.</assert>
+        </rule>
+        
+        <rule context="tei:date[@notAfter-iso]">
+            <assert test="matches(@notAfter-iso,'[0-9]{4}-[0-9]{2}-[0-9]{2}')" role="warning">Form ungültig. Muss dem Schema YYYY-MM-DD entsprechen.</assert>
+        </rule>
+        
         <!-- sortDate bei creation -->
         <rule context="tei:creation">
             <assert test="date[@when-iso]" role="warning">Attribut "when-iso" fehlt.</assert>
@@ -150,6 +158,11 @@
         <rule context="tei:stamp">
             <assert test="@source" role="warning">Attribut "source" fehlt.</assert>
             <report test="@source/string() eq ''" role="warning">Fehlender Wert des Attributs "source".</report>
+        </rule>
+        
+        <!-- Appendix-ID -->
+        <rule context="tei:note[type='appendix']">
+            <assert test="matches(@xml:id,'D_[0-9]{6}-[0-9]{3}-[0-9]{3}')">Attribut "xml:id" von TEI ungültig. Muss dem Muster D_[0-9]{6}-[0-9]{3}-[0-9]{3} entsprechen.</assert>
         </rule>
         
     </pattern>
