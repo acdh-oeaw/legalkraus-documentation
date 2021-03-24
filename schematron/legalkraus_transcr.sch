@@ -117,6 +117,14 @@
             <assert test="matches(@when-iso,'[0-9]{4}-[0-9]{2}-[0-9]{2}')" role="warning">Form ungültig. Muss dem Schema YYYY-MM-DD entsprechen.</assert>
         </rule>
         
+        <rule context="tei:date[@notBefore-iso]">
+            <assert test="matches(@notBefore-iso,'[0-9]{4}-[0-9]{2}-[0-9]{2}')" role="warning">Form ungültig. Muss dem Schema YYYY-MM-DD entsprechen.</assert>
+        </rule>
+        
+        <rule context="tei:date[@notAfter-iso]">
+            <assert test="matches(@notAfter-iso,'[0-9]{4}-[0-9]{2}-[0-9]{2}')" role="warning">Form ungültig. Muss dem Schema YYYY-MM-DD entsprechen.</assert>
+        </rule>
+        
         <!-- sortDate bei creation -->
         <rule context="tei:creation">
             <assert test="date[@when-iso]" role="warning">Attribut "when-iso" fehlt.</assert>
