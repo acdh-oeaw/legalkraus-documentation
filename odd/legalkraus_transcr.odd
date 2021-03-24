@@ -1660,20 +1660,24 @@
             <attDef ident="notAfter-iso" mode="change" usage="opt"/>
 
             <!-- @type, @subtype -->
-            <attDef ident="type" mode="change" usage="opt">
+            <attDef ident="type" mode="change" usage="rec">
               <valList mode="replace" type="closed">
                 <valItem ident="sortDate">
                   <desc>Datum für Sortierung</desc>
                 </valItem>
-                <valItem ident="produced">
-                  <desc>Klassifizierung des Datums (produziert)</desc>
-                </valItem>
-                <valItem ident="received">
-                  <desc>Klassifizierung des Datums (empfangen)</desc>
-                </valItem>
               </valList>
             </attDef>
-            <attDef ident="subtype" mode="delete"/>
+            
+            <attDef ident="subtype" mode="change" usage="rec">
+              <valList>
+              <valItem ident="produced">
+                <desc>Klassifizierung des Datums (produziert)</desc>
+              </valItem>
+              <valItem ident="received">
+                <desc>Klassifizierung des Datums (empfangen)</desc>
+              </valItem>
+              </valList>
+            </attDef>
 
             <attDef ident="evidence" mode="delete"/>
             <attDef ident="instant" mode="delete"/>
