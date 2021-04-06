@@ -3618,7 +3618,13 @@
             <attDef ident="cert" mode="delete"/>
             <attDef ident="resp" mode="delete"/>
             <attDef ident="source" mode="delete"/>
-            <attDef ident="type" mode="delete"/>
+            <attDef ident="type" mode="change" usage="req">
+              <valList type="closed" mode="replace">
+                <valItem ident="stamp">
+                  <desc>Stempel</desc>
+                </valItem>
+              </valList>
+            </attDef>
             <attDef ident="subtype" mode="delete"/>
             <attDef ident="decls" mode="delete"/>
             <attDef ident="part" mode="delete"/>
