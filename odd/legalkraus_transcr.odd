@@ -5,10 +5,12 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>Kraus Gerichtsakten: Kodierrichtlinien Transkriptionen</title>
+        <title>Kraus'sche Kanzleiakten Oskar Sameks: Kodierrichtlinien Transkriptionen</title>
         <author xml:id="IB">Ingo Börner</author>
         <author xml:id="VH">Vanessa Hannesschläger</author>
         <author xml:id="IL">Isabell Langkabel</author>
+        <author xml:id="JK">Johannes Knüchel</author>
+        <author xml:id="LU">Laura Untner</author>
       </titleStmt>
       <publicationStmt>
         <publisher>ACDH-CH OEAW</publisher>
@@ -25,15 +27,17 @@
     <front>
       <titlePage>
         <docTitle>
-          <titlePart type="main">Karl Kraus Rechtsakten</titlePart>
+          <titlePart type="main">Kraus'sche Kanzleiakten Oskar Sameks</titlePart>
           <titlePart type="sub">Kodierrichtlinien</titlePart>
         </docTitle>
         <docAuthor>Ingo Börner</docAuthor>
         <docAuthor>Vanessa Hannesschläger</docAuthor>
-        <docDate>Juni 2020</docDate>
+        <docAuthor>Laura Untner</docAuthor>
+        <docDate>Stand: Mai 2021</docDate>
       </titlePage>
     </front>
     <body>
+      
       <!-- ab hier der Text für's HTML, PDF -->
 
       <div xml:id="div_intro">
@@ -91,7 +95,7 @@
       </div>
       <!-- /workflow -->
 
-      <div xml:id="metadata-tei-doc">
+      <div xml:id="metadata-tei-doc"><!-- LU: author raus -->
         <head>Metadaten - des TEI Dokuments</head>
         <p> Das Element <gi>fileDesc</gi> enthält die Metadaten zum elektronischen Dokument. </p>
 
@@ -148,20 +152,46 @@
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <publicationStmt>
               <publisher>
-                <!-- das soll anders werden: Namen ausschreiben und Adressen ergänzen -->
-                <name>ACDH-CH</name>
-                <name>LBI-DH</name>
-                <name>Wienbibliothek im Rathaus</name>
+                <name>Austrian Centre for Digital Humanities and Cultural Heritage,
+                  Österreichische Akademie der Wissenschaften</name>
+                <address>
+                  <street>Sonnenfelsgasse 19</street>
+                  <postCode>1010</postCode>
+                  <settlement>Wien</settlement>
+                  <country>Österreich</country>
+                </address>
+                <ref target="https://acdh.oeaw.ac.at">https://acdh.oeaw.ac.at</ref>
               </publisher>
+              <publisher>
+                <name>Ludwig Boltzmann Institut für Digital History</name>
+                <address>
+                  <street>Hofburg, Batthianystiege</street>
+                  <postCode>1010</postCode>
+                  <settlement>Wien</settlement>
+                  <country>Österreich</country>
+                </address>
+                <ref target="https://geschichte.lbg.ac.at">https://geschichte.lbg.ac.at</ref>
+              </publisher>
+              <publisher>
+                <name>Wienbibliothek im Rathaus</name>
+                <address>
+                  <street>Friedrich-Schmidt-Platz 1</street>
+                  <postCode>1010</postCode>
+                  <country>Wien</country>
+                  <settlement>Österreich</settlement>
+                </address>
+                <ref target="https://www.wienbibliothek.at">https://www.wienbibliothek.at</ref>
+              </publisher>
+              <pubPlace>Wien, Österreich</pubPlace>
+              <date>2021</date>
+              <pubPlace>Wien, Österreich</pubPlace>
+              <date>2021</date>
               <availability>
-                <licence target="http://creativecommons.org/licenses/by/4.0">Creative Commons
-                  Namensnennung 4.0 International Lizenz</licence>
+                <licence target="http://creativecommons.org/licenses/by/4.0">Creative Commons Namensnennung 4.0 International Lizenz</licence>
               </availability>
-              <idno type="URL" subtype="legalkraus"
-                >https://legalkraus.acdh.oeaw.ac.at/id/D_000002-002-000</idno>
-              <idno type="URL" subtype="krausonline"
-                >http://www.kraus.wienbibliothek.at/node/1540</idno>
-              <idno type="ID" subtype="transkribus">365566</idno>
+              <idno type="URL" subtype="legalkraus">https://legalkraus.acdh.oeaw.ac.at/id/D_000125-006-000</idno>
+              <idno type="URL" subtype="krausonline">http://www.kraus.wienbibliothek.at/node/3371</idno>
+              <idno type="ID" subtype="transkribus">251313</idno>
             </publicationStmt>
           </egXML>
         </div>
@@ -181,19 +211,36 @@
               <item>
                 <val>done</val>
               </item>
-              <item>
-                <val>checked</val>
-              </item>
-            </list> Wird ein Dokument neu angelegt, ist es im Status <q>draft</q>. Sind die
-            Arbeitsschritte (siehe XX) abgeschlossen, wird der Status <q>done</q> vergeben.
-            Korrektur gelesene Dokumente erhalten den Statuswert <q>checked</q>. </p>
+            </list> Wird ein Dokument neu angelegt, ist es im Status <q>draft</q>. Sind alle
+            Arbeitsschritte abgeschlossen, wird der Status <q>done</q> vergeben. </p>
+          <p> Die Arbeitsschritte umfassen: <list>
+            <item>
+              <val>TEI-Header und Faksimile (header_facsimile)</val>
+            </item>
+            <item>
+              <val>Textgliederung (structure)</val>
+            </item>
+            <item>
+              <val>Referenzen (references)</val>
+            </item>
+            <item>
+              <val>Typographisches (typography)</val>
+            </item>
+            <item>
+              <val>Intertexte (intertexts)</val>
+            </item>
+            <item>
+              <val>Korrekturen (corrections)</val>
+            </item>
+          </list>
+          </p>
         </div>
 
       </div>
       <!-- /metadata-doc -->
 
       <div xml:id="metadata-hist-doc">
-        <head>Metadaten - des historischen Dokuments</head>
+        <head>Metadaten des historischen Dokuments</head>
         <p>Ebenfalls im <gi>teiHeader</gi> werden Metadaten zum historischen Dokument
           hinterlegt.</p>
 
@@ -205,8 +252,11 @@
 
         <div xml:id="listWit">
           <head>Textzeugen</head>
-          <!-- allgemein erklären -->
-          <p> Das Element <gi>listWit</gi> listet vorliegende Textzeugen auf. </p>
+          <p> Jedes digital vorliegende Dokument hat mindestens einen historischen Textzeugen. 
+            Das Element <gi>listWit</gi> listet die vorliegenden Textzeugen auf. 
+            Innerhalb von <gi>listWit</gi> wird jeder Textzeuge mit <gi>witness</gi> ausgezeichnet und mit einer <att>xml:id</att> versehen
+          sowie mit dem entsprechenden <att>facs</att> verknüpft. 
+            Der Wert von <att>facs</att> hängt mit den in <gi>facsimilie</gi> angelegten Faksimiles zusammen.</p>          
         </div>
         <!-- /listWit -->
 
@@ -221,37 +271,53 @@
           <head>Kontextinformationen</head>
           <p>Im Element <gi>profileDesc</gi> lassen sich Kontextinformationen zum Dokument, etwa den
             beteiligten Personen, dem Entstehungsdatum, usw. hinterlegen.</p>
-
+     
           <div xml:id="creation">
             <head>Datierung</head>
             <p>Zur Datierung (und als Grundlage für eine Sortierung) wird innerhalb von
                 <gi>creation</gi> ein Datum im ISO-Format (JJJJ-MM-TT) im Attribut
-                <att>when-iso</att> angegeben. Für die Sortierung wird <att>sortDate</att> hinzugefügt. Ist das Datum nicht eindeutig,
-            so werden <att>notBefore-iso</att> und <att>notAfter-iso</att> verwendet. 
+                <att>when-iso</att> angegeben. 
+              Ist ein Dokument nicht eindeutig datierbar, so wird das Datum zusätzlich mit <att>notBefore-iso</att>
+              und <att>notAfter-iso</att> eingeschränkt. Für die Sortierung wird das frühere Datum (aus <att>notBefore-iso</att>)
+              in <att>when-iso</att> eingetragen. Für die Sortierung wird <att>sortDate</att> hinzugefügt.
               Wenn eine Datierung nicht möglich ist, ist weder <att>sortDate</att> noch ein ISO-Wert vorhanden.
-            Zur Klassifizierung des Datums wird <att>type</att> definiert. Zur Auswahl stehen die Werte "produced" und "received".</p>
+            Zur weiteren Klassifizierung des Datums wird <att>subtype</att> eingeführt. 
+              Zur Auswahl stehen die Werte <val>produced</val> und <val>received</val>.</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <creation>
-                <date type="sortDate" when-iso="1922-11-30">30.11.1922</date>
+                <date type="sortDate" subtype="received" when-iso="1922-11-30">30.11.1922</date>
               </creation>
             </egXML>
-            <p>[Welches Datum wird hier notiert? Jenes, das am Dokument in einer Datumszeile
-              angegeben ist?] Beispiele und Entscheidungshilfen...</p>
           </div>
           <!-- /creation -->
+          
+          <div xml:id="langUsage">
+            <head>Sprache</head>
+            <p> In <gi>langUsage</gi> wird die Sprache des Dokuments festgehalten. In <gi>language</gi> wird 
+            dem Attribut <att>ident</att> ein Wert zugeordnet, z. B. <val>ger</val> für ein deutschsprachiges Dokument.</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <langUsage> 
+                <language ident="ger">Deutsch</language> 
+              </langUsage>
+            </egXML>
+          </div>
+          <!-- /langUsage -->
 
           <div xml:id="textClass">
             <head>Klassifizierung des Dokuments</head>
             <p>
               <gi>textClass</gi>
             </p>
-            <p>[Verweis auf die Taxonomie auf <ref target="https://vocabs.acdh-dev.oeaw.ac.at"
-                >https://vocabs.acdh-dev.oeaw.ac.at</ref>].</p>
-            <p>Zur Klassifikation von Dokumenten steht eine Taxonomie bereit. Dazu wird die
-                <term>URI</term> im Attriut <att>target</att> von <gi>catRef</gi> angebeben.</p>
+            <p>Dokumenttypen werden in einer <ref target="https://vocabs.acdh-dev.oeaw.ac.at">projektspezifischen Taxonomie</ref> definiert.
+            Alle Dokumente werden mit dieser Taxonomie klassifiziert. Dazu wird die
+                <term>URI</term> im Attriut <att>scheme</att> von <gi>classCode</gi> angebeben.
+            Darüber hinaus gibt es <gi>keywords</gi>. Der darin enthaltene <gi>term</gi> bezieht sich erneut auf die Taxonomie.</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <textClass>
-                <catRef target="https://vocabs.acdh.oeaw.ac.at/legalkraus-doctypes/v1.0/D.K.BRF"/>
+                <keywords>
+                  <term>Brief</term>
+                </keywords>
+                <classCode scheme="https://vocabs.acdh.oeaw.ac.at/legalkraus-doctypes/v1.0/">D.K.BRF</classCode>
               </textClass>
             </egXML>
             <p>Im obigen Beispiel klassifiziert
@@ -260,8 +326,8 @@
           </div>
           <!-- /textClass -->
 
-          <div xml:id="particDesc">
-            <head>Beteiligte Personen und Institutionen</head>
+          <div xml:id="particDesc"><!-- LU: überarbeiten, wenn neue particDesc steht -->
+            <head>Beteiligte Personen und Institutionen</head>            
             <p> In der <gi>particDesc</gi> werden beteiligte Personen und Institutionen (im
               Unterschied zu rein namentlich genannten) in ihrer Rolle <att>role</att> verzeichnet. </p>
             <p>(Für den Fall ergeben sich die Rollen aus den einzelnen Dokumenten.)</p>
@@ -290,28 +356,53 @@
             <p>
               <gi>correspDesc</gi>
             </p>
-            <p>gibt es nur bei Korrespondenzstücken</p>
+            <p>Metadaten zu Korrespondenzstücken werden in <gi>correspDesc</gi> versammelt.
+            Bei Dokumenten, die keine Korrespondenzstücke ausmachen, fehlt dieser Abschnitt.
+            Es gibt drei Möglichkeiten für die Struktur der <gi>correspDesc</gi>: 
+            Erstens ist sowohl der/die AbsenderIn als auch der/die EmpfängerIn eine Person.
+            Zweitens ist der/die AbsenderIn eine Person, der/die EmpfängerIn eine Institution.
+            Drittens ist der/die AbsenderIn eine Institution, der/die EmpfängerIn eine Person.
+            Entsprechend kommen die Elemente <gi>persName</gi> bzw. <gi>orgName</gi> zum Einsatz.</p>
+            <p>Der/Die AbsenderIn wird in <gi>correspAction</gi> mit dem Attribut <att>type</att> und dem Attributwert <val>sent</val>
+              festgehalten. Der/Die EmpfängerIn hingegen ist in <gi>correspAction</gi> <att>type</att> <val>received</val> zu finden.
+              Die Rollen der Personen und Institutionen, die sich aus der 
+              <ref target="https://vocabs.acdh-dev.oeaw.ac.at">projektspezifischen Taxonomie</ref> ergeben, werden in <gi>roleName</gi>
+            angegeben und mittels <att>ref</att> mit der entsprechenden Klassifikation in der Taxonomie verknüpft.</p>
+            <!-- LU: place, address, date -->
+            <p>In <gi>noteGrp</gi> sind optional weitere Metadaten zur Korrespondenz enthalten. Mittels <gi>note</gi> und entsprechenden
+            <att>type</att>-Attributen kann ein Betreff (<val>subject</val>), eine Diktatsigle (<val>dictation</val>) sowie
+            ein Anhang (<att>appendix</att>) verzeichnet werden.</p>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <correspDesc>
                 <correspAction type="sent">
-                  <rs type="person" ref="https://pmb.acdh.oeaw.ac.at/entity/38909">Oskar Samek</rs>
-                  <rs type="place" ref="https://pmb.acdh.oeaw.ac.at/entity/50">Wien</rs>
-                  <!-- hier nach (Post-)Stempel? -->
-                  <date when-iso="1922-11-30">30.11.1922</date>
+                  <persName ref="#38624">Alfred Kraus</persName>
+                  <roleName ref=""/>
+                  <address>
+                    <rs type="place" ana="#address" ref=""/>
+                  </address>
+                  <placeName ref=""/>
+                  <date when-iso="1927-03-01">01.03.1927</date>
                 </correspAction>
                 <correspAction type="received">
-                  <rs type="institution" ref="https://pmb.acdh.oeaw.ac.at/entity/29637"
-                    >Reichspost</rs>
-                  <rs type="person" ref="https://pmb.acdh.oeaw.ac.at/entity/40703">Karl
-                    Schiffleitner <!-- zitat aus dem Text oder auflösen? --></rs>
-                  <rs type="place" ref="https://pmb.acdh.oeaw.ac.at/entity/50">Wien</rs>
+                  <persName ref="#38909">Herrn Dr. Oskar Samek</persName>
+                  <roleName ref=""/>
+                  <address>
+                    <rs type="place" ana="#address" ref=""/>
+                  </address>
+                  <placeName ref="#50">Wien</placeName>
+                  <date when-iso=""/>
                 </correspAction>
+                <noteGrp>
+                  <note type="subject"/>
+                  <note type="dictation"/>
+                  <note type="appendix"/>
+                </noteGrp>
               </correspDesc>
             </egXML>
           </div>
           <!-- correspDesc -->
 
-          <div xml:id="handNotes">
+          <div xml:id="handNotes"><!-- LU: überarbeiten, wenn Umgang mit HS feststeht -->
             <head>Schreiberhände</head>
             <p>
               <gi>handNotes</gi>
@@ -339,13 +430,34 @@
 
       <div xml:id="facsimile">
         <head>Bilddaten</head>
-        <p>
-          <gi>facsimile</gi>, <gi>surfaceGrp</gi>, <gi>surface</gi> und so weiter. Zuordnung von
-          Bildern zu Blatt und Seite; ... </p>
+        <p>Die der digitalen Edition zugrundeliegenden Faksimiles sind in <gi>facsimile</gi> zu finden. 
+            Innerhalb von <gi>facsimile</gi> ist mindestens eine <gi>surfaceGrp</gi> enthalten. Diese beschreibt ein Blatt.
+            Dieses Blatt wird in mehrere <gi>surface</gi>-Elemente unterteilt. Diese machen die Seiten aus, die mittels <att>type</att>
+            und <val>recto</val> bzw. <val>verso</val> näher bestimmt werden.
+            Diese <gi>surface</gi>-Elemente beinhalten wiederum drei <gi>graphic</gi>-Elemente, die mittels <att>source</att> unterschieden werden.
+            Die Faksimiles des Vorläuferprojekts "<ref target="https://www.kraus.wienbibliothek.at/">Karl Kraus Online</ref>" 
+            werden mit dem Attributwert <val>krausonline</val> versehen, jene der Wienbibliothek im Rathaus mit <val>wienbibliothek</val>
+            und jene der projekteigenen Scans mit <val>scans</val>.</p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <facsimile xml:id="D_000002-002-000-facs001">
+                <surfaceGrp xml:id="D_000002-002-000-facs001-l001">
+                  <surface xml:id="D_000002-002-000-facs001-l001-p001" type="recto">
+                    <graphic url="http://www.kraus.wienbibliothek.at/sites/biographeme.com/files/images/object/00000019.jpg" source="krausonline"/>
+                    <graphic url="ZPH_1545-1/001_010/00000019.jpg" source="scans"/>
+                    <graphic url="https://www.digital.wienbibliothek.at/wbrobv02/i3f/v21/2540028/full/full/0/default.jpg" source="wienbibliothek" ana="status:checked"/>
+                  </surface>
+                  <surface xml:id="D_000002-002-000-facs001-l001-p002" type="recto">
+                    <graphic url="http://www.kraus.wienbibliothek.at/sites/biographeme.com/files/images/object/00000021.jpg" source="krausonline"/>
+                    <graphic url="ZPH_1545-1/001_010/00000021.jpg" source="scans"/>
+                    <graphic url="https://www.digital.wienbibliothek.at/wbrobv02/i3f/v21/2540030/full/full/0/default.jpg" source="wienbibliothek" ana="status:checked"/>
+                  </surface>
+                </surfaceGrp>
+              </facsimile>
+            </egXML>
       </div>
       <!-- /facsimile -->
 
-      <div xml:id="transciption">
+      <div xml:id="transciption"><!-- LU: mit Isa und Johannes besprechen -->
         <head>Transkription des Dokuments</head>
         <p>Die Transkription erfolgt im Element <gi>body</gi> des Elements <gi>text</gi>.</p>
 
@@ -442,32 +554,24 @@
 
         <div xml:id="structure">
           <head>Textstruktur</head>
-          <p>Trennstriche usw. werden nicht kodiert, stattdessen, wenn möglich, Struktureinheiten
-            ansetzen</p>
-          <div xml:id="div">
-            <head>Abschnitte</head>
-            <p><gi>div</gi></p>
+          <p>Trennstriche usw. werden nicht kodiert, stattdessen werden, wenn möglich, Struktureinheiten angesetzt.</p>
+          
+          <div xml:id="pb">
+            <head>Seitenwechsel</head>
+            <p>Seitenwechsel werden mit <gi>pb</gi> markiert. Sie werden außerdem durch das Attribut <att>n</att>
+              und dem entsprechenden Attributwert (z. B. <val>1</val> für die erste Seite) ausgezeichnet.
+              Darüber hinaus werden sie mit den Bilddaten verknüpft.<!-- LU: nachtragen! -->
+            </p>
           </div>
-          <!-- /div -->
-
+          <!-- /pb -->          
+          
           <div xml:id="p">
             <head>Absätze</head>
-            <p>
-              <gi>p</gi>
-            </p>
+            <p>Die größte Struktureinheit nach der Seite (<gi>pb</gi>) ist der Absatz: <gi>p</gi>.</p>
           </div>
           <!-- /p -->
 
-          <div xml:id="pb">
-            <head>Seitenwechsel</head>
-            <p>
-              <gi>pb</gi>
-            </p>
-            <p>Verknüpfung mit Bilddaten beschreiben</p>
-          </div>
-          <!-- /pb -->
-
-          <div xml:id="lb">
+          <div xml:id="lb"><!-- LU: bearbeiten -->
             <head>Zeilenfall</head>
             <p>
               <gi>lb</gi>
@@ -475,7 +579,7 @@
           </div>
           <!-- /lb -->
 
-          <div xml:id="marginalia">
+          <div xml:id="marginalia"><!-- LU: bearbeiten -->
             <head>Marginalien</head>
             <p> Marginalien werden generell als <gi>note</gi> erfasst, ev. mit <att>place</att> o.ä.
               positioniert; sinnvoll wäre eine Klassifizierung mittels <att>type</att> von
@@ -488,7 +592,7 @@
         </div>
         <!-- /structure -->
 
-        <div xml:id="typography">
+        <div xml:id="typography"><!-- LU: bearbeiten -->
           <head>Typografische Hervorhebungen</head>
           <p>
             <gi>hi</gi>
@@ -505,7 +609,7 @@
         </div>
         <!-- /typography -->
 
-        <div xml:id="modifications">
+        <div xml:id="modifications"><!-- LU: bearbeiten -->
           <head>Eingriffe in den Text</head>
           <p>Sofort- und Spätkorrekturen</p>
           <p>kodiert werden ausschließlich »semantisch relevante« Änderungen (siehe Einrichtung?):
