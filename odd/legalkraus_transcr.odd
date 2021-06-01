@@ -1401,7 +1401,33 @@
             </egXML>
           </exemplum>
         </elementSpec>
-
+        
+        <!--seriesStmt [header]-->
+        <elementSpec ident="seriesStmt" module="header" mode="change">
+          <attList>
+            <attDef ident="xml:id" mode="delete"/>
+            <attDef ident="n" mode="delete"/>
+            <attDef ident="xml:lang" mode="delete"/>
+            <attDef ident="xml:base" mode="delete"/>
+            <attDef ident="xml:space" mode="delete"/>
+            <attDef ident="rend" mode="delete"/>
+            <attDef ident="style" mode="delete"/>
+            <attDef ident="rendition" mode="delete"/>
+            <attDef ident="facs" mode="delete"/>
+            <attDef ident="change" mode="delete"/>
+            <attDef ident="cert" mode="delete"/>
+            <attDef ident="resp" mode="delete"/>
+            <attDef ident="source" mode="delete"/>
+          </attList>
+          <exemplum>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <seriesStmt>
+                <title type="collection" ref="https://legalkraus.acdh.oeaw.ac.at/id/C_000001">Karl Kraus ca. Neues Wiener Journal</title>
+              </seriesStmt>
+            </egXML>
+          </exemplum>
+        </elementSpec>
+        
         <!--ref [core]-->
         <elementSpec ident="ref" module="core" mode="change">
           <attList>
@@ -2073,9 +2099,54 @@
             <attDef ident="resp" mode="delete"/>
             <attDef ident="source" mode="delete"/>
             <attDef ident="sortKey" mode="delete"/>
-            <!-- <attDef ident="type" mode="delete"/> -->
+            <attDef ident="type" mode="replace" usage="req">
+              <valList mode="replace" type="closed">
+                <valItem ident="sent">
+                  <desc>Absendende Partei</desc>
+                </valItem>
+                <valItem ident="received">
+                  <desc>Empfangende Partei</desc>
+                </valItem>
+              </valList>
+            </attDef>
             <attDef ident="subtype" mode="delete"/>
           </attList>
+        </elementSpec>
+        
+        <!-- persName -->
+        <elementSpec ident="persName" module="header" mode="change">
+          <attList>
+            <attDef ident="ref" mode="change" usage="rec"/>
+          </attList>
+        </elementSpec>
+        
+        <!-- roleName -->
+        <elementSpec ident="roleName" module="header" mode="change">
+          <attList>
+            <attDef ident="ref" mode="change" usage="rec"/>
+          </attList>
+        </elementSpec>
+        
+        <!-- placeName -->
+        <elementSpec ident="placeName" module="header" mode="change">
+          <attList>
+            <attDef ident="ref" mode="change" usage="rec"/>
+          </attList>
+        </elementSpec>
+        
+        <!--noteGrp [header]-->
+        <elementSpec ident="noteGrp" module="header" mode="change">
+          <valList mode="replace" type="closed">
+            <valItem ident="subject">
+              <desc>Betreff</desc>
+            </valItem>
+            <valItem ident="dictation">
+              <desc>Diktatsigle</desc>
+            </valItem>
+            <valItem ident="appendix">
+              <desc>Anhang</desc>
+            </valItem>
+          </valList>
         </elementSpec>
 
         <!--rs [core]-->
@@ -3132,10 +3203,7 @@
             <attDef ident="targetEnd" mode="delete"/>
           </attList>
         </elementSpec>
-        
-        <!--noteGrp [core]-->
-        <elementSpec ident="noteGrp" module="core" mode="change"/>
-
+       
         <!-- table [figures] -->
         <elementSpec ident="table" module="figures" mode="change">
           <attList>
@@ -3735,12 +3803,6 @@
             <attDef ident="hand" mode="delete"/>
           </attList>
         </elementSpec>
-
-        <!-- dictation (neu)
-        
-        <elementSpec ident="dictation" module="header" mode="change">
-          <desc>Diktat-Sigle.</desc>
-        </elementSpec> -->
 
         <!-- Bsp -->
         <!-- 
