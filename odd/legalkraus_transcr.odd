@@ -2,27 +2,52 @@
 <TEI xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"
   xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0"
   xmlns:s="http://purl.oclc.org/dsdl/schematron">
+
+<!-- Metadaten zur ODD -->
+
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>Kraus'sche Kanzleiakten Oskar Sameks: Kodierrichtlinien Transkriptionen</title>
+        <title>Kraus'sche Kanzleiakten Oskar Sameks: Kodierrichtlinien</title>
+        <author xml:id="LU" role="main">Laura Untner</author>
         <author xml:id="IB">Ingo Börner</author>
         <author xml:id="VH">Vanessa Hannesschläger</author>
         <author xml:id="IL">Isabell Langkabel</author>
         <author xml:id="JK">Johannes Knüchel</author>
-        <author xml:id="LU">Laura Untner</author>
+        <author xml:id="AO">Andrea Ortner</author>
       </titleStmt>
       <publicationStmt>
-        <publisher>ACDH-CH OEAW</publisher>
+        <publisher>
+          <name>Austrian Centre for Digital Humanities and Cultural Heritage,
+            Österreichische Akademie der Wissenschaften</name>
+          <ref target="https://acdh.oeaw.ac.at">https://acdh.oeaw.ac.at</ref>
+        </publisher>
+        <publisher>
+          <name>Ludwig Boltzmann Institut für Digital History</name>
+          <ref target="https://geschichte.lbg.ac.at">https://geschichte.lbg.ac.at</ref>
+        </publisher>
+        <publisher>
+          <name>Wienbibliothek im Rathaus</name>
+          <ref target="https://www.wienbibliothek.at">https://www.wienbibliothek.at</ref>
+        </publisher>
+        <pubPlace>Wien, Österreich</pubPlace>
+        <date>2022</date>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0">Creative Commons
+            Namensnennung 4.0 International Lizenz</licence>
+        </availability>
         <ref type="URL"
           target="https://gitlab.com/acdh-oeaw/legalkraus/documentation/legalkraus_transcr.odd"
           >https://gitlab.com/acdh-oeaw/legalkraus/documentation/legalkraus_transcr.odd</ref>
       </publicationStmt>
       <sourceDesc>
-        <p>born digital</p>
+        <p>Born digital.</p>
       </sourceDesc>
     </fileDesc>
   </teiHeader>
+
+<!-- Text der ODD -->
+
   <text>
     <front>
       <titlePage>
@@ -30,22 +55,27 @@
           <titlePart type="main">Kraus'sche Kanzleiakten Oskar Sameks</titlePart>
           <titlePart type="sub">Kodierrichtlinien</titlePart>
         </docTitle>
+        <docAuthor>Laura Untner</docAuthor>
         <docAuthor>Ingo Börner</docAuthor>
         <docAuthor>Vanessa Hannesschläger</docAuthor>
-        <docAuthor>Laura Untner</docAuthor>
-        <docDate>Stand: Mai 2021</docDate>
+        <docAuthor>Isabell Langkabel</docAuthor>
+        <docAuthor>Johannes Knüchel</docAuthor>
+        <docAuthor>Andrea Ortner</docAuthor>
+        <docDate>Stand: August 2021</docDate>
       </titlePage>
     </front>
     <body>
-      
-      <!-- ab hier der Text für's HTML, PDF -->
 
-      <div xml:id="div_intro">
-        <head>Intro</head>
+<!-- div intro -->
+      <div xml:id="intro">
+        
+        <head>Zu diesem Dokument</head>
+        
         <p>In diesem Dokument werden die Kodierrichtlinien für <ref target="https://tei-c.org/"
-            >TEI</ref> xml Dokumente beschrieben, die im Projekt <title>Intertextuality in the Legal
+            >TEI</ref>/XML-Dokumente beschrieben, die im Projekt <title>Intertextuality in the Legal
             Papers of Karl Kraus. A Scholarly Digital Edition</title> (FWF Projektnr. <idno>P
-            31138-G30</idno>, PI DDr.in Kathrina Prager) zur Anwendung kommen.</p>
+            31138-G30</idno>, PI DDr.in Katharina Prager) zur Anwendung kommen.</p>
+        
         <p>Dieses Projekt wird vom Ludwig Boltzmann Institut für Digital History (<ref
             target="https://geschichte.lbg.ac.at">https://geschichte.lbg.ac.at</ref>) in
           Zusammenarbeit mit dem Austrian Centre for Digital Humanities and Cultural Heritage
@@ -53,10 +83,11 @@
             target="https://acdh.oeaw.ac.at">https://acdh.oeaw.ac.at</ref>) und der Wienbibliothek
           im Rathaus (<ref target="https://www.wienbibliothek.at"
             >https://www.wienbibliothek.at</ref>) umgesetzt. Ziel des Projekts ist es, eine digitale
-          Edition der Kanzleiakten aus der Kanzlei Oskar Samek zu erstellen, die die Fälle
+          Edition der Kanzleiakten aus der Kanzlei Oskar Samek zu erstellen, welche die Fälle
           dokumentieren, in die Karl Kraus involviert war. Diese digitale Edition soll es ihren
-          Nutzer*innen ermöglichen, den unterschiedlichen intertextuellen Bezügen in diesen Akten
-          nachzuforschen.</p>
+          Nutzer_innen ermöglichen, den unterschiedlichen intertextuellen Bezügen in diesen Akten
+          nachzuforschen.</p><!-- LU: überarbeiten -->
+        
         <p>Als Grundlage dient dabei einerseits das Vorgängerprojekt <title>Karl Kraus
             Online</title> (<ref target="https://www.kraus.wienbibliothek.at"
             >https://www.kraus.wienbibliothek.at</ref>), andererseits die digitalisierte Fassung der
@@ -71,85 +102,52 @@
             der Kanzlei Oskar Samek in der Wiener Stadt- und Landesbibliothek, bearb. und
             kommentiert von Hermann Böhm, Wien, Wiener Stadt- u. Landesbibliothek, Bd. 1–4,
             1995–1997</bibl>).</p>
-        <p>Im Rahmen des vorliegenden Projekts wird auf Basis der genannten Quellen für jedes
-          erhaltene Einzeldokument im Archiv ein korrespondierendes TEI xml Dokument erstellt, in
+        
+        <p>Im Rahmen des Projekts wird auf Basis der genannten Quellen für jedes
+          erhaltene Einzeldokument im Archiv ein korrespondierendes TEI/XML-Dokument erstellt, in
           dem sich eine annotierte Transkription des Volltexts sowie alle relevanten Metadaten und
-          Verweise auf Digitalisate des Archivdokuments befinden. (Darüberhinaus wird pro Fall ein
-          weiteres TEI xml Dokument angelegt, in dem die entsprechenden Metadaten festgehalten und
-          eine Liste der zum Fall gehörigen Einzeldokumente angelegt wird.) Wie genau diese TEI xml
-          Dokumente entstehen und strukturiert sind, ist im Folgenden beschrieben.</p>
+          Verweise auf Digitalisate des Archivdokuments befinden. Darüber hinaus wird pro Fall ein
+          weiteres TEI/XML-Dokument angelegt, in dem die entsprechenden Metadaten festgehalten und
+          eine Liste der zum Fall gehörigen Einzeldokumente angelegt wird. Wie genau diese 
+          TEI/XML-Dokumente entstehen und strukturiert sind, ist im Folgenden beschrieben.</p><!-- LU: überarbeiten -->
 
       </div>
-      <!-- /intro -->
 
+<!-- div workflow -->
       <div xml:id="workflow">
+        
         <head>Workflow</head>
+        
         <p>Der Workflow zur Erstellung eines Dokuments umfasst folgende Schritte:</p>
         <list>
           <item>Auswahl des zu transkirbierenden Dokuments</item>
-          <item>Transkribus - Upload, Erstellen der Transkription</item>
+          <item>Transkribus: Upload, Erstellen der Transkription</item>
           <item>Bildzuordnung</item>
           <item>Erstellen des TEI Dokuments</item>
           <item>Bearbeiten des TEI Dokuments</item>
         </list>
+        
       </div>
-      <!-- /workflow -->
 
-      <div xml:id="metadata-tei-doc"><!-- LU: author raus -->
-        <head>Metadaten - des TEI Dokuments</head>
-        <p> Das Element <gi>fileDesc</gi> enthält die Metadaten zum elektronischen Dokument. </p>
-
-        <div xml:id="titleStmt">
-          <head>Titel, VerfasserIn, HerausgeberIn und weitere Beteiligte</head>
-          <p>
-            <gi>titleStmt</gi> enthält Informationen zu Titel <gi>title</gi> und Verfasser
-              <gi>author</gi>, sowie den Namen der/des verantwortlichen Herausgeber/in
-              <gi>editor</gi>. Innerhalb von <gi>respStmt</gi> werden weitere Angaben zu an der
-            Erstellung des Dokuments beteiligten Personen hinterlegt, bspw. dazu, wer das Dokument
-            transkribiert und kodiert hat. </p>
-
-          <p>Ein Beispiel für ein <gi>titleStmt</gi>:</p>
-
-          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+<!-- METADATEN ZUM TEI-DOKUMENT -->
+      
+<!-- div metadata-tei-doc -->
+      <div xml:id="metadata-tei-doc">
+        
+        <head>Metadaten des TEI-Dokuments</head>
+        
+        <p>Das Element <gi>fileDesc</gi> enthält die Metadaten zum elektronischen Dokument.</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+          <fileDesc>
             <titleStmt>
               <title>Brief Samek an Reichspost (verantw. Red. Karl Schiffleitner)</title>
-              <author ref="https://pmb.acdh.oeaw.ac.at/entity/38909">Oskar Samek</author>
-              <editor ref="#IL">Isabell Langkabel</editor>
+              <editor ref="#IL">Isabel Langkabel</editor>
               <respStmt>
                 <resp ref="http://id.loc.gov/vocabulary/relators/trc">Transkription</resp>
-                <name ref="#IL">Isabell Langkabel</name>
-              </respStmt>
-              <respStmt>
-                <resp ref="http://id.loc.gov/vocabulary/relators/mrk">TEI-Encoding</resp>
-                <name ref="#IB">Ingo Börner</name>
-                <name ref="#VH">Vanessa Hannesschläger</name>
+                <name ref="#IL">Isabel Langkabel</name>
               </respStmt>
             </titleStmt>
-          </egXML>
-          <p> Das Dokument wurde von <q>Oskar Samek</q> verfasst und wird von <q>Isabell
-              Langkabel</q> hauptverantwortlich herausgegeben. Das von ihr transkribierte Dokument
-            wurde von <q>Ingo Börner</q> und <q>Vanessa Hannesschläger</q> entsprechend den
-            Kodierrichtlinien kodiert. </p>
-          <p> Das <att>ref</att> dient zur Verknüpfung mit einem zentral verwalteten Datensatz.
-            Bspw. wird der Verfasser des Briefes, <q>Oskar Samek</q> mittels <att>ref</att> mit dem
-            entsprechenden Datensatz (<val>https://pmb.acdh.oeaw.ac.at/entity/38909</val>) in der
-              <ref target="https://pmb.acdh.oeaw.ac.at">PMB</ref> verlinkt. </p>
-          <p>Die Beiträge weiterer Personen (Transkription, Kodierung usw.) werden in
-              <gi>respStmt</gi> erfasst. Die Tätigkeit <gi>resp</gi> wird über ein Attribut
-              <att>ref</att> mit einem <ref type="URL"
-              target="https://www.loc.gov/marc/relators/relaterm.html">MARC Relator-Code</ref>
-            versehen.</p>
-        </div>
-        <!-- /titleStmt -->
-
-        <div xml:id="publicationStmt">
-          <head>Herausgeber (Institutionen)</head>
-          <p>Im Element <gi>publisher</gi> im <gi>publicationStmt</gi> findet sich die Information
-            zum Herausgeber des Dokuments. Im folgenden Beispiel sind es drei Institutionen. Das
-            Element <gi>availability</gi> enthält im Element <gi>licence</gi> einen Verweis
-              <gi>ref</gi> auf die Creative Commons-Lizenz, unter der die Daten bereitgestellt
-            werden. Die <gi>idno</gi> Elemente geben interne und externe Identifier an.</p>
-          <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <publicationStmt>
               <publisher>
                 <name>Austrian Centre for Digital Humanities and Cultural Heritage,
@@ -184,8 +182,104 @@
               </publisher>
               <pubPlace>Wien, Österreich</pubPlace>
               <date>2021</date>
+              <availability>
+                <licence target="http://creativecommons.org/licenses/by/4.0">Creative Commons
+                  Namensnennung 4.0 International Lizenz</licence>
+              </availability>
+              <idno type="URL" subtype="legalkraus">https://legalkraus.acdh.oeaw.ac.at/id/D_000002-002-000</idno>
+              <idno type="URL" subtype="krausonline">http://www.kraus.wienbibliothek.at/node/1540</idno>
+              <idno type="ID" subtype="transkribus">365566</idno>
+            </publicationStmt>
+            <seriesStmt>
+              <title type="collection" ref="https://legalkraus.acdh.oeaw.ac.at/id/C_000002">Karl Kraus ca. Reichspost</title>
+            </seriesStmt>
+            <sourceDesc>
+              <listWit>
+                <witness xml:id="D_000002-002-000-wit01" facs="#D_000002-002-000-facs001"/>
+              </listWit>
+            </sourceDesc>
+          </fileDesc>
+        </egXML>
+
+  <!-- div titleStmt -->
+        <div xml:id="titleStmt">
+          
+          <head>Titel und Herausgeber_in</head>
+          
+          <p>Das Element <gi>titleStmt</gi> in der <gi>fileDesc</gi> enthält den Titel des Dokuments
+          (<gi>title</gi>) sowie den Namen der_des Herausgebers_in (<gi>editor</gi>). 
+          Die hier über das Attribut <att>ref</att> verlinkte Person ist für die digitale Version des Dokuments hauptverantwortlich.</p>
+
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <titleStmt>
+              <title>Ladung zur Berufungsverhandlung (Landesgericht für Strafsachen I Wien, G. Z. 14 Bl 920/28, Josef Schaupp)</title>
+              <editor ref="#IL"/>
+            </titleStmt>
+          </egXML>
+          
+        </div>
+
+  <!-- div publicationStmt -->
+        <div xml:id="publicationStmt">
+          
+          <head>Herausgebende Institutionen</head>
+          
+            <p>Im Element <gi>publisher</gi> im <gi>publicationStmt</gi> finden sich Informationen
+            zu den herausgebenden Institutionen des Dokuments. Im Falle des vorliegenden Projekts sind es drei Institutionen, 
+            die jeweils in einem <gi>publisher</gi>-Element mit entsprechenden Kindelementen (<gi>name</gi>, 
+            <gi>address</gi> (mit <gi>street</gi>, <gi>postCode</gi>, <gi>settlement</gi> und <gi>country</gi> sowie <gi>ref</gi>) 
+            angeführt werden.</p> 
+          
+            <p>Das Element <gi>availability</gi> enthält im Element <gi>licence</gi> einen Verweis mittels 
+            <att>target</att> auf die Creative Commons-Lizenz, unter der die Daten bereitgestellt
+            werden.</p> 
+          
+            <p>Die <gi>idno</gi> Elemente geben interne und externe Identifier an. In der Regel sind drei 
+            <gi>idno</gi>-Elemente vorhanden. Das erste verweist mit dem <att>type</att> <val>URL</val> und 
+            dem <att>subtype</att> <val>legalkraus</val> auf die ID in der digitalen Edition. Die zweite 
+            verweist mit demselben <att>type</att> und dem <att>subtype</att> <val>krausonline</val> auf die ID im
+            schon genannten Vorgängerprojekt <title>Karl Kraus Online</title> 
+            (<ref target="https://www.kraus.wienbibliothek.at">https://www.kraus.wienbibliothek.at</ref>).
+            Das dritte <gi>idno</gi>-Element ist, insofern eine Transkription des Dokuments angefertigt wurde, 
+            vom <att>type</att> <val>ID</val> und dem <att>subtype</att> <val>transkribus</val>. 
+            Dieser letzte Identifier bezieht sich auf die ID im Transkriptionsprogramm 
+            <ref target="https://readcoop.eu/de/transkribus/">Transkribus</ref>.</p>
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <publicationStmt>
+              <publisher>
+                <name>Austrian Centre for Digital Humanities and Cultural Heritage,
+                  Österreichische Akademie der Wissenschaften</name>
+                <address>
+                  <street>Sonnenfelsgasse 19</street>
+                  <postCode>1010</postCode>
+                  <settlement>Wien</settlement>
+                  <country>Österreich</country>
+                </address>
+                <ref target="https://acdh.oeaw.ac.at">https://acdh.oeaw.ac.at</ref>
+              </publisher>
+              <publisher>
+                <name>Ludwig Boltzmann Institut für Digital History</name>
+                <address>
+                  <street>Hofburg, Batthianystiege</street>
+                  <postCode>1010</postCode>
+                  <settlement>Wien</settlement>
+                  <country>Österreich</country>
+                </address>
+                <ref target="https://geschichte.lbg.ac.at">https://geschichte.lbg.ac.at</ref>
+              </publisher>
+              <publisher>
+                <name>Wienbibliothek im Rathaus</name>
+                <address>
+                  <street>Friedrich-Schmidt-Platz 1</street>
+                  <postCode>1010</postCode>
+                  <country>Wien</country>
+                  <settlement>Österreich</settlement>
+                </address>
+                <ref target="https://www.wienbibliothek.at">https://www.wienbibliothek.at</ref>
+              </publisher>
               <pubPlace>Wien, Österreich</pubPlace>
-              <date>2021</date>
+              <date>2022</date>
               <availability>
                 <licence target="http://creativecommons.org/licenses/by/4.0">Creative Commons Namensnennung 4.0 International Lizenz</licence>
               </availability>
@@ -194,251 +288,356 @@
               <idno type="ID" subtype="transkribus">251313</idno>
             </publicationStmt>
           </egXML>
+          
         </div>
-        <!-- /publicationStmt -->
+        
+  <!-- div seriesStmt -->
+        <div xml:id="seriesStmt">
+          
+          <head>Verknüpfung mit dem Fall</head>
+          
+          <p>Im Element <gi>title</gi> vom <att>type</att> <val>collection</val> im <gi>seriesStmt</gi> 
+          findet sich die Information zu dem Fallkomplex, dem das Dokument angehört. Das Attribut 
+          <att>ref</att> verweist dabei auf das entsprechende Falldokument in der digitalen Edition.</p>
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <seriesStmt>
+              <title type="collection" ref="https://legalkraus.acdh.oeaw.ac.at/id/C_000002">Karl Kraus ca. Reichspost</title>
+            </seriesStmt>
+          </egXML>
+          
+        </div>
 
+  <!-- revisionDesc -->
         <div xml:id="revisionDesc">
+          
           <head>Status des Dokuments, Arbeitsstand</head>
-          <!-- draft, {weitere Werte? metadaten, text kollationiert, entitäten ausgezeichnet}, done, checked -->
-          <!-- klären mit Isa und Johannes -->
-          <!-- eher wichtig! -->
-          <!-- changes typisieren -->
-          <p> Der Status der Bearbeitung des Dokuments wird in der <gi>revisionDesc</gi> im Attribut
-              <att>status</att> notiert. Folgende Werte stehen hierfür zur Verfügung: <list>
-              <item>
-                <val>draft</val>
-              </item>
-              <item>
-                <val>done</val>
-              </item>
-            </list> Wird ein Dokument neu angelegt, ist es im Status <q>draft</q>. Sind alle
-            Arbeitsschritte abgeschlossen, wird der Status <q>done</q> vergeben. </p>
-          <p> Die Arbeitsschritte umfassen: <list>
-            <item>
-              <val>TEI-Header und Faksimile (header_facsimile)</val>
-            </item>
-            <item>
-              <val>Textgliederung (structure)</val>
-            </item>
-            <item>
-              <val>Referenzen (references)</val>
-            </item>
-            <item>
-              <val>Typographisches (typography)</val>
-            </item>
-            <item>
-              <val>Intertexte (intertexts)</val>
-            </item>
-            <item>
-              <val>Korrekturen (corrections)</val>
-            </item>
-          </list>
-          </p>
+          
+          <p>Der Status der Bearbeitung des gesamten Dokuments wird in der <gi>revisionDesc</gi> 
+          im Attribut <att>status</att> notiert. Ist das Dokument noch in Bearbeitung, hat 
+          <att>status</att> den Wert <val>draft</val>. Sind alle Arbeitsschritte für das Dokument 
+          abgeschlossen, hat <att>status</att> den Wert <val>done</val>.</p>
+            
+          <p>Allgemeiner ausgedrückt umfassen die Arbeitsschritte, die in <gi>change</gi>-Elementen notiert werden,
+          die Bearbeitung des TEI-Headers sowie der Faksimiles (<att>type</att> <val>header_facsimile</val>), 
+          die strukturelle Auszeichnung (<att>type</att> <val>structure</val>),
+          die Vergabe von Referenzen (<att>type</att> <val>references</val>),
+          die Annotation typographischer Besonderheiten (<att>type</att> <val>typography</val>),
+          die Kennzeichnung von Intertexten (<att>type</att> <val>intertexts</val>) und 
+          Korrekturvorgänge (<att>type</att> <val>corrections</val>).</p>
+          
+          <p>Jedes <gi>change</gi>-Element wird nicht nur näher im Hinblick auf den Arbeitsschritt 
+          mittels des <att>type</att>-Attributs bestimmt, sondern erhält auch ein <att>when-iso</att>-Attribut 
+          mit der Angabe des Datums der Fertigstellung des Arbeitsschrittes sowie ein <att>who</att>-Attribut, 
+          das auf die Person verweist, welche diesen Arbeitsschritt durchgeführt hat.</p>
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples"><!-- LU: wäre eine Überlegung wert, changes von Ingo im Sinne der Vereinheitlichung noch zu typisieren -->
+            <revisionDesc status="draft">
+              <change type="intertexts" when-iso="2021-03-17" who="#JK"/>
+              <change type="typography" when-iso="2021-03-17" who="#JK"/>
+              <change type="references" when-iso="2021-03-17" who="#JK"/>
+              <change type="structure" when-iso="2021-03-17" who="#JK"/>
+              <change when-iso="2020-07-21T12:53:42.834Z" who="#IB">created by API</change>
+              <change when-iso="2020-10-01T12:09:09.817Z" who="#IB">Replaced Text with Transcription of Transkribus Document 292191.</change>
+            </revisionDesc>
+          </egXML>
+          
         </div>
 
-      </div>
-      <!-- /metadata-doc -->
+    </div>
 
+<!-- METADATEN ZUM HISTORISCHEN DOKUMENT -->
+
+<!-- div metadata-hist-doc -->
       <div xml:id="metadata-hist-doc">
-        <head>Metadaten des historischen Dokuments</head>
+        
+        <head>Metadaten zum historischen Dokument</head>
+        
         <p>Ebenfalls im <gi>teiHeader</gi> werden Metadaten zum historischen Dokument
           hinterlegt.</p>
 
+  <!-- div sourceDesc -->
         <div xml:id="sourceDesc">
-          <head>Quelle</head>
-          <p> Informationen zur Quelle finden sich im Element <gi>sourceDesc</gi>. </p>
+          
+          <head>Quelle, Textzeugen, Beilagen</head>
+          
+          <p>Informationen zur Quelle finden sich im Element <gi>sourceDesc</gi>. 
+          Im Kindelement <gi>listWit</gi> wird der Textzeuge bzw. werden die Textzeugen 
+          in einem oder mehreren <gi>witness</gi>-Elemente(n) mit einer <att>xml:id</att> 
+          sowie einer Verlinkung auf das entsprechende Faksimile in <att>facs</att> angegeben.</p>
+          
+          <p>Stempel werden in der <gi>sourceDesc</gi> im Kindelement <gi>msDesc</gi> im Element <gi>ab</gi> 
+          mit dem Attribut <att>type</att> und dem Wert <val>stamp</val> notiert. Im Attribut 
+          <att>source</att> wird außerdem auf die Quelle des Stempels verwiesen. Im <gi>body</gi> 
+          wird der Stempel mit dem Element <gi>stamp</gi> ausgezeichnet und mittels eines 
+          <att>source</att>-Attributs mit der Quelle verknüpft. Eindeutig identifizierbar wird 
+          der Stempel durch die ID im Attribut <att>xml:id</att>.</p>
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <stamp xml:id="uuid_79f806a1-ab26-445f-b806-a1ab26c45fb5" source="#29605"/>
+          </egXML>
+          
+          <p>Ist eine Beilage zu einem Dokument verhanden, wird dieses im Element <gi>physDesc</gi> 
+          bzw. genauer in seinem Kindelement <gi>accMat</gi> mit einer <att>xml:id</att> sowie gegebenenfalls 
+          mit einer Verlinkung auf das entsprechende Beilagendokument in <att>source</att> festgehalten. 
+          Im Text selbst wird die Beilage mit dem Element <gi>ab</gi> versehen. Dieses erhält das Attribut 
+          <att>type</att> mit dem Wert <val>appendix</val> sowie gegebenenfalls eine Verlinkung auf das 
+          entsprechende <gi>accMat</gi>-Element im Header. Ein Beispiel für die Kodierung von Beilagen 
+          im <gi>body</gi>:</p> 
+            
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <ab type="appendix" source="#D_000002-002-000-acc001">1 Beilage</ab>
+            </egXML>
+          
+          <p>Informationen zur Materialität des Dokuments sind ebenso in der <gi>physDesc</gi> im 
+          Kindelement <gi>ab</gi> mit dem <att>type</att> <val>materiality</val> notiert. In 
+          <gi>objectType</gi> wird mit dem Attribut <att>ref</att> auf die <ref target="https://vocabs.acdh-dev.oeaw.ac.at/legalkraus-doctypes/v1.0/">projektspezifische Taxonomie</ref> 
+          verwiesen, in der die zur Auswahl stehenden Materialitätstypen definiert sind. Als String sind 
+          ebenso eine Prosabeschreibung des Materialitätstyps sowie die entsprechende Sigle vorhanden.
+          Sind mehrere Textzeugen überliefert, werden mehrere <gi>objectType</gi>-Elemente angelegt und mit 
+          <att>source</att>-Attributen versehen.</p>
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <sourceDesc>
+              <listWit>
+                <witness xml:id="D_000002-002-000-wit01" facs="#D_000002-002-000-facs001"/>
+              </listWit>
+              <msDesc>
+                <ab type="stamp"> 
+                  <stamp xml:id="uuid_79f806a1-ab26-445f-b806-a1ab26c45fb5" source="#36793"></stamp>
+                </ab>
+              </msDesc>   
+              <physDesc>
+                <accMat xml:id="D_000002-002-000-acc001" source="#D_000002-002-001">1 Beilage</accMat>
+                <ab type="materiality">
+                  <objectType ref="https://vocabs.acdh.oeaw.ac.at/...">Typoskript, M.T.xxx</objectType><!-- LU: Link und Sigle müssen noch ausgebessert werden -->
+                </ab>
+              </physDesc>
+            </sourceDesc>
+          </egXML>
+          
         </div>
-        <!-- /sourceDesc -->
 
-        <div xml:id="listWit">
-          <head>Textzeugen</head>
-          <p> Jedes digital vorliegende Dokument hat mindestens einen historischen Textzeugen. 
-            Das Element <gi>listWit</gi> listet die vorliegenden Textzeugen auf. 
-            Innerhalb von <gi>listWit</gi> wird jeder Textzeuge mit <gi>witness</gi> ausgezeichnet und mit einer <att>xml:id</att> versehen
-          sowie mit dem entsprechenden <att>facs</att> verknüpft. 
-            Der Wert von <att>facs</att> hängt mit den in <gi>facsimilie</gi> angelegten Faksimiles zusammen.</p>          
-        </div>
-        <!-- /listWit -->
-
-
-        <div xml:id="app">
-          <head>Selektiver Apparat</head>
-          <p> ... </p>
-        </div>
-        <!-- /selektiver Apparat -->
-
+  <!-- div profileDesc -->
         <div xml:id="profileDesc">
+          
           <head>Kontextinformationen</head>
+          
           <p>Im Element <gi>profileDesc</gi> lassen sich Kontextinformationen zum Dokument, etwa den
             beteiligten Personen, dem Entstehungsdatum, usw. hinterlegen.</p>
      
+      <!-- div creation -->
           <div xml:id="creation">
+            
             <head>Datierung</head>
-            <p>Zur Datierung (und als Grundlage für eine Sortierung) wird innerhalb von
-                <gi>creation</gi> ein Datum im ISO-Format (JJJJ-MM-TT) im Attribut
-                <att>when-iso</att> angegeben. 
-              Ist ein Dokument nicht eindeutig datierbar, so wird das Datum zusätzlich mit <att>notBefore-iso</att>
-              und <att>notAfter-iso</att> eingeschränkt. Für die Sortierung wird das frühere Datum (aus <att>notBefore-iso</att>)
-              in <att>when-iso</att> eingetragen. Für die Sortierung wird <att>sortDate</att> hinzugefügt.
-              Wenn eine Datierung nicht möglich ist, ist weder <att>sortDate</att> noch ein ISO-Wert vorhanden.
+            
+            <p>Zur Datierung (und als Grundlage für eine Sortierung) wird innerhalb von <gi>creation</gi> 
+            ein Datum im ISO-Format (JJJJ-MM-TT) im Attribut <att>when-iso</att> angegeben. 
+            Ist ein Dokument nicht eindeutig datierbar, so wird das Datum mit <att>notBefore-iso</att>
+            und / oder <att>notAfter-iso</att> eingeschränkt. Für die Sortierung wird <att>sortDate</att> hinzugefügt.
+            Wenn eine Datierung nicht möglich ist, ist weder <att>sortDate</att> noch ein ISO-Wert vorhanden.
             Zur weiteren Klassifizierung des Datums wird <att>subtype</att> eingeführt. 
-              Zur Auswahl stehen die Werte <val>produced</val> und <val>received</val>.</p>
+            Zur Auswahl stehen die Werte <val>produced</val> (Datum der Entstehung) und <val>received</val> 
+            (Datum des Empfangens).</p>
+            
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <creation>
                 <date type="sortDate" subtype="received" when-iso="1922-11-30">30.11.1922</date>
               </creation>
             </egXML>
+            
           </div>
-          <!-- /creation -->
-          
+
+      <!-- div langUsage -->
           <div xml:id="langUsage">
+            
             <head>Sprache</head>
-            <p> In <gi>langUsage</gi> wird die Sprache des Dokuments festgehalten. In <gi>language</gi> wird 
+            
+            <p>In <gi>langUsage</gi> wird die Sprache des Dokuments festgehalten. In <gi>language</gi> wird 
             dem Attribut <att>ident</att> ein Wert zugeordnet, z. B. <val>ger</val> für ein deutschsprachiges Dokument.</p>
+            
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <langUsage> 
                 <language ident="ger">Deutsch</language> 
               </langUsage>
             </egXML>
+            
           </div>
-          <!-- /langUsage -->
 
+      <!-- div textClass -->
           <div xml:id="textClass">
+            
             <head>Klassifizierung des Dokuments</head>
-            <p>
-              <gi>textClass</gi>
+            
+            <p>Auf der Dokumentebene wird in <gi>textClass</gi> der Dokumenttyp definiert. 
+            Im Kindelement <gi>keywords</gi> mit dem passenden <gi>term</gi> ist eine Prosabezeichnung 
+            des Dokumenttyps zu finden. Im Kindelement <gi>classCode</gi> mit dem Attribut <att>scheme</att>, 
+            welches auf den entsprechenden Datensatz in der <ref target="https://vocabs.acdh-dev.oeaw.ac.at/legalkraus-doctypes/v1.0/">projektspezifischen Taxonomie</ref> verweist, ist als String 
+            die Sigle für den Datensatz zu finden.
+            Grundsätzlich sind mehrere Dokumenttypen – im Gegensatz zu den singulären Materialitätstypen 
+            (siehe <ref target="#sourceDesc">sourceDesc</ref>) – bei einem Dokument möglich. 
+            Sind mehrere Textzeugen vorhanden, so wird <gi>term</gi> und <gi>classCode</gi> das Attribut <att>source</att> 
+            hinzugefügt, das auf den entsprechenden Textzeugen verweist.
             </p>
-            <p>Dokumenttypen werden in einer <ref target="https://vocabs.acdh-dev.oeaw.ac.at">projektspezifischen Taxonomie</ref> definiert.
-            Alle Dokumente werden mit dieser Taxonomie klassifiziert. Dazu wird die
-                <term>URI</term> im Attriut <att>scheme</att> von <gi>classCode</gi> angebeben.
-            Darüber hinaus gibt es <gi>keywords</gi>. Der darin enthaltene <gi>term</gi> bezieht sich erneut auf die Taxonomie.</p>
+            
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <textClass>
                 <keywords>
-                  <term>Brief</term>
+                  <term source="#D_000002-002-000-wit01">Brief</term>
+                  <term source="#D_000002-002-000-wit02">Brief</term>
                 </keywords>
-                <classCode scheme="https://vocabs.acdh.oeaw.ac.at/legalkraus-doctypes/v1.0/">D.K.BRF</classCode>
+                <classCode scheme="https://vocabs.acdh.oeaw.ac.at/legalkraus-doctypes/v1.0/" source="#D_000002-002-000-wit01">D.K.BRF</classCode>
+                <classCode scheme="https://vocabs.acdh.oeaw.ac.at/legalkraus-doctypes/v1.0/" source="#D_000002-002-000-wit02">D.K.BRF</classCode>
               </textClass>
             </egXML>
-            <p>Im obigen Beispiel klassifiziert
-                <val>https://vocabs.acdh.oeaw.ac.at/legalkraus-doctypes/v1.0/D.K.BRF</val> das
-              kodierte Dokument als Brief.</p>
+            
           </div>
-          <!-- /textClass -->
 
-          <div xml:id="particDesc"><!-- LU: überarbeiten, wenn neue particDesc steht -->
-            <head>Beteiligte Personen und Institutionen</head>            
-            <p> In der <gi>particDesc</gi> werden beteiligte Personen und Institutionen (im
-              Unterschied zu rein namentlich genannten) in ihrer Rolle <att>role</att> verzeichnet. </p>
-            <p>(Für den Fall ergeben sich die Rollen aus den einzelnen Dokumenten.)</p>
+      <!-- div particDesc -->
+          <div xml:id="particDesc">
+            
+            <head>Beteiligte Personen und Institutionen</head>       
+            
+            <p>In der <gi>particDesc</gi> werden beteiligte Personen und Institutionen (im
+            Unterschied zu rein namentlich genannten) in ihrer Rolle (<att>role</att>) verzeichnet. 
+            Im Element <gi>listPerson</gi> und den ensprechenden Kindelementen <gi>person</gi> werden 
+            beteiligte Personen festgehalten. Jedes <gi>person</gi>-Element erhält dabei ein Attribut 
+            <att>role</att> mit einem Verweis auf die Rolle der Person in diesem Dokument. Der Wert 
+            von <att>role</att> entspricht einer <ref target="https://vocabs.acdh-dev.oeaw.ac.at/legalkraus-doctypes/v1.0/">projektspezifischen Taxonomie</ref>. Jede Person erhält außerdem 
+            einen Verweis auf den ensprechenden Datensatz in der PMB mittels eines <att>ref</att>-Attributs 
+            sowie ein Kindelement mit dem Namen der Person, <gi>persName</gi>.
+            Analog funktioniert die Dokumentation der beteiligten Institutionen: Im Element <gi>listOrg</gi> 
+            werden <gi>org</gi>-Elemente mit dem Kindelement <gi>orgName</gi> sowie den Attributen 
+            <att>role</att> und <att>ref</att> angegeben.</p>
+            
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <particDesc>
-                <person role="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/plaintiff">
-                  <name>Karl Kraus</name>
-                </person>
-                <person role="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/defendant">
-                  <name>Karl Schiffleitner</name>
-                </person>
-                <org role="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/defendant">
-                  <name>Reichspost</name>
-                </org>
+                <listPerson>
+                  <person role="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/plaintiff" ref="#11988">
+                    <persName>Karl Kraus</persName>
+                  </person>
+                  <person role="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/defendant" ref="#40703">
+                    <persName>Karl Schiffleitner</persName>
+                  </person>
+                </listPerson>
+                <listOrg>
+                  <org role="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/defendant" ref="#29637">
+                    <orgName>Reichspost</orgName>
+                  </org>
+                </listOrg>
               </particDesc>
             </egXML>
-            <p>Achtung: Die Werte in <att>role</att> sind noch vorläufig. Idealerweise werden diese
-              aus einer noch zu erstellenden Taxonomie entnommen.</p>
-            <p>Denkbar (und sinnvoll) wäre es auch Personen und Institutionen mittels <att>ref</att>
-              mit einem Normdatensatz (oder der PMB) zu verknüpfen.</p>
+            
           </div>
-          <!-- /particDesc -->
 
+      <!-- div correspDesc -->
           <div xml:id="correspDesc">
-            <head>Brief-Metadaten</head>
-            <p>
-              <gi>correspDesc</gi>
-            </p>
-            <p>Metadaten zu Korrespondenzstücken werden in <gi>correspDesc</gi> versammelt.
+            
+            <head>Metadaten zu Korrespondenzstücken</head>
+            
+            <p>Metadaten zu Korrespondenzstücken werden in der <gi>correspDesc</gi> versammelt.
             Bei Dokumenten, die keine Korrespondenzstücke ausmachen, fehlt dieser Abschnitt.
             Es gibt drei Möglichkeiten für die Struktur der <gi>correspDesc</gi>: 
-            Erstens ist sowohl der/die AbsenderIn als auch der/die EmpfängerIn eine Person.
-            Zweitens ist der/die AbsenderIn eine Person, der/die EmpfängerIn eine Institution.
-            Drittens ist der/die AbsenderIn eine Institution, der/die EmpfängerIn eine Person.
+            Erstens ist sowohl der_die Absender_in als auch der_die Empfänger_in eine Person.
+            Zweitens ist der_die Absender_in eine Person, der_die Empfänger_in eine Institution.
+            Drittens ist der_die Absender_in eine Institution, der_die Empfänger_in eine Person.
             Entsprechend kommen die Elemente <gi>persName</gi> bzw. <gi>orgName</gi> zum Einsatz.</p>
-            <p>Der/Die AbsenderIn wird in <gi>correspAction</gi> mit dem Attribut <att>type</att> und dem Attributwert <val>sent</val>
-              festgehalten. Der/Die EmpfängerIn hingegen ist in <gi>correspAction</gi> <att>type</att> <val>received</val> zu finden.
-              Die Rollen der Personen und Institutionen, die sich aus der 
-              <ref target="https://vocabs.acdh-dev.oeaw.ac.at">projektspezifischen Taxonomie</ref> ergeben, werden in <gi>roleName</gi>
+              
+            <p>Die Namen werden dem Original entnommen. Zeilenfälle werden mit einem senkrechten Strich (|) notiert. 
+            Die 'Rolle', z. B. Rechtsanwalt, wird gegebenenfalls ebenso angebeben.</p>
+            
+            <p>Der_Die Absender_in wird in <gi>correspAction</gi> mit dem Attribut <att>type</att> und dem Attributwert <val>sent</val>
+            festgehalten. Der_Die Empfänger_n hingegen ist in <gi>correspAction</gi> <att>type</att> <val>received</val> zu finden.
+            Die Rollen der Personen und Institutionen, die sich aus der 
+            <ref target="https://vocabs.acdh-dev.oeaw.ac.at">projektspezifischen Taxonomie</ref> ergeben, werden in <gi>roleName</gi>
             angegeben und mittels <att>ref</att> mit der entsprechenden Klassifikation in der Taxonomie verknüpft.</p>
-            <!-- LU: place, address, date -->
+            
+            <p>In <gi>address</gi> werden die Anschriften dokumentiert. <gi>street</gi> verweist auf einen Eintrag in der 
+            <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref>, <gi>settlement</gi> und <gi>country</gi> ebenso. 
+            Das Datum wird sowohl im ISO-Format in <att>date</att> als auch originalgetreu im entsprechenden String wiedergegeben.</p>
+            
             <p>In <gi>noteGrp</gi> sind optional weitere Metadaten zur Korrespondenz enthalten. Mittels <gi>note</gi> und entsprechenden
-            <att>type</att>-Attributen kann ein Betreff (<val>subject</val>), eine Diktatsigle (<val>dictation</val>) sowie
-            ein Anhang (<att>appendix</att>) verzeichnet werden.</p>
+            <att>type</att>-Attributen kann ein Betreff (<val>subject</val>) und eine Diktatsigle (<val>dictation</val>) verzeichnet werden.</p>
+            
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <correspDesc>
                 <correspAction type="sent">
-                  <persName ref="#38624">Alfred Kraus</persName>
-                  <roleName ref=""/>
-                  <address>
-                    <rs type="place" ana="#address" ref=""/>
+                  <persName ref="#11988">Karl Kraus</persName>
+                  <roleName ref="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/defendant"/><!-- LU: korrigieren -->
+                  <address ana="#address">
+                    <street ref="#50496">Hintere Zollamtsstrasse Nr.3</street>
+                    <settlement ref="#53">Wien III.</settlement>
+                    <country ref="#41240"/>
                   </address>
-                  <placeName ref=""/>
-                  <date when-iso="1927-03-01">01.03.1927</date>
+                  <date when-iso="1931-01-15"/>
                 </correspAction>
                 <correspAction type="received">
-                  <persName ref="#38909">Herrn Dr. Oskar Samek</persName>
-                  <roleName ref=""/>
-                  <address>
-                    <rs type="place" ana="#address" ref=""/>
+                  <orgName ref="#50491">Strafbezirksgericht I</orgName>
+                  <roleName ref="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/plaintiff"/><!-- LU: korrigieren -->
+                  <address ana="#address">
+                    <street ref="#50664"/>
+                    <settlement ref="#53">Wien</settlement>
+                    <country ref="#41240"/>
                   </address>
-                  <placeName ref="#50">Wien</placeName>
-                  <date when-iso=""/>
+                  <date when-iso="1931-01-16">16. JAN. 1931</date>
                 </correspAction>
                 <noteGrp>
-                  <note type="subject"/>
+                  <note type="subject">Privatanklage</note>
                   <note type="dictation"/>
-                  <note type="appendix"/>
                 </noteGrp>
-              </correspDesc>
+              </correspDesc>              
             </egXML>
+            
           </div>
-          <!-- correspDesc -->
 
-          <div xml:id="handNotes"><!-- LU: überarbeiten, wenn Umgang mit HS feststeht -->
+      <!-- div handNotes -->
+          <div xml:id="handNotes">
+            
             <head>Schreiberhände</head>
-            <p>
-              <gi>handNotes</gi>
-            </p>
-            <p>Das Schreibmedium immer an eine Schreiberhand geknüpft. <gi>handNote</gi> mit
-                <att>medium</att> (Bleistift,...) Kriterium für die Ansetzung einer Schreiberhand
-              als <gi>handNote</gi> ist jedenfalls ein anderes Schreibmedium. Schreiberhände können,
-              sofern sie Text beisteuern, identifiziert und per <att>scribeRef</att> mit dem
-              Schreiber verknüpft werden (optional). Bei Anstreichungen ist dies in der Regel nicht
-              möglich, dennoch sind bei materiell unterschiedlichen Anstreichungen auch die
-              entsprechenden Hände anzulegen. </p>
+            
+            <p>Schreiberhände werden im Header innerhalb des Elements <gi>handNotes</gi> definiert.
+            Sind keine <gi>handNotes</gi> angelegt, handelt es sich standardmäßig um Typoskripte.</p>
+            
+            <p>Jede Schreiberhand wird in einem <gi>handNote</gi>-Element festgehalten. Dieses enhält eine 
+            <att>xml:id</att>, einen Hinweis auf das Schreibmedium (Bleistift, Tinte ...) in <att>medium</att> 
+            sowie gegebenenfalls eine Verlinkung mit der schreibenden Person in <att>scribeRef</att>, 
+            dem entsprechenden Textzeugen in <att>source</att>, einer Angabe zur Sicherheit der Aussage 
+            in <att>cert</att> und eine Zuschreibung der Verantwortlichkeit für die Definition der Hand 
+            in <att>resp</att>.</p>
+            
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <handNotes>
-                <handNote xml:id="D_000002-002-000-hand01" medium="pencil"/>
+                <handNote xml:id="D_000001-001-000-hand01" source="#D_000001-001-000-wit01" scribeRef="#38909" medium="black-ink" cert="high" resp="#IL"></handNote>
               </handNotes>
             </egXML>
+            
           </div>
 
         </div>
-        <!-- /profileDesc -->
-
 
       </div>
-      <!-- /metadata-hist-doc -->
 
+<!-- METADATEN ZU DEN BILDDATEN -->
+
+  <!-- div facsimile -->
       <div xml:id="facsimile">
+        
         <head>Bilddaten</head>
+        
         <p>Die der digitalen Edition zugrundeliegenden Faksimiles sind in <gi>facsimile</gi> zu finden. 
-            Innerhalb von <gi>facsimile</gi> ist mindestens eine <gi>surfaceGrp</gi> enthalten. Diese beschreibt ein Blatt.
-            Dieses Blatt wird in mehrere <gi>surface</gi>-Elemente unterteilt. Diese machen die Seiten aus, die mittels <att>type</att>
-            und <val>recto</val> bzw. <val>verso</val> näher bestimmt werden.
-            Diese <gi>surface</gi>-Elemente beinhalten wiederum drei <gi>graphic</gi>-Elemente, die mittels <att>source</att> unterschieden werden.
-            Die Faksimiles des Vorläuferprojekts "<ref target="https://www.kraus.wienbibliothek.at/">Karl Kraus Online</ref>" 
-            werden mit dem Attributwert <val>krausonline</val> versehen, jene der Wienbibliothek im Rathaus mit <val>wienbibliothek</val>
-            und jene der projekteigenen Scans mit <val>scans</val>.</p>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+        Innerhalb von <gi>facsimile</gi> ist mindestens eine <gi>surfaceGrp</gi> enthalten. Diese beschreibt ein Blatt.
+        Dieses Blatt kann in mehrere <gi>surface</gi>-Elemente unterteilt werden. Diese machen die Seiten aus, die mittels <att>type</att>
+        und <val>recto</val> bzw. <val>verso</val> noch näher bestimmt werden.
+        Diese <gi>surface</gi>-Elemente beinhalten wiederum ein bis drei <gi>graphic</gi>-Elemente, die mittels <att>source</att> 
+        und entsprechenden Attributwerten unterschieden werden.
+        Die Faksimiles des Vorläuferprojekts "<ref target="https://www.kraus.wienbibliothek.at/">Karl Kraus Online</ref>" 
+        werden mit dem Attributwert <val>krausonline</val> versehen, jene der Wienbibliothek im Rathaus mit <val>wienbibliothek</val>
+        und jene der projekteigenen Scans mit <val>scans</val>. Sowohl <gi>facsimile</gi> als auch 
+        <gi>surfaceGrp</gi> und <gi>surface</gi> erhalten eine <att>xml:id</att> zur eindeutigen Identifizierung.
+        Derzeit sind die Faksimiles nur für den 'Haupttextzeugen' zugeordnet. Insofern weitere Textzeugen vorhanden und verlinkt sind, 
+        werden diese in einem weiteren <gi>facsimile</gi>-Element mit dem Attribut <att>type</att> und dem Wert <val>further-witnesses</val> zur vorläufigen Differenzierung versehen.</p>
+            
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <facsimile xml:id="D_000002-002-000-facs001">
                 <surfaceGrp xml:id="D_000002-002-000-facs001-l001">
                   <surface xml:id="D_000002-002-000-facs001-l001-p001" type="recto">
@@ -454,18 +653,25 @@
                 </surfaceGrp>
               </facsimile>
             </egXML>
+        
       </div>
-      <!-- /facsimile -->
 
-      <div xml:id="transciption"><!-- LU: mit Isa und Johannes besprechen -->
+<!-- TRANSKRIPTIONSRICHTLINIEN -->
+
+  <!-- div transcription -->
+      <div xml:id="transciption"><!-- LU: Aktualität prüfen (Isa + Johannes); außerdem: hier Transkriptor_innen festhalten? (nachdem Transkribus resp rauskommt) -->
+        
         <head>Transkription des Dokuments</head>
+        
         <p>Die Transkription erfolgt im Element <gi>body</gi> des Elements <gi>text</gi>.</p>
 
+    <!-- div ed-einrichtungsfragen -->
         <div xml:id="ed-einrichtungsfragen" resp="#IL">
+          
           <head>Editorische Einrichtungsfragen</head>
+          
           <p>Folgende Prinzipien wurden bei der Erstellung der Transkriptionen mit Transkribus
             berücksichtigt:</p>
-          <!-- Isas Text, muss man gegebenfalls prüfen, was davon aktuell ist -->
           <p>Spatien zwischen Abkürzungen, <q>Z.A.</q> oder <q>Z. A.</q>, <q>St.P.O.</q>,
               <q>P.A.</q>, <q>Urh.Ges.</q> etc., <q>Art. IX</q> oder <q>Art.IX</q>, bei
             Datumsangaben, Komposita wie <q>Kronos-Verlag</q> (<q>Kronos - Verlag</q>) werden
@@ -531,7 +737,7 @@
           <p>Stempel werden in Transkribus mit eigener Textregion (tag mit element stamp) erfasst:
             d.h. sie werden nicht transkribiert bzw. wichtige Informationen wie Eingangsdatum im
             Header erfasst; Stempel werden aber ausgeschnitten, so dass jede Stempelart der Akten
-            einsehbar ist. Arbeit könnte von den nächsten Praktikantinnen übernommen werden?</p>
+            einsehbar ist. Arbeit könnte von den nächsten Praktikantinnen übernommen werden?</p><!-- stimmt nicht mehr -->
           <p>auch Beschreibungen wie Blatt 2 werden. nicht gesetzt, weil Paginierungen nicht ediert
             werden</p>
           <p>Umgang mit zweispaltigen Satz? Bsp.: 70.3, besonders schwierig: 70.5 mit: news-eye
@@ -550,218 +756,1479 @@
           <!-- Ende Isas Text -->
 
         </div>
-        <!-- /ed-einrichtungsfragen -->
 
+    <!-- div structure -->
         <div xml:id="structure">
+          
           <head>Textstruktur</head>
+          
           <p>Trennstriche usw. werden nicht kodiert, stattdessen werden, wenn möglich, Struktureinheiten angesetzt.</p>
-          
+    
+      <!-- div pb -->
           <div xml:id="pb">
+            
             <head>Seitenwechsel</head>
+            
             <p>Seitenwechsel werden mit <gi>pb</gi> markiert. Sie werden außerdem durch das Attribut <att>n</att>
-              und dem entsprechenden Attributwert (z. B. <val>1</val> für die erste Seite) ausgezeichnet.
-              Darüber hinaus werden sie mit den Bilddaten verknüpft.<!-- LU: nachtragen! -->
-            </p>
+            und dem entsprechenden Attributwert (z. B. <val>1</val> für die erste Seite) ausgezeichnet.
+            Darüber hinaus werden sie mit den Bilddaten verknüpft. Dies geschieht über das Attribut 
+            <att>facs</att> und dem entsprechenden Verweis auf das <gi>surface</gi>-Element.
+            Durch das Attribut <att>xml:id</att> erhält das Element außerdem eine eindeutige ID.</p>
+            
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <pb xml:id="uuid_01b00d2d-7002-4209-b425-a0a147ea957d" n="1" facs="#D_000002-002-000-facs001-l001-p001"/>
+            </egXML>
+            
           </div>
-          <!-- /pb -->          
           
+      <!-- div p -->
           <div xml:id="p">
+            
             <head>Absätze</head>
-            <p>Die größte Struktureinheit nach der Seite (<gi>pb</gi>) ist der Absatz: <gi>p</gi>.</p>
+            
+            <p>Die größte Struktureinheit nach der Seite (<gi>pb</gi>) ist der Absatz: <gi>p</gi>.
+            Dieser erhält eine <att>xml:id</att>.</p>
+            
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <p xml:id="uuid_401e1862-85b6-4dfb-9d95-77543d6f4edf">
+                <lb xml:id="uuid_d3bfe99e-be54-4a0f-bfe9-9ebe54fa0f46"/>1.) Anberaumung einer Hauptverhandlung; 
+                <lb xml:id="uuid_bf8b41d7-0095-409d-8b41-d70095a09d1c"/>2.) Ladung des <rs type="person" ref="#51602">Beschuldigten</rs>; 
+                <lb xml:id="uuid_2f30be6b-1ca6-45fe-b0be-6b1ca615fe7d"/>3.) Verlesung des Berichtigungsschreibens und der vorgelegten 
+                <lb xml:id="uuid_7d4a1760-6919-42fb-8a17-60691902fb9c"/><rs type="work" ref="#53857">Zeitungsnummer</rs>;
+              </p>
+            </egXML>
+            
           </div>
-          <!-- /p -->
+          
+        <!-- div div -->
+          <div xml:id="div">
+            
+            <head>Abschnitte / Divisions: mehrere Textzeugen, unterschiedliche Dokumente unter einer Signatur und Rekonstruktionen Böhms</head>
+            
+            <p>Sind mehrere Textzeugen eines Schriftstücks vorhanden und werden auch mehrere Textzeugen ediert (s. editorische Richtlinien), 
+            so wird nach dem 'primären' Textzeugen im <gi>body</gi> der weitere Textzeuge eingefügt und mit
+            <gi>div</gi> ausgezeichnet. Außerdem erhält er ein <att>type</att>-Attribut mit dem Wert <val>wit</val>.
+            Verlinkt wird der Textzeuge in <gi>div</gi> mit einem <att>source</att>-Attribut, das auf das entsprechende 
+            <gi>witness</gi>-Element bzw. das Faksimile verweist. Der Abschnitt selbst wird, ebenso wie der folgende, mit einer 
+            <att>xml:id</att> eindeutig identifizierbar gemacht.</p>
+            
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <div xml:id="D_000068-044-000-wit-div-001" type="wit" source="#D_000068-044-000-wit01"/>
+            </egXML>
+            
+            <p>Sind mehrere Textzeugen eines Schriftstücks vorhanden, wird aber nur einer in seiner Gänze kodiert, 
+            kann Varianz unter Textzeugen trotzdem mittels eines Variantenapparats festgehalten werden. Dabei 
+            wird an der jeweiligen Stelle im <gi>body</gi> ein Apparat mit <gi>app</gi> eingefügt. In diesem wird 
+            in <gi>lem</gi> mit den Attributen <att>wit</att> (verlinkt den betroffenen Textzeugen) und 
+            <att>hand</att> (verlinkt die betroffene Schreiberhand) ein Lemma bzw. eine präferierte Lesart 
+            festgelegt. Im folgenden <gi>rdg</gi>, mit denselben Attributen wie bei <gi>lem</gi>, wird 
+            die Variante eines weiteren Textzeugen notiert.</p>
+ 
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <lb xml:id="uuid_55cfaeb3-0c8b-4901-8fae-b30c8b6901ee"/>Zu der Meldung, dass die Wiener
+              <app>
+                <lem wit="#D_000002-002-000-wit01" 
+                  hand="#D_000002-002-000-hand01">Renaissancebühne</lem>
+                <rdg wit="#D_000002-002-000-wit02" 
+                  hand="#D_000002-002-000-hand02">Bühne</rdg>
+              </app>
+            </egXML>
+            
+            <p>Wenn es zur Verwendung dieses Variantenapparats in einem Dokument kommt, muss im Header, 
+            nach <gi>fileDesc</gi> und vor <gi>profileDesc</gi>, eine <gi>encodingDesc</gi> eingefügt werden. 
+            Diese beinhaltet wiederum das Element <gi>variantEncoding</gi>. Bei diesem wird durch den Wert 
+            <val>parallel-segmentation</val> für <att>method</att> und den Wert <val>internal</val> für 
+            <att>location</att> angegeben, um welche Form des Variantenapparats es sich handelt.</p>
+            
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <encodingDesc>
+                <variantEncoding method="parallel-segmentation" 
+                  location="internal"/>
+              </encodingDesc>
+            </egXML>
+            
+            <p>Wenn unterschiedliche Dokumente unter einer Signatur vorhanden sind (z. B. ein Brief und ein Protokoll), 
+            wird ebenfalls auf <gi>div</gi> zurückgegriffen, hier mit dem <att>type</att> <val>doc</val>.
+            Das Attribut <att>source</att> verweist gegebenenfalls auf eine weitere Signatur, die das entsprechende Schriftstück verzeichnet.</p>
+            
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <div xml:id="D_000068-044-000-doc-div-001" type="doc" source="#D_000068-044-001"/>
+            </egXML>
+            
+            <p>Nicht nur für die Auszeichnung mehrerer Textzeugen und unterschiedlicher Dokumente unter einer Signatur, sondern auch für Rekonstruktionen von Dokumenten
+            durch Hermann Böhm wird <gi>div</gi> verwendet. Dies betrifft den Aktenkomplex 192, in dem einige Schriftstücke
+            nicht ediert wurden, weil die entsprechenden Objekte fehlen. Stattdessen werden Rekonstruktionen dieser Texte
+            von Hermann Böhm festgehalten und mit einem <att>type</att>-Attribut mit dem Wert <val>boehm-reconstruction</val> gekennzeichnet.</p>
+            
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <div type="boehm-reconstruction">
+                <p>Ersucht um Übersendung eines Werkverzeichnisses von Karl Kraus mit Anzahl der Exemplare und Preisangabe, da der Verlag Melantrich daran interessiert sei, diese Werke in seine neuerrichtete Kommissionsabteilung zu übernehmen.</p>
+              </div>
+            </egXML>
+            
+          </div>
+          
+        <!-- div missing-objects -->
+          <div xml:id="missing-objects">
+            
+            <head>Fehlende Objekte</head>
+            
+            <p>Ist ein Objekt nicht (mehr) vorhanden, aber dennoch mittels einer Signatur im Aktenbestand verzeichnet,
+            so wird im entsprechenden <gi>body</gi> der Dokumente mit dem Hinweis "Objekt fehlt" darauf aufmerksam gemacht.</p>
+            
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <body>
+                <p>D_000181-001-000: Objekt fehlt.</p>
+              </body>
+            </egXML>
+            
+          </div>
 
-          <div xml:id="lb"><!-- LU: bearbeiten -->
+        <!-- div lb -->
+          <div xml:id="lb">
+            
             <head>Zeilenfall</head>
-            <p>
-              <gi>lb</gi>
-            </p>
+            
+            <p>Zeilenfälle werden mit <gi>lb</gi> markiert. Kommt es innerhalb eines Worts zu einem 
+            Zeilenfall, so wird in der folgenden Zeile dem Element <gi>lb</gi> das Attribut <att>break</att> 
+            mit dem Wert <val>no</val> beigefügt. Insofern eine eindeutige Identifizierung von Zeilen 
+            angestrebt wird, erhält jedes <gi>lb</gi>-Element außerdem eine <att>xml:id</att>.</p>
+            
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <lb xml:id="uuid_45105d00-1bba-4ea6-905d-001bbabea608"/>Beschuldigter: <rs type="person" ref="https://pmb.acdh.oeaw.ac.at/entity/51602">Josef <hi rend="spaced">Koller</hi></rs>, verantwortlicher Redak
+              <lb xml:id="uuid_588cb55f-c706-4cc9-8cb5-5fc706dcc959" break="no"/>teur der Zeitung „<rs type="institution" ref="37568">Der Wiener Tag</rs>”
+            </egXML>
+            
           </div>
-          <!-- /lb -->
-
-          <div xml:id="marginalia"><!-- LU: bearbeiten -->
+          
+        <!-- div marginalia -->
+          <div xml:id="marginalia">
+            
             <head>Marginalien</head>
-            <p> Marginalien werden generell als <gi>note</gi> erfasst, ev. mit <att>place</att> o.ä.
-              positioniert; sinnvoll wäre eine Klassifizierung mittels <att>type</att> von
-              Marginalien, die auf eine Beilage verweisen; auf diese Weise lassen sich zumindest die
-              Stellen im Dokument finden, in denen sich dann im Fließtext ein Verweis auf die
-              Beilage findet </p>
+            
+            <p>Marginalien werden auf zwei Arten ausgezeichnet:</p>
+            
+            <p>Marginalien ohne Text: Kodierung mit <gi>metamark</gi>, dem Attribut <att>function</att> und 
+            dem Wert <val>marginal</val>. Mittels <att>hand</att> wird auf die entsprechende 
+            Schreiberhand verwiesen, mittels <att>rend</att> auf die Position der Marginalie auf 
+            dem Objekt.</p>
+            
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              Abschrift.<metamark function="marginal" hand="#D_000001-001-000-hand01" rend="marginRight"/>
+            </egXML>
+            
+            <p>Marginalien mit Text: Kodierung mittels <gi>note</gi>, dem Attribut <att>type</att> 
+            und dem Wert <val>marginal</val>. Mittels <att>hand</att> wird auf die entsprechende 
+            Schreiberhand verwiesen, mittels <att>rend</att> auf die Position der Marginalie 
+            auf dem Objekt.</p>
+            
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              Abschrift.<note type="marginal" hand="#D_000001-001-000-hand01" rend="marginRight">1933</note>
+            </egXML>
+
           </div>
 
-
         </div>
-        <!-- /structure -->
 
-        <div xml:id="typography"><!-- LU: bearbeiten -->
+  <!-- div typography -->
+
+        <div xml:id="typography">
+          
           <head>Typografische Hervorhebungen</head>
-          <p>
-            <gi>hi</gi>
-          </p>
-          <p> Unterstreichung Sperrung Unterstreichung + Sperrung [Böhm: Kursive und Fette] Tag
-              <gi>hi</gi> mit Attributen (vermutlich <att>rend</att> mit Werteliste) »Hervorhebung«
-            vs. »Markierung« Medium immer an Hand (Attribut <att>hand</att>) geknüpft (im Header)
-              <gi>handNote</gi> mit <att>medium</att> (Bleistift,...) Kriterium für die Ansetzung
-            einer Schreiberhand im Header ist jedenfalls ein anderes Schreibmedium Schreiberhände
-            bei Text identifizieren, nicht notwendigerweise bei Anstreichungen bei materiell
-            unterschiedlichen Anstreichungen im Header auch zwei Hände anlegen Argument:
-            Unterstreichungen immer semantisch relevant, daher werden sie im Gegensatz zu
-            Sofortkorrekturen immer ausgezeichnet </p>
-        </div>
-        <!-- /typography -->
+          
+          <p>Grundsätzlich werden typographische Auszeichnungen mit <gi>hi</gi> ausgezeichnet. 
+          Je nachdem, welche Hervorhebung vorliegt, kommen unterschiedliche Werte für <att>rend</att> 
+          zum Einsatz. Handelt es sich um eine Unterstreichung, so wird der Wert <val>underlined</val> 
+          angegeben. Liegt eine Sperrung vor, bekommt <att>rend</att> den Wert <val>spaced</val>.
+          Fette Stellen werden mit <val>bold</val> ausgezeichnet, kursive mit <val>italics</val>.</p>
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <hi rend="spaced">Privatanklage</hi>
+          </egXML>
 
-        <div xml:id="modifications"><!-- LU: bearbeiten -->
+          <p>Liegt eine handschriftliche Hervorhebung vor, so kann die entsprechende Schreiberhand im 
+          Attribut <att>hand</att> verlinkt werden.</p>
+            
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <hi rend="underlined" hand="#D_000001-001-000-hand01">Anträge</hi>
+          </egXML>
+        
+        </div>
+
+  <!-- div modifications -->
+        <div xml:id="modifications">
+          
           <head>Eingriffe in den Text</head>
-          <p>Sofort- und Spätkorrekturen</p>
-          <p>kodiert werden ausschließlich »semantisch relevante« Änderungen (siehe Einrichtung?):
-            Beispiele finden sehr sparsam einsetzen... ex negativo definieren: keine
-            orthographischen Änderungen, keine auf Interpunktion bezogene Änderungen, nicht, wenn
-            Buchstaben nachgezogen werden (Lesbarkeit) bei semantisch relevanten Änderungen in
-            unterschiedlichen Schreibschichten: Hinzufügung <gi>add</gi> , <gi>del</gi> …
-              <gi>subst</gi>
-            <gi>gap</gi> Textverlust <gi>supplied</gi> Zeilenfall in Hinzufügungen <gi>add</gi>
-            werden nicht kodiert (kein <gi>lb</gi> in <gi>add</gi>) Frage ist, wie das
-            Randanmerkungen betrifft (soll man in der Marginalie <gi>add</gi> verwenden oder @hand
-            auf die <gi>note</gi> setzen = bevorzugte Variante) → <gi>lb</gi> Spätkorrekturen nur
-            dann erfasst, wenn inhaltlich relevant sind. Bsp. für inhaltlich nicht relevante
-            Spätkorrektur aus 2.3 (Anklageschrift): “solliim” </p>
+          
+          <p>Semantisch relevante Sofort- und Spätkorrekturen werden auf unterschiedliche Weisen ausgezeichnet:</p>
+          
+          <p>Einfügungen werden mit <gi>add</gi> ausgezeichnet. Handelt es sich um eine handschriftliche 
+          Einfügung, so wird das Attribut <att>hand</att> mit Verweis auf die entsprechende Schreiberhand 
+          ebenso verzeichnet.</p>
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            Ein <add hand="#D_000001-001-000-hand01">neuer</add> Antrag.
+          </egXML>
+          
+          <p>Tilgungen werden mit <gi>del</gi> ausgezeichnet. Handelt es sich um eine handschriftliche 
+          Tilgung, so wird das Attribut <att>hand</att> mit Verweis auf die entsprechende Schreiberhand 
+          ebenso verzeichnet.</p>
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            Ein <del hand="#D_000001-001-000-hand01">alter</del> Antrag.
+          </egXML>
+          
+          <p>Ersetzungen werden mit <gi>subst</gi> ausgezeichnet. Handelt es sich um eine handschriftliche 
+          Ersetzung, so wird das Attribut <att>hand</att> mit Verweis auf die entsprechende Schreiberhand 
+          ebenso verzeichnet.</p>
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            Ein <subst hand="#D_000001-001-000-hand01"><del>alter</del><add>neuer</add></subst> Antrag.
+          </egXML>
+          
+          <p>Bestandteile von Umstellungen werden mit <gi>seg</gi> mit dem <att>type</att> <val>transposition</val> ausgezeichnet. 
+          Jedes <gi>seg</gi>-Element erhält dabei eine <att>xml:id</att>. Die Umstellung selbst wird mit dem Element 
+          <gi>metamark</gi> gekennzeichnet, welches das Attribut <att>function</att> mit dem Wert 
+          <val>transposition</val> und einer Verlinkung auf das entsprechende <gi>seg</gi>-Element in 
+          <att>target</att> enthält. Handelt es sich um eine handschriftliche Umstellung, so wird die 
+          entsprechende Schreiberhand mit Hilfe des Attributs <att>hand</att> angeführt.</p>
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <seg type="transposition" xml:id="D_000001-001-000_seg001">Der</seg><metamark function="transposition" hand="#D_000001-001-000-hand01" target="#D_000001-001-000_seg001"/>
+            <seg type="transposition" xml:id="D_000001-001-000_seg002">Antrag</seg><metamark function="transposition" hand="#D_000001-001-000-hand01" target="#D_000001-001-000_seg002"/>
+            <seg type="transposition" xml:id="D_000001-001-000_seg003">ist</seg><metamark function="transposition" hand="#D_000001-001-000-hand01" target="#D_000001-001-000_seg003"/>
+            <seg type="transposition" xml:id="D_000001-001-000_seg004">neu</seg><metamark function="transposition" hand="#D_000001-001-000-hand01" target="#D_000001-001-000_seg004"/>.
+          </egXML>
+          
+          <p>Im Header wird sodann in die <gi>profileDesc</gi> <gi>listTranspose</gi> mit der betroffenen 
+          Umstellung eingefügt. Im Element <gi>transpose</gi> mit einer möglichen Verlinkung auf 
+          eine Schreiberhand in <att>hand</att> befinden sich sodann <gi>ptr</gi>-Elemente, die 
+          mittels des Attributs <att>target</att> auf die entsprechenden <gi>seg</gi>-Elemente im 
+          <gi>body</gi> verweisen.</p>
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <listTranspose>
+              <transpose hand="#D_000001-001-000-hand01">
+                <ptr target="#D_000001-001-000_seg004"/>
+                <ptr target="#D_000001-001-000_seg003"/>
+                <ptr target="#D_000001-001-000_seg001"/>
+                <ptr target="#D_000001-001-000_seg002"/>
+              </transpose>
+            </listTranspose>
+          </egXML>
+          
+          <p>Getilgte bzw. zurückgenommene Überarbeitungen werden mit <gi>restore</gi> ausgezeichnet. Handelt es sich um eine 
+          handschriftliche Korrektur, so wird die entsprechende Schreiberhand über das Attribut 
+          <att>hand</att> hinzugefügt.</p>
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            Der Antrag ist <restore hand="#D_000001-001-000-hand01"><del hand="#D_000001-001-000-hand01">sehr</del></restore> alt.
+          </egXML>
+          
+          <p>Sind Korrekturen innerhalb von Korrekturen vorhanden, etwa eine Tilgung in einer 
+          Hinzufügung (<gi>del</gi> in <gi>add</gi>), so werden die Elemente entsprechend geschachtelt.
+          Davon ausgenommen ist die nicht TEI-konforme Schachtelung von <gi>subst</gi> in <gi>subst</gi>.</p>
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            Der Antrag <subst hand="#D_000001-001-000-hand01"><del>ist alt</del><add><subst><del> war</del><add>ist</add></subst> neu</add></subst>.
+          </egXML>
+                    
+          <p>Leerstellen werden mit <gi>gap</gi> gekennzeichnet. Der Grund für die Leerstelle in der digitalen Edition
+          wird in <att>reason</att> angegeben. Als Attributwerte stehen <val>cancelled</val> (abgebrochen), 
+          <val>deleted</val> (getilgt), <val>editorial</val> (aus editorischen Gründen nicht übertragen) und 
+          <val>illegible</val> (unleserlich) zur Auswahl. Im Attribut <att>extent</att> kann das Ausmaß der Leerstelle
+          dokumentiert werden. Die Werte sind in diesem Fall nicht klar definiert, da beispielsweise 
+          <val>several-characters</val> neben <val>three-words</val> oder <val>one-line</val> vorkommen kann.</p>
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            Dieser Antrag <gap reason="illegible" extent="1-word"/> neu.
+          </egXML>
 
+          <p>Komplexe Korrekturen werden mit Hilfe eines Pointers annotiert. Haben wir beispielsweise 
+          den Satzausschnitt "dessen Besprechung über das Kriegsmanifest" vorliegen, wobei 
+          "Besprechung über das" nachträglich durchgestrichen und mit der handschriftlichen Einfügung 
+          "Kritik an dessen Stelle" ersetzt wurde, hier aber wieder "Kritik an dessen" getilgt und 
+          die Streichung von "über das" zurückgenommen wurde, können wir den Ausschnitt 
+          wie folgt kodieren:</p>
+            
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <p>dessen <subst>
+              <del hand="#A" seq="1">Besprechung 
+                <restore xml:id="XY" hand="#A" seq="3">über
+                das</restore>
+              </del>
+              <del hand="#A" seq="2">
+                <add hand="#A" seq="1">Kritik an dem</add>
+              </del>
+              <add hand="#A" seq="2">Stelle</add>
+            </subst>
+            <ptr target="#XY" type="transposition"/> Kriegsmanifest</p>
+          </egXML>
+            
+          <p>Stehen zwei zusammengehörende Korrekturen nicht direkt nebeneinander, 
+          kann auch <gi>substJoin</gi> in der Kodierung herangezogen werden, um die 
+          Zusammengehörigkeit durch Pointer anzuzeigen.</p>
+            
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <p>
+              Der <del xml:id="del_1">neue</del> Antrag <add xml:id="add_1">, wie der alte,</add> ist fehlerhaft.
+              <substJoin target="#r112 #r113"/>
+            </p>
+          </egXML>
+            
+          <p>Handelt es sich zwar um keine handschriftliche Korrektur, jedoch sehr wohl um eine 
+          handschriftliche Notiz, dann wird diese mit <gi>note</gi> und einem Verweis auf die 
+          entsprechende Schreiberhand mittels <att>hand</att> ausgezeichnet.</p>
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <note hand="#D_000001-001-000-hand01">Der Antrag liegt nicht vor.</note>
+          </egXML>
+            
         </div>
-        <!-- /modifications -->
 
       </div>
-      <!-- /transciption -->
 
+  <!-- div semantic-annotation -->
       <div xml:id="semantic-annotation">
+        
         <head>Annotation und semantische Erschließung</head>
 
-        <div xml:id="div-types">
-          <head>Klassifizierung der Abschnitte</head>
-          <p>Beipielsweise im Urteil <att>type</att>.</p>
-        </div>
-        <!-- /div-types -->
-
-        <div xml:id="entites">
+  <!-- div entities -->
+        <div xml:id="entities">
+          
           <head>Verweise auf Entitäten</head>
-          <p><gi>rs</gi> mit <att>type</att>.</p>
-          <p>Schachtelungen von <gi>rs</gi> sollen gemacht werden, Beispiel:</p>
+          
+          <p>Gewisse Entitäten im <gi>body</gi> werden mittels <gi>rs</gi> und entsprechenden
+          <att>type</att>-Attributwerten ausgezeichnet. <val>person</val> wird für die Verlinkung
+          von Personen herangezogen, <val>institution</val> für jene von Institutionen. 
+          Orte werden mit <val>place</val> kodiert, Werke mit <val>work</val> und Gesetzestexte mit
+          <val>law</val>. Adressen erhalten sowohl <val>place</val> als auch <att>ana</att> mit dem Wert
+          <val>#address</val>. Schachtelungen von <gi>rs</gi> sind möglich.</p>
+          
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <rs type="person">Regisseur des <rs type="institution">Volkstheaters</rs></rs>
+            <rs type="work" ref="#53851">Der Wiener Tag</rs>
           </egXML>
-          <p>eher großzügiger taggen, als zu wenig</p>
-          <p>Personal- und Possessivpronomen nicht taggen; Kriterium sind Namen bzw. Substantive,
-            die Rollen bezeichnen</p>
+          
+          <p>Durch das <att>ref</att>-Attribut wird die Entität außerdem mit dem entsprechenden 
+          Datensatz in der <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref> verlinkt.</p>
 
-          <div xml:id="persons">
-            <head>Personen</head>
-            <p>erwähnte Personen im Unterschied zu 'beteiligten' Personen, vgl. X</p>
-            <p>historische Personen werden ausgezeichnet</p>
-            <p><att>type</att>
-              <val>person</val></p>
-            <p>Aufnahme von am Dokument beteiligten Personen in der <gi>particDesc</gi> mit
-                <att>role</att> im <gi>teiHeader</gi> des Dokuments (für den Fall ergeben sich die
-              Rollen aus den einzelnen Dokumenten).</p>
-            <p>keine literarischen Figuren auszeichnen; gegebenenfalls als Werke (Bsp. “Hamlet”,
-              nicht Ophelia, Claudius, ….), aber Nero als historische Person soll getaggt werden;
-              historische Personen in Zitaten werden getaggt</p>
-          </div>
-          <!-- /persons -->
-
-          <div xml:id="institutions">
-            <head>Institutionen</head>
-            <p><att>type</att>
-              <val>institution</val></p>
-          </div>
-          <!-- /institutions -->
-
-          <div xml:id="places">
-            <head>Orte</head>
-            <p><att>type</att>
-              <val>place</val></p>
-          </div>
-          <!-- /places -->
-
-          <div xml:id="works">
-            <head>Werke</head>
-            <p>
-              <att>type</att>
-              <val>works</val>
-            </p>
-          </div>
-          <!-- /works -->
+          <p>Personal- und Possessivpronomen werden nicht ausgezeichnet. Ausschlaggebend sind Namen
+          bzw. Substantive. Ebenso nicht näher bestimmt werden Namen literarischer Figuren.</p>
+          
+          <p>Im <gi>body</gi> selbst sind also alle erwähnten Personen und Institutionen ausgezeichnet. 
+          In die <ref target="#particDesc"><gi>particDesc</gi></ref> werden jedoch nur die zentral beteiligten übernommen.</p>
 
         </div>
-        <!-- entities -->
 
-        <div xml:id="law">
-          <head>Gesetzestexte</head>
-          <p>
-            <gi>rs</gi>
-            <att>type</att>
-            <val>law</val>
-          </p>
-        </div>
-
+  <!-- div citations -->
         <div xml:id="citations">
-          <head>Zitate</head>
-          <p><gi>q</gi> und <gi>quote</gi></p>
-          <p>generell <gi>q</gi> für Text unter Anführungszeichen; <gi>quote</gi> für alles, was als
-            Zitat identifiziert wurde; die Ausgabe kann man überlegen (Bsp. Doppelte und einfache
-            Anführungszeichen). Anführungszeichen wurden bei der Transkription ohnehin schon
-            normalisiert. </p>
+          
+          <head>Zitate, wörtliche Reden</head>
+          
+          <p>Zitate werden mit <gi>quote</gi> ausgezeichnet, insofern sie in Anführungszeichen stehen. 
+          Diese wurden im Zuge der Transkription normalisiert. Die <gi>quote</gi>-Elemente erhalten 
+          eine <att>xml:id</att> sowie einen Verweis auf den Ursprung des Zitats mittels <att>source</att>.</p> 
+            
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            „<quote xml:id="uuid_3ddbac9d-2d25-4017-a98b-44dbc216608c" source="https://fackel.oeaw.ac.at/f/908,007">groteske Bemerkung</quote>“
+          </egXML>
+          
+          <p>Handelt es sich um eine wörtliche Rede, so wird das Element <gi>q</gi> mit dem Attribut 
+          <att>type</att> und dem Wert <val>spoken</val> herangezogen. Ist der_die Sprecher_in der Aussage 
+          identifizierbar, wird sie mit dem <att>who</att>-Attribut verlinkt.</p>
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            „<q type="spoken" who="#38909">hineingebracht</q>“
+          </egXML>
+         
         </div>
-        <!-- citations -->
 
-
-
+  <!-- div note -->        
+        <div xml:id="note">
+          
+          <head>Notizen</head>
+          
+          <p>Das Element <gi>note</gi> wird nicht nur in der 
+          <ref target="#correspDesc"><gi>correspDesc</gi></ref> für die Auszeichnung von 
+          Diktatsiglen und Betreffen herangezogen, sondern, wie schon erwähnt, auch für 
+          <ref target="#marginalia">Marginalien</ref>. Darüber hinaus werden Notizen der 
+          Kanzlei Oskar Samek mit <gi>note</gi>, dem Attribut <att>type</att> mit dem Wert 
+          <val>paratext</val> und dem Attribut <att>resp</att> mit dem Wert <val>law-firm</val> 
+          verzeichnet.</p>
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <note type="paratext" resp="law-firm">Betrifft: <rs type="person" ref="#11988">Kraus</rs> – <rs type="person" ref="#11910">Kerr</rs>
+              <lb xml:id="uuid_fba404e0-86b9-42fb-a404-e086b9a2fb21"/>expediert am 3. Jänner 1927.
+            </note>
+          </egXML>
+                    
+        </div>
+        
       </div>
-      <!-- /semantic-annoation -->
 
+<!-- div identifier -->
       <div xml:id="identifier">
+        
         <head>IDs</head>
-        <p>IDs, Identifier werden wie folgt vergeben...</p>
+        
+        <p>IDs bzw. Identifier werden wie folgt vergeben:</p>
+        
+        <p>Die Dokumente selbst erhalten eine ID in der Form D_xxxxxx-xxx-xxx, wobei 
+        die erste Ziffernkombination den Fall bezeichnet (vgl. die IDs für Fälle in 
+        der Form C_xxxxx), die zweite das Dokument und die dritte gegebenenfalls eine Beilage.</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+          <TEI xml:id="D_000002-002-000" prev="https://legalkraus.acdh.oeaw.ac.at/id/D_000002-001-000" next="https://legalkraus.acdh.oeaw.ac.at/id/D_000002-003-000"/>
+        </egXML>
+                
+        <p>Als Attribute des Elements <gi>TEI</gi> werden außerdem der Namespace (<att>xmlns</att>, im Beispiel nicht vorhanden) sowie <att>prev</att> und <att>next</att> angeführt. 
+        Sie verweisen auf das vorangehende sowie das folgende Dokument.</p>
+                
+        <p><gi>witness</gi>-Elemente, also Textzeugen, bekommen eine ID in der Form 
+        D_xxxxxx-xxx-xxx-witxx. Der ID des Dokuments wird also "witxx" hinzugefügt.</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+          <witness xml:id="D_000002-002-000-wit01" facs="#D_000002-002-000-facs001"/>
+        </egXML>
+        
+        <p>Die IDs der <gi>facsimile</gi>-Elemente ergibt sich ebenso aus der ID des Dokuments 
+        und einem Zusatz in der Form "facsxxx". Dieser ID wird noch ein weiterer Zusatz in der 
+        Form "lxxx" für <gi>surfaceGrp</gi>-Elemente hinzugefügt. Für die ID eines 
+        <gi>surface</gi>-Elements wird die ID der <gi>surfaceGrp</gi> noch einmal erweitert um 
+        "pxxx".</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+          <facsimile xml:id="D_000002-002-000-facs001">
+            <surfaceGrp xml:id="D_000002-002-000-facs001-l001">
+              <surface xml:id="D_000002-002-000-facs001-l001-p001" type="recto">
+                <graphic url="http://www.kraus.wienbibliothek.at/sites/biographeme.com/files/images/object/00000019.jpg" source="krausonline"/>
+                <graphic url="ZPH_1545-1/001_010/00000019.jpg" source="scans"/>
+                <graphic url="https://www.digital.wienbibliothek.at/wbrobv02/i3f/v21/2540028/full/full/0/default.jpg" source="wienbibliothek" ana="status:checked"/>
+              </surface>
+              <surface xml:id="D_000002-002-000-facs001-l001-p002" type="recto">
+                <graphic url="http://www.kraus.wienbibliothek.at/sites/biographeme.com/files/images/object/00000021.jpg" source="krausonline"/>
+                <graphic url="ZPH_1545-1/001_010/00000021.jpg" source="scans"/>
+                <graphic url="https://www.digital.wienbibliothek.at/wbrobv02/i3f/v21/2540030/full/full/0/default.jpg" source="wienbibliothek" ana="status:checked"/>
+              </surface>
+            </surfaceGrp>
+          </facsimile>
+        </egXML>
+
+        <p>Folgende Elemente erhalten UUIDs: <gi>p</gi>, <gi>pb</gi> (zusätzlich zur Seitenzählung 
+        in <att>n</att>), <gi>lb</gi>, <gi>quote</gi> und <gi>stamp</gi>.</p>
+        
+        <egXML xmlns="http://www.tei-c.org/ns/Examples">
+          <p xml:id="uuid_3e3c19ee-b10e-4d0b-95fb-0ccf3db0dc3a">
+            <lb xml:id="uuid_cb24b124-dde5-4621-a4b1-24dde5762193"/>In vorzüglicher Hochachtung
+          </p>
+        </egXML>
+        
       </div>
 
-
-
-      <!-- Schema -->
+<!-- SCHEMA -->
+      
       <div>
-        <head>TEI Modifikation</head>
+        
+        <head>TEI-Modifikation</head>
+        
         <schemaSpec ident="legalkraus_transcr" start="TEI" xml:lang="de">
-          <!-- anpassen! -->
+          
           <moduleRef key="header"
-            include="availability change classCode correspAction correspDesc creation fileDesc handNote idno keywords language langUsage licence profileDesc publicationStmt revisionDesc sourceDesc teiHeader textClass titleStmt msDesc"/>
+            include="availability change classCode correspAction correspDesc creation encodingDesc fileDesc handNote idno keywords language langUsage licence profileDesc publicationStmt revisionDesc seriesStmt sourceDesc teiHeader textClass titleStmt msDesc"/>
           <moduleRef key="core"
-            include="add address author date del editor gap graphic head hi lb name note p pb postCode publisher pubPlace q quote ref resp respStmt rs street term textClass title"/>
+            include="add address date del editor gap graphic hi lb name note noteGrp p pb postCode ptr publisher pubPlace q quote ref rs street term title"/>
           <moduleRef key="corpus" include="particDesc"/>
-          <moduleRef key="namesdates" include="country org person settlement"/>
+          <moduleRef key="msdescription" include="accMat objectType physDesc stamp"/>
+          <moduleRef key="namesdates" include="country listOrg listPerson org orgName persName person roleName settlement"/>
           <moduleRef key="tei"/>
-          <moduleRef key="textstructure" include="body dateline div opener TEI text"/>
-          <moduleRef key="textcrit" include="listWit witness"/>
-          <moduleRef key="transcr" include="facsimile handNotes subst supplied surface surfaceGrp"/>
-          <moduleRef key="figures" include="table row cell"/>
-          <moduleRef key="linking" include=""/>
-          <moduleRef key="analysis" include=""/>
-
-          <!-- Validierung -->
+          <moduleRef key="textstructure" include="body div TEI text"/>
+          <moduleRef key="textcrit" include="app lem listWit rdg variantEncoding witness"/>
+          <moduleRef key="transcr" include="facsimile handNotes listTranspose metamark restore subst substJoin surface surfaceGrp transpose"/>
+          <moduleRef key="linking" include="ab seg"/>
+          
           <!--  contraintSpec -->
-
-
+            <!-- LU: bei entsprechenden Elementen oder hier (?) mittels constraintSpec Schematron-Regeln einfügen? 
+                Dann wäre alles an einem Ort;
+                
+                  Bsp.: 
+                  <constraintSpec ident="TEI-xmlid" scheme="schematron">
+                    <desc>Werte in <att>xml:id</att> von <gi>TEI</gi> müssen dem Muster D_000002-002-000 entsprechen.</desc>
+                    <constraint>
+                      <sch:assert test="matches(tei:TEI/@xml:id/string(),'D_[0-9]{6}-[0-9]{3}-[0-9]{3}')">Der Wert in xml:id von TEI entspricht nicht den Vorgaben.</sch:assert>
+                    </constraint>
+                  </constraintSpec>-->
 
         </schemaSpec>
 
+  <!-- ELEMENTE -->
+    
+<!-- core module -->
+
+    <!-- element add -->
+    <elementSpec ident="add" module="core" mode="change">
+        <attList>
+            <attDef ident="xml:id" mode="change" usage="opt">
+                <datatype>
+                    <dataRef key="ID"/>
+                </datatype>
+            </attDef>
+            <attDef ident="hand" mode="change" usage="rec"/>  
+            <attDef ident="seq" mode="change" usage="opt"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element address -->
+    <elementSpec ident="address" module="core" mode="change">
+        <attList>
+            <attDef ident="ana" mode="change" usage="req">
+                <valList mode="replace" type="closed">
+                    <valItem ident="#address">
+                        <desc>Adresse</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element date -->
+    <elementSpec ident="date" module="core" mode="change">
+        <attList>
+            <attDef ident="when-iso" mode="change" usage="rec">
+                <datatype>
+                    <dataRef key="teidata.temporal.iso"/>
+                </datatype>
+            </attDef>
+            <attDef ident="notBefore-iso" mode="change" usage="opt">
+                <datatype>
+                    <dataRef key="teidata.temporal.iso"/>
+                </datatype>
+            </attDef>
+            <attDef ident="notAfter-iso" mode="change" usage="opt">
+                <datatype>
+                    <dataRef key="teidata.temporal.iso"/>
+                </datatype>
+            </attDef>
+            <attDef ident="type" mode="change" usage="rec">
+                <valList mode="replace" type="closed">
+                    <valItem ident="sortDate">
+                        <desc>Datum für Sortierung</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+            <attDef ident="subtype" mode="change" usage="rec">
+                <valList type="closed" mode="replace">
+                    <valItem ident="produced">
+                        <desc>Klassifizierung des Datums (produziert)</desc>
+                    </valItem>
+                    <valItem ident="received">
+                        <desc>Klassifizierung des Datums (empfangen)</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element del -->
+    <elementSpec ident="del" module="core" mode="change">
+        <attList>
+            <attDef ident="xml:id" mode="change" usage="opt">
+                <datatype>
+                    <dataRef key="ID"/>
+                </datatype>
+            </attDef>
+            <attDef ident="hand" mode="change" usage="rec"/> 
+            <attDef ident="seq" mode="change" usage="opt"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element editor -->
+    <elementSpec ident="editor" module="core" mode="change">
+        <attList>
+            <attDef ident="ref" mode="change" usage="req"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element gap -->
+
+    <elementSpec ident="gap" module="core" mode="change">
+        <attList>
+            <attDef ident="extent" mode="change" usage="req"/>
+            <attDef ident="reason" mode="change" usage="req">
+                <valList mode="replace" type="closed">
+                    <valItem ident="cancelled">
+                        <desc>abgebrochen</desc>
+                    </valItem>
+                    <valItem ident="deleted">
+                        <desc>getilgt</desc>
+                    </valItem>
+                    <valItem ident="editorial">
+                        <desc>für Bestandteile, die aus editorischen Gründen nicht übertragen wurden</desc>
+                    </valItem>
+                    <valItem ident="illegible">
+                        <desc>unleserlich</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element graphic -->
+    <elementSpec ident="graphic" module="core" mode="change">
+        <attList>
+            <attDef ident="source" mode="change" usage="req">
+                <valList mode="replace" type="closed">
+                    <valItem ident="krausonline">
+                        <desc>Kraus Online</desc>
+                    </valItem>
+                    <valItem ident="wienbibliothek">
+                        <desc>Wienbibliothek</desc>
+                    </valItem>
+                    <valItem ident="scans">
+                        <desc>Scans</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+            <attDef ident="url" mode="change" usage="req"/>
+            <attDef ident="ana" mode="change" usage="opt"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element hi -->
+    <elementSpec ident="hi" module="core" mode="change">
+        <attList>
+            <attDef ident="rend" mode="change" usage="req">
+                <valList type="closed" mode="replace">
+                    <valItem ident="underlined">
+                        <desc>Unterstreichung</desc>
+                    </valItem>
+                    <valItem ident="spaced">
+                        <desc>Sperrung</desc>
+                    </valItem>
+                    <valItem ident="bold">
+                        <desc>Fett</desc>
+                    </valItem>
+                    <valItem ident="italics">
+                        <desc>Kursiv</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+            <attDef ident="hand" mode="change" usage="opt"/> 
+        </attList>
+    </elementSpec>
+    
+    <!-- element lb -->
+    <elementSpec ident="lb" module="core" mode="change">
+        <attList>
+            <attDef ident="xml:id" mode="change" usage="req">
+                <datatype>
+                    <dataRef key="ID"/>
+                </datatype>
+            </attDef>
+            <attDef ident="break" mode="change" usage="opt">
+                <valList type="closed" mode="replace">
+                    <valItem ident="no">
+                        <desc>Umbruch im Wort</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element name -->
+    <elementSpec ident="name" module="core" mode="change"/>
+    
+    <!-- element note -->
+    <elementSpec ident="note" module="core" mode="change">
+        <attList>
+            <attDef ident="xml:id" mode="change" usage="opt">
+                <datatype>
+                    <dataRef key="ID"/>
+                </datatype>
+            </attDef>
+            <attDef ident="rend" mode="change" usage="opt"/>
+            <attDef ident="resp" mode="change" usage="opt">
+                <valList type="closed" mode="replace">
+                    <valItem ident="law-firm">
+                        <desc>Samek-Kanzlei</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+            <attDef ident="source" mode="change" usage="opt"/>
+            <attDef ident="type" mode="change" usage="opt">
+                <valList type="closed" mode="replace">
+                    <valItem ident="paratext">
+                        <desc>Paratext</desc>
+                    </valItem>
+                    <valItem ident="subject">
+                        <desc>Betreff</desc>
+                    </valItem>
+                    <valItem ident="dictation">
+                        <desc>Diktatsigle</desc>
+                    </valItem>
+                    <valItem ident="marginal">
+                        <desc>Marginalie</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+            <attDef ident="hand" mode="change" usage="opt"/> 
+        </attList>
+    </elementSpec>
+
+    <!-- element noteGrp -->
+    <elementSpec ident="noteGrp" module="core" mode="change">
+        <attList>
+            <attDef ident="type" mode="replace" usage="rec">
+                <valList mode="replace" type="closed">
+                    <valItem ident="subject">
+                        <desc>Betreff</desc>
+                    </valItem>
+                    <valItem ident="dictation">
+                        <desc>Diktatsigle</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element p -->
+    <elementSpec ident="p" module="core" mode="change">
+        <attList>
+            <attDef ident="xml:id" mode="change" usage="req">
+                <datatype>
+                    <dataRef key="ID"/>
+                </datatype>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element pb -->
+    <elementSpec ident="pb" module="core" mode="change">
+        <attList>
+            <attDef ident="xml:id" mode="change" usage="req">
+                <datatype>
+                    <dataRef key="ID"/>
+                </datatype>
+            </attDef>
+            <attDef ident="n" mode="change" usage="req"/> 
+            <attDef ident="facs" mode="change" usage="req"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element postCode -->
+    <elementSpec ident="postCode" module="core" mode="change"/>
+    
+    <!-- element ptr -->
+    <elementSpec ident="ptr" module="core">
+        <attList>
+            <attDef ident="target" mode="change" usage="req"/>
+            <attDef ident="type" mode="change" usage="opt">
+                <valList type="closed" mode="replace">
+                    <valItem ident="transposition">
+                        <desc>Umstellung</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element publisher -->
+    <elementSpec ident="publisher" module="core" mode="change"/>
+    
+    <!-- element pubPlace -->
+    <elementSpec ident="pubPlace" module="core" mode="change"/>
+    
+    <!-- element q -->
+    <elementSpec ident="q" module="core" mode="change">
+        <attList>
+            <attDef ident="who" mode="change" usage="rec"/>
+            <attDef ident="type" mode="change" usage="req">
+                <valList type="closed" mode="replace">
+                    <valItem ident="spoken">
+                        <desc>wörtliche Rede</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element quote -->
+    <elementSpec ident="quote" module="core" mode="change">
+        <attList>
+            <attDef ident="xml:id" mode="change" usage="req">
+                <datatype>
+                    <dataRef key="ID"/>
+                </datatype>
+            </attDef>
+            <attDef ident="source" mode="change" usage="rec"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element ref -->
+    <elementSpec ident="ref" module="core" mode="change">
+        <attList>
+            <attDef ident="target" mode="change" usage="req">
+                <datatype>
+                    <dataRef key="teidata.pointer"/>
+                </datatype>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element rs -->
+    <elementSpec ident="rs" module="core" mode="change">
+        <attList>
+            <attDef ident="type" mode="replace" usage="req">
+                <valList mode="replace" type="closed">
+                    <valItem ident="person">
+                        <desc>Person</desc>
+                    </valItem>
+                    <valItem ident="institution">
+                        <desc>Insititution</desc>
+                    </valItem>
+                    <valItem ident="place">
+                        <desc>Ort</desc>
+                    </valItem>
+                    <valItem ident="work">
+                        <desc>Werk</desc>
+                    </valItem>
+                    <valItem ident="law">
+                        <desc>Gesetzestext</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+            <attDef ident="ana" mode="replace" usage="opt">
+                <valList mode="replace" type="closed">
+                    <valItem ident="#address">
+                        <desc>Adresse</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+            <attDef ident="ref" mode="change" usage="rec"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element street -->
+    <elementSpec ident="street" module="core" mode="change">
+        <attList>
+            <attDef ident="ref" mode="change" usage="req"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element term -->
+    <elementSpec ident="term" module="core" mode="change">
+        <attList>
+            <attDef ident="source" mode="change" usage="opt"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element title -->
+    <elementSpec ident="title" module="core" mode="change">
+        <attList>
+            <attDef ident="type" mode="change" usage="opt">
+                <valList type="closed" mode="replace">
+                    <valItem ident="collection">
+                        <desc>Fall</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+            <attDef ident="ref" mode="change" usage="opt"/>
+        </attList>
+    </elementSpec>
+
+<!-- corpus module -->
+
+    <!-- element particDesc -->
+    <elementSpec ident="particDesc" module="corpus" mode="change"/>
+
+<!-- header module -->
+
+    <!-- element availability -->
+    <elementSpec ident="availability" module="header" mode="change"/>
+    
+    <!-- element change -->
+    <elementSpec ident="change" module="header" mode="change">
+        <attList>
+            <attDef ident="who" mode="change" usage="req">
+                <valList mode="replace" type="closed">
+                    <valItem ident="#JK">
+                        <desc>Johannes Knüchel</desc>
+                    </valItem>
+                    <valItem ident="#IL">
+                        <desc>Isabel Langkabel</desc>
+                    </valItem>
+                    <valItem ident="#IB">
+                        <desc>Ingo Börner</desc>
+                    </valItem>
+                    <valItem ident="#LU">
+                        <desc>Laura Untner</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+            <attDef ident="type" mode="change" usage="req">
+                <desc>Typ des Arbeitsschritts</desc>
+                <valList mode="replace" type="closed">
+                    <valItem ident="header_facsimile">
+                        <desc>TEI-Header und Faksimile</desc>
+                    </valItem>
+                    <valItem ident="structure">
+                        <desc>Textgliederung</desc>
+                    </valItem>
+                    <valItem ident="references">
+                        <desc>Referenzen</desc>
+                    </valItem>
+                    <valItem ident="typography">
+                        <desc>Typographisches</desc>
+                    </valItem>
+                    <valItem ident="intertexts">
+                        <desc>Intertexte</desc>
+                    </valItem>
+                    <valItem ident="corrections">
+                        <desc>Korrekturen</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+            <attDef ident="when-iso" mode="change" usage="req">
+                <datatype>
+                    <dataRef key="teidata.temporal.iso"/>
+                </datatype>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element classCode -->
+    <elementSpec ident="classCode" module="header" mode="change">
+        <attList>
+            <attDef ident="source" mode="change" usage="opt"/>
+            <attDef ident="scheme" mode="change" usage="req">
+                <valList mode="replace" type="closed">
+                    <valItem ident="https://vocabs.acdh.oeaw.ac.at/legalkraus-doctypes/v1.0/"/>
+                </valList>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element correspAction -->
+    <elementSpec ident="correspAction" module="header" mode="change">
+        <attList>
+            <attDef ident="type" mode="replace" usage="req">
+                <valList mode="replace" type="closed">
+                    <valItem ident="sent">
+                        <desc>Absendende Partei</desc>
+                    </valItem>
+                    <valItem ident="received">
+                        <desc>Empfangende Partei</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+        </attList>
+    </elementSpec>
+
+    <!-- element correspDesc -->
+    <elementSpec ident="correspDesc" module="header" mode="change"/>
+    
+    <!-- element creation -->
+    <elementSpec ident="creation" module="header" mode="change"/>
+    
+    <!-- element encodingDesc -->
+    <elementSpec ident="encodingDesc" module="header" mode="change"/>
+    
+    <!-- element fileDesc -->
+    <elementSpec ident="fileDesc" module="header" mode="change"/>
+    
+    <!-- element handNote -->
+    <elementSpec ident="handNote" module="header" mode="change">
+        <attList>
+            <attDef ident="xml:id" mode="change" usage="req">
+                <datatype>
+                    <dataRef key="ID"/>
+                </datatype>
+            </attDef>
+            <attDef ident="cert" mode="change" usage="rec"/>
+            <attDef ident="resp" mode="change" usage="req"/>
+            <attDef ident="source" mode="change" usage="rec"/>
+            <attDef ident="scribeRef" mode="change" usage="rec"/>
+            <attDef ident="medium" mode="change" usage="rec"/> 
+        </attList>
+    </elementSpec>
+    
+    <!-- element idno -->
+    <elementSpec ident="idno" module="header" mode="change">
+        <attList>
+            <attDef ident="type" mode="change" usage="req">
+                <valList type="closed" mode="replace">
+                    <valItem ident="URL">
+                        <desc>URL</desc>
+                    </valItem>
+                    <valItem ident="ID">
+                        <desc>Identifier</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+            <attDef ident="subtype" mode="change" usage="req">
+                <valList type="closed" mode="replace">
+                    <valItem ident="legalkraus">
+                        <desc>Rechtsakten-Projekt</desc>
+                    </valItem>
+                    <valItem ident="krausonline">
+                        <desc>Karl Kraus Online</desc>
+                    </valItem>
+                    <valItem ident="transkribus">
+                        <desc>Transkribus Document-ID</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element keywords -->
+    <elementSpec ident="keywords" module="header" mode="change"/>
+    
+    <!-- element language -->
+    <elementSpec ident="language" module="header" mode="change">
+        <attList>
+            <attDef ident="ident" mode="change" usage="req">
+                <datatype>
+                    <dataRef key="teidata.language"/>
+                </datatype>
+                <valList mode="replace" type="semi">
+                    <valItem ident="ger">
+                        <desc>Deutsch</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element langUsage -->
+    <elementSpec ident="langUsage" module="header" mode="change"/>
+    
+    <!-- element licence -->
+    <elementSpec ident="licence" module="header" mode="change">
+        <attList>
+            <attDef ident="target" mode="change" usage="req">
+                <valList mode="replace" type="closed">
+                    <valItem ident="http://creativecommons.org/licenses/by/4.0">
+                        <desc>Creative Commons Namensnennung 4.0 International Lizenz</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element profileDesc -->
+    <elementSpec ident="profileDesc" module="header" mode="change"/>
+    
+    <!-- element publicationStmt -->
+    <elementSpec ident="publicationStmt" module="header" mode="change"/>
+    
+    <!-- element revisionDesc -->
+    <elementSpec ident="revisionDesc" module="header" mode="change">
+        <attList>
+            <attDef ident="status" mode="change" usage="req">
+                <valList mode="replace" type="closed">
+                    <valItem ident="done">
+                        <desc>Bearbeitung abgeschlossen</desc>
+                    </valItem>
+                    <valItem ident="not-done">
+                        <desc>Bearbeitung nicht abgeschlossen</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element seriesStmt -->
+    <elementSpec ident="seriesStmt" module="header" mode="change"/>
+    
+    <!-- element sourceDesc -->
+    <elementSpec ident="sourceDesc" module="header" mode="change"/>
+    
+    <!-- element teiHeader -->
+    <elementSpec ident="teiHeader" module="header" mode="change"/>
+    
+    <!-- element textClass -->
+    <elementSpec ident="textClass" module="header" mode="change"/>
+    
+    <!-- element titleStmt -->
+    <elementSpec ident="titleStmt" module="header" mode="change"/>
+    
+    <!-- element msDesc -->
+    <elementSpec ident="msDesc" module="header" mode="change"/>
+
+<!-- linking module -->
+
+    <!-- element ab -->
+    <elementSpec ident="ab" module="linking" mode="change">
+        <attList>
+            <attDef ident="source" mode="change" usage="opt"/>
+            <attDef ident="type" mode="change" usage="req">
+                <valList type="closed" mode="replace">
+                    <valItem ident="stamp">
+                        <desc>Stempel</desc>
+                    </valItem>
+                    <valItem ident="materiality">
+                        <desc>Materialität</desc>
+                    </valItem>
+                    <valItem ident="appendix">
+                        <desc>Beilage (im Body)</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element seg -->
+    <elementSpec ident="seg" module="linking" mode="change">
+        <attList>
+            <attDef ident="type" mode="change" usage="req">
+                <valList mode="replace" type="closed">
+                    <valItem ident="transposition">
+                        <desc>Umstellung</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+            <attDef ident="xml:id" mode="change" usage="req">
+                <datatype>
+                    <dataRef key="ID"/>
+                </datatype>
+            </attDef>
+        </attList>
+    </elementSpec>
+
+<!-- msdescription module -->
+
+    <!-- element accMat -->
+    <elementSpec ident="accMat" module="msdescription" mode="change">
+        <attList>
+            <attDef ident="xml:id" mode="change" usage="req">
+                <datatype>
+                    <dataRef key="ID"/>
+                </datatype>
+            </attDef>
+            <attDef ident="source" mode="change" usage="req"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element objectType -->
+    <elementSpec ident="objectType" module="msdescription" mode="change">
+        <attList>
+            <attDef ident="ref" mode="change" usage="req">
+                <valList mode="replace" type="closed">
+                    <valItem ident="https://vocabs.acdh.oeaw.ac.at/legalkraus-doctypes/v1.0/"/>
+                </valList>
+            </attDef>
+            <attDef ident="source" mode="change" usage="opt"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element physDesc -->
+    <elementSpec ident="physDesc" module="msdescription" mode="change"/>
+    
+    <!-- element stamp -->
+    <elementSpec ident="stamp" module="header" mode="change">
+        <attList>
+            <attDef ident="xml:id" mode="change" usage="req">
+                <datatype>
+                    <dataRef key="ID"/>
+                </datatype>
+            </attDef>
+            <attDef ident="source" mode="change" usage="rec"/>
+        </attList>
+    </elementSpec>
+
+<!-- namesdates module -->
+
+    <!-- element country -->
+    <elementSpec ident="country" module="namesdates" mode="change">
+        <attList>
+            <attDef ident="ref" mode="change" usage="req"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element listOrg -->
+    <elementSpec ident="listOrg" module="namesdates" mode="change"/>
+    
+    <!-- element listPerson -->
+    <elementSpec ident="listPerson" module="namesdates" mode="change"/>
+    
+    <!-- element org -->
+    <elementSpec ident="org" module="namesdates" mode="change">
+        <attList>
+            <attDef ident="role" mode="change" usage="req"/> 
+            <attDef ident="ref" mode="change" usage="req"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element orgName -->
+    <elementSpec ident="orgName" module="namesdates" mode="change">
+        <attList>
+            <attDef ident="ref" mode="change" usage="req"/>
+            <attDef ident="role" mode="change" usage="opt"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element persName -->
+    <elementSpec ident="persName" module="namesdates" mode="change">
+        <attList>
+            <attDef ident="ref" mode="change" usage="req"/>
+            <attDef ident="role" mode="change" usage="opt"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element person -->
+    <elementSpec ident="person" module="namesdates" mode="change">
+        <attList>
+            <attDef ident="role" mode="change" usage="req"/>
+            <attDef ident="ref" mode="change" usage="req"/>
+        </attList>
+    </elementSpec>
+
+    <!-- element roleName -->
+    <elementSpec ident="roleName" module="namesdates" mode="change">
+        <attList>
+            <attDef ident="ref" mode="change" usage="req"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element settlement -->
+    <elementSpec ident="settlement" module="namesdates" mode="change">
+        <attList>
+            <attDef ident="ref" mode="change" usage="req"/>
+        </attList>
+    </elementSpec>
+
+<!-- tei module -->
 
 
-        <!-- Elemente -->
+<!-- textcrit module -->
 
+    <!-- element app -->
+    <elementSpec ident="app" module="textcrit" mode="change"/>
+    
+    <!-- element lem -->
+    <elementSpec ident="lem" module="textcrit">
+        <attList>
+            <attDef ident="wit" mode="change" usage="req"/>
+            <attDef ident="hand" mode="change" usage="req"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element listWit -->
+    <elementSpec ident="listWit" module="textcrit" mode="change"/>
+    
+    <!-- element rdg -->
+    <elementSpec ident="rdg" module="textcrit" mode="change">
+        <attList>
+            <attDef ident="wit" mode="change" usage="req"/>
+            <attDef ident="hand" mode="change" usage="req"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element variantEncoding -->
+    <elementSpec ident="variantEncoding" module="textcrit" mode="change">
+        <attList>
+            <attDef ident="method" mode="change" usage="req">
+                <valList type="closed" mode="replace">
+                    <valItem ident="parallel-segmentation">
+                        <desc>Parallele Segmentierung</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+            <attDef ident="location" mode="change" usage="req">
+                <valList type="closed" mode="replace">
+                    <valItem ident="internal">
+                        <desc>innerhalb des Textes</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element witness -->
+    <elementSpec ident="witness" module="textcrit" mode="change">
+        <attList>
+            <attDef ident="xml:id" mode="change" usage="req">
+                <datatype>
+                    <dataRef key="ID"/>
+                </datatype>
+            </attDef>
+            <attDef ident="facs" mode="change" usage="req"/>
+        </attList>
+    </elementSpec>
 
+<!-- textstructure module -->
 
-        <!-- TEI -->
+    <!-- element body -->
+    <elementSpec ident="body" module="textstructure" mode="change"/>
+
+    <!-- element div -->
+    <elementSpec ident="div" module="textstructure" mode="change">
+        <attList>
+            <attDef ident="xml:id" mode="change" usage="rec">
+                <datatype>
+                    <dataRef key="ID"/>
+                </datatype>
+            </attDef>
+            <attDef ident="source" mode="change" usage="opt"/>
+            <attDef ident="type" mode="change" usage="req">
+                <valList mode="replace" type="closed">
+                    <valItem ident="wit">
+                        <desc>weiterer Textzeuge</desc>
+                    </valItem>
+                    <valItem ident="doc">
+                        <desc>weiteres Dokument</desc>
+                    </valItem>
+                    <valItem ident="boehm-recostruction">
+                        <desc>Rekonstruktion Hermann Böhms</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element TEI -->
+    <elementSpec ident="TEI" module="textstructure" mode="change">
+        <attList>
+            <attDef ident="xml:id" mode="change" usage="req">
+                <desc>ID des Dokuments</desc>
+                <datatype>
+                    <dataRef key="ID"/>
+                </datatype>
+            </attDef>
+            <attDef ident="prev" mode="change" usage="req"/><!-- LU: Beschreibung ausständig? -->
+            <attDef ident="next" mode="change" usage="req"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element text -->
+    <elementSpec ident="text" module="textstructure" mode="change"/>
+
+<!-- transcr module -->
+
+    <!-- element facsimile -->
+    <elementSpec ident="facsimile" module="transcr" mode="change">
+        <attList>
+            <attDef ident="xml:id" mode="change" usage="req">
+                <datatype>
+                    <dataRef key="ID"/>
+                </datatype>
+            </attDef>
+            <attDef ident="type" mode="change" usage="opt">
+                <valList type="closed" mode="replace">
+                    <valItem ident="further-witnesses">
+                        <desc>weitere Textzeugen</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element handNotes -->
+    <elementSpec ident="handNotes" module="transcr" mode="change"/>
+    
+    <!-- element listTranspose -->
+    <elementSpec ident="listTranspose" module="transcr" mode="change"/>
+    
+    <!-- element metamark -->
+    <elementSpec ident="metamark" module="transcr" mode="change">
+        <attList>
+            <attDef ident="function" mode="change" usage="req">
+                <valList type="closed" mode="replace">
+                    <valItem ident="transposition">
+                        <desc>Umstellung</desc>
+                    </valItem>
+                    <valItem ident="marginal">
+                        <desc>Marginalie</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+            <attDef ident="hand" mode="change" usage="req"/>
+            <attDef ident="target" mode="change" usage="opt"/>
+            <attDef ident="rend" mode="change" usage="opt"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element restore -->
+    <elementSpec ident="restore" module="transcr" mode="change">
+        <attList>
+            <attDef ident="xml:id" mode="change" usage="opt">
+                <datatype>
+                    <dataRef key="ID"/>
+                </datatype>
+            </attDef>
+            <attDef ident="hand" mode="change" usage="req"/>
+            <attDef ident="seq" mode="change" usage="opt"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element subst -->
+    <elementSpec ident="subst" module="transcr" mode="change">
+        <attList>
+            <attDef ident="xml:id" mode="change" usage="opt">
+                <datatype>
+                    <dataRef key="ID"/>
+                </datatype>
+            </attDef>
+            <attDef ident="hand" mode="change" usage="rec"/> 
+            <attDef ident="seq" mode="change" usage="opt"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element substJoin -->
+    <elementSpec ident="substJoin" module="transcr" mode="change">
+        <attList>
+            <attDef ident="target" mode="change" usage="req"/>
+        </attList>
+    </elementSpec>
+    
+    <!-- element surface -->
+    <elementSpec ident="surface" module="transcr" mode="change">
+        <attList>
+            <attDef ident="xml:id" mode="change" usage="req">
+                <datatype>
+                    <dataRef key="ID"/>
+                </datatype>
+            </attDef>
+            <attDef ident="type" mode="change" usage="req">
+                <valList type="closed" mode="replace">
+                    <valItem ident="recto">
+                        <desc>Vorderseite</desc>
+                    </valItem>
+                    <valItem ident="verso">
+                        <desc>Rückseite</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element surfaceGrp -->
+    <elementSpec ident="surfaceGrp" module="transcr" mode="change">
+        <attList>
+            <attDef ident="xml:id" mode="change" usage="req">
+                <datatype>
+                    <dataRef key="ID"/>
+                </datatype>
+            </attDef>
+        </attList>
+    </elementSpec>
+    
+    <!-- element transpose -->
+    <elementSpec ident="transpose" module="transcr">
+        <attList>
+            <attDef ident="hand" mode="change" usage="req"/>
+        </attList>
+    </elementSpec>
+        
+<!-- ALTES SCHEMA
+          
+          
+        <!-\- TEI -\->
         <elementSpec ident="TEI" module="textstructure" mode="change">
           <attList>
             <attDef ident="xml:id" mode="change" usage="req">
               <desc>ID des Dokuments</desc>
             </attDef>
-
             <attDef ident="type" mode="delete"/>
             <attDef ident="subtype" mode="delete"/>
             <attDef ident="n" mode="delete"/>
@@ -781,12 +2248,10 @@
             <attDef ident="synch" mode="delete"/>
             <attDef ident="sameAs" mode="delete"/>
             <attDef ident="copyOf" mode="delete"/>
-            <attDef ident="prev" mode="change" usage="rec"/>
-            <attDef ident="next" mode="change" usage="rec"/>
+            <attDef ident="prev" mode="change" usage="req"/>
+            <attDef ident="next" mode="change" usage="req"/>
             <attDef ident="exclude" mode="delete"/>
             <attDef ident="select" mode="delete"/>
-            
-            
           </attList>
           <exemplum>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -800,17 +2265,17 @@
                       <publisher>ACDH-CH</publisher>
                     </publicationStmt>
                     <sourceDesc>
-                      <p><!-- Info zur Quelle --></p>
+                      <p><!-\- Info zur Quelle -\-></p>
                     </sourceDesc>
                   </fileDesc>
-                  <!-- weitere Metadaten -->
+                  <!-\- weitere Metadaten -\->
                 </teiHeader>
                 <facsimile>
-                  <!-- Bilddaten -->
+                  <!-\- Bilddaten -\->
                 </facsimile>
                 <text>
                   <body>
-                    <!-- Transkription -->
+                    <!-\- Transkription -\->
                   </body>
                 </text>
               </TEI>
@@ -818,17 +2283,7 @@
           </exemplum>
         </elementSpec>
 
-        <!--<constraintSpec ident="TEI-xmlid" scheme="schematron">
-          <desc>Werte in <att>xml:id</att> von <gi>TEI</gi> müssen dem Muster D_000002-002-000 entsprechen.</desc>
-          <constraint>
-            <sch:assert test="matches(tei:TEI/@xml:id/string(),'D_[0-9]{6}-[0-9]{3}-[0-9]{3}')">Der Wert in xml:id von TEI entspricht nicht den Vorgaben.</sch:assert>
-          </constraint>
-        </constraintSpec>-->
-
-
-
-
-        <!-- teiHeader [header] -->
+        <!-\- teiHeader [header] -\->
         <elementSpec ident="teiHeader" module="header" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -847,7 +2302,7 @@
           </attList>
         </elementSpec>
 
-        <!-- fileDesc [header] -->
+        <!-\- fileDesc [header] -\->
         <elementSpec ident="fileDesc" module="header" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -866,7 +2321,7 @@
           </attList>
         </elementSpec>
 
-        <!--titleStmt [header]-->
+        <!-\-titleStmt [header]-\->
         <elementSpec ident="titleStmt" module="header" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -903,7 +2358,7 @@
           </exemplum>
         </elementSpec>
 
-        <!--title [core]-->
+        <!-\-title [core]-\->
         <elementSpec ident="title" module="core" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -940,7 +2395,13 @@
             <attDef ident="to-custom" mode="delete"/>
             <attDef ident="datingPoint" mode="delete"/>
             <attDef ident="datingMethod" mode="delete"/>
-            <attDef ident="type" mode="delete"/>
+            <attDef ident="type" mode="change" usage="opt">
+              <valList type="closed" mode="replace">
+                <valItem ident="collection">
+                  <desc>Fall</desc>
+                </valItem>
+              </valList>
+            </attDef>
             <attDef ident="subtype" mode="delete"/>
             <attDef ident="level" mode="delete"/>
           </attList>
@@ -948,7 +2409,7 @@
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <titleStmt>
                 <title>Brief Samek an Reichspost (verantw. Red. Karl Schiffleitner)</title>
-                <!-- ... -->
+                <!-\- ... -\->
               </titleStmt>
             </egXML>
           </exemplum>
@@ -957,59 +2418,13 @@
               <titleStmt>
                 <title>Privatanklage von Karl Kraus gegen Reichspost (verantw. Red. Karl
                   Schiffleitner) wegen Verweigerung einer Berichtigung</title>
-                <!-- ... -->
+                <!-\- ... -\->
               </titleStmt>
             </egXML>
           </exemplum>
         </elementSpec>
 
-        <!--author [core]-->
-        <elementSpec ident="author" module="core" mode="change">
-          <attList>
-            <attDef ident="xml:id" mode="delete"/>
-            <attDef ident="n" mode="delete"/>
-            <attDef ident="xml:lang" mode="delete"/>
-            <attDef ident="xml:base" mode="delete"/>
-            <attDef ident="xml:space" mode="delete"/>
-            <attDef ident="rend" mode="delete"/>
-            <attDef ident="style" mode="delete"/>
-            <attDef ident="rendition" mode="delete"/>
-            <attDef ident="facs" mode="delete"/>
-            <attDef ident="change" mode="delete"/>
-            <attDef ident="cert" mode="delete"/>
-            <attDef ident="resp" mode="delete"/>
-            <attDef ident="source" mode="delete"/>
-            <attDef ident="role" mode="delete"/>
-            <attDef ident="nymRef" mode="delete"/>
-            <attDef ident="key" mode="delete"/>
-
-            <attDef ident="ref" mode="change" usage="req">
-              <desc>Verweis auf Normdatensatz (Bsp. in der PMB)</desc>
-            </attDef>
-            
-            <attDef ident="corresp" mode="delete"/>
-            <attDef ident="synch" mode="delete"/>
-            <attDef ident="sameAs" mode="delete"/>
-            <attDef ident="copyOf" mode="delete"/>
-            <attDef ident="next" mode="delete"/>
-            <attDef ident="prev" mode="delete"/>
-            <attDef ident="exclude" mode="delete"/>
-            <attDef ident="select" mode="delete"/>
-            
-          </attList>
-          <exemplum>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <titleStmt>
-                <title>Brief Samek an Reichspost (verantw. Red. Karl Schiffleitner)</title>
-                <author ref="https://pmb.acdh.oeaw.ac.at/entity/38909">Oskar Samek</author>
-                <!-- ... -->
-              </titleStmt>
-            </egXML>
-          </exemplum>
-
-        </elementSpec>
-
-        <!--editor [core]-->
+        <!-\-editor [core]-\->
         <elementSpec ident="editor" module="core" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -1049,106 +2464,8 @@
             </egXML>
           </exemplum>
         </elementSpec>
-
-        <!--respStmt [core]-->
-        <elementSpec ident="respStmt" module="core" mode="change">
-          <attList>
-            <attDef ident="xml:id" mode="delete"/>
-            <attDef ident="n" mode="delete"/>
-            <attDef ident="xml:lang" mode="delete"/>
-            <attDef ident="xml:base" mode="delete"/>
-            <attDef ident="xml:space" mode="delete"/>
-            <attDef ident="rend" mode="delete"/>
-            <attDef ident="style" mode="delete"/>
-            <attDef ident="rendition" mode="delete"/>
-            <attDef ident="facs" mode="delete"/>
-            <attDef ident="change" mode="delete"/>
-            <attDef ident="cert" mode="delete"/>
-            <attDef ident="resp" mode="delete"/>
-            <attDef ident="source" mode="delete"/>
-            <attDef ident="key" mode="delete"/>
-            <attDef ident="ref" mode="delete"/>
-          </attList>
-          <exemplum>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <respStmt>
-                <resp ref="http://id.loc.gov/vocabulary/relators/trc">Transkription</resp>
-                <name ref="#IL">Isabell Langkabel</name>
-              </respStmt>
-            </egXML>
-          </exemplum>
-          <exemplum>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <respStmt>
-                <resp ref="http://id.loc.gov/vocabulary/relators/mrk">TEI-Encoding</resp>
-                <name ref="#IB">Ingo Börner</name>
-              </respStmt>
-            </egXML>
-          </exemplum>
-        </elementSpec>
-
-        <!--resp [core]-->
-        <elementSpec ident="resp" module="core" mode="change">
-          <attList>
-
-            <attDef ident="xml:id" mode="delete"/>
-            <attDef ident="n" mode="delete"/>
-            <attDef ident="xml:lang" mode="delete"/>
-            <attDef ident="xml:base" mode="delete"/>
-            <attDef ident="xml:space" mode="delete"/>
-            <attDef ident="rend" mode="delete"/>
-            <attDef ident="style" mode="delete"/>
-            <attDef ident="rendition" mode="delete"/>
-            <attDef ident="facs" mode="delete"/>
-            <attDef ident="change" mode="delete"/>
-            <attDef ident="cert" mode="delete"/>
-            <attDef ident="resp" mode="delete"/>
-            <attDef ident="source" mode="delete"/>
-            <attDef ident="key" mode="delete"/>
-
-
-            <attDef ident="calendar" mode="delete"/>
-            <attDef ident="period" mode="delete"/>
-            <attDef ident="when" mode="delete"/>
-            <attDef ident="notBefore" mode="delete"/>
-            <attDef ident="notAfter" mode="delete"/>
-            <attDef ident="from" mode="delete"/>
-            <attDef ident="to" mode="delete"/>
-            <attDef ident="when-iso" mode="delete"/>
-            <attDef ident="notBefore-iso" mode="delete"/>
-            <attDef ident="notAfter-iso" mode="delete"/>
-            <attDef ident="from-iso" mode="delete"/>
-            <attDef ident="to-iso" mode="delete"/>
-            <attDef ident="when-custom" mode="delete"/>
-            <attDef ident="notBefore-custom" mode="delete"/>
-            <attDef ident="notAfter-custom" mode="delete"/>
-            <attDef ident="from-custom" mode="delete"/>
-            <attDef ident="to-custom" mode="delete"/>
-            <attDef ident="datingPoint" mode="delete"/>
-            <attDef ident="datingMethod" mode="delete"/>
-
-            <attDef ident="ref" mode="change" usage="req"> </attDef>
-
-          </attList>
-          <exemplum>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <respStmt>
-                <resp ref="http://id.loc.gov/vocabulary/relators/mrk">TEI-Encoding</resp>
-                <name ref="#IB">Ingo Börner</name>
-              </respStmt>
-            </egXML>
-          </exemplum>
-          <exemplum>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <respStmt>
-                <resp ref="http://id.loc.gov/vocabulary/relators/trc">Transkription</resp>
-                <name ref="#IL">Isabell Langkabel</name>
-              </respStmt>
-            </egXML>
-          </exemplum>
-        </elementSpec>
-
-        <!--name [core]-->
+     
+        <!-\-name [core]-\->
         <elementSpec ident="name" module="core" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -1213,7 +2530,7 @@
           </exemplum>
         </elementSpec>
 
-        <!--publicationStmt [header]-->
+        <!-\-publicationStmt [header]-\->
         <elementSpec ident="publicationStmt" module="header" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -1281,7 +2598,7 @@
         </elementSpec>
 
 
-        <!--publisher [core]-->
+        <!-\-publisher [core]-\->
         <elementSpec ident="publisher" module="core" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -1316,7 +2633,7 @@
           </exemplum>
         </elementSpec>
 
-        <!--availability [header]-->
+        <!-\-availability [header]-\->
         <elementSpec ident="availability" module="header" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -1345,7 +2662,7 @@
           </exemplum>
         </elementSpec>
 
-        <!--licence [header]-->
+        <!-\-licence [header]-\->
         <elementSpec ident="licence" module="header" mode="change">
           <attList>
 
@@ -1402,7 +2719,7 @@
           </exemplum>
         </elementSpec>
         
-        <!--seriesStmt [header]-->
+        <!-\-seriesStmt [header]-\->
         <elementSpec ident="seriesStmt" module="header" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -1428,7 +2745,7 @@
           </exemplum>
         </elementSpec>
         
-        <!--ref [core]-->
+        <!-\-ref [core]-\->
         <elementSpec ident="ref" module="core" mode="change">
           <attList>
             <attDef ident="cRef" mode="delete"/>
@@ -1468,10 +2785,10 @@
           </attList>
         </elementSpec>
 
-        <!--idno [header]-->
+        <!-\-idno [header]-\->
         <elementSpec ident="idno" module="header" mode="change">
-          <!-- kommt im Schema an, funktioniert nicht, aber das liegt am schematron -->
-          <!-- <constraintSpec ident="idno-type-no-subtype" scheme="schematron">
+          <!-\- kommt im Schema an, funktioniert nicht, aber das liegt am schematron -\->
+          <!-\- <constraintSpec ident="idno-type-no-subtype" scheme="schematron">
             <constraint>
               <s:ns prefix="tei"
                 uri="http://www.tei-c.org/ns/1.0"/>
@@ -1480,7 +2797,7 @@
               </s:rule>
             </constraint>
           </constraintSpec>
-          -->
+          -\->
 
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -1559,7 +2876,7 @@
           </exemplum>
         </elementSpec>
 
-        <!--sourceDesc [header]-->
+        <!-\-sourceDesc [header]-\->
         <elementSpec ident="sourceDesc" module="header" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -1583,17 +2900,17 @@
                 <listWit>
                   <witness xml:id="D_000002-002-000-wit01" facs="#D_000002-002-000-facs001"/>
                   <witness xml:id="D_000002-002-000-wit02" facs="#D_000002-002-000-facs002">
-                    <!-- das ist der, der in Transkribus transkribiert worden ist -->
+                    <!-\- das ist der, der in Transkribus transkribiert worden ist -\->
                   </witness>
-                  <!-- wie kann man hinterlegen, welcher der Textzeugen Textgrundlage ist -->
+                  <!-\- wie kann man hinterlegen, welcher der Textzeugen Textgrundlage ist -\->
                 </listWit>
-                <!-- hier gegebenfalls Apparat -->
+                <!-\- hier gegebenfalls Apparat -\->
               </sourceDesc>
             </egXML>
           </exemplum>
         </elementSpec>
 
-        <!--listWit [textcrit]-->
+        <!-\-listWit [textcrit]-\->
         <elementSpec ident="listWit" module="textcrit" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -1617,21 +2934,20 @@
                 <listWit>
                   <witness xml:id="D_000002-002-000-wit01" facs="#D_000002-002-000-facs001"/>
                   <witness xml:id="D_000002-002-000-wit02" facs="#D_000002-002-000-facs002">
-                    <!-- das ist der, der in Transkribus transkribiert worden ist -->
+                    <!-\- das ist der, der in Transkribus transkribiert worden ist -\->
                   </witness>
-                  <!-- wie kann man hinterlegen, welcher der Textzeugen Textgrundlage ist -->
+                  <!-\- wie kann man hinterlegen, welcher der Textzeugen Textgrundlage ist -\->
                 </listWit>
-                <!-- hier gegebenfalls Apparat -->
+                <!-\- hier gegebenfalls Apparat -\->
               </sourceDesc>
             </egXML>
           </exemplum>
         </elementSpec>
 
-        <!--witness [textcrit]-->
+        <!-\-witness [textcrit]-\->
         <elementSpec ident="witness" module="textcrit" mode="change">
           <attList>
             <attDef ident="xml:id" mode="change" usage="req"/>
-
             <attDef ident="n" mode="delete"/>
             <attDef ident="xml:lang" mode="delete"/>
             <attDef ident="xml:base" mode="delete"/>
@@ -1639,9 +2955,7 @@
             <attDef ident="rend" mode="delete"/>
             <attDef ident="style" mode="delete"/>
             <attDef ident="rendition" mode="delete"/>
-
             <attDef ident="facs" mode="change" usage="req"/>
-
             <attDef ident="change" mode="delete"/>
             <attDef ident="cert" mode="delete"/>
             <attDef ident="resp" mode="delete"/>
@@ -1653,15 +2967,36 @@
               <listWit>
                 <witness xml:id="D_000002-002-000-wit01" facs="#D_000002-002-000-facs001"/>
                 <witness xml:id="D_000002-002-000-wit02" facs="#D_000002-002-000-facs002">
-                  <!-- das ist der, der in Transkribus transkribiert worden ist -->
                 </witness>
-                <!-- wie kann man hinterlegen, welcher der Textzeugen Textgrundlage ist -->
               </listWit>
             </egXML>
           </exemplum>
         </elementSpec>
+        
+        <!-\- encodingDesc [header] -\->
+        <elementSpec ident="encodingDesc" module="header" mode="change"/>
+        
+        <!-\- variantEncoding [textcrit] -\->
+        <elementSpec ident="variantEncoding" module="textcrit" mode="change">
+          <attList>
+            <attDef ident="method" mode="change" usage="req">
+              <valList type="closed" mode="replace">
+                <valItem ident="parallel-segmentation">
+                  <desc>Parallele Segmentierung</desc>
+                </valItem>
+              </valList>
+            </attDef>
+            <attDef ident="location" mode="change" usage="req">
+              <valList type="closed" mode="replace">
+                <valItem ident="internal">
+                  <desc>innerhalb des Textes</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
 
-        <!--profileDesc [header]-->
+        <!-\-profileDesc [header]-\->
         <elementSpec ident="profileDesc" module="header" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -1682,29 +3017,29 @@
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <profileDesc>
                 <creation>
-                  <!-- Datierung des Dokuments -->
+                  <!-\- Datierung des Dokuments -\->
                 </creation>
                 <langUsage>
-                  <!-- optional: Sprachen -->
+                  <!-\- optional: Sprachen -\->
                 </langUsage>
                 <textClass>
-                  <!-- Klassifizierung des Dokuments -->
+                  <!-\- Klassifizierung des Dokuments -\->
                 </textClass>
                 <particDesc>
-                  <!-- aktiv handelnde Personen -->
+                  <!-\- aktiv handelnde Personen -\->
                 </particDesc>
                 <correspDesc>
-                  <!-- optional, bei Briefen: Korrespondenz-Metadaten -->
+                  <!-\- optional, bei Briefen: Korrespondenz-Metadaten -\->
                 </correspDesc>
                 <handNotes>
-                  <!-- optional: Schreiberhände -->
+                  <!-\- optional: Schreiberhände -\->
                 </handNotes>
               </profileDesc>
             </egXML>
           </exemplum>
         </elementSpec>
 
-        <!--creation [header]-->
+        <!-\-creation [header]-\->
         <elementSpec ident="creation" module="header" mode="change">
           <attList>
 
@@ -1744,13 +3079,13 @@
           <exemplum>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <creation>
-                <date type="sortDate" when-iso="1922-11-30">30.11.1922</date>
+                <date type="sortDate" subtype="received" when-iso="1922-11-30">30.11.1922</date>
               </creation>
             </egXML>
           </exemplum>
         </elementSpec>
 
-        <!--date [core]-->
+        <!-\-date [core]-\->
         <elementSpec ident="date" module="core" mode="change">
           <attList>
 
@@ -1774,9 +3109,6 @@
             <attDef ident="notAfter" mode="delete"/>
             <attDef ident="from" mode="delete"/>
             <attDef ident="to" mode="delete"/>
-
-            <!-- @when-iso usw sind drin -->
-
             <attDef ident="when-custom" mode="delete"/>
             <attDef ident="notBefore-custom" mode="delete"/>
             <attDef ident="notAfter-custom" mode="delete"/>
@@ -1784,12 +3116,13 @@
             <attDef ident="to-custom" mode="delete"/>
             <attDef ident="datingPoint" mode="delete"/>
             <attDef ident="datingMethod" mode="delete"/>
-
-            <attDef ident="when-iso" mode="change" usage="opt"/>
+            <attDef ident="when-iso" mode="change" usage="rec">
+              <datatype>
+                <dataRef key="teidata.temporal.iso"/>
+              </datatype>
+            </attDef>
             <attDef ident="notBefore-iso" mode="change" usage="opt"/>
             <attDef ident="notAfter-iso" mode="change" usage="opt"/>
-
-            <!-- @type, @subtype -->
             <attDef ident="type" mode="change" usage="rec">
               <valList mode="replace" type="closed">
                 <valItem ident="sortDate">
@@ -1797,15 +3130,14 @@
                 </valItem>
               </valList>
             </attDef>
-            
             <attDef ident="subtype" mode="change" usage="rec">
-              <valList>
-              <valItem ident="produced">
-                <desc>Klassifizierung des Datums (produziert)</desc>
-              </valItem>
-              <valItem ident="received">
-                <desc>Klassifizierung des Datums (empfangen)</desc>
-              </valItem>
+              <valList type="closed" mode="replace">
+                <valItem ident="produced">
+                  <desc>Klassifizierung des Datums (produziert)</desc>
+                </valItem>
+                <valItem ident="received">
+                  <desc>Klassifizierung des Datums (empfangen)</desc>
+                </valItem>
               </valList>
             </attDef>
 
@@ -1839,7 +3171,7 @@
           </exemplum>
         </elementSpec>
 
-        <!--textClass [header]-->
+        <!-\-textClass [header]-\->
         <elementSpec ident="textClass" module="header" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -1866,8 +3198,8 @@
           </exemplum>
         </elementSpec>
 
-        <!--catRef [header]-->
-        <!-- <elementSpec ident="catRef" module="header" mode="change">
+        <!-\-catRef [header]-\->
+        <!-\- <elementSpec ident="catRef" module="header" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
             <attDef ident="n" mode="delete"/>
@@ -1903,7 +3235,7 @@
               <catRef target="https://vocabs.acdh.oeaw.ac.at/legalkraus-doctypes/v1.0/D.J.AKS"/>
             </egXML>
           </exemplum>
-        </elementSpec> -->
+        </elementSpec> -\->
         
         <elementSpec ident="classCode" module="header" mode="change">
           <attList>
@@ -1928,8 +3260,8 @@
             <attDef ident="change" mode="delete"/>
             <attDef ident="cert" mode="delete"/>
             <attDef ident="resp" mode="delete"/>
-            <attDef ident="source" mode="delete"/>
-            <attDef ident="scheme" mode="change">
+            <attDef ident="source" mode="change" usage="opt"/>
+            <attDef ident="scheme" mode="change" usage="req">
               <valList mode="replace" type="closed">
                 <valItem ident="https://vocabs.acdh.oeaw.ac.at/legalkraus-doctypes/v1.0/"/>
               </valList>
@@ -1942,7 +3274,7 @@
           </exemplum>
         </elementSpec>
 
-        <!--particDesc [corpus]-->
+        <!-\-particDesc [corpus]-\->
         <elementSpec ident="particDesc" module="corpus" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -1971,7 +3303,7 @@
           </attList>
         </elementSpec>
 
-        <!--person [namesdates]-->
+        <!-\-person [namesdates]-\->
         <elementSpec ident="person" module="namesdates" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -1999,10 +3331,12 @@
             <attDef ident="evidence" mode="delete"/>
             <attDef ident="instant" mode="delete"/>
             <attDef ident="sortKey" mode="delete"/>
+            <attDef ident="role" mode="change" usage="req"/>
+            <attDef ident="ref" mode="change" usage="req"/>
           </attList>
         </elementSpec>
 
-        <!--org [namesdates]-->
+        <!-\-org [namesdates]-\->
         <elementSpec ident="org" module="namesdates" mode="change">
           <attList>
             <attDef ident="xml:id" mode="change" usage="req">
@@ -2036,11 +3370,12 @@
             <attDef ident="evidence" mode="delete"/>
             <attDef ident="instant" mode="delete"/>
             <attDef ident="sortKey" mode="delete"/>
-            <!-- <attDef ident="role" mode="change"></attDef> -->
+           <attDef ident="role" mode="change" usage="req"/> 
+            <attDef ident="ref" mode="change" usage="req"/>
           </attList>
         </elementSpec>
 
-        <!--correspDesc [header]-->
+        <!-\-correspDesc [header]-\->
         <elementSpec ident="correspDesc" module="header" mode="change">
           <attList>
             <attDef ident="default" mode="delete"/>
@@ -2073,7 +3408,7 @@
           </attList>
         </elementSpec>
 
-        <!--correspAction [header]-->
+        <!-\-correspAction [header]-\->
         <elementSpec ident="correspAction" module="header" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -2113,43 +3448,52 @@
           </attList>
         </elementSpec>
         
-        <!-- persName -->
-        <elementSpec ident="persName" module="header" mode="change">
+        <!-\- persName -\->
+        <elementSpec ident="persName" module="namesdates" mode="change">
           <attList>
-            <attDef ident="ref" mode="change" usage="rec"/>
+            <attDef ident="ref" mode="change" usage="req"/>
+            <attDef ident="role" mode="change" usage="rec"/>
           </attList>
         </elementSpec>
         
-        <!-- roleName -->
-        <elementSpec ident="roleName" module="header" mode="change">
+        <!-\- orgName -\->
+        <elementSpec ident="orgName" module="namesdates" mode="change">
           <attList>
-            <attDef ident="ref" mode="change" usage="rec"/>
+            <attDef ident="ref" mode="change" usage="req"/>
+            <attDef ident="role" mode="change" usage="rec"/>
           </attList>
         </elementSpec>
         
-        <!-- placeName -->
-        <elementSpec ident="placeName" module="header" mode="change">
+        <!-\- listPerson -\->
+        <elementSpec ident="listPerson" module="namesdates" mode="change"/>
+        
+        <!-\- listOrg -\->
+        <elementSpec ident="listOrg" module="namesdates" mode="change"/>
+        
+        <!-\- roleName -\->
+        <elementSpec ident="roleName" module="namesdates" mode="change">
           <attList>
-            <attDef ident="ref" mode="change" usage="rec"/>
+            <attDef ident="ref" mode="change" usage="req"/>
           </attList>
         </elementSpec>
-        
-        <!--noteGrp [header]-->
-        <elementSpec ident="noteGrp" module="header" mode="change">
-          <valList mode="replace" type="closed">
-            <valItem ident="subject">
-              <desc>Betreff</desc>
-            </valItem>
-            <valItem ident="dictation">
-              <desc>Diktatsigle</desc>
-            </valItem>
-            <valItem ident="appendix">
-              <desc>Anhang</desc>
-            </valItem>
-          </valList>
+                        
+        <!-\-noteGrp [core]-\->
+        <elementSpec ident="noteGrp" module="core" mode="change">
+          <attList>
+            <attDef ident="type" mode="replace" usage="rec">
+              <valList mode="replace" type="closed">
+                <valItem ident="subject">
+                  <desc>Betreff</desc>
+                </valItem>
+                <valItem ident="dictation">
+                  <desc>Diktatsigle</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
         </elementSpec>
 
-        <!--rs [core]-->
+        <!-\-rs [core]-\->
 
         <elementSpec ident="rs" module="core" mode="change">
           <attList>
@@ -2172,14 +3516,13 @@
                 </valItem>
               </valList>
             </attDef>
-            <attDef ident="ana" mode="replace" usage="req">
+            <attDef ident="ana" mode="replace" usage="opt">
               <valList mode="replace" type="closed">
                 <valItem ident="#address">
                   <desc>Adresse</desc>
                 </valItem>
               </valList>
             </attDef>
-            
             <attDef ident="xml:id" mode="delete"/>
             <attDef ident="n" mode="delete"/>
             <attDef ident="xml:lang" mode="delete"/>
@@ -2210,9 +3553,7 @@
           </attList>
         </elementSpec>
 
-
-
-        <!--handNotes [transcr]-->
+        <!-\-handNotes [transcr]-\->
         <elementSpec ident="handNotes" module="transcr" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -2240,7 +3581,7 @@
           </attList>
         </elementSpec>
 
-        <!--handNote [header]-->
+        <!-\-handNote [header]-\->
         <elementSpec ident="handNote" module="header" mode="change">
           <attList>
             <attDef ident="xml:id" mode="change" usage="req">
@@ -2266,19 +3607,19 @@
             <attDef ident="ana" mode="delete"/>
             <attDef ident="facs" mode="delete"/>
             <attDef ident="change" mode="delete"/>
-            <attDef ident="cert" mode="delete"/>
-            <attDef ident="resp" mode="delete"/>
-            <attDef ident="source" mode="delete"/>
+            <attDef ident="cert" mode="change" usage="rec"/>
+            <attDef ident="resp" mode="change" usage="req"/>
+            <attDef ident="source" mode="change" usage="rec"/>
             <attDef ident="scribe" mode="delete"/>
             <attDef ident="scribeRef" mode="change" usage="rec"/>
-            <!-- <attDef ident="script" mode="delete"/> -->
+             <attDef ident="script" mode="delete"/> 
             <attDef ident="scriptRef" mode="delete"/>
-            <!-- <attDef ident="medium" mode="delete"/> -->
+             <attDef ident="medium" mode="change" usage="rec"/> 
             <attDef ident="scope" mode="delete"/>
           </attList>
         </elementSpec>
 
-        <!--revisionDesc [header]-->
+        <!-\-revisionDesc [header]-\->
         <elementSpec ident="revisionDesc" module="header" mode="change">
           <attList>
 
@@ -2295,8 +3636,6 @@
             <attDef ident="cert" mode="delete"/>
             <attDef ident="resp" mode="delete"/>
             <attDef ident="source" mode="delete"/>
-
-
             <attDef ident="status" mode="change" usage="req">
               <valList mode="replace" type="closed">
                 <valItem ident="done">
@@ -2310,7 +3649,7 @@
           </attList>
         </elementSpec>
 
-        <!--change [header]-->
+        <!-\-change [header]-\->
         <elementSpec ident="change" module="header" mode="change">
 
           <attList>
@@ -2344,8 +3683,7 @@
             <attDef ident="cert" mode="delete"/>
             <attDef ident="resp" mode="delete"/>
             <attDef ident="source" mode="delete"/>
-
-            <attDef ident="type" mode="change" usage="rec">
+            <attDef ident="type" mode="change" usage="req">
               <desc>Typ des Arbeitsschritts</desc>
               <valList mode="replace" type="closed">
                 <valItem ident="header_facsimile">
@@ -2368,7 +3706,6 @@
                 </valItem>
               </valList>
             </attDef>
-
             <attDef ident="subtype" mode="delete"/>
             <attDef ident="calendar" mode="delete"/>
             <attDef ident="period" mode="delete"/>
@@ -2377,13 +3714,11 @@
             <attDef ident="notAfter" mode="delete"/>
             <attDef ident="from" mode="delete"/>
             <attDef ident="to" mode="delete"/>
-            
             <attDef ident="when-iso" mode="change" usage="req">
               <datatype>
                 <dataRef key="teidata.temporal.iso"/>
               </datatype>
             </attDef>
-            
             <attDef ident="notBefore-iso" mode="delete"/>
             <attDef ident="notAfter-iso" mode="delete"/>
             <attDef ident="from-iso" mode="delete"/>
@@ -2406,7 +3741,7 @@
 
         </elementSpec>
 
-        <!--facsimile [transcr]-->
+        <!-\-facsimile [transcr]-\->
         <elementSpec ident="facsimile" module="transcr" mode="change">
           <attList>
             <attDef ident="xml:id" mode="change" usage="req"/>
@@ -2432,10 +3767,17 @@
             <attDef ident="exclude" mode="delete"/>
             <attDef ident="select" mode="delete"/>
             <attDef ident="ana" mode="delete"/>
+            <attDef ident="type" mode="change" usage="opt">
+              <valList type="closed" mode="replace">
+                <valItem ident="further-witnesses">
+                  <desc>weitere Textzeugen</desc>
+                </valItem>
+              </valList>
+            </attDef>
           </attList>
         </elementSpec>
 
-        <!--surfaceGrp [transcr]-->
+        <!-\-surfaceGrp [transcr]-\->
         <elementSpec ident="surfaceGrp" module="transcr" mode="change">
           <attList>
             <attDef ident="xml:id" mode="change" usage="req"/>
@@ -2454,7 +3796,7 @@
             <attDef ident="decls" mode="delete"/>
             <attDef ident="type" mode="delete"/>
             <attDef ident="subtype" mode="delete"/>
-            <!-- <attDef ident="corresp" mode="delete"/> -->
+             <attDef ident="corresp" mode="delete"/> 
             <attDef ident="synch" mode="delete"/>
             <attDef ident="sameAs" mode="delete"/>
             <attDef ident="copyOf" mode="delete"/>
@@ -2463,14 +3805,10 @@
             <attDef ident="exclude" mode="delete"/>
             <attDef ident="select" mode="delete"/>
             <attDef ident="ana" mode="delete"/>
-
-            <!-- @corresp fehlt; da muss ich noch ein Modul einbinden, damit ich @ana und @corresp global bekomme 
-            
-            -->
           </attList>
         </elementSpec>
 
-        <!--surface [transcr]-->
+        <!-\-surface [transcr]-\->
         <elementSpec ident="surface" module="transcr" mode="change">
           <attList>
             <attDef ident="xml:id" mode="change" usage="req"/>
@@ -2506,7 +3844,7 @@
             <attDef ident="subtype" mode="delete"/>
             <attDef ident="attachment" mode="delete"/>
             <attDef ident="flipping" mode="delete"/>
-            <!-- <attDef ident="corresp" mode="delete"/> -->
+             <attDef ident="corresp" mode="delete"/> 
             <attDef ident="synch" mode="delete"/>
             <attDef ident="sameAs" mode="delete"/>
             <attDef ident="copyOf" mode="delete"/>
@@ -2520,7 +3858,7 @@
           
         </elementSpec>
 
-        <!--graphic [core]-->
+        <!-\-graphic [core]-\->
         <elementSpec ident="graphic" module="core" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -2567,7 +3905,7 @@
           </attList>
         </elementSpec>
 
-        <!--text [textstructure]-->
+        <!-\-text [textstructure]-\->
         <elementSpec ident="text" module="textstructure" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -2582,7 +3920,7 @@
             <attDef ident="change" mode="delete"/>
             <attDef ident="cert" mode="delete"/>
             <attDef ident="resp" mode="delete"/>
-            <!-- source -->
+            <!-\- source -\->
             <attDef ident="decls" mode="delete"/>
             <attDef ident="type" mode="delete"/>
             <attDef ident="subtype" mode="delete"/>
@@ -2590,7 +3928,7 @@
           </attList>
         </elementSpec>
 
-        <!--body [textstructure]-->
+        <!-\-body [textstructure]-\->
         <elementSpec ident="body" module="textstructure" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -2613,48 +3951,11 @@
           </attList>
         </elementSpec>
 
-        <!--opener [textstructure]-->
-        <elementSpec ident="opener" module="textstructure" mode="change">
-          <attList>
-            <attDef ident="xml:id" mode="change" usage="req"/>
-            <attDef ident="n" mode="delete"/>
-            <attDef ident="xml:lang" mode="delete"/>
-            <attDef ident="xml:base" mode="delete"/>
-            <attDef ident="xml:space" mode="delete"/>
-            <attDef ident="rend" mode="delete"/>
-            <attDef ident="style" mode="delete"/>
-            <attDef ident="rendition" mode="delete"/>
-            <attDef ident="facs" mode="delete"/>
-            <attDef ident="change" mode="delete"/>
-            <attDef ident="cert" mode="delete"/>
-            <attDef ident="resp" mode="delete"/>
-            <attDef ident="source" mode="delete"/>
-            <attDef ident="hand" mode="delete"/>
-          </attList>
-          <exemplum>
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <opener>
-                <pb n="1" facs="#D_000002-002-000-facs002-l001-p001"/>
-                <dateline>
-                  <lb xml:id="uuid_dae436d5-37af-4aa7-a436-d537af9aa7ff"/><date
-                    when-iso="1922-11-30">30. November <lb
-                      xml:id="uuid_756f53a6-b252-4f1b-af53-a6b2527f1b8b"/><add
-                      hand="#D_000002-002-000-hand01">1922</add></date>
-                </dateline>
-                <lb xml:id="uuid_d52e8c20-824b-4837-ae8c-20824b7837bf"/>An den <rs type="person"
-                  >verantwortlichen Redakteur der <rs type="institution">„Reichspost“</rs></rs>
-                <lb xml:id="uuid_11a18a50-af1e-46ae-a18a-50af1ea6aeda"/><rs type="place">Wien VIII.
-                  Strozzigasse</rs>
-              </opener>
-            </egXML>
-          </exemplum>
-        </elementSpec>
-
-        <!--pb [core]-->
+        <!-\-pb [core]-\->
         <elementSpec ident="pb" module="core" mode="change">
           <attList>
             <attDef ident="xml:id" mode="change" usage="req"/>
-            <!-- <attDef ident="n" mode="delete"/> -->
+             <attDef ident="n" mode="change" usage="req"/> 
             <attDef ident="xml:lang" mode="delete"/>
             <attDef ident="xml:base" mode="delete"/>
             <attDef ident="xml:space" mode="delete"/>
@@ -2671,13 +3972,7 @@
             <attDef ident="ed" mode="delete"/>
             <attDef ident="edRef" mode="delete"/>
             <attDef ident="spanTo" mode="delete"/>
-            <attDef ident="break" mode="change" usage="opt">
-              <valList type="closed" mode="replace">
-                <valItem ident="no">
-                  <desc>Seitenumbruch im Wort</desc>
-                </valItem>
-              </valList>
-            </attDef>
+            <attDef ident="break" mode="delete"/>
             <attDef ident="corresp" mode="delete"/>
             <attDef ident="synch" mode="delete"/>
             <attDef ident="sameAs" mode="delete"/>
@@ -2690,26 +3985,7 @@
           </attList>
         </elementSpec>
 
-        <!--dateline [textstructure]-->
-        <elementSpec ident="dateline" module="textstructure" mode="change">
-          <attList>
-            <attDef ident="xml:id" mode="change" usage="req"/>
-            <attDef ident="n" mode="delete"/>
-            <attDef ident="xml:lang" mode="delete"/>
-            <attDef ident="xml:base" mode="delete"/>
-            <attDef ident="xml:space" mode="delete"/>
-            <attDef ident="rend" mode="delete"/>
-            <attDef ident="style" mode="delete"/>
-            <attDef ident="rendition" mode="delete"/>
-            <attDef ident="facs" mode="delete"/>
-            <attDef ident="change" mode="delete"/>
-            <attDef ident="cert" mode="delete"/>
-            <attDef ident="resp" mode="delete"/>
-            <attDef ident="source" mode="delete"/>
-          </attList>
-        </elementSpec>
-
-        <!--lb [core]-->
+        <!-\-lb [core]-\->
         <elementSpec ident="lb" module="core" mode="change">
           <attList>
             <attDef ident="xml:id" mode="change" usage="req">
@@ -2753,7 +4029,7 @@
           </attList>
         </elementSpec>
 
-        <!--add [core]-->
+        <!-\-add [core]-\->
         <elementSpec ident="add" module="core" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -2783,8 +4059,8 @@
             <attDef ident="seq" mode="delete"/>
             <attDef ident="evidence" mode="delete"/>
             <attDef ident="instant" mode="delete"/>
-            <!-- <attDef ident="hand" mode="delete"/>  -->
-            <!-- <attDef ident="place" mode="delete"/> -->
+           <attDef ident="hand" mode="change" usage="opt"/>  
+           <attDef ident="place" mode="delete"/> 
             <attDef ident="type" mode="delete"/>
             <attDef ident="subtype" mode="delete"/>
             <attDef ident="unit" mode="delete"/>
@@ -2800,7 +4076,7 @@
           </attList>
         </elementSpec>
 
-        <!--p [core]-->
+        <!-\-p [core]-\->
         <elementSpec ident="p" module="core" mode="change">
           <attList>
             <attDef ident="xml:id" mode="change" usage="req">
@@ -2835,7 +4111,7 @@
           </attList>
         </elementSpec>
 
-        <!--hi [core]-->
+        <!-\-hi [core]-\->
         <elementSpec ident="hi" module="core" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -2843,7 +4119,7 @@
             <attDef ident="xml:lang" mode="delete"/>
             <attDef ident="xml:base" mode="delete"/>
             <attDef ident="xml:space" mode="delete"/>
-            <attDef ident="rend" mode="change">
+            <attDef ident="rend" mode="change" usage="req">
               <valList type="closed" mode="replace">
                 <valItem ident="underlined">
                   <desc>Unterstreichung</desc>
@@ -2875,12 +4151,12 @@
             <attDef ident="cert" mode="delete"/>
             <attDef ident="resp" mode="delete"/>
             <attDef ident="source" mode="delete"/>
-            <!-- <attDef ident="hand" mode="change"/> -->
+            <attDef ident="hand" mode="change"/> 
             
           </attList>
         </elementSpec>
 
-        <!--quote [core]-->
+        <!-\-quote [core]-\->
         <elementSpec ident="quote" module="core" mode="change">
           <attList>
             <attDef ident="xml:id" mode="change" usage="req">
@@ -2916,13 +4192,13 @@
           </attList>
         </elementSpec>
 
-        <!--q [core]-->
+        <!-\-q [core]-\->
         <elementSpec ident="q" module="core" mode="change">
           <attList>
-            <attDef ident="who" mode="change"/>
-            <attDef ident="type" mode="change">
+            <attDef ident="who" mode="change" usage="req"/>
+            <attDef ident="type" mode="change" usage="req">
               <valList type="closed" mode="replace">
-                <valItem ident="written">
+                <valItem ident="spoken">
                   <desc>wörtliche Rede</desc>
                 </valItem>
               </valList>
@@ -2932,8 +4208,7 @@
             <attDef ident="xml:lang" mode="delete"/>
             <attDef ident="xml:base" mode="delete"/>
             <attDef ident="xml:space" mode="delete"/>
-            <!-- <attDef ident="rend" mode="change">
-            </attDef> -->
+             <attDef ident="rend" mode="change"/>
             <attDef ident="style" mode="delete"/>
             <attDef ident="rendition" mode="delete"/>
             <attDef ident="corresp" mode="delete"/>
@@ -2954,15 +4229,15 @@
           </attList>
         </elementSpec>
 
-        <!--del [core]-->
+        <!-\-del [core]-\->
         <elementSpec ident="del" module="core" mode="change">
           <attList>
-            <attDef ident="xml:id" mode="delete"/>
+            <attDef ident="xml:id" mode="change" usage="opt"/>
             <attDef ident="n" mode="delete"/>
             <attDef ident="xml:lang" mode="delete"/>
             <attDef ident="xml:base" mode="delete"/>
             <attDef ident="xml:space" mode="delete"/>
-            <!-- <attDef ident="rend" mode="delete"/> -->
+             <attDef ident="rend" mode="delete"/> 
             <attDef ident="style" mode="delete"/>
             <attDef ident="rendition" mode="delete"/>
             <attDef ident="corresp" mode="delete"/>
@@ -2984,7 +4259,7 @@
             <attDef ident="seq" mode="delete"/>
             <attDef ident="evidence" mode="delete"/>
             <attDef ident="instant" mode="delete"/>
-            <!-- <attDef ident="hand" mode="change"/> -->
+             <attDef ident="hand" mode="change" usage="req"/> 
             <attDef ident="type" mode="delete"/>
             <attDef ident="subtype" mode="delete"/>
             <attDef ident="unit" mode="delete"/>
@@ -3000,10 +4275,10 @@
           </attList>
         </elementSpec>
 
-        <!--subst [transcr]-->
+        <!-\-subst [transcr]-\->
         <elementSpec ident="subst" module="transcr" mode="change">
           <attList>
-            <attDef ident="xml:id" mode="delete"/>
+            <attDef ident="xml:id" mode="change" usage="opt"/>
             <attDef ident="n" mode="delete"/>
             <attDef ident="xml:lang" mode="delete"/>
             <attDef ident="xml:base" mode="delete"/>
@@ -3030,7 +4305,7 @@
             <attDef ident="seq" mode="delete"/>
             <attDef ident="evidence" mode="delete"/>
             <attDef ident="instant" mode="delete"/>
-            <!-- <attDef ident="hand" mode="delete"/> -->
+            <attDef ident="hand" mode="change" usage="req"/> 
             <attDef ident="unit" mode="delete"/>
             <attDef ident="quantity" mode="delete"/>
             <attDef ident="extent" mode="delete"/>
@@ -3043,8 +4318,14 @@
             <attDef ident="confidence" mode="delete"/>
           </attList>
         </elementSpec>
+        
+        <elementSpec ident="substJoin" module="transcr" mode="change">
+          <attList>
+            <attDef ident="target" mode="change" usage="req"/>
+          </attList>
+        </elementSpec>
 
-        <!--gap [core]-->
+        <!-\-gap [core]-\->
         <elementSpec ident="gap" module="core" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -3077,7 +4358,7 @@
             <attDef ident="instant" mode="delete"/>
             <attDef ident="unit" mode="delete"/>
             <attDef ident="quantity" mode="delete"/>
-            <attDef ident="extent" mode="delete"/>
+            <attDef ident="extent" mode="change" usage="req"/>
             <attDef ident="precision" mode="delete"/>
             <attDef ident="scope" mode="delete"/>
             <attDef ident="atLeast" mode="delete"/>
@@ -3085,8 +4366,11 @@
             <attDef ident="min" mode="delete"/>
             <attDef ident="max" mode="delete"/>
             <attDef ident="confidence" mode="delete"/>
-            <attDef ident="reason" mode="change">
+            <attDef ident="reason" mode="change" usage="req">
               <valList mode="replace" type="closed">
+                <valItem ident="cancelled">
+                  <desc>abgebrochen</desc>
+                </valItem>
                 <valItem ident="deleted">
                   <desc>getilgt</desc>
                 </valItem>
@@ -3102,48 +4386,7 @@
           </attList>
         </elementSpec>
 
-        <!--supplied [transcr]-->
-        <elementSpec ident="supplied" module="transcr" mode="change">
-          <attList>
-            <attDef ident="xml:id" mode="delete"/>
-            <attDef ident="n" mode="delete"/>
-            <attDef ident="xml:lang" mode="delete"/>
-            <attDef ident="xml:base" mode="delete"/>
-            <attDef ident="xml:space" mode="delete"/>
-            <attDef ident="rend" mode="delete"/>
-            <attDef ident="style" mode="delete"/>
-            <attDef ident="rendition" mode="delete"/>
-            <attDef ident="corresp" mode="delete"/>
-            <attDef ident="synch" mode="delete"/>
-            <attDef ident="sameAs" mode="delete"/>
-            <attDef ident="copyOf" mode="delete"/>
-            <attDef ident="next" mode="delete"/>
-            <attDef ident="prev" mode="delete"/>
-            <attDef ident="exclude" mode="delete"/>
-            <attDef ident="select" mode="delete"/>
-            <attDef ident="ana" mode="delete"/>
-            <attDef ident="facs" mode="delete"/>
-            <attDef ident="change" mode="delete"/>
-            <attDef ident="cert" mode="delete"/>
-            <attDef ident="resp" mode="delete"/>
-            <attDef ident="source" mode="delete"/>
-            <attDef ident="evidence" mode="delete"/>
-            <attDef ident="instant" mode="delete"/>
-            <attDef ident="unit" mode="delete"/>
-            <attDef ident="quantity" mode="delete"/>
-            <attDef ident="extent" mode="delete"/>
-            <attDef ident="precision" mode="delete"/>
-            <attDef ident="scope" mode="delete"/>
-            <attDef ident="atLeast" mode="delete"/>
-            <attDef ident="atMost" mode="delete"/>
-            <attDef ident="min" mode="delete"/>
-            <attDef ident="max" mode="delete"/>
-            <attDef ident="confidence" mode="delete"/>
-            <attDef ident="reason" mode="delete"/>
-          </attList>
-        </elementSpec>
-
-        <!--note [core]-->
+        <!-\-note [core]-\->
         <elementSpec ident="note" module="core" mode="change">
           <attList>
            <attDef ident="xml:id" mode="change" usage="opt"/>
@@ -3151,7 +4394,7 @@
             <attDef ident="xml:lang" mode="delete"/>
             <attDef ident="xml:base" mode="delete"/>
             <attDef ident="xml:space" mode="delete"/>
-            <attDef ident="rend" mode="delete"/>
+            <attDef ident="rend" mode="change" usage="opt"/>
             <attDef ident="style" mode="delete"/>
             <attDef ident="rendition" mode="delete"/>
             <attDef ident="corresp" mode="delete"/>
@@ -3166,138 +4409,42 @@
             <attDef ident="facs" mode="delete"/>
             <attDef ident="change" mode="delete"/>
             <attDef ident="cert" mode="delete"/>
-            <attDef ident="resp" mode="change" usage="rec">
+            <attDef ident="resp" mode="change" usage="opt">
               <valList type="closed" mode="replace">
                 <valItem ident="law-firm">
                   <desc>Samek-Kanzlei</desc>
                 </valItem>
               </valList>
             </attDef>
-            <attDef ident="source" mode="change"/>
-            <!-- <attDef ident="place" mode="delete"/> -->
+            <attDef ident="source" mode="change" usage="opt"/>
+           <attDef ident="place" mode="delete"/> 
             <attDef ident="targetLang" mode="delete"/>
             <attDef ident="target" mode="delete"/>
             <attDef ident="evaluate" mode="delete"/>
-            <attDef ident="type" mode="change" usage="rec">
+            <attDef ident="type" mode="change" usage="opt">
               <valList type="closed" mode="replace">
                 <valItem ident="paratext">
                   <desc>Paratext</desc>
                 </valItem>
-              <valItem ident="intertext">
-                <desc>Intertext</desc>
-              </valItem>
               <valItem ident="subject">
                 <desc>Betreff</desc>
               </valItem>
               <valItem ident="dictation">
                 <desc>Diktatsigle</desc>
               </valItem>
-              <valItem ident="appendix">
-                <desc>Anlage</desc>
-              </valItem>  
+              <valItem ident="marginal">
+                <desc>Marginalie</desc>
+              </valItem>
               </valList>
             </attDef>
-            <!-- <attDef ident="subtype" mode="delete"/> -->
-            <!-- <attDef ident="hand" mode="delete"/> -->
+             <attDef ident="subtype" mode="delete"/> 
+             <attDef ident="hand" mode="change" usage="opt"/> 
             <attDef ident="anchored" mode="delete"/>
             <attDef ident="targetEnd" mode="delete"/>
           </attList>
         </elementSpec>
-       
-        <!-- table [figures] -->
-        <elementSpec ident="table" module="figures" mode="change">
-          <attList>
-            <attDef ident="xml:id" mode="delete"/>
-            <attDef ident="n" mode="delete"/>
-            <attDef ident="xml:lang" mode="delete"/>
-            <attDef ident="xml:base" mode="delete"/>
-            <attDef ident="xml:space" mode="delete"/>
-            <attDef ident="rend" mode="delete"/>
-            <attDef ident="style" mode="delete"/>
-            <attDef ident="rendition" mode="delete"/>
-            <attDef ident="corresp" mode="delete"/>
-            <attDef ident="synch" mode="delete"/>
-            <attDef ident="sameAs" mode="delete"/>
-            <attDef ident="copyOf" mode="delete"/>
-            <attDef ident="next" mode="delete"/>
-            <attDef ident="prev" mode="delete"/>
-            <attDef ident="exclude" mode="delete"/>
-            <attDef ident="select" mode="delete"/>
-            <attDef ident="ana" mode="delete"/>
-            <attDef ident="facs" mode="delete"/>
-            <attDef ident="change" mode="delete"/>
-            <attDef ident="cert" mode="delete"/>
-            <attDef ident="resp" mode="delete"/>
-            <attDef ident="source" mode="delete"/>
-            <attDef ident="type" mode="delete"/>
-            <attDef ident="subtype" mode="delete"/>
-            <!-- rows -->
-            <!-- cols -->
-          </attList>
-        </elementSpec>
-        
-        <!-- row [figures] -->
-        <elementSpec ident="row" module="figures" mode="change">
-          <attList>
-            <attDef ident="xml:id" mode="delete"/>
-            <attDef ident="n" mode="delete"/>
-            <attDef ident="xml:lang" mode="delete"/>
-            <attDef ident="xml:base" mode="delete"/>
-            <attDef ident="xml:space" mode="delete"/>
-            <attDef ident="rend" mode="delete"/>
-            <attDef ident="style" mode="delete"/>
-            <attDef ident="rendition" mode="delete"/>
-            <attDef ident="corresp" mode="delete"/>
-            <attDef ident="synch" mode="delete"/>
-            <attDef ident="sameAs" mode="delete"/>
-            <attDef ident="copyOf" mode="delete"/>
-            <attDef ident="next" mode="delete"/>
-            <attDef ident="prev" mode="delete"/>
-            <attDef ident="exclude" mode="delete"/>
-            <attDef ident="select" mode="delete"/>
-            <attDef ident="ana" mode="delete"/>
-            <attDef ident="facs" mode="delete"/>
-            <attDef ident="change" mode="delete"/>
-            <attDef ident="cert" mode="delete"/>
-            <attDef ident="resp" mode="delete"/>
-            <attDef ident="source" mode="delete"/>
-            <attDef ident="role" mode="delete"/>
-            <!-- <attDef ident="rows" mode="delete"/> -->
-            <!-- <attDef ident="cols" mode="delete"/> -->
-            </attList>
-        </elementSpec>
-        
-        <!-- cell [figures] -->
-        <elementSpec ident="cell" module="figures" mode="change">
-          <attList>
-            <attDef ident="xml:id" mode="delete"/>
-          <attDef ident="n" mode="delete"/>
-          <attDef ident="xml:lang" mode="delete"/>
-          <attDef ident="xml:base" mode="delete"/>
-          <attDef ident="xml:space" mode="delete"/>
-          <attDef ident="rend" mode="delete"/>
-          <attDef ident="style" mode="delete"/>
-          <attDef ident="rendition" mode="delete"/>
-          <attDef ident="corresp" mode="delete"/>
-          <attDef ident="synch" mode="delete"/>
-          <attDef ident="sameAs" mode="delete"/>
-          <attDef ident="copyOf" mode="delete"/>
-          <attDef ident="next" mode="delete"/>
-          <attDef ident="prev" mode="delete"/>
-          <attDef ident="exclude" mode="delete"/>
-          <attDef ident="select" mode="delete"/>
-          <attDef ident="ana" mode="delete"/>
-          <attDef ident="facs" mode="delete"/>
-          <attDef ident="change" mode="delete"/>
-          <attDef ident="cert" mode="delete"/>
-          <attDef ident="resp" mode="delete"/>
-          <attDef ident="source" mode="delete"/>
-          <attDef ident="role" mode="delete"/>
-          <!-- rows, @cols-->
-          </attList>
-        </elementSpec>
-        
-        <!-- keywords -->
+               
+        <!-\- keywords -\->
         <elementSpec ident="keywords" module="header" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -3322,11 +4469,11 @@
             <attDef ident="cert" mode="delete"/>
             <attDef ident="resp" mode="delete"/>
             <attDef ident="source" mode="delete"/>
-            <!-- scheme -->
+            <!-\- scheme -\->
           </attList>
         </elementSpec>
         
-        <!-- term -->
+        <!-\- term -\->
         <elementSpec ident="term" module="core" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -3350,7 +4497,7 @@
             <attDef ident="change" mode="delete"/>
             <attDef ident="cert" mode="delete"/>
             <attDef ident="resp" mode="delete"/>
-            <attDef ident="source" mode="delete"/>
+            <attDef ident="source" mode="change" usage="opt"/>
             <attDef ident="decls" mode="delete"/>
             <attDef ident="targetLang" mode="delete"/>
             <attDef ident="target" mode="delete"/>
@@ -3365,7 +4512,7 @@
         </elementSpec>
         
         
-        <!-- langUsage -->
+        <!-\- langUsage -\->
         <elementSpec ident="langUsage" module="header" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -3394,7 +4541,7 @@
           </attList>
         </elementSpec>
         
-        <!-- language -->
+        <!-\- language -\->
         <elementSpec ident="language" module="header" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -3428,35 +4575,20 @@
           </attList>
         </elementSpec>
         
-        
+        <!-\- address -\->
         <elementSpec ident="address" module="core" mode="change">
-          <attList>
-            <attDef ident="xml:id" mode="delete"/>
-            <attDef ident="n" mode="delete"/>
-            <attDef ident="xml:lang" mode="delete"/>
-            <attDef ident="xml:base" mode="delete"/>
-            <attDef ident="xml:space" mode="delete"/>
-            <attDef ident="rend" mode="delete"/>
-            <attDef ident="style" mode="delete"/>
-            <attDef ident="rendition" mode="delete"/>
-            <attDef ident="corresp" mode="delete"/>
-            <attDef ident="synch" mode="delete"/>
-            <attDef ident="sameAs" mode="delete"/>
-            <attDef ident="copyOf" mode="delete"/>
-            <attDef ident="next" mode="delete"/>
-            <attDef ident="prev" mode="delete"/>
-            <attDef ident="exclude" mode="delete"/>
-            <attDef ident="select" mode="delete"/>
-            <attDef ident="ana" mode="delete"/>
-            <attDef ident="facs" mode="delete"/>
-            <attDef ident="change" mode="delete"/>
-            <attDef ident="cert" mode="delete"/>
-            <attDef ident="resp" mode="delete"/>
-            <attDef ident="source" mode="delete"/>
-          </attList>
+            <attList>
+              <attDef ident="ana" mode="change" usage="req">
+                <valList mode="replace" type="closed">
+                  <valItem ident="#address">
+                    <desc>Adresse</desc>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
         </elementSpec>
         
-        <!-- street  -->
+        <!-\- street  -\->
         <elementSpec ident="street" module="core" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -3481,10 +4613,11 @@
             <attDef ident="cert" mode="delete"/>
             <attDef ident="resp" mode="delete"/>
             <attDef ident="source" mode="delete"/>
+            <attDef ident="ref" mode="change" usage="req"/>
           </attList>
         </elementSpec>
         
-        <!-- postCode -->
+        <!-\- postCode -\->
         <elementSpec ident="postCode" module="core" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -3512,7 +4645,7 @@
           </attList>
         </elementSpec>
         
-        <!-- settlement -->
+        <!-\- settlement -\->
         <elementSpec ident="settlement" module="namesdates" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -3540,7 +4673,7 @@
             <attDef ident="role" mode="delete"/>
             <attDef ident="nymRef" mode="delete"/>
             <attDef ident="key" mode="delete"/>
-            <attDef ident="ref" mode="delete"/>
+            <attDef ident="ref" mode="change" usage="req"/>
             <attDef ident="type" mode="delete"/>
             <attDef ident="subtype" mode="delete"/>
             <attDef ident="calendar" mode="delete"/>
@@ -3565,7 +4698,7 @@
           </attList>
         </elementSpec>
         
-        <!-- country -->
+        <!-\- country -\->
         <elementSpec ident="country" module="namesdates" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -3593,7 +4726,7 @@
             <attDef ident="role" mode="delete"/>
             <attDef ident="nymRef" mode="delete"/>
             <attDef ident="key" mode="delete"/>
-            <attDef ident="ref" mode="delete"/>
+            <attDef ident="ref" mode="change" usage="req"/>
             <attDef ident="type" mode="delete"/>
             <attDef ident="subtype" mode="delete"/>
             <attDef ident="calendar" mode="delete"/>
@@ -3618,7 +4751,7 @@
           </attList>
         </elementSpec>
         
-        <!-- pubPlace -->
+        <!-\- pubPlace -\->
         <elementSpec ident="pubPlace" module="core" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -3649,41 +4782,8 @@
             <attDef ident="ref" mode="delete"/>
           </attList>
         </elementSpec>
-        
-        
-        <!-- head [core] -->
-        <elementSpec ident="head" module="core" mode="change">
-          <attList>
-            <attDef ident="xml:id" mode="delete"/>
-            <attDef ident="n" mode="delete"/>
-            <attDef ident="xml:lang" mode="delete"/>
-            <attDef ident="xml:base" mode="delete"/>
-            <attDef ident="xml:space" mode="delete"/>
-            <attDef ident="rend" mode="delete"/>
-            <attDef ident="style" mode="delete"/>
-            <attDef ident="rendition" mode="delete"/>
-            <attDef ident="corresp" mode="delete"/>
-            <attDef ident="synch" mode="delete"/>
-            <attDef ident="sameAs" mode="delete"/>
-            <attDef ident="copyOf" mode="delete"/>
-            <attDef ident="next" mode="delete"/>
-            <attDef ident="prev" mode="delete"/>
-            <attDef ident="exclude" mode="delete"/>
-            <attDef ident="select" mode="delete"/>
-            <attDef ident="ana" mode="delete"/>
-            <attDef ident="facs" mode="delete"/>
-            <attDef ident="change" mode="delete"/>
-            <attDef ident="cert" mode="delete"/>
-            <attDef ident="resp" mode="delete"/>
-            <attDef ident="source" mode="delete"/>
-            <attDef ident="type" mode="delete"/>
-            <attDef ident="subtype" mode="delete"/>
-            <attDef ident="place" mode="delete"/>
-            <attDef ident="hand" mode="delete"/>
-          </attList>
-        </elementSpec>
-        
-        <!-- msDesc [header] -->
+                      
+        <!-\- msDesc [header] -\->
         <elementSpec ident="msDesc" module="header" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -3716,7 +4816,7 @@
           </attList>
         </elementSpec>    
         
-        <!-- stamp [header] -->
+        <!-\- stamp [msdescription] -\->
         <elementSpec ident="stamp" module="header" mode="change">
           <attList>
             <attDef ident="xml:id" mode="change" usage="req"/>
@@ -3740,7 +4840,7 @@
             <attDef ident="change" mode="delete"/>
             <attDef ident="cert" mode="delete"/>
             <attDef ident="resp" mode="delete"/>
-            <attDef ident="source" mode="change" usage="req"/>
+            <attDef ident="source" mode="change" usage="rec"/>
             <attDef ident="type" mode="delete"/>
             <attDef ident="subtype" mode="delete"/>
             <attDef ident="calendar" mode="delete"/>
@@ -3765,7 +4865,7 @@
           </attList>
         </elementSpec>
         
-        <!-- ab [header] -->
+        <!-\- ab [header] -\->
         <elementSpec ident="ab" module="linking" mode="change">
           <attList>
             <attDef ident="xml:id" mode="delete"/>
@@ -3789,11 +4889,17 @@
             <attDef ident="change" mode="delete"/>
             <attDef ident="cert" mode="delete"/>
             <attDef ident="resp" mode="delete"/>
-            <attDef ident="source" mode="delete"/>
+            <attDef ident="source" mode="change" usage="opt"/>
             <attDef ident="type" mode="change" usage="req">
               <valList type="closed" mode="replace">
                 <valItem ident="stamp">
                   <desc>Stempel</desc>
+                </valItem>
+                <valItem ident="materiality">
+                  <desc>Materialität</desc>
+                </valItem>
+                <valItem ident="appendix">
+                  <desc>Beilage (im Body)</desc>
                 </valItem>
               </valList>
             </attDef>
@@ -3803,9 +4909,132 @@
             <attDef ident="hand" mode="delete"/>
           </attList>
         </elementSpec>
+        
+        <!-\- div -\->
+        <elementSpec ident="div" module="textstructure">
+          <attList>
+            <attDef ident="xml:id" mode="change" usage="req"/>
+            <attDef ident="source" mode="change" usage="opt"/>
+            <attDef ident="type" mode="change" usage="req">
+              <valList mode="replace" type="closed">
+                <valItem ident="wit">
+                  <desc>weiterer Textzeuge</desc>
+                </valItem>
+                <valItem ident="doc">
+                  <desc>weiteres Dokument</desc>
+                </valItem>
+                <valItem ident="boehm-recostruction">
+                  <desc>Rekonstruktion Hermann Böhms</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        
+        <!-\- seg -\->
+        <elementSpec ident="seg" module="linking">
+          <attList>
+            <attDef ident="type" mode="change" usage="req"/>
+            <attDef ident="xml:id" mode="change" usage="req"/>
+          </attList>
+        </elementSpec>
+        
+        <!-\- metamark -\->
+        <elementSpec ident="metamark" module="transcr">
+          <attList>
+            <attDef ident="function" mode="change" usage="req">
+              <valList type="closed" mode="replace">
+                <valItem ident="transposition">
+                  <desc>Umstellung</desc>
+                </valItem>
+                <valItem ident="marginal">
+                  <desc>Marginalie</desc>
+                </valItem>
+              </valList>
+            </attDef>
+            <attDef ident="hand" mode="change" usage="req"/>
+            <attDef ident="target" mode="change" usage="req"/>
+            <attDef ident="rend" mode="change" usage="opt"/>
+          </attList>
+        </elementSpec>
+        
+        <!-\- listTranspose in profileDesc -\->
+        <elementSpec ident="listTranspose" module="transcr"/>
+        
+        <!-\- transpose in listTranspose -\->
+        <elementSpec ident="transpose" module="transcr">
+          <attList>
+            <attDef ident="hand" mode="change" usage="req"/>
+          </attList>
+        </elementSpec>
+        
+        <!-\- ptr -\->
+        <elementSpec ident="ptr" module="core">
+          <attList>
+            <attDef ident="target" mode="change" usage="req"/>
+            <attDef ident="type" mode="change" usage="opt">
+              <valList type="closed" mode="replace">
+                <valItem ident="transposition">
+                  <desc>Umstellung</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        
+        <!-\- restore -\->
+        <elementSpec ident="restore" module="linking">
+          <attList>
+            <attDef ident="hand" mode="change" usage="req"/>
+            <attDef ident="xml:id" mode="change" usage="opt"/>
+            <attDef ident="seq" mode="change" usage="opt"/>
+          </attList>
+        </elementSpec>
+        
+        <!-\- app -\->
+        <elementSpec ident="app" module="textcrit"/>
+        
+        <!-\- lem -\->
+        <elementSpec ident="lem" module="textcrit">
+          <attList>
+            <attDef ident="wit" mode="change" usage="req"/>
+            <attDef ident="hand" mode="change" usage="req"/>
+          </attList>
+        </elementSpec>
+        
+        <!-\- rdg -\->
+        <elementSpec ident="rdg" module="textcrit">
+          <attList>
+            <attDef ident="wit" mode="change" usage="req"/>
+            <attDef ident="hand" mode="change" usage="req"/>
+          </attList>
+        </elementSpec>
+        
+        <!-\- physDesc -\->
+        <elementSpec ident="physDesc" module="msdescription"/>
+        
+        <!-\- accMat -\->
+        <elementSpec ident="accMat" module="msdescription">
+          <attList>
+            <attDef ident="xml:id" mode="change" usage="req"/>
+            <attDef ident="source" mode="change" usage="req"/>
+          </attList>
+        </elementSpec>
+        
+        <!-\- objectType -\->
+        <elementSpec ident="objectType" module="msdescription">
+          <attList>
+            <attDef ident="ref" mode="change" usage="req">
+              <valList mode="replace" type="closed">
+                <valItem ident="https://vocabs.acdh.oeaw.ac.at/legalkraus-doctypes/v1.0/"/>
+              </valList>
+            </attDef>
+            <attDef ident="source" mode="change" usage="opt"/>
+          </attList>
+        </elementSpec>
 
-        <!-- Bsp -->
-        <!-- 
+        <!-\- Bsp -\->
+        <!-\- 
         <elementSpec ident="div" module="textstructure">
           <attList>
             <attDef ident="xml:ns" mode="change" usage="req"/>
@@ -3819,7 +5048,9 @@
             </attDef>
           </attList>
         </elementSpec>
-        -->
+        -\->
+        
+        ALTES SCHEMA -->
 
       </div>
 
