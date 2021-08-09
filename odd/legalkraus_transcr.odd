@@ -1477,7 +1477,7 @@
     <!-- element noteGrp -->
     <elementSpec ident="noteGrp" module="core" mode="change">
         <attList>
-            <attDef ident="type" mode="replace" usage="rec">
+            <attDef ident="type" mode="change" usage="rec">
                 <valList mode="replace" type="closed">
                     <valItem ident="subject">
                         <desc>Betreff</desc>
@@ -1577,7 +1577,7 @@
     <!-- element rs -->
     <elementSpec ident="rs" module="core" mode="change">
         <attList>
-            <attDef ident="type" mode="replace" usage="req">
+            <attDef ident="type" mode="change" usage="req">
                 <valList mode="replace" type="closed">
                     <valItem ident="person">
                         <desc>Person</desc>
@@ -1596,7 +1596,7 @@
                     </valItem>
                 </valList>
             </attDef>
-            <attDef ident="ana" mode="replace" usage="opt">
+            <attDef ident="ana" mode="change" usage="opt">
                 <valList mode="replace" type="closed">
                     <valItem ident="#address">
                         <desc>Adresse</desc>
@@ -1710,7 +1710,7 @@
     <!-- element correspAction -->
     <elementSpec ident="correspAction" module="header" mode="change">
         <attList>
-            <attDef ident="type" mode="replace" usage="req">
+            <attDef ident="type" mode="change" usage="req">
                 <valList mode="replace" type="closed">
                     <valItem ident="sent">
                         <desc>Absendende Partei</desc>
