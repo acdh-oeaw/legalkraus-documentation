@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns="http://www.tei-c.org/ns/1.0"
+  xmlns:s="http://purl.oclc.org/dsdl/schematron">
+
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>ODD Collections</title>
+        <author xml:id="LU" role="main">Laura Untner</author>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>
+          <name>Austrian Centre for Digital Humanities and Cultural Heritage,
+            Österreichische Akademie der Wissenschaften</name>
+          <ref target="https://acdh.oeaw.ac.at">https://acdh.oeaw.ac.at</ref>
+        </publisher>
+        <publisher>
+          <name>Ludwig Boltzmann Institut für Digital History</name>
+          <ref target="https://geschichte.lbg.ac.at">https://geschichte.lbg.ac.at</ref>
+        </publisher>
+        <publisher>
+          <name>Wienbibliothek im Rathaus</name>
+          <ref target="https://www.wienbibliothek.at">https://www.wienbibliothek.at</ref>
+        </publisher>
+        <pubPlace>Wien, Österreich</pubPlace>
+        <date>2022</date>
+        <availability>
+          <licence target="http://creativecommons.org/licenses/by/4.0">Creative Commons
+            Namensnennung 4.0 International Lizenz</licence>
+        </availability>
+        <ref type="URL"
+          target="https://gitlab.com/acdh-oeaw/legalkraus/documentation/other_odds/odd_collections.odd"
+          >https://gitlab.com/acdh-oeaw/legalkraus/documentation/other_odds/odd_collections.odd</ref>
+      </publicationStmt>
+      <sourceDesc>
+        <p>Born digital.</p>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+
+<!-- Text der ODD -->
+
+  <text>
+    <front>
+      <titlePage>
+        <docTitle>
+          <titlePart type="main">ODD Collections</titlePart>
+        </docTitle>
+        <docAuthor>Laura Untner</docAuthor>
+      </titlePage>
+    </front>
+    <body>
+            
+<!-- SCHEMA -->
+      
+      <div>
+        
+        <head>TEI-Modifikation</head>
+        
+        <schemaSpec ident="legalkraus_transcr_fackel" start="TEI" xml:lang="de">
+                                                                                                                                                                                                                  
+          <moduleRef key="header" include="availability change fileDesc idno licence publicationStmt revisionDesc sourceDesc teiHeader titleStmt"/>
+          <moduleRef key="core" include="desc head item list p publisher ref title"/>
+          <moduleRef key="corpus"/>
+          <moduleRef key="msdescription"/>
+          <moduleRef key="namesdates" include="event listEvent"/>
+          <moduleRef key="tei"/>
+          <moduleRef key="textstructure" include="body TEI text"/>
+          <moduleRef key="textcrit"/>
+          <moduleRef key="transcr"/>
+          <moduleRef key="linking"/>
+        </schemaSpec>
+        
+        <!-- element availability -->
+        <elementSpec ident="availability" module="header" mode="change"/>
+        
+        <!-- element change -->
+        <elementSpec ident="change" module="header" mode="change">
+          <attList>
+            <attDef ident="when-iso" mode="change" usage="req">
+              <datatype>
+                <dataRef key="teidata.temporal.iso"/>
+              </datatype>
+            </attDef>
+          </attList>
+        </elementSpec>
+        
+        <!-- element fileDesc -->
+        <elementSpec ident="fileDesc" module="header" mode="change"/>
+        
+        <!-- element idno -->
+        <elementSpec ident="idno" module="header" mode="change">
+          <attList>
+            <attDef ident="type" mode="change" usage="req">           
+              <valList type="closed" mode="replace">
+                <valItem ident="URL">
+                  <desc>URL</desc>
+                </valItem>
+                <valItem ident="URI">
+                  <desc>URI</desc>
+                </valItem>
+              </valList>
+            </attDef>
+            <attDef ident="subtype" mode="change" usage="req">           
+              <valList type="closed" mode="replace">
+                <valItem ident="legalkraus">
+                  <desc>legalkraus</desc>
+                </valItem>
+                <valItem ident="krausonline">
+                  <desc>Karl Kraus Online</desc>
+                </valItem>
+                <valItem ident="wienbibliothek">
+                  <desc>Wienbibliothek im Rathaus</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        
+        <!-- element licence -->
+        <elementSpec ident="licence" module="header" mode="change"/>
+        
+        <!-- element publicationStmt -->
+        <elementSpec ident="publicationStmt" module="header" mode="change"/>
+        
+        <!-- element revisionDesc -->
+        <elementSpec ident="revisionDesc" module="header" mode="change">
+          <attList>
+            <attDef ident="status" mode="change" usage="req"/>           
+          </attList>
+        </elementSpec>
+        
+        <!-- element sourceDesc -->
+        <elementSpec ident="sourceDesc" module="header" mode="change"/>
+        
+        <!-- element teiHeader -->
+        <elementSpec ident="teiHeader" module="header" mode="change"/>
+        
+        <!-- element titleStmt -->
+        <elementSpec ident="titleStmt" module="header" mode="change"/>
+        
+        <!-- element desc -->
+        <elementSpec ident="desc" module="core" mode="change"/>
+        
+        <!-- element head -->
+        <elementSpec ident="head" module="core" mode="change"/>
+        
+        <!-- element item -->
+        <elementSpec ident="item" module="core" mode="change"/>
+        
+        <!-- element list -->
+        <elementSpec ident="list" module="core" mode="change">
+          <attList>
+            <attDef ident="type" mode="change" usage="req">           
+              <valList type="closed" mode="replace">
+                <valItem ident="objects">
+                  <desc>Objekte / Dokumente</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        
+        <!-- element p -->
+        <elementSpec ident="p" module="core" mode="change"/>
+        
+        <!-- element publisher -->
+        <elementSpec ident="publisher" module="core" mode="change"/>
+        
+        <!-- element ref -->
+        <elementSpec ident="ref" module="core" mode="change">
+          <attList>
+            <attDef ident="target" mode="change" usage="req">
+              <datatype>
+                <dataRef key="teidata.pointer"/>
+              </datatype>
+            </attDef>
+          </attList>
+        </elementSpec>
+        
+        <!-- element title -->
+        <elementSpec ident="title" module="core" mode="change"/>
+        
+        <!-- element event -->
+        <elementSpec ident="event" module="namesdates" mode="change">
+          <attList>
+            <attDef ident="xml:id" mode="change" usage="req">
+              <datatype>
+                <dataRef key="ID"/>
+              </datatype>
+            </attDef>
+          </attList>
+        </elementSpec>
+        
+        <!-- element listEvent -->
+        <elementSpec ident="listEvent" module="namesdates" mode="change"/>
+        
+        <!-- element body -->
+        <elementSpec ident="body" module="textstructure" mode="change"/>
+        
+        <!-- element TEI -->
+        <elementSpec ident="TEI" module="textstructure" mode="change"/>
+        
+        <!-- element text -->
+        <elementSpec ident="text" module="textstructure" mode="change"/>
+            
+      </div>
+        
+    </body>
+      
+  </text>
+    
+</TEI>
