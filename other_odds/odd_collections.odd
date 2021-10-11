@@ -60,8 +60,8 @@
         
         <schemaSpec ident="legalkraus_transcr_fackel" start="TEI" xml:lang="de">
                                                                                                                                                                                                                   
-          <moduleRef key="header" include="availability change fileDesc idno licence publicationStmt revisionDesc sourceDesc teiHeader titleStmt"/>
-          <moduleRef key="core" include="desc head item list p publisher ref title"/>
+          <moduleRef key="header" include="availability change classCode fileDesc idno keywords licence profileDesc publicationStmt revisionDesc sourceDesc teiHeader textClass titleStmt"/>
+          <moduleRef key="core" include="desc head item list p publisher ref term title"/>
           <moduleRef key="corpus"/>
           <moduleRef key="msdescription"/>
           <moduleRef key="namesdates" include="event listEvent"/>
@@ -83,6 +83,13 @@
                 <dataRef key="teidata.temporal.iso"/>
               </datatype>
             </attDef>
+          </attList>
+        </elementSpec>
+        
+        <!-- element classCode -->
+        <elementSpec ident="classCode" module="header" mode="change">
+          <attList>
+            <attDef ident="scheme" mode="change" usage="req"/>           
           </attList>
         </elementSpec>
         
@@ -118,8 +125,27 @@
           </attList>
         </elementSpec>
         
+        <!-- element keywords -->
+        <elementSpec ident="keywords" module="header" mode="change">
+          <attList>
+            <attDef ident="source" mode="change" usage="req">           
+              <valList type="closed" mode="replace">
+                <valItem ident="vocabs">
+                  <desc>'neue' Keywords</desc>
+                </valItem>
+                <valItem ident="krausonline">
+                  <desc>Keywords aus Karl Kraus Online</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
+        
         <!-- element licence -->
         <elementSpec ident="licence" module="header" mode="change"/>
+        
+        <!-- element profileDesc -->
+        <elementSpec ident="profileDesc" module="header" mode="change"/>
         
         <!-- element publicationStmt -->
         <elementSpec ident="publicationStmt" module="header" mode="change"/>
@@ -136,6 +162,9 @@
         
         <!-- element teiHeader -->
         <elementSpec ident="teiHeader" module="header" mode="change"/>
+        
+        <!-- element textClass -->
+        <elementSpec ident="textClass" module="header" mode="change"/>
         
         <!-- element titleStmt -->
         <elementSpec ident="titleStmt" module="header" mode="change"/>
@@ -178,6 +207,9 @@
             </attDef>
           </attList>
         </elementSpec>
+        
+        <!-- element term -->
+        <elementSpec ident="term" module="core" mode="change"/>
         
         <!-- element title -->
         <elementSpec ident="title" module="core" mode="change"/>
