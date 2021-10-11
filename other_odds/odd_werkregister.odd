@@ -61,7 +61,7 @@
         <schemaSpec ident="legalkraus_transcr_werke" start="TEI" xml:lang="de">
           
           <moduleRef key="header" include="availability fileDesc licence publicationStmt sourceDesc teiHeader titleStmt"/>
-          <moduleRef key="core" include="address author bibl biblScope date listBibl name num postCode publisher pubPlace ref street title"/>
+          <moduleRef key="core" include="address author bibl biblScope date editor listBibl name num postCode publisher pubPlace ref street title"/>
           <moduleRef key="corpus"/>
           <moduleRef key="msdescription"/>
           <moduleRef key="namesdates" include="country settlement"/>
@@ -117,7 +117,7 @@
         <elementSpec ident="bibl" module="core" mode="change">
           <attList>
             <attDef ident="sortKey" mode="change" usage="req"/>
-            <attDef ident="ref" mode="change" usage="req"/>
+            <attDef ident="corresp" mode="change" usage="req"/>
             <attDef ident="type" mode="change" usage="req">           
               <valList type="closed" mode="replace">
                 <valItem ident="ind">
@@ -138,6 +138,14 @@
         <elementSpec ident="date" module="core" mode="change">
           <attList>
             <attDef ident="when" mode="change" usage="opt"></attDef>
+          </attList>
+        </elementSpec>
+        
+        <!-- element editor -->
+        <elementSpec ident="editor" module="core" mode="change">
+          <attList>
+            <attDef ident="ref" mode="change" usage="req">
+            </attDef>
           </attList>
         </elementSpec>
         

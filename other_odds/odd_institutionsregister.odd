@@ -61,10 +61,10 @@
         <schemaSpec ident="legalkraus_transcr_institutionen" start="TEI" xml:lang="de">
           
           <moduleRef key="header" include="availability fileDesc licence publicationStmt sourceDesc teiHeader titleStmt"/>
-          <moduleRef key="core" include="address date name postCode publisher pubPlace ref street title"/>
+          <moduleRef key="core" include="address date editor name postCode publisher pubPlace ref street title"/>
           <moduleRef key="corpus"/>
           <moduleRef key="msdescription"/>
-          <moduleRef key="namesdates" include="country listOrg org place placeName settlement"/>
+          <moduleRef key="namesdates" include="country listOrg org orgName place placeName settlement"/>
           <moduleRef key="tei"/>
           <moduleRef key="textstructure" include="body TEI text"/>
           <moduleRef key="textcrit"/>
@@ -109,6 +109,14 @@
         <!-- element date -->
         <elementSpec ident="date" module="core" mode="change"/>
         
+        <!-- element editor -->
+        <elementSpec ident="editor" module="core" mode="change">
+          <attList>
+            <attDef ident="ref" mode="change" usage="req">
+            </attDef>
+          </attList>
+        </elementSpec>
+        
         <!-- element name -->
         <elementSpec ident="name" module="core" mode="change"/>
         
@@ -148,9 +156,12 @@
         <elementSpec ident="org" module="namesdates" mode="change">
           <attList>
             <attDef ident="sortKey" mode="change" usage="req"/>
-            <attDef ident="ref" mode="change" usage="req"/>
+            <attDef ident="corresp" mode="change" usage="req"/>
           </attList>
         </elementSpec>
+        
+        <!-- element orgName -->
+        <elementSpec ident="orgName" module="namesdates" mode="change"/>
         
         <!-- element place -->
         <elementSpec ident="place" module="namesdates" mode="change"/>

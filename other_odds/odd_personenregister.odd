@@ -61,7 +61,7 @@
         <schemaSpec ident="legalkraus_transcr_personen" start="TEI" xml:lang="de">
           
           <moduleRef key="header" include="availability fileDesc licence publicationStmt sourceDesc teiHeader titleStmt"/>
-          <moduleRef key="core" include="address date name postCode publisher pubPlace ref street title"/>
+          <moduleRef key="core" include="address date editor name postCode publisher pubPlace ref street title"/>
           <moduleRef key="corpus"/>
           <moduleRef key="msdescription"/>
           <moduleRef key="namesdates" include="birth country death forename listPerson occupation persName person settlement surname"/>
@@ -108,6 +108,14 @@
         
         <!-- element date -->
         <elementSpec ident="date" module="core" mode="change"/>
+        
+        <!-- element editor -->
+        <elementSpec ident="editor" module="core" mode="change">
+          <attList>
+            <attDef ident="ref" mode="change" usage="req">
+            </attDef>
+          </attList>
+        </elementSpec>
         
         <!-- element name -->
         <elementSpec ident="name" module="core" mode="change"/>
@@ -179,7 +187,7 @@
         <elementSpec ident="person" module="namesdates" mode="change">
             <attList>
               <attDef ident="sortKey" mode="change" usage="req"/>
-              <attDef ident="ref" mode="change" usage="req"/>
+              <attDef ident="corresp" mode="change" usage="req"/>
             </attList>
         </elementSpec>
         
