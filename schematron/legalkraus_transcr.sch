@@ -204,8 +204,7 @@
         <rule context="tei:quote">
             <assert test="@xml:id" role="warning">Element quote hat kein Attribut "xml:id".</assert>
             <report test="@xml:id/string() eq ''" role="warning">Fehlender Wert des Attributs "xml:id".</report>
-            <assert test="matches(@xml:id,'https://')">Wert in Attribut "ref" ist kein Verweis.</assert>
-            <report test="starts-with(@xml:id,'#')" role="warning">Attribut "xml:id" zuerst definieren, dann darauf verweisen.</report>
+            <report test="starts-with(@xml:id,'#')" role="warning">Attribut "xml:id" darf nicht mit "#" beginnen.</report>
             <assert test="@source" role="warning">Attribut "source" fehlt.</assert>
             <report test="@source/string() eq ''" role="warning">Fehlender Wert des Attributs "source".</report>
             <assert test="matches(@source,'https://') or starts-with(@source,'#')">Wert in Attribut "source" ist kein Verweis.</assert>
