@@ -6,13 +6,13 @@
     <pattern>
         <rule context="tei:TEI">
             <!-- Gültiges Format der xml:id von TEI -->
-            <assert test="matches(@xml:id,'D_[0-9]{6}-[0-9]{3}-[0-9]{3}')">Attribut "xml:id" von TEI ungültig. Muss dem Muster D_[0-9]{6}-[0-9]{3}-[0-9]{3} entsprechen.</assert>
+            <assert test="matches(@xml:id,'D_[0-9]{6}-[0-9]{3}-[0-9]{3}.xml')">Attribut "xml:id" von TEI ungültig. Muss dem Muster D_[0-9]{6}-[0-9]{3}-[0-9]{3} entsprechen.</assert>
             
             <!-- @prev und @next -->
             <report test="@prev eq ''">Attribut "prev" ist leer. Vorangehendes Dokument eintragen.</report>
             <report test="@next eq ''">Attribut "next" ist leer. Folgendes Dokument eintragen.</report>
-            <assert test="matches(@prev,'https://legalkraus.acdh.oeaw.ac.at/id/D_[0-9]{6}-[0-9]{3}-[0-9]{3}')">Attribut "prev" (vorangehendes Dokument) ungültig. Muss dem Muster https://legalkraus.acdh.oeaw.ac.at/id/D_[0-9]{6}-[0-9]{3}-[0-9]{3} entsprechen.</assert>
-            <assert test="matches(@next,'https://legalkraus.acdh.oeaw.ac.at/id/D_[0-9]{6}-[0-9]{3}-[0-9]{3}')">Attribut "next" (folgendes Dokument) ungültig. Muss dem Muster https://legalkraus.acdh.oeaw.ac.at/id/D_[0-9]{6}-[0-9]{3}-[0-9]{3} entsprechen.</assert>
+            <assert test="matches(@prev,'https://id.acdh.oeaw.ac.at/legalkraus/D_[0-9]{6}-[0-9]{3}-[0-9]{3}.xml')">Attribut "prev" (vorangehendes Dokument) ungültig. Muss dem Muster https://id.acdh.oeaw.ac.at/legalkraus/D_[0-9]{6}-[0-9]{3}-[0-9]{3} entsprechen.</assert>
+            <assert test="matches(@next,'https://id.acdh.oeaw.ac.at/legalkraus/D_[0-9]{6}-[0-9]{3}-[0-9]{3}.xml')">Attribut "next" (folgendes Dokument) ungültig. Muss dem Muster https://id.acdh.oeaw.ac.at/legalkraus/D_[0-9]{6}-[0-9]{3}-[0-9]{3} entsprechen.</assert>
         </rule>
         
         <!-- editor -->
@@ -42,7 +42,45 @@
         <!-- Textzeugen -->
         <rule context="tei:witness">
             <!-- ID -->
-            <assert test="matches(@xml:id,'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-wit[0-9]{2}')">Attribut "xml:id" des Textzeugen entspricht nicht dem Muster 'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-wit[0-9]{2}'</assert>
+            <assert test="matches(@xml:id,'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-wit[0-9]{2}')">Attribut "xml:id" von witness ist ungültig, entspricht nicht dem Muster 'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-wit[0-9]{2}'.</assert>
+        </rule>
+        
+        <!-- Beilagen im Body -->
+        <rule context="tei:ab[@type='appendix']">
+            <!-- ID -->
+            <assert test="matches(@source,'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-acc[0-9]{3}')">Attribut "xml:id" von witness ist ungültig, entspricht nicht dem Muster 'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-acc[0-9]{3}'.</assert>
+            <assert test="matches(@source,'https://') or starts-with(@source,'#')">Wert in Attribut "source" ist kein Verweis.</assert>
+            <assert test="@source" role="warning">Attribut "source" fehlt.</assert>
+            <report test="@source/string() eq ''" role="warning">Fehlender Wert des Attributs "source".</report>
+        </rule>
+        
+        <!-- Beilagen im Header -->
+        <rule context="tei:accMat">
+            <!-- ID -->
+            <assert test="matches(@xml:id,'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-acc[0-9]{3}')">Attribut "xml:id" von witness ist ungültig, entspricht nicht dem Muster 'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-acc[0-9]{3}'.</assert>
+            <assert test="matches(@source,'https://') or starts-with(@source,'#')">Wert in Attribut "source" ist kein Verweis.</assert>
+            <assert test="@source" role="warning">Attribut "source" fehlt.</assert>
+            <report test="@source/string() eq ''" role="warning">Fehlender Wert des Attributs "source".</report>
+        </rule>
+        
+        <!-- mehrere Textzeugen mit divs -->
+        <rule context="tei:div[@type='wit']">
+            <!-- ID -->
+            <assert test="matches(@xml:id,'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-wit-div[0-9]{3}')">Attribut "xml:id" von div ist ungültig, entspricht nicht dem Muster 'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-wit-div[0-9]{3}'.</assert>
+            <assert test="matches(@source,'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-wit[0-9]{2}')">Attribut "source" von div ist ungültig, entspricht nicht dem Muster 'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-wit[0-9]{2}' (Verweis auf witness fehlgeschlagen).</assert>
+            <assert test="starts-with(@source,'#')">Wert in Attribut "source" ist kein Verweis.</assert>
+            <assert test="@source" role="warning">Attribut "source" fehlt.</assert>
+            <report test="@source/string() eq ''" role="warning">Fehlender Wert des Attributs "source".</report>
+        </rule>
+        
+        <!-- mehrere Dokumente mit divs -->
+        <rule context="tei:div[@type='doc']">
+            <!-- ID -->
+            <assert test="matches(@xml:id,'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-doc-div[0-9]{3}')">Attribut "xml:id" von div ist ungültig, entspricht nicht dem Muster 'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-doc-div[0-9]{3}'.</assert>
+            <assert test="matches(@source,'D_[0-9]{6}-[0-9]{3}-[0-9]{3}')">Attribut "source" von div ist ungültig, entspricht nicht dem Muster 'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-wit[0-9]{2}' (Verweis auf Dokument fehlgeschlagen).</assert>
+            <assert test="matches(@source,'https://') or starts-with(@source,'#')">Wert in Attribut "source" ist kein Verweis.</assert>
+            <assert test="@source" role="warning">Attribut "source" fehlt.</assert>
+            <report test="@source/string() eq ''" role="warning">Fehlender Wert des Attributs "source".</report>
         </rule>
         
         <!-- Schreiberhände -->
@@ -50,8 +88,81 @@
             <assert test="tei:handNotes" role="information">Keine Schreiberhände angelegt.</assert>
         </rule>
         
+        <rule context="tei:handNote">
+            <assert test="matches(@xml:id,'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attribut "xml:id" von handNote ist ungültig, entspricht nicht dem Muster 'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}'.</assert>
+            
+            <assert test="matches(@source,'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-wit[0-9]{2}')">Attribut "source" von div ist ungültig, entspricht nicht dem Muster 'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-wit[0-9]{2}' (Verweis auf Dokument fehlgeschlagen).</assert>
+            <assert test="starts-with(@source,'#')">Wert in Attribut "source" ist kein Verweis.</assert>
+            <assert test="@source" role="warning">Attribut "source" fehlt.</assert>
+            <report test="@source/string() eq ''" role="warning">Fehlender Wert des Attributs "source".</report>
+            
+            <assert test="matches(@scribeRef,'https://') or starts-with(@scribeRef,'#')">Wert in Attribut "scribeRef" ist kein Verweis.</assert>
+            <assert test="@scribeRef" role="warning">Attribut "scribeRef" fehlt.</assert>
+            <report test="@scribeRef/string() eq ''" role="warning">Fehlender Wert des Attributs "scribeRef".</report>
+            
+            <assert test="@resp" role="warning">Attribut "resp" fehlt.</assert>
+            <report test="@resp/string() eq ''" role="warning">Fehlender Wert des Attributs "resp".</report>
+            <assert test="starts-with(@resp,'#')">Wert in Attribut "resp" ist kein Verweis.</assert>
+        </rule>
+
+        <!-- hs. Bearbeitungen -->
+        <rule context="tei:add">
+            <assert test="matches(@hand,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attributwert von "hand" ist ungültig, entspricht nicht dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}'.</assert>
+        </rule>
+        
+        <rule context="tei:del">
+            <assert test="matches(@hand,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attributwert von "hand" ist ungültig, entspricht nicht dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}'.</assert>
+        </rule>
+        
+        <rule context="tei:subst">
+            <assert test="matches(@hand,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attributwert von "hand" ist ungültig, entspricht nicht dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}'.</assert>
+        </rule>
+        
+        <rule context="tei:seg[@type='transposition']">
+            <assert test="matches(@xml:id,'D_[0-9]{6}-[0-9]{3}-[0-9]{3}_seg[0-9]{3}')">Attributwert von "xml:id" ist ungültig, entspricht nicht dem Muster 'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-seg[0-9]{3}'.</assert>
+        </rule>
+        
+        <rule context="tei:metamark[@function='transposition']">
+            <assert test="matches(@hand,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attributwert von "hand" ist ungültig, entspricht nicht dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}'.</assert>
+            <assert test="matches(@target,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}_seg[0-9]{3}')">Attributwert von "target" ist ungültig, entspricht nicht dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}_seg[0-9]{3}'.</assert>
+        </rule>
+        
+        <rule context="tei:transpose">
+            <assert test="matches(@hand,'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attributwert von "hand" ist ungültig, entspricht nicht dem Muster 'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}'.</assert>
+        </rule>
+        
+        <rule context="tei:transpose/ptr">
+            <assert test="matches(@target,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}_seg[0-9]{3}')">Attributwert von "target" ist ungültig, entspricht nicht dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}_seg[0-9]{3}'.</assert>
+        </rule>
+        
+        <rule context= "tei:hi[@hand]">
+            <assert test="matches(@hand,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attribut "hand" ungültig. Muss dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}' entsprechen.</assert>
+        </rule>
+        
+        <rule context= "tei:restore">
+            <assert test="matches(@hand,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attribut "hand" ungültig. Muss dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}' entsprechen.</assert>
+        </rule>
+        
+        <rule context= "tei:note">
+            <assert test="matches(@hand,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attribut "hand" ungültig. Muss dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}' entsprechen.</assert>
+        </rule>
+        
+        <rule context= "tei:metamark[@function='marginal']">
+            <assert test="matches(@hand,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attribut "hand" ungültig. Muss dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}' entsprechen.</assert>
+        </rule>
+        
+        <rule context= "tei:lem">
+            <assert test="matches(@wit,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-wit[0-9]{2}')">Attribut "wit" ungültig. Muss dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-wit[0-9]{2}' entsprechen.</assert>
+            <assert test="matches(@hand,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attribut "hand" ungültig. Muss dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}' entsprechen.</assert>
+        </rule>
+        
+        <rule context= "tei:rdg">
+            <assert test="matches(@wit,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-wit[0-9]{2}')">Attribut "wit" ungültig. Muss dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-wit[0-9]{2}' entsprechen.</assert>
+            <assert test="matches(@hand,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attribut "hand" ungültig. Muss dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}' entsprechen.</assert>
+        </rule>
+       
         <!-- rs -->
-        <rule context="tei:rs[@type= 'person' or @type= 'place' or @type= 'institution']">
+        <rule context="tei:rs[@type= 'person' or @type= 'place' or @type= 'institution' or @type='work']">
             <assert test="matches(@ref,'https://') or starts-with(@ref,'#')">Wert in Attribut "ref" ist kein Verweis.</assert>
             <assert test="@ref" role="warning">Attribut "ref" fehlt.</assert>
             <report test="@ref/string() eq ''" role="warning">Fehlender Wert des Attributs "ref".</report>
@@ -128,7 +239,7 @@
         <!-- sortDate bei creation -->
         <rule context="tei:creation">
             <assert test="date[@when-iso]" role="warning">Attribut "when-iso" fehlt.</assert>
-            <assert test="date[@type, 'sortDate']" role="warning">"sortDate" fehlt.</assert>
+            <assert test="date[@type, 'sortDate']" role="warning">Attributwert "sortDate" bei "type" fehlt.</assert>
         </rule>
         
         <!-- Arbeitsschritte revisionDesc -->
@@ -158,11 +269,6 @@
         <rule context="tei:stamp">
             <assert test="@source" role="warning">Attribut "source" fehlt.</assert>
             <report test="@source/string() eq ''" role="warning">Fehlender Wert des Attributs "source".</report>
-        </rule>
-        
-        <!-- Appendix-ID -->
-        <rule context="tei:note[type='appendix']">
-            <assert test="matches(@xml:id,'D_[0-9]{6}-[0-9]{3}-[0-9]{3}')">Attribut "xml:id" von TEI ungültig. Muss dem Muster D_[0-9]{6}-[0-9]{3}-[0-9]{3} entsprechen.</assert>
         </rule>
         
     </pattern>
