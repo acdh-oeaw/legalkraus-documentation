@@ -61,7 +61,7 @@
         <docAuthor>Isabell Langkabel</docAuthor>
         <docAuthor>Johannes Knüchel</docAuthor>
         <docAuthor>Andrea Ortner</docAuthor>
-        <docDate>Stand: August 2021</docDate>
+        <docDate>Stand: Oktober 2021</docDate>
       </titlePage>
     </front>
     <body>
@@ -637,7 +637,7 @@
         und jene der projekteigenen Scans mit <val>scans</val>. Sowohl <gi>facsimile</gi> als auch 
         <gi>surfaceGrp</gi> und <gi>surface</gi> erhalten eine <att>xml:id</att> zur eindeutigen Identifizierung.
         Derzeit sind die Faksimiles nur für den 'Haupttextzeugen' zugeordnet. Insofern weitere Textzeugen vorhanden und verlinkt sind, 
-        werden diese in einem weiteren <gi>facsimile</gi>-Element mit dem Attribut <att>type</att> und dem Wert <val>further-witnesses</val> zur vorläufigen Differenzierung versehen.</p>
+        werden diese in einem weiteren <gi>facsimile</gi>-Element mit dem Attribut <att>ana</att> und dem Wert <val>further-witnesses</val> zur vorläufigen Differenzierung versehen.</p>
             
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <facsimile xml:id="D_000002-002-000-facs001">
@@ -1247,7 +1247,7 @@
           <moduleRef key="core"
             include="add address date del editor gap graphic hi lb name note noteGrp p pb postCode ptr publisher pubPlace q quote ref rs street term title"/>
           <moduleRef key="corpus" include="particDesc"/>
-          <moduleRef key="analysis"/><!-- LU: ggf. wieder raus, wenn @ana-Problem dadurch nicht gelöst werden kann -->
+          <moduleRef key="analysis"/>
           <moduleRef key="msdescription" include="accMat objectType physDesc stamp"/>
           <moduleRef key="namesdates" include="country listOrg listPerson org orgName persName person roleName settlement"/>
           <moduleRef key="tei"/>
@@ -2137,7 +2137,7 @@
                     <dataRef key="ID"/>
                 </datatype>
             </attDef>
-            <attDef ident="type" mode="change" usage="opt">
+            <attDef ident="ana" mode="change" usage="opt">
                 <valList type="closed" mode="replace">
                     <valItem ident="further-witnesses">
                         <desc>weitere Textzeugen</desc>
