@@ -186,12 +186,12 @@
                 <licence target="http://creativecommons.org/licenses/by/4.0">Creative Commons
                   Namensnennung 4.0 International Lizenz</licence>
               </availability>
-              <idno type="URL" subtype="legalkraus">https://legalkraus.acdh.oeaw.ac.at/id/D_000002-002-000</idno>
+              <idno type="URL" subtype="legalkraus">https://id.acdh.oeaw.ac.at/legalkraus/D_000002-002-000.xml</idno>
               <idno type="URL" subtype="krausonline">http://www.kraus.wienbibliothek.at/node/1540</idno>
               <idno type="ID" subtype="transkribus">365566</idno>
             </publicationStmt>
             <seriesStmt>
-              <title type="collection" ref="https://legalkraus.acdh.oeaw.ac.at/id/C_000002">Karl Kraus ca. Reichspost</title>
+              <title type="collection" ref="https://id.acdh.oeaw.ac.at/legalkraus/C_000002">Karl Kraus ca. Reichspost</title>
             </seriesStmt>
             <sourceDesc>
               <listWit>
@@ -283,7 +283,7 @@
               <availability>
                 <licence target="http://creativecommons.org/licenses/by/4.0">Creative Commons Namensnennung 4.0 International Lizenz</licence>
               </availability>
-              <idno type="URL" subtype="legalkraus">https://legalkraus.acdh.oeaw.ac.at/id/D_000125-006-000</idno>
+              <idno type="URL" subtype="legalkraus">https://id.acdh.oeaw.ac.at/legalkraus/D_000125-006-000.xml</idno>
               <idno type="URL" subtype="krausonline">http://www.kraus.wienbibliothek.at/node/3371</idno>
               <idno type="ID" subtype="transkribus">251313</idno>
             </publicationStmt>
@@ -302,7 +302,7 @@
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <seriesStmt>
-              <title type="collection" ref="https://legalkraus.acdh.oeaw.ac.at/id/C_000002">Karl Kraus ca. Reichspost</title>
+              <title type="collection" ref="https://id.acdh.oeaw.ac.at/legalkraus/C_000002">Karl Kraus ca. Reichspost</title>
             </seriesStmt>
           </egXML>
           
@@ -368,14 +368,16 @@
           
           <p>Stempel werden in der <gi>sourceDesc</gi> im Kindelement <gi>msDesc</gi> im Element <gi>ab</gi> 
           mit dem Attribut <att>type</att> und dem Wert <val>stamp</val> notiert. Im Attribut 
-          <att>source</att> wird außerdem auf die Quelle des Stempels verwiesen. Im <gi>body</gi> 
-          wird der Stempel mit dem Element <gi>stamp</gi> ausgezeichnet und mittels eines 
-          <att>source</att>-Attributs mit der Quelle verknüpft. Eindeutig identifizierbar wird 
-          der Stempel durch die ID im Attribut <att>xml:id</att>.</p>
+          <att>source</att> des <gi>stamp</gi>-Elements wird auf die Quelle des Stempels verwiesen,
+          durch die <att>xml:id</att> wird der Stempel zudem eindeutig identifizierbar.</p>
           
-          <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <stamp xml:id="uuid_79f806a1-ab26-445f-b806-a1ab26c45fb5" source="#29605"/>
-          </egXML>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <msDesc>
+                  <ab type="stamp"> 
+                    <stamp xml:id="uuid_79f806a1-ab26-445f-b806-a1ab26c45fb5" source="#36793"></stamp>
+                  </ab>
+                </msDesc>  
+            </egXML>
           
           <p>Ist eine Beilage zu einem Dokument verhanden, wird dieses im Element <gi>physDesc</gi> 
           bzw. genauer in seinem Kindelement <gi>accMat</gi> mit einer <att>xml:id</att> sowie gegebenenfalls 
@@ -438,7 +440,7 @@
             Wenn eine Datierung nicht möglich ist, ist weder <att>sortDate</att> noch ein ISO-Wert vorhanden.
             Zur weiteren Klassifizierung des Datums wird <att>subtype</att> eingeführt. 
             Zur Auswahl stehen die Werte <val>produced</val> (Datum der Entstehung) und <val>received</val> 
-            (Datum des Empfangens).</p>
+            (Datum des Empfangens). Der String entspricht einem normalisierten Datum im Format TT.MM.JJJJ.</p>
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <creation>
@@ -504,7 +506,7 @@
             beteiligte Personen festgehalten. Jedes <gi>person</gi>-Element erhält dabei ein Attribut 
             <att>role</att> mit einem Verweis auf die Rolle der Person in diesem Dokument. Der Wert 
             von <att>role</att> entspricht einer <ref target="https://vocabs.acdh-dev.oeaw.ac.at/legalkraus-doctypes/v1.0/">projektspezifischen Taxonomie</ref>. Jede Person erhält außerdem 
-            einen Verweis auf den ensprechenden Datensatz in der PMB mittels eines <att>ref</att>-Attributs 
+            einen Verweis auf den ensprechenden Datensatz in der <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref> mittels eines <att>ref</att>-Attributs 
             sowie ein Kindelement mit dem Namen der Person, <gi>persName</gi>.
             Analog funktioniert die Dokumentation der beteiligten Institutionen: Im Element <gi>listOrg</gi> 
             werden <gi>org</gi>-Elemente mit dem Kindelement <gi>orgName</gi> sowie den Attributen 
@@ -553,7 +555,7 @@
             angegeben und mittels <att>ref</att> mit der entsprechenden Klassifikation in der Taxonomie verknüpft.</p>
             
             <p>In <gi>address</gi> werden die Anschriften dokumentiert. <gi>street</gi> verweist auf einen Eintrag in der 
-            <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref>, <gi>settlement</gi> und <gi>country</gi> ebenso. 
+            <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref> und <gi>settlement</gi> ebenso. 
             Das Datum wird sowohl im ISO-Format in <att>date</att> als auch originalgetreu im entsprechenden String wiedergegeben.</p>
             
             <p>In <gi>noteGrp</gi> sind optional weitere Metadaten zur Korrespondenz enthalten. Mittels <gi>note</gi> und entsprechenden
@@ -567,7 +569,6 @@
                   <address ana="#address">
                     <street ref="#50496">Hintere Zollamtsstrasse Nr.3</street>
                     <settlement ref="#53">Wien III.</settlement>
-                    <country ref="#41240"/>
                   </address>
                   <date when-iso="1931-01-15"/>
                 </correspAction>
@@ -577,7 +578,6 @@
                   <address ana="#address">
                     <street ref="#50664"/>
                     <settlement ref="#53">Wien</settlement>
-                    <country ref="#41240"/>
                   </address>
                   <date when-iso="1931-01-16">16. JAN. 1931</date>
                 </correspAction>
@@ -627,10 +627,12 @@
         <p>Die der digitalen Edition zugrundeliegenden Faksimiles sind in <gi>facsimile</gi> zu finden. 
         Innerhalb von <gi>facsimile</gi> ist mindestens eine <gi>surfaceGrp</gi> enthalten. Diese beschreibt ein Blatt.
         Dieses Blatt kann in mehrere <gi>surface</gi>-Elemente unterteilt werden. Diese machen die Seiten aus, die mittels <att>type</att>
-        und <val>recto</val> bzw. <val>verso</val> noch näher bestimmt werden.
+        und <val>recto</val> bzw. <val>verso</val> (Vorder-/ Rückseite) noch näher bestimmt werden.
         Diese <gi>surface</gi>-Elemente beinhalten wiederum ein bis drei <gi>graphic</gi>-Elemente, die mittels <att>source</att> 
         und entsprechenden Attributwerten unterschieden werden.
-        Die Faksimiles des Vorläuferprojekts "<ref target="https://www.kraus.wienbibliothek.at/">Karl Kraus Online</ref>" 
+        Liegt ein Doppelblatt vor, so wird die Gruppierung der Faksimiles entsprechend angepasst.</p>
+        
+        <p>Die Faksimiles des Vorläuferprojekts "<ref target="https://www.kraus.wienbibliothek.at/">Karl Kraus Online</ref>" 
         werden mit dem Attributwert <val>krausonline</val> versehen, jene der Wienbibliothek im Rathaus mit <val>wienbibliothek</val>
         und jene der projekteigenen Scans mit <val>scans</val>. Sowohl <gi>facsimile</gi> als auch 
         <gi>surfaceGrp</gi> und <gi>surface</gi> erhalten eine <att>xml:id</att> zur eindeutigen Identifizierung.
@@ -1065,7 +1067,7 @@
             <ptr target="#XY" type="transposition"/> Kriegsmanifest</p>
           </egXML>
             
-          <p>Stehen zwei zusammengehörende Korrekturen nicht direkt nebeneinander, 
+          <!--<p>Stehen zwei zusammengehörende Korrekturen nicht direkt nebeneinander, 
           kann auch <gi>substJoin</gi> in der Kodierung herangezogen werden, um die 
           Zusammengehörigkeit durch Pointer anzuzeigen.</p>
             
@@ -1074,7 +1076,7 @@
               Der <del xml:id="del_1">neue</del> Antrag <add xml:id="add_1">, wie der alte,</add> ist fehlerhaft.
               <substJoin target="#r112 #r113"/>
             </p>
-          </egXML>
+          </egXML>-->
             
           <p>Handelt es sich zwar um keine handschriftliche Korrektur, jedoch sehr wohl um eine 
           handschriftliche Notiz, dann wird diese mit <gi>note</gi> und einem Verweis auf die 
@@ -1102,7 +1104,11 @@
           <att>type</att>-Attributwerten ausgezeichnet. <val>person</val> wird für die Verlinkung
           von Personen herangezogen, <val>institution</val> für jene von Institutionen. 
           Orte werden mit <val>place</val> kodiert, Werke mit <val>work</val> und Gesetzestexte mit
-          <val>law</val>. Adressen erhalten sowohl <val>place</val> als auch <att>ana</att> mit dem Wert
+          <val>law</val>. Bei <gi>rs</gi> mit dem <att>type</att> <val>work</val> gibt es ferner Untergruppen
+          in Form von <att>subtype</att> mit den möglichen Werten <val>pmb</val> (für 'Werke' in der <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref>), 
+          <val>fackel</val> (für 'Werke' aus der <ref target="https://fackel.oeaw.ac.at/">"Fackel"</ref>)
+          und <val>legal-doc</val> (für 'Werke', die sich im Korpus der Rechtsakten-Edition befinden). 
+          Adressen erhalten sowohl <val>place</val> als auch <att>ana</att> mit dem Wert
           <val>#address</val>. Schachtelungen von <gi>rs</gi> sind möglich.</p>
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -1110,7 +1116,9 @@
           </egXML>
           
           <p>Durch das <att>ref</att>-Attribut wird die Entität außerdem mit dem entsprechenden 
-          Datensatz in der <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref> verlinkt.</p>
+          Datensatz in der <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref> 
+          bzw. der <ref target="https://fackel.oeaw.ac.at/">"Fackel"</ref>, dem entsprechenden Dokument in den Rechtsakten
+          oder <ref target="https://alex.onb.ac.at/">ALEX</ref> verlinkt.</p>
 
           <p>Personal- und Possessivpronomen werden nicht ausgezeichnet. Ausschlaggebend sind Namen
           bzw. Substantive. Ebenso nicht näher bestimmt werden Namen literarischer Figuren.</p>
@@ -1173,16 +1181,17 @@
         
         <p>IDs bzw. Identifier werden wie folgt vergeben:</p>
         
-        <p>Die Dokumente selbst erhalten eine ID in der Form D_xxxxxx-xxx-xxx, wobei 
+        <p>Die Dokumente selbst erhalten eine ID in der Form D_xxxxxx-xxx-xxx.xml, wobei 
         die erste Ziffernkombination den Fall bezeichnet (vgl. die IDs für Fälle in 
         der Form C_xxxxx), die zweite das Dokument und die dritte gegebenenfalls eine Beilage.</p>
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
-          <TEI xml:id="D_000002-002-000" prev="https://legalkraus.acdh.oeaw.ac.at/id/D_000002-001-000" next="https://legalkraus.acdh.oeaw.ac.at/id/D_000002-003-000"/>
+          <TEI xml:base="https://id.acdh.oeaw.ac.at/legalkraus" xml:id="D_000112-029-000.xml" prev="https://id.acdh.oeaw.ac.at/legalkraus/D_000112-028-000.xml" next="https://id.acdh.oeaw.ac.at/legalkraus/D_000112-030-000.xml"/>
         </egXML>
                 
-        <p>Als Attribute des Elements <gi>TEI</gi> werden außerdem der Namespace (<att>xmlns</att>, im Beispiel nicht vorhanden) sowie <att>prev</att> und <att>next</att> angeführt. 
-        Sie verweisen auf das vorangehende sowie das folgende Dokument.</p>
+        <p>Als Attribute des Elements <gi>TEI</gi> werden außerdem die <att>xml:base</att>, 
+        der Namespace (<att>xmlns</att>, im Beispiel nicht vorhanden) sowie <att>prev</att> und <att>next</att> angeführt. 
+        Letztere Attribute verweisen auf das vorangehende sowie das folgende Dokument.</p>
                 
         <p><gi>witness</gi>-Elemente, also Textzeugen, bekommen eine ID in der Form 
         D_xxxxxx-xxx-xxx-witxx. Der ID des Dokuments wird also "witxx" hinzugefügt.</p>
@@ -1238,12 +1247,13 @@
           <moduleRef key="core"
             include="add address date del editor gap graphic hi lb name note noteGrp p pb postCode ptr publisher pubPlace q quote ref rs street term title"/>
           <moduleRef key="corpus" include="particDesc"/>
+          <moduleRef key="analysis"/><!-- LU: ggf. wieder raus, wenn @ana-Problem dadurch nicht gelöst werden kann -->
           <moduleRef key="msdescription" include="accMat objectType physDesc stamp"/>
           <moduleRef key="namesdates" include="country listOrg listPerson org orgName persName person roleName settlement"/>
           <moduleRef key="tei"/>
           <moduleRef key="textstructure" include="body div TEI text"/>
           <moduleRef key="textcrit" include="app lem listWit rdg variantEncoding witness"/>
-          <moduleRef key="transcr" include="facsimile handNotes listTranspose metamark restore subst substJoin surface surfaceGrp transpose"/>
+          <moduleRef key="transcr" include="facsimile handNotes listTranspose metamark restore subst surface surfaceGrp transpose"/><!-- substJoin -->
           <moduleRef key="linking" include="ab seg"/>
           
           <!--  contraintSpec -->
@@ -1596,6 +1606,19 @@
                     </valItem>
                 </valList>
             </attDef>
+          <attDef ident="subtype" mode="change" usage="opt">
+            <valList mode="replace" type="closed">
+              <valItem ident="fackel">
+                <desc>Verweis auf ein 'Werk' in der "Fackel"</desc>
+              </valItem>
+              <valItem ident="pmb">
+                <desc>Verweis auf ein 'Werk' in der PMB</desc>
+              </valItem>
+              <valItem ident="legal-doc">
+                <desc>Verweis auf ein 'Werk' im Korpus der Rechtsakten-Edition</desc>
+              </valItem>
+            </valList>
+          </attDef>
             <attDef ident="ana" mode="change" usage="opt">
                 <valList mode="replace" type="closed">
                     <valItem ident="#address">
@@ -1939,11 +1962,7 @@
 <!-- namesdates module -->
 
     <!-- element country -->
-    <elementSpec ident="country" module="namesdates" mode="change">
-        <attList>
-            <attDef ident="ref" mode="change" usage="req"/>
-        </attList>
-    </elementSpec>
+    <elementSpec ident="country" module="namesdates" mode="change"/>
     
     <!-- element listOrg -->
     <elementSpec ident="listOrg" module="namesdates" mode="change"/>
@@ -2095,8 +2114,13 @@
                     <dataRef key="ID"/>
                 </datatype>
             </attDef>
-            <attDef ident="prev" mode="change" usage="req"/><!-- LU: Beschreibung ausständig? -->
+            <attDef ident="prev" mode="change" usage="req"/>
             <attDef ident="next" mode="change" usage="req"/>
+            <attDef ident="xml:base" mode="change" usage="req">
+              <valList mode="replace" type="closed">
+                <valItem ident="https://id.acdh.oeaw.ac.at/legalkraus"/>
+              </valList>
+            </attDef>
         </attList>
     </elementSpec>
     
@@ -2175,11 +2199,11 @@
     </elementSpec>
     
     <!-- element substJoin -->
-    <elementSpec ident="substJoin" module="transcr" mode="change">
+    <!--<elementSpec ident="substJoin" module="transcr" mode="change">
         <attList>
             <attDef ident="target" mode="change" usage="req"/>
         </attList>
-    </elementSpec>
+    </elementSpec>-->
     
     <!-- element surface -->
     <elementSpec ident="surface" module="transcr" mode="change">
@@ -2588,7 +2612,7 @@
                     Namensnennung 4.0 International Lizenz</licence>
                 </availability>
                 <idno type="URL" subtype="legalkraus"
-                  >https://legalkraus.acdh.oeaw.ac.at/id/D_000002-002-000</idno>
+                  >https://id.acdh.oeaw.ac.at/legalkraus/D_000002-002-000</idno>
                 <idno type="URL" subtype="krausonline"
                   >http://www.kraus.wienbibliothek.at/node/1540</idno>
                 <idno type="ID" subtype="transkribus">365566</idno>
@@ -2739,7 +2763,7 @@
           <exemplum>
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <seriesStmt>
-                <title type="collection" ref="https://legalkraus.acdh.oeaw.ac.at/id/C_000001">Karl Kraus ca. Neues Wiener Journal</title>
+                <title type="collection" ref="https://id.acdh.oeaw.ac.at/legalkraus/C_000001">Karl Kraus ca. Neues Wiener Journal</title>
               </seriesStmt>
             </egXML>
           </exemplum>
