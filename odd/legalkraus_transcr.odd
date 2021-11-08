@@ -566,7 +566,7 @@
                 <correspAction type="sent">
                   <persName ref="#11988">Karl Kraus</persName>
                   <roleName ref="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/defendant"/><!-- LU: korrigieren -->
-                  <address ana="#address">
+                  <address>
                     <street ref="#50496">Hintere Zollamtsstrasse Nr.3</street>
                     <settlement ref="#53">Wien III.</settlement>
                   </address>
@@ -575,7 +575,7 @@
                 <correspAction type="received">
                   <orgName ref="#50491">Strafbezirksgericht I</orgName>
                   <roleName ref="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/plaintiff"/><!-- LU: korrigieren -->
-                  <address ana="#address">
+                  <address>
                     <street ref="#50664"/>
                     <settlement ref="#53">Wien</settlement>
                   </address>
@@ -637,7 +637,7 @@
         und jene der projekteigenen Scans mit <val>scans</val>. Sowohl <gi>facsimile</gi> als auch 
         <gi>surfaceGrp</gi> und <gi>surface</gi> erhalten eine <att>xml:id</att> zur eindeutigen Identifizierung.
         Derzeit sind die Faksimiles nur für den 'Haupttextzeugen' zugeordnet. Insofern weitere Textzeugen vorhanden und verlinkt sind, 
-        werden diese in einem weiteren <gi>facsimile</gi>-Element mit dem Attribut <att>ana</att> und dem Wert <val>further-witnesses</val> zur vorläufigen Differenzierung versehen.</p>
+        werden diese in einem weiteren <gi>facsimile</gi>-Element mit dem Attribut <att>type</att> und dem Wert <val>further-witnesses</val> zur vorläufigen Differenzierung versehen.</p>
             
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <facsimile xml:id="D_000002-002-000-facs001">
@@ -1108,8 +1108,8 @@
           in Form von <att>subtype</att> mit den möglichen Werten <val>pmb</val> (für 'Werke' in der <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref>), 
           <val>fackel</val> (für 'Werke' aus der <ref target="https://fackel.oeaw.ac.at/">"Fackel"</ref>)
           und <val>legal-doc</val> (für 'Werke', die sich im Korpus der Rechtsakten-Edition befinden). 
-          Adressen erhalten sowohl <val>place</val> als auch <att>ana</att> mit dem Wert
-          <val>#address</val>. Schachtelungen von <gi>rs</gi> sind möglich.</p>
+          Adressen erhalten sowohl <val>place</val> als auch <att>subtype</att> mit dem Wert
+          <val>address</val>. Schachtelungen von <gi>rs</gi> sind möglich.</p>
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <rs type="work" ref="#53851">Der Wiener Tag</rs>
@@ -1288,17 +1288,7 @@
     </elementSpec>
     
     <!-- element address -->
-    <elementSpec ident="address" module="core" mode="change">
-        <attList>
-            <attDef ident="ana" mode="change" usage="req">
-                <valList mode="replace" type="closed">
-                    <valItem ident="#address">
-                        <desc>Adresse</desc>
-                    </valItem>
-                </valList>
-            </attDef>
-        </attList>
-    </elementSpec>
+    <elementSpec ident="address" module="core" mode="change"/>
     
     <!-- element date -->
     <elementSpec ident="date" module="core" mode="change">
@@ -1619,9 +1609,9 @@
               </valItem>
             </valList>
           </attDef>
-            <attDef ident="ana" mode="change" usage="opt">
+            <attDef ident="subtype" mode="change" usage="opt">
                 <valList mode="replace" type="closed">
-                    <valItem ident="#address">
+                    <valItem ident="address">
                         <desc>Adresse</desc>
                     </valItem>
                 </valList>
@@ -2137,7 +2127,7 @@
                     <dataRef key="ID"/>
                 </datatype>
             </attDef>
-            <attDef ident="ana" mode="change" usage="opt">
+            <attDef ident="type" mode="change" usage="opt">
                 <valList type="closed" mode="replace">
                     <valItem ident="further-witnesses">
                         <desc>weitere Textzeugen</desc>
