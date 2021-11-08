@@ -456,11 +456,11 @@
             <head>Sprache</head>
             
             <p>In <gi>langUsage</gi> wird die Sprache des Dokuments festgehalten. In <gi>language</gi> wird 
-            dem Attribut <att>ident</att> ein Wert zugeordnet, z. B. <val>ger</val> für ein deutschsprachiges Dokument.</p>
+            dem Attribut <att>ident</att> ein Wert zugeordnet, z. B. <val>de</val> für ein deutschsprachiges Dokument (ISO 639).</p>
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <langUsage> 
-                <language ident="ger">Deutsch</language> 
+                <language ident="de">Deutsch</language> 
               </langUsage>
             </egXML>
             
@@ -1814,7 +1814,7 @@
                     <dataRef key="teidata.language"/>
                 </datatype>
                 <valList mode="replace" type="semi">
-                    <valItem ident="ger">
+                    <valItem ident="de">
                         <desc>Deutsch</desc>
                     </valItem>
                 </valList>
