@@ -65,7 +65,7 @@
           <moduleRef key="msdescription"/>
           <moduleRef key="namesdates" include="country settlement"/>
           <moduleRef key="tei"/>
-          <moduleRef key="textstructure" include="body TEI text"/>
+          <moduleRef key="textstructure" include="body div TEI text"/>
           <moduleRef key="textcrit"/>
           <moduleRef key="transcr" include="fw"/>
           <moduleRef key="linking"/>
@@ -291,6 +291,24 @@
         
         <!-- element body -->
         <elementSpec ident="body" module="textstructure" mode="change"/>
+        
+        <!-- element div -->
+        <elementSpec ident="div" module="textstructure" mode="change">
+          <attList>
+            <attDef ident="xmlns" mode="change" usage="req">
+              <valList type="closed" mode="replace">
+                <valItem ident="http://www.tei-c.org/ns/1.0"/>
+              </valList>
+            </attDef>
+            <attDef ident="xml:id" mode="change" usage="req"/>
+            <attDef ident="type" mode="change=" usage="req">
+              <valList type="closed" mode="replace">
+                <valItem ident="page"/>
+              </valList>
+            </attDef>
+            <attDef ident="n" mode="change" usage="req"/>
+          </attList>
+        </elementSpec>
         
         <!-- element TEI -->
         <elementSpec ident="TEI" module="textstructure" mode="change"/>
