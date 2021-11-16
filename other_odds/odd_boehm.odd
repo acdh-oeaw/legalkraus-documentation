@@ -130,13 +130,13 @@
                 <valItem ident="preserve"/>
               </valList>
             </attDef>
-            <attDef ident="ids" mode="add" ns="https://www.kraus.wienbibliothek.at/" usage="req">
+            <attDef ident="ko:ids" mode="add" ns="https://www.kraus.wienbibliothek.at/" usage="req">
               <desc>ID</desc>
               <datatype>
-                <dataRef key="teidata.numeric"></dataRef>
+                <dataRef key="teidata.numeric"/>
               </datatype>
             </attDef>
-            <attDef ident="titles" mode="add" ns="https://www.kraus.wienbibliothek.at/" usage="req">
+            <attDef ident="ko:titles" mode="add" ns="https://www.kraus.wienbibliothek.at/" usage="req">
               <desc>ID</desc>
               <datatype>
                 <dataRef key="teidata.text"/>
