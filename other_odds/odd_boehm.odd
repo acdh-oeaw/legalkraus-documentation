@@ -123,20 +123,24 @@
         <!-- element head -->
         <elementSpec ident="head" module="core" mode="change">
           <attList>
-            <attDef ident="level" mode="change" usage="req"/>
+            <attDef ident="level" mode="add" ns="" usage="req">
+              <datatype>
+                <dataRef key="teidata.numeric"/>
+              </datatype>
+            </attDef>
             <attDef ident="n" mode="change" usage="req"/>
             <attDef ident="xml:space" mode="change" usage="req">
               <valList>
                 <valItem ident="preserve"/>
               </valList>
             </attDef>
-            <attDef ident="ko:ids" mode="add" ns="https://www.kraus.wienbibliothek.at/" usage="req">
+            <attDef ident="ids" mode="add" ns="https://www.kraus.wienbibliothek.at/" usage="req">
               <desc>ID</desc>
               <datatype>
                 <dataRef key="teidata.numeric"/>
               </datatype>
             </attDef>
-            <attDef ident="ko:titles" mode="add" ns="https://www.kraus.wienbibliothek.at/" usage="req">
+            <attDef ident="titles" mode="add" ns="https://www.kraus.wienbibliothek.at/" usage="req">
               <desc>ID</desc>
               <datatype>
                 <dataRef key="teidata.text"/>
