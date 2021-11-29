@@ -106,15 +106,15 @@
         </rule>
 
         <!-- hs. Bearbeitungen -->
-        <rule context="tei:add">
+        <rule context="tei:add[@hand]">
             <assert test="matches(@hand,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attributwert von "hand" ist ungültig, entspricht nicht dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}'.</assert>
         </rule>
         
-        <rule context="tei:del">
+        <rule context="tei:del[@hand]">
             <assert test="matches(@hand,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attributwert von "hand" ist ungültig, entspricht nicht dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}'.</assert>
         </rule>
         
-        <rule context="tei:subst">
+        <rule context="tei:subst[@hand]">
             <assert test="matches(@hand,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attributwert von "hand" ist ungültig, entspricht nicht dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}'.</assert>
         </rule>
         
@@ -127,7 +127,7 @@
             <assert test="matches(@target,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}_seg[0-9]{3}')">Attributwert von "target" ist ungültig, entspricht nicht dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}_seg[0-9]{3}'.</assert>
         </rule>
         
-        <rule context="tei:transpose">
+        <rule context="tei:transpose[@hand]">
             <assert test="matches(@hand,'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attributwert von "hand" ist ungültig, entspricht nicht dem Muster 'D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}'.</assert>
         </rule>
         
@@ -139,7 +139,7 @@
             <assert test="matches(@hand,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attribut "hand" ungültig. Muss dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}' entsprechen.</assert>
         </rule>
         
-        <rule context= "tei:restore">
+        <rule context= "tei:restore[@hand]">
             <assert test="matches(@hand,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attribut "hand" ungültig. Muss dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}' entsprechen.</assert>
         </rule>
         
@@ -147,16 +147,16 @@
             <assert test="matches(@hand,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attribut "hand" ungültig. Muss dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}' entsprechen.</assert>
         </rule>
         
-        <rule context= "tei:metamark[@function='marginal']">
+        <rule context= "tei:metamark[@function='marginal', @hand]">
             <assert test="matches(@hand,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attribut "hand" ungültig. Muss dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}' entsprechen.</assert>
         </rule>
         
-        <rule context= "tei:lem">
+        <rule context= "tei:lem [@hand]">
             <assert test="matches(@wit,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-wit[0-9]{2}')">Attribut "wit" ungültig. Muss dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-wit[0-9]{2}' entsprechen.</assert>
             <assert test="matches(@hand,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attribut "hand" ungültig. Muss dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}' entsprechen.</assert>
         </rule>
         
-        <rule context= "tei:rdg">
+        <rule context= "tei:rdg [@hand]">
             <assert test="matches(@wit,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-wit[0-9]{2}')">Attribut "wit" ungültig. Muss dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-wit[0-9]{2}' entsprechen.</assert>
             <assert test="matches(@hand,'#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}')">Attribut "hand" ungültig. Muss dem Muster '#D_[0-9]{6}-[0-9]{3}-[0-9]{3}-hand[0-9]{2}' entsprechen.</assert>
         </rule>
