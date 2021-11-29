@@ -69,6 +69,7 @@
           <moduleRef key="textcrit"/>
           <moduleRef key="transcr" include="fw"/>
           <moduleRef key="linking"/>
+          <moduleSpec ident="ko" xml:lang="de"/>
         </schemaSpec>
         
         <!-- element availability -->
@@ -121,33 +122,44 @@
         <elementSpec ident="date" module="core" mode="change"/>
         
         <!-- element head -->
-        <elementSpec ident="head" module="core" mode="change">
+        <elementSpec ident="head" mode="change" module="ko">
+          <classes mode="change">
+            <memberOf key="att.typed"/>
+            <memberOf key="att.global"/><!-- @n und @xml:space -->
+            <memberOf key="att.ko"/><!-- @level, @ids, @titles -->
+          </classes>
           <attList>
-            <attDef ident="level" mode="add" ns="" usage="req">
-              <datatype>
-                <dataRef key="teidata.numeric"/>
-              </datatype>
-            </attDef>
             <attDef ident="n" mode="change" usage="req"/>
             <attDef ident="xml:space" mode="change" usage="req">
               <valList>
                 <valItem ident="preserve"/>
               </valList>
             </attDef>
-            <attDef ident="ids" mode="add" ns="https://www.kraus.wienbibliothek.at/" usage="req">
-              <desc>ID</desc>
+          </attList>
+        </elementSpec>
+        
+        <classSpec ident="att.ko" type="atts" mode="add" module="ko">
+          <classes/>
+          <attList>
+            <attDef ident="level" ns="https://www.kraus.wienbibliothek.at/" usage="req"><!-- namespace hinzufügen: "ko:level" -->
               <datatype>
-                <dataRef key="teidata.numeric"/>
+                <dataRef name="decimal"/>
               </datatype>
             </attDef>
-            <attDef ident="titles" mode="add" ns="https://www.kraus.wienbibliothek.at/" usage="req">
+            <attDef ident="ids" ns="https://www.kraus.wienbibliothek.at/" usage="req">
               <desc>ID</desc>
               <datatype>
-                <dataRef key="teidata.text"/>
+                <dataRef name="decimal"/>
+              </datatype>
+            </attDef>
+            <attDef ident="titles" ns="https://www.kraus.wienbibliothek.at/" usage="req">
+              <desc>Titel</desc>
+              <datatype>
+                <dataRef name="string"/>
               </datatype>
             </attDef>
           </attList>
-        </elementSpec>
+        </classSpec>
         
         <!-- element hi -->
         <elementSpec ident="hi" module="core" mode="change">
@@ -305,7 +317,7 @@
               </valList>
             </attDef>
             <attDef ident="xml:id" mode="change" usage="req"/>
-            <attDef ident="type" mode="change=" usage="req">
+            <attDef ident="type" mode="change" usage="req">
               <valList type="closed" mode="replace">
                 <valItem ident="page"/>
               </valList>
