@@ -60,7 +60,7 @@
         
         <schemaSpec ident="legalkraus_transcr_boehm" start="TEI" xml:lang="de">
           <moduleRef key="header" include="availability fileDesc licence publicationStmt sourceDesc teiHeader titleStmt"/>
-          <moduleRef key="core" include="address bibl choice corr date head hi lb name note p pb postCode publisher pubPlace ref sic street title"/>
+          <moduleRef key="core" include="address bibl date head hi lb name note p pb postCode publisher pubPlace ref street title"/>
           <moduleRef key="corpus"/>
           <moduleRef key="msdescription"/>
           <moduleRef key="namesdates" include="country settlement"/>
@@ -69,7 +69,7 @@
           <moduleRef key="textcrit"/>
           <moduleRef key="transcr" include="fw"/>
           <moduleRef key="linking"/>
-          <moduleSpec ident="ko" xml:lang="de"/>
+          <moduleSpec ident="ko" xml:lang="de"/><!-- HIER -->
         </schemaSpec>
         
         <!-- element availability -->
@@ -112,16 +112,10 @@
         <!-- element bibl -->
         <elementSpec ident="bibl" module="core" mode="change"/>
         
-        <!-- element choice -->
-        <elementSpec ident="choice" module="core" mode="change"/>
-        
-        <!-- element corr -->
-        <elementSpec ident="corr" module="core" mode="change"/>
-        
         <!-- element date -->
         <elementSpec ident="date" module="core" mode="change"/>
         
-        <!-- element head -->
+        <!-- element head --><!-- HIER -->
         <elementSpec ident="head" mode="change" module="ko">
           <classes mode="change">
             <memberOf key="att.typed"/>
@@ -141,7 +135,7 @@
         <classSpec ident="att.ko" type="atts" mode="add" module="ko">
           <classes/>
           <attList>
-            <attDef ident="level" ns="https://www.kraus.wienbibliothek.at/" usage="req"><!-- namespace hinzufügen: "ko:level" -->
+            <attDef ident="level" ns="https://www.kraus.wienbibliothek.at/" usage="req"><!-- evtl. namespace hinzufügen: "ko:level"? -->
               <datatype>
                 <dataRef name="decimal"/>
               </datatype>
@@ -289,9 +283,6 @@
             </attDef>
           </attList>
         </elementSpec>
-       
-        <!-- element sic -->
-        <elementSpec ident="sic" module="core" mode="change"/>
        
         <!-- element street -->
         <elementSpec ident="street" module="core" mode="change"/>
