@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2021-11-29T10:25:22Z. .
+Schema generated from ODD source 2021-11-30T07:49:21Z. .
 TEI Edition: Version 4.3.0. Last updated on
         31st August 2021, revision b4f72b1ff
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.3.0/
@@ -1492,72 +1492,40 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
       </choice>
    </define>
    <define name="model.pPart.editorial">
-      <choice>
-         <ref name="choice"/>
-      </choice>
+      <notAllowed/>
    </define>
    <define name="model.pPart.editorial_alternation">
-      <choice>
-         <ref name="choice"/>
-      </choice>
+      <notAllowed/>
    </define>
    <define name="model.pPart.editorial_sequence">
-      <ref name="choice"/>
+      <empty/>
    </define>
    <define name="model.pPart.editorial_sequenceOptional">
-      <optional>
-         <ref name="choice"/>
-      </optional>
+      <empty/>
    </define>
    <define name="model.pPart.editorial_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="choice"/>
-      </zeroOrMore>
+      <empty/>
    </define>
    <define name="model.pPart.editorial_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="choice"/>
-      </oneOrMore>
+      <notAllowed/>
    </define>
    <define name="model.pPart.transcriptional">
-      <choice>
-         <ref name="sic"/>
-         <ref name="corr"/>
-      </choice>
+      <notAllowed/>
    </define>
    <define name="model.pPart.transcriptional_alternation">
-      <choice>
-         <ref name="sic"/>
-         <ref name="corr"/>
-      </choice>
+      <notAllowed/>
    </define>
    <define name="model.pPart.transcriptional_sequence">
-      <ref name="sic"/>
-      <ref name="corr"/>
+      <empty/>
    </define>
    <define name="model.pPart.transcriptional_sequenceOptional">
-      <optional>
-         <ref name="sic"/>
-      </optional>
-      <optional>
-         <ref name="corr"/>
-      </optional>
+      <empty/>
    </define>
    <define name="model.pPart.transcriptional_sequenceOptionalRepeatable">
-      <zeroOrMore>
-         <ref name="sic"/>
-      </zeroOrMore>
-      <zeroOrMore>
-         <ref name="corr"/>
-      </zeroOrMore>
+      <empty/>
    </define>
    <define name="model.pPart.transcriptional_sequenceRepeatable">
-      <oneOrMore>
-         <ref name="sic"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="corr"/>
-      </oneOrMore>
+      <notAllowed/>
    </define>
    <define name="model.pPart.edit">
       <choice>
@@ -2028,13 +1996,6 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
          <ref name="decoNote"/>
       </choice>
    </define>
-   <define name="model.choicePart">
-      <choice>
-         <ref name="sic"/>
-         <ref name="corr"/>
-         <ref name="seg"/>
-      </choice>
-   </define>
    <define name="model.imprintPart">
       <choice>
          <ref name="publisher"/>
@@ -2334,37 +2295,6 @@ The element indicated by @spanTo (<sch:value-of select="@spanTo"/>) must follow 
          <ref name="macro.paraContent"/>
          <ref name="att.global.attributes"/>
          <ref name="att.written.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="sic">
-      <element name="sic">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Latin for thus or so) contains text reproduced although apparently incorrect or inaccurate. [3.5.1. Apparent Errors]</a:documentation>
-         <ref name="macro.paraContent"/>
-         <ref name="att.global.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="corr">
-      <element name="corr">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(correction) contains the correct form of a passage apparently erroneous in the copy text. [3.5.1. Apparent Errors]</a:documentation>
-         <ref name="macro.paraContent"/>
-         <ref name="att.global.attributes"/>
-         <ref name="att.editLike.attributes"/>
-         <ref name="att.typed.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="choice">
-      <element name="choice">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(choice) groups a number of alternative encodings for the same point in a text. [3.5. Simple Editorial Changes]</a:documentation>
-         <oneOrMore>
-            <choice>
-               <ref name="model.choicePart"/>
-               <ref name="choice"/>
-            </choice>
-         </oneOrMore>
-         <ref name="att.global.attributes"/>
          <empty/>
       </element>
    </define>
