@@ -39,7 +39,7 @@
     </fileDesc>
   </teiHeader>
 
-<!-- Text der ODD -->
+<!-- Text -->
 
   <text>
     <front>
@@ -60,7 +60,7 @@
         
         <schemaSpec ident="legalkraus_transcr_boehm" start="TEI" xml:lang="de">
           <moduleRef key="header" include="availability fileDesc licence publicationStmt sourceDesc teiHeader titleStmt"/>
-          <moduleRef key="core" include="address bibl date head hi lb name note p pb postCode publisher pubPlace ref street title"/>
+          <moduleRef key="core" include="address bibl date hi lb name note p pb postCode publisher pubPlace ref street title"/>
           <moduleRef key="corpus"/>
           <moduleRef key="msdescription"/>
           <moduleRef key="namesdates" include="country settlement"/>
@@ -68,9 +68,8 @@
           <moduleRef key="textstructure" include="body div TEI text"/>
           <moduleRef key="textcrit"/>
           <moduleRef key="transcr" include="fw"/>
-          <moduleRef key="linking"/>
-          <moduleSpec ident="ko" xml:lang="de"/><!-- HIER -->
-        </schemaSpec>
+          <moduleRef key="linking" include="ab"/>
+          <moduleSpec ident="ko" xml:lang="de"/>
         
         <!-- element availability -->
         <elementSpec ident="availability" module="header" mode="change"/>
@@ -81,7 +80,7 @@
         <!-- element licence -->
         <elementSpec ident="licence" module="header" mode="change">
           <attList>
-            <attDef ident="target" mode="change" usage="req">
+            <attDef ident="target" mode="change" usage="opt">
               <valList mode="replace" type="closed">
                 <valItem ident="http://creativecommons.org/licenses/by/4.0">
                   <desc>Creative Commons Namensnennung 4.0 International Lizenz</desc>
@@ -116,15 +115,20 @@
         <elementSpec ident="date" module="core" mode="change"/>
         
         <!-- element head --><!-- HIER -->
-        <elementSpec ident="head" mode="change" module="ko">
+        <elementSpec ident="ab" mode="change" module="linking">
           <classes mode="change">
-            <memberOf key="att.typed"/>
+            <memberOf key="att.typed"/><!-- @type -->
             <memberOf key="att.global"/><!-- @n und @xml:space -->
             <memberOf key="att.ko"/><!-- @level, @ids, @titles -->
           </classes>
           <attList>
-            <attDef ident="n" mode="change" usage="req"/>
-            <attDef ident="xml:space" mode="change" usage="req">
+            <attDef ident="type" mode="change" usage="req">
+              <valList>
+                <valItem ident="head"/>
+              </valList>
+            </attDef>
+            <attDef ident="n" mode="change" usage="opt"/>
+            <attDef ident="xml:space" mode="change" usage="opt">
               <valList>
                 <valItem ident="preserve"/>
               </valList>
@@ -135,18 +139,18 @@
         <classSpec ident="att.ko" type="atts" mode="add" module="ko">
           <classes/>
           <attList>
-            <attDef ident="level" ns="https://www.kraus.wienbibliothek.at/" usage="req"><!-- evtl. namespace hinzufügen: "ko:level"? -->
+            <attDef ident="level" ns="https://www.kraus.wienbibliothek.at/" usage="opt">
               <datatype>
-                <dataRef name="decimal"/>
+                <dataRef name="string"/>
               </datatype>
             </attDef>
-            <attDef ident="ids" ns="https://www.kraus.wienbibliothek.at/" usage="req">
+            <attDef ident="ids" ns="https://www.kraus.wienbibliothek.at/" usage="opt">
               <desc>ID</desc>
               <datatype>
-                <dataRef name="decimal"/>
+                <dataRef name="string"/>
               </datatype>
             </attDef>
-            <attDef ident="titles" ns="https://www.kraus.wienbibliothek.at/" usage="req">
+            <attDef ident="titles" ns="https://www.kraus.wienbibliothek.at/" usage="opt">
               <desc>Titel</desc>
               <datatype>
                 <dataRef name="string"/>
@@ -158,7 +162,7 @@
         <!-- element hi -->
         <elementSpec ident="hi" module="core" mode="change">
           <attList>
-            <attDef ident="rend" mode="change" usage="req">
+            <attDef ident="rend" mode="change" usage="opt">
               <valList type="closed" mode="replace">
                 <valItem ident="underline"/>
                 <valItem ident="spaced"/>
@@ -179,11 +183,6 @@
                 </valItem>
               </valList>
             </attDef>
-            <attDef ident="part" mode="change" usage="opt">
-              <valList type="closed" mode="replace">
-                <valItem ident="Y"/>
-              </valList>
-            </attDef>
           </attList>
         </elementSpec>
         
@@ -193,14 +192,14 @@
         <!-- element note -->
         <elementSpec ident="note" module="core" mode="change">
           <attList>
-            <attDef ident="resp" mode="change" usage="req">
+            <attDef ident="resp" mode="change" usage="opt">
               <valList type="closed" mode="replace">
                 <valItem ident="#boehm"/>
                 <valItem ident="#Boehm"/>
                 <valItem ident="#legalkraus"/>
               </valList>
             </attDef>
-            <attDef ident="type" mode="change" usage="req">
+            <attDef ident="type" mode="change" usage="opt">
               <valList type="closed" mode="replace">
                 <valItem ident="material"/>
                 <valItem ident="zusammenfassung"/>
@@ -213,7 +212,7 @@
                 <valItem ident="italic"/>
               </valList>
             </attDef>
-            <attDef ident="n" mode="change" usage="req">
+            <attDef ident="n" mode="change" usage="opt">
               <valList type="closed" mode="replace">
                 <valItem ident="1"/>
                 <valItem ident="2"/>
@@ -226,7 +225,7 @@
         <!-- element p -->
         <elementSpec ident="p" module="core" mode="change">
           <attList>
-            <attDef ident="xml:id" mode="change" usage="req">
+            <attDef ident="xml:id" mode="change" usage="opt">
               <datatype>
                 <dataRef key="ID"/>
               </datatype>
@@ -238,15 +237,9 @@
                 </valItem>
               </valList>
             </attDef>
-            <attDef ident="part" mode="change" usage="opt">
-              <valList type="closed" mode="replace">
-                <valItem ident="Y"/>
-              </valList>
-            </attDef>
-            <attDef ident="xml:space" mode="change" usage="req">
+            <attDef ident="xml:space" mode="change" usage="opt">
               <valList>
                 <valItem ident="preserve"/>
-                <valItem ident="xml:space_tgx_tkz_bhb"/>
               </valList>
             </attDef>
           </attList>
@@ -255,12 +248,12 @@
         <!-- element pb -->
         <elementSpec ident="pb" module="core" mode="change">
           <attList>
-            <attDef ident="xml:id" mode="change" usage="req">
+            <attDef ident="xml:id" mode="change" usage="opt">
               <datatype>
                 <dataRef key="ID"/>
               </datatype>
             </attDef>
-            <attDef ident="n" mode="change" usage="req"/> 
+            <attDef ident="n" mode="change" usage="opt"/> 
           </attList>
         </elementSpec>
         
@@ -276,7 +269,7 @@
         <!-- element ref -->
         <elementSpec ident="ref" module="core" mode="change">
           <attList>
-            <attDef ident="target" mode="change" usage="req">
+            <attDef ident="target" mode="change" usage="opt">
               <datatype>
                 <dataRef key="teidata.pointer"/>
               </datatype>
@@ -302,18 +295,18 @@
         <!-- element div -->
         <elementSpec ident="div" module="textstructure" mode="change">
           <attList>
-            <attDef ident="xmlns" mode="change" usage="req">
+            <attDef ident="xmlns" mode="change" usage="opt">
               <valList type="closed" mode="replace">
                 <valItem ident="http://www.tei-c.org/ns/1.0"/>
               </valList>
             </attDef>
-            <attDef ident="xml:id" mode="change" usage="req"/>
-            <attDef ident="type" mode="change" usage="req">
+            <attDef ident="xml:id" mode="change" usage="opt"/>
+            <attDef ident="type" mode="change" usage="opt">
               <valList type="closed" mode="replace">
                 <valItem ident="page"/>
               </valList>
             </attDef>
-            <attDef ident="n" mode="change" usage="req"/>
+            <attDef ident="n" mode="change" usage="opt"/>
           </attList>
         </elementSpec>
         
@@ -326,21 +319,23 @@
         <!-- element fw -->
         <elementSpec ident="fw" module="transcr" mode="change">
           <attList>
-            <attDef ident="type" mode="change" usage="req">
+            <attDef ident="type" mode="change" usage="opt">
               <valList type="closed" mode="replace">
                 <valItem ident="pageNum"/>
               </valList>
             </attDef>
-            <attDef ident="xml:id" mode="change" usage="req">
+            <attDef ident="xml:id" mode="change" usage="opt">
               <datatype>
                 <dataRef key="ID"/>
               </datatype>
             </attDef>
           </attList>
         </elementSpec>
-            
-      </div>
+          
+      </schemaSpec>   
         
+      </div>
+      
     </body>
       
   </text>
