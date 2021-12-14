@@ -104,9 +104,6 @@
                 <valItem ident="URL">
                   <desc>URL</desc>
                 </valItem>
-                <valItem ident="URI">
-                  <desc>URI</desc>
-                </valItem>
               </valList>
             </attDef>
             <attDef ident="subtype" mode="change" usage="req">           
@@ -116,9 +113,6 @@
                 </valItem>
                 <valItem ident="krausonline">
                   <desc>Karl Kraus Online</desc>
-                </valItem>
-                <valItem ident="wienbibliothek">
-                  <desc>Wienbibliothek im Rathaus</desc>
                 </valItem>
               </valList>
             </attDef>
