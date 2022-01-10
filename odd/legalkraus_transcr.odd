@@ -1623,7 +1623,7 @@
     <!-- element street -->
     <elementSpec ident="street" module="core" mode="change">
         <attList>
-            <attDef ident="ref" mode="change" usage="req"/>
+            <attDef ident="corresp" mode="change" usage="req"/>
         </attList>
     </elementSpec>
     
