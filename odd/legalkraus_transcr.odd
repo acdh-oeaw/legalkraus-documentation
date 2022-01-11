@@ -1243,12 +1243,12 @@
         <schemaSpec ident="legalkraus_transcr" start="TEI" xml:lang="de">
           
           <moduleRef key="header"
-            include="availability change classCode correspAction correspDesc creation encodingDesc fileDesc handNote idno keywords language langUsage licence profileDesc publicationStmt revisionDesc seriesStmt sourceDesc teiHeader textClass titleStmt msDesc"/>
+            include="availability change classCode correspAction correspDesc creation encodingDesc fileDesc handNote idno keywords language langUsage licence profileDesc publicationStmt revisionDesc seriesStmt sourceDesc teiHeader textClass titleStmt"/>
           <moduleRef key="core"
             include="add address date del editor gap graphic hi lb name note noteGrp p pb postCode ptr publisher pubPlace q quote ref rs street term title"/>
           <moduleRef key="corpus" include="particDesc"/>
           <moduleRef key="analysis"/>
-          <moduleRef key="msdescription" include="accMat objectType physDesc stamp"/>
+          <moduleRef key="msdescription" include="accMat msDesc objectType physDesc stamp"/>
           <moduleRef key="namesdates" include="country listOrg listPerson org orgName persName person roleName settlement"/>
           <moduleRef key="tei"/>
           <moduleRef key="textstructure" include="body div TEI text"/>
@@ -1865,9 +1865,6 @@
     <!-- element titleStmt -->
     <elementSpec ident="titleStmt" module="header" mode="change"/>
     
-    <!-- element msDesc -->
-    <elementSpec ident="msDesc" module="header" mode="change"/>
-
 <!-- linking module -->
 
     <!-- element ab -->
@@ -1921,6 +1918,9 @@
             <attDef ident="source" mode="change" usage="req"/>
         </attList>
     </elementSpec>
+    
+        <!-- element msDesc -->
+        <elementSpec ident="msDesc" module="msdescription" mode="change"/>
     
     <!-- element objectType -->
     <elementSpec ident="objectType" module="msdescription" mode="change">
