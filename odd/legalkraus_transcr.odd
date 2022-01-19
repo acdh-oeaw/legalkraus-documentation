@@ -495,47 +495,6 @@
             
           </div>
 
-      <!-- div back -->
-          <!--<div xml:id="back">-->
-            
-            <!--<head>Beteiligte Personen und Institutionen</head>       
-            
-            <p>In der <gi>particDesc</gi> werden beteiligte Personen und Institutionen (im
-            Unterschied zu rein namentlich genannten) in ihrer Rolle (<att>role</att>) verzeichnet. 
-            Im Element <gi>listPerson</gi> und den ensprechenden Kindelementen <gi>person</gi> werden 
-            beteiligte Personen festgehalten. Jedes <gi>person</gi>-Element erhält dabei ein Attribut 
-            <att>role</att> mit einem Verweis auf die Rolle der Person in diesem Dokument. Der Wert 
-            von <att>role</att> entspricht einer <ref target="https://vocabs.acdh-dev.oeaw.ac.at/legalkraus-doctypes/v1.0/">projektspezifischen Taxonomie</ref>. Jede Person erhält außerdem 
-            einen Verweis auf den ensprechenden Datensatz in der <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref> mittels eines <att>ref</att>-Attributs 
-            sowie ein Kindelement mit dem Namen der Person, <gi>persName</gi>.
-            Analog funktioniert die Dokumentation der beteiligten Institutionen: Im Element <gi>listOrg</gi> 
-            werden <gi>org</gi>-Elemente mit dem Kindelement <gi>orgName</gi> sowie den Attributen 
-            <att>role</att> und <att>ref</att> angegeben.</p>
-            
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <particDesc>
-                <listPerson>
-                  <person role="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/plaintiff" ref="#11988">
-                    <persName>Karl Kraus</persName>
-                  </person>
-                  <person role="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/defendant" ref="#40703">
-                    <persName>Karl Schiffleitner</persName>
-                  </person>
-                </listPerson>
-                <listOrg>
-                  <org role="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/defendant" ref="#29637">
-                    <orgName>Reichspost</orgName>
-                  </org>
-                </listOrg>
-              </particDesc>
-            </egXML>
-            
-            <p>In die <ref target="#particDesc"><gi>particDesc</gi></ref> werden jedoch nur die zentral beteiligten übernommen.</p>
-            
-             !!! ggf. auch raus, falls nicht in Peters <back>: listPerson, person/@role and @ref, persName, listOrg, org/@role and @ref, orgName
-            
-          </div>-->
-
       <!-- div correspDesc -->
           <div xml:id="correspDesc">
             
@@ -1149,8 +1108,43 @@
           <p>Personal- und Possessivpronomen werden nicht ausgezeichnet. Ausschlaggebend sind Namen
           bzw. Substantive. Ebenso nicht näher bestimmt werden Namen literarischer Figuren.</p>
           
-          <p>Im <gi>body</gi> selbst sind also alle erwähnten Personen und Institutionen ausgezeichnet.</p>
-
+        </div>
+        
+  <!-- div back -->
+        <div xml:id="back">
+        
+          <head>Entitäten im <gi>back</gi></head>
+          
+          <p>Im <gi>back</gi>-Element werden alle erwähnten Personen, Instutionen, Orte, Werke und erwähnte Dokumente
+          aus dem Rechtsakten-Korpus aufgelistet.</p>
+            
+          <p>Alle Personen, Institutionen, Orte und Werke werden mit <att>xml:id</att>s versehen, deren Werte auf den 
+          entsprechenden Datensatz in der <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref> verweisen.
+          Alle erwähnten Dokumente aus dem Rechtsakten-Korpus werden außerdem mit den entsprechenden <att>xml:id</att>s 
+          der betroffenen Dokumente verlinkt.</p>
+          
+          <!-- noch unklar (auch in Bsp. und unten nachtragen): Kodierung von Rollen der Personen (ist auch für Institutionen wichtig,
+          Bsp.: <person role="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/plaintiff" ref="#11988">;
+          in diese Richtung: Jeder am Dokument zentral beteiligten Person und Institution wird [wie] eine 'Rolle' zugewiesen. 
+          Das bedeutet, dass jedes <gi>person</gi>- und jedes <gi>org</gi>-Element ein <att>role</att>-Attribut erhält,
+          dessen Attributwert einem Verweis auf den entsprechenden Datensatz zu dieser zuvor definierten Rolle in der
+          <ref target="https://vocabs.acdh-dev.oeaw.ac.at/legalkraus">projektspezifischen SKOS-Ontologie</ref> entspricht. -->
+          
+          <!-- noch nicht endgültig (auch in Bsp. und unten nachtragen): Personen -->
+          <!-- noch nicht endgültig (auch in Bsp. und unten nachtragen): Orte -->
+          
+          <!-- noch unklar (auch in Bsp. und unten nachtragen): Institutionen -->
+          <!-- noch unklar (auch in Bsp. und unten nachtragen): Werke -->
+          <!-- noch unklar (auch in Bsp. und unten nachtragen): erwähnte Dokumente -->
+          
+          <!-- ggf. unten raus, falls nicht in Peters back: @role bei person, listOrg, org/@role and @ref, orgName-->
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <back>
+              <!-- TO DO -->
+            </back>
+          </egXML>
+          
         </div>
 
   <!-- div citations -->
@@ -2008,7 +2002,6 @@
     <elementSpec ident="person" module="namesdates" mode="change">
         <attList>
             <attDef ident="role" mode="change" usage="req"/>
-            <attDef ident="ref" mode="change" usage="req"/>
         </attList>
     </elementSpec>
 
