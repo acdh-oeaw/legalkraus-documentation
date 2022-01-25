@@ -120,11 +120,7 @@
         </elementSpec>
         
         <!-- element keywords -->
-        <elementSpec ident="keywords" module="header" mode="change">
-          <attList>
-            <attDef ident="source" mode="change" usage="opt"/>
-          </attList>
-        </elementSpec>
+        <elementSpec ident="keywords" module="header" mode="change"/>
         
         <!-- element licence -->
         <elementSpec ident="licence" module="header" mode="change"/>
