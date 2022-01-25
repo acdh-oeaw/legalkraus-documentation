@@ -511,10 +511,7 @@
             Die 'Rolle', z. B. Rechtsanwalt, wird gegebenenfalls ebenso angebeben.</p>
             
             <p>Der_Die Absender_in wird in <gi>correspAction</gi> mit dem Attribut <att>type</att> und dem Attributwert <val>sent</val>
-            festgehalten. Der_Die Empfänger_n hingegen ist in <gi>correspAction</gi> <att>type</att> <val>received</val> zu finden.
-            Die Rollen der Personen und Institutionen, die sich aus der 
-            <ref target="https://vocabs.acdh-dev.oeaw.ac.at">projektspezifischen Taxonomie</ref> ergeben, werden in <gi>roleName</gi>
-            angegeben und mittels <att>ref</att> mit der entsprechenden Klassifikation in der Taxonomie verknüpft.</p>
+            festgehalten. Der_Die Empfänger_n hingegen ist in <gi>correspAction</gi> <att>type</att> <val>received</val> zu finden.</p>
             
             <p>In <gi>address</gi> werden die Anschriften dokumentiert. <gi>street</gi> verweist auf einen Eintrag in der 
             <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref> und <gi>settlement</gi> ebenso. 
@@ -527,7 +524,6 @@
               <correspDesc>
                 <correspAction type="sent">
                   <persName ref="#11988">Karl Kraus</persName>
-                  <roleName ref="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/defendant"/><!-- LU: korrigieren -->
                   <address>
                     <street corresp="#50496">Hintere Zollamtsstrasse Nr.3</street>
                     <settlement ref="#53">Wien III.</settlement>
@@ -536,7 +532,6 @@
                 </correspAction>
                 <correspAction type="received">
                   <orgName ref="#50491">Strafbezirksgericht I</orgName>
-                  <roleName ref="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/plaintiff"/><!-- LU: korrigieren -->
                   <address>
                     <street corresp="#50664"/>
                     <settlement ref="#53">Wien</settlement>
@@ -1122,11 +1117,6 @@
           Alle erwähnten Dokumente aus dem Rechtsakten-Korpus werden außerdem mit den entsprechenden <att>xml:id</att>s 
           der betroffenen Dokumente verlinkt.</p>
             
-          <p>Jede Person und jede Institution wird zudem eine 'Rolle' zugewiesen, die sie in diesem Dokument einnimmt.
-          Das bedeutet, dass jedes <gi>person</gi>- und jedes <gi>org</gi>-Element ein <att>role</att>-Attribut erhält,
-          dessen Attributwert einem Verweis auf den entsprechenden Datensatz zu dieser definierten Rolle in der 
-          <ref target="https://vocabs.acdh-dev.oeaw.ac.at/legalkraus">projektspezifischen SKOS-Ontologie</ref> entspricht.</p>
-            
           <p>Für die in einem Dokument erwähnten Personen gibt es im <gi>back</gi> eine <gi>listPerson</gi>.
           Jede erwähnte Person wird in einem eigenen <gi>person</gi>-Element dokumentiert.
           Jedes <gi>person</gi>-Element enthält wiederum diverse weitere Informationen.
@@ -1175,7 +1165,7 @@
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <back>
                 <listPerson>
-                    <person xml:id="pmb11988" role="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/plaintiff">
+                    <person xml:id="pmb11988">
                         <persName>
                             <forename>Karl</forename>
                             <surname>Kraus</surname>
@@ -1260,7 +1250,7 @@
                     </place>
                 </listPlace>
                 <listOrg>
-                    <org xml:id="org__36791" role="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/court">
+                    <org xml:id="org__36791">
                         <orgName>Bezirksgericht Wien Margareten</orgName>
                         <orgName type="uri_wien-geschichte-wiki">https://www.geschichtewiki.wien.gv.at/Bezirksgericht_Margareten</orgName>
                         <location type="located_in_place">
@@ -1453,7 +1443,7 @@
           <moduleRef key="corpus"/>
           <moduleRef key="analysis"/>
           <moduleRef key="msdescription" include="accMat msDesc objectType physDesc stamp"/>
-          <moduleRef key="namesdates" include="affiliation birth country death event forename geo listEvent listOrg listPerson listPlace location occupation org orgName persName person place placeName roleName settlement sex surname"/>
+          <moduleRef key="namesdates" include="affiliation birth country death event forename geo listEvent listOrg listPerson listPlace location occupation org orgName persName person place placeName settlement sex surname"/>
           <moduleRef key="tei"/>
           <moduleRef key="textstructure" include="back body div TEI text"/>
           <moduleRef key="textcrit" include="app lem listWit rdg variantEncoding witness"/>
@@ -2303,7 +2293,6 @@
     <elementSpec ident="org" module="namesdates" mode="change">
         <attList>
             <attDef ident="xml:id" mode="change" usage="req"/>
-            <attDef ident="role" mode="change" usage="req"/>
         </attList>
     </elementSpec>
     
@@ -2311,7 +2300,6 @@
     <elementSpec ident="orgName" module="namesdates" mode="change">
         <attList>
             <attDef ident="ref" mode="change" usage="opt"/>
-            <attDef ident="role" mode="change" usage="opt"/>
             <attDef ident="key" mode="change" usage="opt"/>
             <attDef ident="type" mode="change" usage="opt">
                 <valList type="closed" mode="replace">
@@ -2334,7 +2322,6 @@
     <elementSpec ident="person" module="namesdates" mode="change">
         <attList>
             <attDef ident="xml:id" mode="change" usage="req"/>
-            <attDef ident="role" mode="change" usage="req"/>
         </attList>
     </elementSpec>
     
@@ -2351,13 +2338,6 @@
           <attDef ident="type" mode="change" usage="opt"/>
           <attDef ident="key" mode="change" usage="opt"/>
       </attList>
-    </elementSpec>
-
-    <!-- element roleName -->
-    <elementSpec ident="roleName" module="namesdates" mode="change">
-        <attList>
-            <attDef ident="ref" mode="change" usage="req"/>
-        </attList>
     </elementSpec>
     
     <!-- element settlement -->
