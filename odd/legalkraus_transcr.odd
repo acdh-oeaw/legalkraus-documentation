@@ -8,11 +8,12 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>Kraus'sche Kanzleiakten Oskar Sameks: Kodierrichtlinien</title>
+        <title>Karl Kraus: Rechtsakten der Kanzlei Oskar Samek. Wissenschaftliche Edition: Kodierrichtlinien</title>
         <author xml:id="LU" role="main">Laura Untner</author>
         <author xml:id="IB">Ingo Börner</author>
         <author xml:id="VH">Vanessa Hannesschläger</author>
-        <author xml:id="IL">Isabell Langkabel</author>
+        <author xml:id="PA">Peter Andorfer</author>
+        <author xml:id="IL">Isabel Langkabel</author>
         <author xml:id="JK">Johannes Knüchel</author>
         <author xml:id="AO">Andrea Ortner</author>
       </titleStmt>
@@ -52,16 +53,17 @@
     <front>
       <titlePage>
         <docTitle>
-          <titlePart type="main">Kraus'sche Kanzleiakten Oskar Sameks</titlePart>
+          <titlePart type="main">Karl Kraus: Rechtsakten der Kanzlei Oskar Samek. Wissenschaftliche Edition</titlePart>
           <titlePart type="sub">Kodierrichtlinien</titlePart>
         </docTitle>
         <docAuthor>Laura Untner</docAuthor>
         <docAuthor>Ingo Börner</docAuthor>
         <docAuthor>Vanessa Hannesschläger</docAuthor>
-        <docAuthor>Isabell Langkabel</docAuthor>
+        <docAuthor>Peter Andorfer</docAuthor>
+        <docAuthor>Isabel Langkabel</docAuthor>
         <docAuthor>Johannes Knüchel</docAuthor>
         <docAuthor>Andrea Ortner</docAuthor>
-        <docDate>Stand: Oktober 2021</docDate>
+        <docDate>Stand: Jänner 2022</docDate>
       </titlePage>
     </front>
     <body>
@@ -71,45 +73,42 @@
         
         <head>Zu diesem Dokument</head>
         
-        <p>In diesem Dokument werden die Kodierrichtlinien für <ref target="https://tei-c.org/"
-            >TEI</ref>/XML-Dokumente beschrieben, die im Projekt <title>Intertextuality in the Legal
-            Papers of Karl Kraus. A Scholarly Digital Edition</title> (FWF Projektnr. <idno>P
-            31138-G30</idno>, PI DDr.in Katharina Prager) zur Anwendung kommen.</p>
+        <p>In diesem Dokument werden die Kodierrichtlinien für <ref target="https://tei-c.org/">TEI
+        </ref>/XML-Dokumente beschrieben, die im Projekt <title>Intertextuality in the Legal
+        Papers of Karl Kraus. A Scholarly Digital Edition</title> (FWF Projektnr. <idno>P
+        31138-G30</idno>, PI DDr.in Katharina Prager) zur Anwendung kommen.</p>
         
         <p>Dieses Projekt wird vom Ludwig Boltzmann Institut für Digital History (<ref
-            target="https://geschichte.lbg.ac.at">https://geschichte.lbg.ac.at</ref>) in
-          Zusammenarbeit mit dem Austrian Centre for Digital Humanities and Cultural Heritage
-          (ACDH-CH) der Österreichischen Akademie der Wissenschaften (<ref
-            target="https://acdh.oeaw.ac.at">https://acdh.oeaw.ac.at</ref>) und der Wienbibliothek
-          im Rathaus (<ref target="https://www.wienbibliothek.at"
-            >https://www.wienbibliothek.at</ref>) umgesetzt. Ziel des Projekts ist es, eine digitale
-          Edition der Kanzleiakten aus der Kanzlei Oskar Samek zu erstellen, welche die Fälle
-          dokumentieren, in die Karl Kraus involviert war. Diese digitale Edition soll es ihren
-          Nutzer_innen ermöglichen, den unterschiedlichen intertextuellen Bezügen in diesen Akten
-          nachzuforschen.</p><!-- LU: überarbeiten -->
+        target="https://geschichte.lbg.ac.at">https://geschichte.lbg.ac.at</ref>) in
+        Zusammenarbeit mit dem Austrian Centre for Digital Humanities and Cultural Heritage
+        (ACDH-CH) der Österreichischen Akademie der Wissenschaften (<ref
+        target="https://acdh.oeaw.ac.at">https://acdh.oeaw.ac.at</ref>) und der Wienbibliothek
+        im Rathaus (<ref target="https://www.wienbibliothek.at"
+        >https://www.wienbibliothek.at</ref>) umgesetzt. Ziel des Projekts ist es, eine digitale
+        Edition der Kanzleiakten aus der Kanzlei Oskar Samek zu erstellen, welche die Fälle
+        dokumentieren, in die Karl Kraus involviert war. Diese digitale Edition soll es ihren
+        Nutzer_innen ermöglichen, den unterschiedlichen intertextuellen Bezügen in diesen Akten
+        nachzuforschen.</p><!-- LU: überarbeiten -->
         
         <p>Als Grundlage dient dabei einerseits das Vorgängerprojekt <title>Karl Kraus
-            Online</title> (<ref target="https://www.kraus.wienbibliothek.at"
-            >https://www.kraus.wienbibliothek.at</ref>), andererseits die digitalisierte Fassung der
-          Kanzleiakten in der digitalen Wienbibliothek (<ref
-            target="https://www.digital.wienbibliothek.at"
-            >https://www.digital.wienbibliothek.at</ref>). Diese beiden Quellen bauen auf der von
-          Katharina Prager erstellten Ordnung der Bestandsliste des Kraus-Archivs der Wienbibliothek
-          im Rathaus auf und orientieren sich an den Signaturen dieser Liste. Diese Ordnungslogik
-          wird auch im vorliegenden Projekt als Ausgangsbasis übernommen. Ebenfalls eine wichtige
-          Grundlage für die Editionsarbeit stellt die von Hermann Böhm erstellte, heute vergriffene
-          Lese-Edition der Akten in vier Bänden dar (<bibl>Karl Kraus contra ...: die Prozeßakten
-            der Kanzlei Oskar Samek in der Wiener Stadt- und Landesbibliothek, bearb. und
-            kommentiert von Hermann Böhm, Wien, Wiener Stadt- u. Landesbibliothek, Bd. 1–4,
-            1995–1997</bibl>).</p>
+        Online</title> (<ref target="https://www.kraus.wienbibliothek.at">https://www.kraus.wienbibliothek.at</ref>), 
+        andererseits die digitalisierte Fassung der Kanzleiakten in der digitalen Wienbibliothek (<ref target="https://www.digital.wienbibliothek.at">https://www.digital.wienbibliothek.at</ref>). 
+        Diese beiden Quellen bauen auf der von Katharina Prager erstellten Ordnung der Bestandsliste des Kraus-Archivs der Wienbibliothek
+        im Rathaus auf und orientieren sich an den Signaturen dieser Liste. Diese Ordnungslogik
+        wird auch im vorliegenden Projekt als Ausgangsbasis übernommen. Ebenfalls eine wichtige
+        Grundlage für die Editionsarbeit stellt die von Hermann Böhm erstellte, heute vergriffene
+        Lese-Edition der Akten in vier Bänden dar (<bibl>Karl Kraus contra ...: die Prozeßakten
+        der Kanzlei Oskar Samek in der Wiener Stadt- und Landesbibliothek, bearb. und
+        kommentiert von Hermann Böhm, Wien, Wiener Stadt- u. Landesbibliothek, Bd. 1–4,
+        1995–1997</bibl>).</p>
         
         <p>Im Rahmen des Projekts wird auf Basis der genannten Quellen für jedes
-          erhaltene Einzeldokument im Archiv ein korrespondierendes TEI/XML-Dokument erstellt, in
-          dem sich eine annotierte Transkription des Volltexts sowie alle relevanten Metadaten und
-          Verweise auf Digitalisate des Archivdokuments befinden. Darüber hinaus wird pro Fall ein
-          weiteres TEI/XML-Dokument angelegt, in dem die entsprechenden Metadaten festgehalten und
-          eine Liste der zum Fall gehörigen Einzeldokumente angelegt wird. Wie genau diese 
-          TEI/XML-Dokumente entstehen und strukturiert sind, ist im Folgenden beschrieben.</p><!-- LU: überarbeiten -->
+        erhaltene Einzeldokument im Archiv ein korrespondierendes TEI/XML-Dokument erstellt, in
+        dem sich eine annotierte Transkription des Volltexts sowie alle relevanten Metadaten und
+        Verweise auf Digitalisate des Archivdokuments befinden. Darüber hinaus wird pro Fall ein
+        weiteres TEI/XML-Dokument angelegt, in dem die entsprechenden Metadaten festgehalten und
+        eine Liste der zum Fall gehörigen Einzeldokumente angelegt wird. Wie genau diese 
+        TEI/XML-Dokumente entstehen und strukturiert sind, ist im Folgenden beschrieben.</p><!-- LU: überarbeiten -->
 
       </div>
 
@@ -1122,26 +1121,212 @@
           entsprechenden Datensatz in der <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref> verweisen.
           Alle erwähnten Dokumente aus dem Rechtsakten-Korpus werden außerdem mit den entsprechenden <att>xml:id</att>s 
           der betroffenen Dokumente verlinkt.</p>
-          
-          <!-- noch unklar (auch in Bsp. und unten nachtragen): Kodierung von Rollen der Personen (ist auch für Institutionen wichtig,
-          Bsp.: <person role="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/plaintiff" ref="#11988">;
-          in diese Richtung: Jeder am Dokument zentral beteiligten Person und Institution wird [wie] eine 'Rolle' zugewiesen. 
+            
+          <p>Jede Person und jede Institution wird zudem eine 'Rolle' zugewiesen, die sie in diesem Dokument einnimmt.
           Das bedeutet, dass jedes <gi>person</gi>- und jedes <gi>org</gi>-Element ein <att>role</att>-Attribut erhält,
-          dessen Attributwert einem Verweis auf den entsprechenden Datensatz zu dieser zuvor definierten Rolle in der
-          <ref target="https://vocabs.acdh-dev.oeaw.ac.at/legalkraus">projektspezifischen SKOS-Ontologie</ref> entspricht. -->
-          
-          <!-- noch nicht endgültig (auch in Bsp. und unten nachtragen): Personen -->
-          <!-- noch nicht endgültig (auch in Bsp. und unten nachtragen): Orte -->
-          
-          <!-- noch unklar (auch in Bsp. und unten nachtragen): Institutionen -->
-          <!-- noch unklar (auch in Bsp. und unten nachtragen): Werke -->
-          <!-- noch unklar (auch in Bsp. und unten nachtragen): erwähnte Dokumente -->
-          
-          <!-- ggf. unten raus, falls nicht in Peters back: @role bei person, listOrg, org/@role and @ref, orgName-->
-          
+          dessen Attributwert einem Verweis auf den entsprechenden Datensatz zu dieser definierten Rolle in der 
+          <ref target="https://vocabs.acdh-dev.oeaw.ac.at/legalkraus">projektspezifischen SKOS-Ontologie</ref> entspricht.</p>
+            
+          <p>Für die in einem Dokument erwähnten Personen gibt es im <gi>back</gi> eine <gi>listPerson</gi>.
+          Jede erwähnte Person wird in einem eigenen <gi>person</gi>-Element dokumentiert.
+          Jedes <gi>person</gi>-Element enthält wiederum diverse weitere Informationen.
+          Darunter fallen der Name (in <gi>persName</gi>), ggf. eine Verlinkung mit <ref target="https://de.wikipedia.org/">Wikipedia</ref> oder 
+          dem <ref target="https://www.geschichtewiki.wien.gv.at/Wien_Geschichte_Wiki">Wien Geschichte Wiki</ref>, 
+          die Geburts- und Sterbedaten sowie -ort (in <gi>birth</gi> und <gi>death</gi>), das Geschlecht (in <gi>sex</gi>), 
+          der Beruf (in <gi>occupation</gi>), diverse IDs (in <gi>idno</gi>) und 'Zugehörigkeiten' einer Person (in <gi>affiliation</gi>) 
+          sowie verschiedene mit ihr in Verbindung stehende Ereignisse (in <gi>listEvent</gi>). 
+          Ebenso verzeichnet wird die Zugehörigkeit des Datensatzes der Person zu einer Sammmlung in der 
+          <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref> (in <gi>listBibl</gi>). Außerdem aufgenommen werden die Dokumente, 
+          in denen diese Person noch erwähnt wird (in <gi>listEvent</gi> mit <gi>event</gi> mit dem <att>type</att> <val>mentioned</val>).</p>
+            
+          <p>Für die in einem Dokument erwähnten Orte gibt es im <gi>back</gi> eine <gi>listPlace</gi>.
+          Jeder erwähnte Ort wird mit einem eigenen <gi>place</gi>-Element dokumentiert.
+          Jedes <gi>place</gi>-Element enthält wiederum diverse weitere Informationen.
+          Darunter fallen der Name (in <gi>placeName</gi>), die Koordinaten (in <gi>location</gi> mit dem <att>type</att> <val>coords</val>), 
+          übergeordnete Ortseinheiten (in <gi>location</gi> mit dem <att>type</att> <val>located_in_place</val>) und ggf. verschiedene IDs 
+          (in <gi>idno</gi>). Ebenso verzeichnet wird die Zugehörigkeit des Datensatzes des Ortes zu einer Sammmlung in der 
+          <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref> (in <gi>listBibl</gi>). Außerdem aufgenommen werden die Dokumente, 
+          in denen dieser Ort noch erwähnt wird (in <gi>listEvent</gi> mit <gi>event</gi> mit dem <att>type</att> <val>mentioned</val>).</p>
+            
+          <p>Für die in einem Dokument erwähnten Institutionen gibt es im <gi>back</gi> eine <gi>listOrg</gi>.
+          Jede erwähnte Institution wird mit einem eigenen <gi>org</gi>-Element dokumentiert.
+          Jedes <gi>org</gi>-Element enthält wiederum diverse weitere Informationen.
+          Darunter fallen der Name und ggf. eine Verlinkung mit <ref target="https://de.wikipedia.org/">Wikipedia</ref> oder 
+          dem <ref target="https://www.geschichtewiki.wien.gv.at/Wien_Geschichte_Wiki">Wien Geschichte Wiki</ref> (in <gi>orgNameName</gi>), 
+          übergeordnete Ortseinheiten (in <gi>location</gi> mit dem <att>type</att> <val>located_in_place</val>) und diverse IDs 
+          (in <gi>idno</gi>). Ebenso verzeichnet wird die Zugehörigkeit des Datensatzes der Institution zu einer Sammmlung in der 
+          <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref> (in <gi>listBibl</gi>). Außerdem aufgenommen werden die Dokumente, 
+          in denen diese Institution noch erwähnt wird (in <gi>listEvent</gi> mit <gi>event</gi> mit dem <att>type</att> <val>mentioned</val>).</p>
+            
+          <p>Für die in einem Dokument erwähnten Werke gibt es im <gi>back</gi> eine nicht näher definierte <gi>listBibl</gi>.
+          Jedes erwähnte Werk wird mit einem eigenen <gi>bibl</gi>-Element dokumentiert.
+          Jedes <gi>bibl</gi>-Element enthält wiederum diverse weitere Informationen.
+          Darunter fallen der Titel (in <gi>title</gi>), der_die Autorin (in <gi>author</gi>), das Datum (in <gi>date</gi>) und 
+          diverse IDs (in <gi>idno</gi>). Ebenso verzeichnet wird die Zugehörigkeit des Datensatzes des Werks zu einer Sammmlung in der 
+          <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref> (in <gi>note</gi>). Außerdem aufgenommen werden die Dokumente, 
+          in denen dieses Werk noch erwähnt wird (in <gi>listEvent</gi> mit <gi>event</gi> mit dem <att>type</att> <val>mentioned</val>).</p>
+            
+          <p>Für die in einem Dokument erwähnten Dokumente aus dem Rechtsakten-Korpus gibt es im <gi>back</gi> eine <gi>listBibl</gi> mit dem <att>type</att> <val>legal-doc</val>.
+          Jedes dieser Dokumente wird mit einem eigenen <gi>bibl</gi>-Element dokumentiert.
+          Jedes <gi>bibl</gi>-Element enthält wiederum diverse weitere Informationen.
+          Darunter fallen der Titel (in <gi>title</gi>), das Datum (in <gi>date</gi>) und die URL zum Datensatz in der <ref target="https://arche.acdh.oeaw.ac.at/">ARCHE</ref> (in <gi>idno</gi>). 
+          Außerdem aufgenommen werden die Dokumente, in denen dieses Werk noch erwähnt wird (in <gi>listEvent</gi> mit <gi>event</gi> mit dem <att>type</att> <val>mentioned</val>).</p>
+                    
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <back>
-              <!-- TO DO -->
+                <listPerson>
+                    <person xml:id="pmb11988" role="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/plaintiff">
+                        <persName>
+                            <forename>Karl</forename>
+                            <surname>Kraus</surname>
+                        </persName>
+                        <persName type="pseudonym">Berdach J.</persName>
+                        <birth>
+                            <date when-iso="1874-04-28">28.04.1874</date>
+                            <settlement key="pmb41660">
+                                <placeName type="pref">Jičín</placeName>
+                                <location>
+                                    <geo>50,43723 15,35162</geo>
+                                </location>
+                            </settlement>
+                        </birth>
+                        <death>
+                            <date when-iso="1936-06-12">12.06.1936</date>
+                            <settlement key="pmb50">
+                                <placeName type="pref">Wien</placeName>
+                                <location>
+                                    <geo>48,2066 16,37341</geo>
+                                </location>
+                            </settlement>
+                        </death>
+                        <sex value="male"/>
+                        <occupation key="90">Schriftsteller/Schriftstellerin</occupation>
+                        <idno type="URL" subtype="gnd">https://d-nb.info/gnd/118566288</idno>
+                        <idno type="URL">https://pmb.acdh.oeaw.ac.at/entity/11988</idno>
+                        <affiliation>
+                            <term key="1182">arbeitet für</term>
+                            <orgName key="pmb29308">Die Fackel</orgName>
+                            <idno type="URL">https://pmb.acdh.oeaw.ac.at/entity/29308</idno>
+                        </affiliation>
+                        <listEvent>
+                            <event key="40436" when-iso="1893-01-14">
+                                <desc n="1256">ist Arbeitskraft bei</desc>
+                                <label>Aufführung von Die Räuber, 14.1.1893</label>
+                                <idno type="URL" subtype="apis-default">https://pmb.acdh.oeaw.ac.at/apis/api2/entity/40436/</idno>
+                                <idno type="URL">https://pmb.acdh.oeaw.ac.at/entity/40436</idno>
+                            </event>
+                        </listEvent>
+                        <listBibl>
+                            <bibl type="collections" n="5">legalkraus</bibl>
+                        </listBibl>
+                        <listEvent>
+                            <event type="mentioned">
+                                <p>
+                                    erwähnt in
+                                    <title>Widerspruchsschrift</title>
+                                </p>
+                                <linkGrp>
+                                    <link type="ARCHE" target="https://id.acdh.oeaw.ac.at/legalkraus/D_000070-007-000.xml"/>
+                                </linkGrp>
+                            </event>
+                        </listEvent>
+                    </person>
+                </listPerson>
+                <listPlace>
+                    <place xml:id="pmb51751">
+                        <placeName>Landsberger Allee</placeName>
+                        <location type="coords">
+                            <geo>52,535210312267594 13,511518642584441</geo>
+                        </location>
+                        <location type="located_in_place">
+                            <placeName key="pmb168">Berlin</placeName>
+                            <geo>52,52437 13,41053</geo>
+                        </location>
+                        <idno type="URL" subtype="apis-default">https://pmb.acdh.oeaw.ac.at/entity/51751/</idno>
+                        <listBibl>
+                            <bibl type="collections" n="5">legalkraus</bibl>
+                        </listBibl>
+                        <listEvent>
+                            <event type="mentioned">
+                                <p>
+                                    erwähnt in
+                                    <title>Brief RA Botho Laserstein an Kraus</title>
+                                </p>
+                                <linkGrp>
+                                    <link type="ARCHE" target="https://id.acdh.oeaw.ac.at/legalkraus/D_000112-004-000.xml"/>
+                                </linkGrp>
+                            </event>
+                        </listEvent>
+                    </place>
+                </listPlace>
+                <listOrg>
+                    <org xml:id="org__36791" role="https://vocabs.acdh.oeaw.ac.at/legalkraus-roles/v1.0/court">
+                        <orgName>Bezirksgericht Wien Margareten</orgName>
+                        <orgName type="uri_wien-geschichte-wiki">https://www.geschichtewiki.wien.gv.at/Bezirksgericht_Margareten</orgName>
+                        <location type="located_in_place">
+                            <placeName key="place__55">V., Margareten</placeName>
+                            <geo>48,18646 16,35491</geo>
+                            <note type="IDNO" subtype="geonames">http://sws.geonames.org/2771956/</note>
+                            <note type="IDNO">https://pmb.acdh.oeaw.ac.at/entity/55</note>
+                        </location>
+                        <idno type="URL" subtype="apis-default">https://pmb.acdh.oeaw.ac.at/apis/api2/entity/36791/</idno>
+                        <idno type="URL">https://pmb.acdh.oeaw.ac.at/entity/36791</idno>
+                        <listBibl> 
+                            <bibl type="collections" n="5">legalkraus</bibl>
+                        </listBibl>
+                        <listEvent>
+                            <event type="mentioned">
+                                <p>
+                                    erwähnt in
+                                    <title>Brief RA Botho Laserstein an Kraus</title>
+                                </p>
+                                <linkGrp>
+                                    <link type="ARCHE" target="https://id.acdh.oeaw.ac.at/legalkraus/D_000112-004-000.xml"/>
+                                </linkGrp>
+                            </event>
+                        </listEvent>
+                    </org>
+                </listOrg>
+                <listBibl>
+                    <bibl xml:id="work__60398">
+                        <title type="main">Karl Kraus und die Jugend</title>
+                        <author key="person__38133">Fischer, Heinrich</author>
+                        <date notBefore-iso="1934-01-01" when-iso="1934-07-02" notAfter-iso="1934-12-31">1934</date>
+                        <idno type="URL" subtype="apis-default">https://pmb.acdh.oeaw.ac.at/entity/60398/</idno>
+                        <note type="collections">
+                            <bibl type="collections" n="5">legalkraus</bibl>
+                        </note>
+                        <listEvent>
+                            <event type="mentioned">
+                                <p>
+                                    erwähnt in
+                                    <title>Brief RA Botho Laserstein an Kraus</title>
+                                </p>
+                                <linkGrp>
+                                    <link type="ARCHE" target="https://id.acdh.oeaw.ac.at/legalkraus/D_000112-004-000.xml"/>
+                                </linkGrp>
+                            </event>
+                        </listEvent>
+                    </bibl>
+                </listBibl>
+                <listBibl type="legal-doc">
+                    <bibl xml:id="D_000003-001-000.xml">
+                        <title>Brief Samek an Der Tag (verantw. Red. Hugo Bettauer)</title>
+                        <date when-iso="1922-12-18">18. Dezember 1922</date>
+                        <idno type="arche">https://id.acdh.oeaw.ac.at/legalkraus/D_000003-001-000.xml</idno>
+                        <listEvent>
+                            <event type="mentioned">
+                                <p>
+                                    erwähnt in
+                                    <title>Brief RA Botho Laserstein an Kraus</title>
+                                </p>
+                                <linkGrp>
+                                    <link type="ARCHE" target="https://id.acdh.oeaw.ac.at/legalkraus/D_000112-004-000.xml"/>
+                                </linkGrp>
+                            </event>
+                        </listEvent>
+                    </bibl>
+                </listBibl>
             </back>
           </egXML>
           
@@ -1264,16 +1449,16 @@
           <moduleRef key="header"
             include="availability change classCode correspAction correspDesc creation encodingDesc fileDesc handNote idno keywords language langUsage licence profileDesc publicationStmt revisionDesc seriesStmt sourceDesc teiHeader textClass titleStmt"/>
           <moduleRef key="core"
-            include="add address date del editor gap graphic hi lb name note noteGrp p pb postCode ptr publisher pubPlace q quote ref rs street term title"/>
+            include="add address author bibl date del desc editor gap graphic hi label lb listBibl name note noteGrp p pb postCode ptr publisher pubPlace q quote ref rs street term title"/>
           <moduleRef key="corpus"/>
           <moduleRef key="analysis"/>
           <moduleRef key="msdescription" include="accMat msDesc objectType physDesc stamp"/>
-          <moduleRef key="namesdates" include="country listOrg listPerson org orgName persName person roleName settlement"/>
+          <moduleRef key="namesdates" include="affiliation birth country death event forename geo listEvent listOrg listPerson listPlace location occupation org orgName persName person place placeName roleName settlement sex surname"/>
           <moduleRef key="tei"/>
           <moduleRef key="textstructure" include="back body div TEI text"/>
           <moduleRef key="textcrit" include="app lem listWit rdg variantEncoding witness"/>
           <moduleRef key="transcr" include="facsimile handNotes listTranspose metamark restore subst surface surfaceGrp transpose"/><!-- substJoin -->
-          <moduleRef key="linking" include="ab seg"/>
+          <moduleRef key="linking" include="ab link linkGrp seg"/>
           
           <!--  contraintSpec -->
             <!-- LU: bei entsprechenden Elementen oder hier (?) mittels constraintSpec Schematron-Regeln einfügen? 
@@ -1288,8 +1473,6 @@
                   </constraintSpec>-->
 
         </schemaSpec>
-
-  <!-- ELEMENTE -->
     
 <!-- core module -->
 
@@ -1308,6 +1491,28 @@
     
     <!-- element address -->
     <elementSpec ident="address" module="core" mode="change"/>
+          
+    <!-- element author -->
+    <elementSpec ident="author" module="core" mode="change">
+        <attList>
+            <attDef ident="key" mode="change" usage="req"/>
+        </attList>
+    </elementSpec>
+          
+    <!-- element bibl -->
+    <elementSpec ident="bibl" module="core" mode="change">
+        <attList>
+            <attDef ident="xml:id" mode="change" usage="opt"/>
+            <attDef ident="type" mode="change" usage="opt">
+                <valList mode="replace" type="closed">
+                    <valItem ident="collections">
+                        <desc>Sammlung in der PMB</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+            <attDef ident="n" mode="change" usage="opt"/>
+        </attList>
+    </elementSpec>
     
     <!-- element date -->
     <elementSpec ident="date" module="core" mode="change">
@@ -1358,6 +1563,13 @@
             <attDef ident="hand" mode="change" usage="rec"/> 
             <attDef ident="seq" mode="change" usage="opt"/>
         </attList>
+    </elementSpec>
+          
+    <!-- element desc -->
+    <elementSpec ident="desc" module="core" mode="change">
+      <attList>
+          <attDef ident="n" mode="change" usage="req"/>
+      </attList>
     </elementSpec>
     
     <!-- element editor -->
@@ -1435,6 +1647,9 @@
         </attList>
     </elementSpec>
     
+    <!-- element label -->
+    <elementSpec ident="label" module="core" mode="change"/>
+    
     <!-- element lb -->
     <elementSpec ident="lb" module="core" mode="change">
         <attList>
@@ -1447,6 +1662,19 @@
                 <valList type="closed" mode="replace">
                     <valItem ident="no">
                         <desc>Umbruch im Wort</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+        </attList>
+    </elementSpec>
+          
+    <!-- element listBibl -->
+    <elementSpec ident="listBibl" module="core" mode="change">
+        <attList>
+            <attDef ident="type" mode="change" usage="opt">
+                <valList type="closed" mode="replace">
+                    <valItem ident="legal-doc">
+                        <desc>Dokumente aus dem Rechtsakten-Korpus</desc>
                     </valItem>
                 </valList>
             </attDef>
@@ -1487,9 +1715,16 @@
                     <valItem ident="marginal">
                         <desc>Marginalie</desc>
                     </valItem>
+                    <valItem ident="IDNO">
+                        <desc>ID</desc>
+                    </valItem>
+                    <valItem ident="collections">
+                        <desc>Sammlung in der PMB</desc>
+                    </valItem>
                 </valList>
             </attDef>
-            <attDef ident="hand" mode="change" usage="opt"/> 
+            <attDef ident="subtype" mode="change" usage="opt"/>
+            <attDef ident="hand" mode="change" usage="opt"/>
         </attList>
     </elementSpec>
 
@@ -1512,7 +1747,7 @@
     <!-- element p -->
     <elementSpec ident="p" module="core" mode="change">
         <attList>
-            <attDef ident="xml:id" mode="change" usage="req">
+            <attDef ident="xml:id" mode="change" usage="rec">
                 <datatype>
                     <dataRef key="ID"/>
                 </datatype>
@@ -1650,6 +1885,7 @@
     <elementSpec ident="term" module="core" mode="change">
         <attList>
             <attDef ident="source" mode="change" usage="opt"/>
+            <attDef ident="key" mode="change" usage="opt"/>
         </attList>
     </elementSpec>
     
@@ -1660,6 +1896,12 @@
                 <valList type="closed" mode="replace">
                     <valItem ident="collection">
                         <desc>Fall</desc>
+                    </valItem>
+                    <valItem ident="main">
+                        <desc>Haupttitel</desc>
+                    </valItem>
+                    <valItem ident="sub">
+                        <desc>Untertitel</desc>
                     </valItem>
                 </valList>
             </attDef>
@@ -1789,10 +2031,13 @@
                     <valItem ident="ID">
                         <desc>Identifier</desc>
                     </valItem>
+                    <valItem ident="arche">
+                        <desc>ARCHE</desc>
+                    </valItem>
                 </valList>
             </attDef>
             <attDef ident="subtype" mode="change" usage="req">
-                <valList type="closed" mode="replace">
+                <valList type="semi" mode="replace">
                     <valItem ident="legalkraus">
                         <desc>Rechtsakten-Projekt</desc>
                     </valItem>
@@ -1900,6 +2145,23 @@
             </attDef>
         </attList>
     </elementSpec>
+          
+    <!-- element link -->
+    <elementSpec ident="link" module="linking" mode="change">
+      <attList>
+          <attDef ident="type" mode="change" usage="req">
+              <valList type="closed" mode="replace">
+                  <valItem ident="ARCHE">
+                      <desc>ARCHE</desc>
+                  </valItem>
+              </valList>
+          </attDef>
+          <attDef ident="target" mode="change" usage="req"/>
+      </attList>
+    </elementSpec>
+          
+    <!-- element linkGrp -->
+    <elementSpec ident="linkGrp" module="linking" mode="change"/>
     
     <!-- element seg -->
     <elementSpec ident="seg" module="linking" mode="change">
@@ -1965,44 +2227,130 @@
 
 <!-- namesdates module -->
 
+    <!-- element affiliation -->
+    <elementSpec ident="affiliation" module="namesdates" mode="change"/>
+
+    <!-- element birth -->
+    <elementSpec ident="birth" module="namesdates" mode="change"/>
+
     <!-- element country -->
     <elementSpec ident="country" module="namesdates" mode="change"/>
+          
+    <!-- element death -->
+    <elementSpec ident="death" module="namesdates" mode="change"/>
+          
+    <!-- element event -->
+    <elementSpec ident="event" module="namesdates" mode="change">
+        <attList>
+            <attDef ident="key" mode="change" usage="opt"/>
+            <attDef ident="when-iso" mode="change" usage="opt">
+                <datatype>
+                    <dataRef key="teidata.temporal.iso"/>
+                </datatype>
+            </attDef>
+            <attDef ident="type" mode="change" usage="opt">
+                <valList mode="replace" type="closed">
+                    <valItem ident="mentioned">
+                        <desc>Dokumente, in denen die Instanz vorkommt</desc>
+                    </valItem>
+                </valList>
+            </attDef>
+        </attList>
+    </elementSpec>
+          
+    <!-- element forename -->
+    <elementSpec ident="forename" module="namesdates" mode="change"/>
+          
+    <!-- element geo -->
+    <elementSpec ident="geo" module="namesdates" mode="change"/>
+    
+    <!-- element listEvent -->
+    <elementSpec ident="listEvent" module="namesdates" mode="change"/>
     
     <!-- element listOrg -->
     <elementSpec ident="listOrg" module="namesdates" mode="change"/>
     
     <!-- element listPerson -->
     <elementSpec ident="listPerson" module="namesdates" mode="change"/>
+          
+    <!-- element listPlace -->
+    <elementSpec ident="listPlace" module="namesdates" mode="change"/>
+          
+    <!-- element location -->
+    <elementSpec ident="location" module="namesdates" mode="change">
+        <attList>
+            <attDef ident="type" mode="change" usage="opt">
+                <valList type="closed" mode="replace">
+                    <valItem ident="coords">
+                        <desc>Koordinaten</desc>
+                    </valItem>
+                    <valItem ident="located_in_place">
+                        <desc>zugehöriger Ort</desc>
+                    </valItem>
+                </valList>
+            </attDef> 
+        </attList>
+    </elementSpec>
+    
+    <!-- element occupation -->
+    <elementSpec ident="occupation" module="namesdates" mode="change">
+      <attList>
+          <attDef ident="key" mode="change" usage="req"/> 
+      </attList>
+    </elementSpec>
     
     <!-- element org -->
     <elementSpec ident="org" module="namesdates" mode="change">
         <attList>
-            <attDef ident="role" mode="change" usage="req"/> 
-            <attDef ident="ref" mode="change" usage="req"/>
+            <attDef ident="xml:id" mode="change" usage="req"/>
+            <attDef ident="role" mode="change" usage="req"/>
         </attList>
     </elementSpec>
     
     <!-- element orgName -->
     <elementSpec ident="orgName" module="namesdates" mode="change">
         <attList>
-            <attDef ident="ref" mode="change" usage="req"/>
+            <attDef ident="ref" mode="change" usage="opt"/>
             <attDef ident="role" mode="change" usage="opt"/>
+            <attDef ident="key" mode="change" usage="opt"/>
+            <attDef ident="type" mode="change" usage="opt">
+                <valList type="closed" mode="replace">
+                    <valItem ident="uri_wien-geschichte-wiki">
+                        <desc>Wien Geschichte Wiki</desc>
+                    </valItem>
+                </valList>
+            </attDef>
         </attList>
     </elementSpec>
     
     <!-- element persName -->
     <elementSpec ident="persName" module="namesdates" mode="change">
         <attList>
-            <attDef ident="ref" mode="change" usage="req"/>
-            <attDef ident="role" mode="change" usage="opt"/>
+            <attDef ident="type" mode="change" usage="opt"/>
         </attList>
     </elementSpec>
     
     <!-- element person -->
     <elementSpec ident="person" module="namesdates" mode="change">
         <attList>
+            <attDef ident="xml:id" mode="change" usage="req"/>
             <attDef ident="role" mode="change" usage="req"/>
         </attList>
+    </elementSpec>
+    
+    <!-- element place -->
+    <elementSpec ident="place" module="namesdates" mode="change">
+      <attList>
+          <attDef ident="xml:id" mode="change" usage="req"/>
+      </attList>
+    </elementSpec>
+    
+    <!-- element placeName -->
+    <elementSpec ident="placeName" module="namesdates" mode="change">
+      <attList>
+          <attDef ident="type" mode="change" usage="opt"/>
+          <attDef ident="key" mode="change" usage="opt"/>
+      </attList>
     </elementSpec>
 
     <!-- element roleName -->
@@ -2015,9 +2363,20 @@
     <!-- element settlement -->
     <elementSpec ident="settlement" module="namesdates" mode="change">
         <attList>
-            <attDef ident="ref" mode="change" usage="req"/>
+            <attDef ident="ref" mode="change" usage="opt"/>
+            <attDef ident="key" mode="change" usage="opt"/>
         </attList>
     </elementSpec>
+          
+    <!-- element sex -->
+    <elementSpec ident="sex" module="namesdates" mode="change">
+        <attList>
+            <attDef ident="value" mode="change" usage="req"/>
+        </attList>
+    </elementSpec>
+          
+    <!-- element surname -->
+    <elementSpec ident="surname" module="namesdates" mode="change"/>
 
 <!-- tei module -->
 
