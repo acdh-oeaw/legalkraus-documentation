@@ -5,7 +5,7 @@
          xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2021-12-14T14:03:00Z. .
+Schema generated from ODD source 2022-01-25T13:53:14Z. .
 TEI Edition: Version 4.3.0. Last updated on
         31st August 2021, revision b4f72b1ff
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.3.0/
@@ -1225,22 +1225,44 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
       </optional>
    </define>
    <define name="model.nameLike.agent">
-      <notAllowed/>
+      <choice>
+         <ref name="orgName"/>
+         <ref name="persName"/>
+      </choice>
    </define>
    <define name="model.nameLike.agent_alternation">
-      <notAllowed/>
+      <choice>
+         <ref name="orgName"/>
+         <ref name="persName"/>
+      </choice>
    </define>
    <define name="model.nameLike.agent_sequence">
-      <empty/>
+      <ref name="orgName"/>
+      <ref name="persName"/>
    </define>
    <define name="model.nameLike.agent_sequenceOptional">
-      <empty/>
+      <optional>
+         <ref name="orgName"/>
+      </optional>
+      <optional>
+         <ref name="persName"/>
+      </optional>
    </define>
    <define name="model.nameLike.agent_sequenceOptionalRepeatable">
-      <empty/>
+      <zeroOrMore>
+         <ref name="orgName"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="persName"/>
+      </zeroOrMore>
    </define>
    <define name="model.nameLike.agent_sequenceRepeatable">
-      <notAllowed/>
+      <oneOrMore>
+         <ref name="orgName"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="persName"/>
+      </oneOrMore>
    </define>
    <define name="model.segLike">
       <choice>
@@ -1807,7 +1829,9 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
    <define name="model.listLike">
       <choice>
          <ref name="list"/>
+         <ref name="listOrg"/>
          <ref name="listEvent"/>
+         <ref name="listPerson"/>
          <ref name="listApp"/>
          <ref name="listWit"/>
       </choice>
@@ -1815,14 +1839,18 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
    <define name="model.listLike_alternation">
       <choice>
          <ref name="list"/>
+         <ref name="listOrg"/>
          <ref name="listEvent"/>
+         <ref name="listPerson"/>
          <ref name="listApp"/>
          <ref name="listWit"/>
       </choice>
    </define>
    <define name="model.listLike_sequence">
       <ref name="list"/>
+      <ref name="listOrg"/>
       <ref name="listEvent"/>
+      <ref name="listPerson"/>
       <ref name="listApp"/>
       <ref name="listWit"/>
    </define>
@@ -1831,7 +1859,13 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="list"/>
       </optional>
       <optional>
+         <ref name="listOrg"/>
+      </optional>
+      <optional>
          <ref name="listEvent"/>
+      </optional>
+      <optional>
+         <ref name="listPerson"/>
       </optional>
       <optional>
          <ref name="listApp"/>
@@ -1845,7 +1879,13 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="list"/>
       </zeroOrMore>
       <zeroOrMore>
+         <ref name="listOrg"/>
+      </zeroOrMore>
+      <zeroOrMore>
          <ref name="listEvent"/>
+      </zeroOrMore>
+      <zeroOrMore>
+         <ref name="listPerson"/>
       </zeroOrMore>
       <zeroOrMore>
          <ref name="listApp"/>
@@ -1859,7 +1899,13 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="list"/>
       </oneOrMore>
       <oneOrMore>
+         <ref name="listOrg"/>
+      </oneOrMore>
+      <oneOrMore>
          <ref name="listEvent"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="listPerson"/>
       </oneOrMore>
       <oneOrMore>
          <ref name="listApp"/>
@@ -1969,8 +2015,24 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="model.pLike"/>
       </choice>
    </define>
+   <define name="model.persStateLike">
+      <choice>
+         <ref name="persName"/>
+      </choice>
+   </define>
    <define name="model.personLike">
-      <notAllowed/>
+      <choice>
+         <ref name="org"/>
+         <ref name="person"/>
+      </choice>
+   </define>
+   <define name="model.personPart">
+      <choice>
+         <ref name="model.biblLike"/>
+         <ref name="model.eventLike"/>
+         <ref name="model.persStateLike"/>
+         <ref name="idno"/>
+      </choice>
    </define>
    <define name="model.placeNamePart">
       <notAllowed/>
@@ -2017,6 +2079,13 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
       <oneOrMore>
          <ref name="model.placeNamePart_sequenceRepeatable"/>
       </oneOrMore>
+   </define>
+   <define name="model.orgPart">
+      <choice>
+         <ref name="model.eventLike"/>
+         <ref name="listOrg"/>
+         <ref name="listPerson"/>
+      </choice>
    </define>
    <define name="model.publicationStmtPart.agency">
       <choice>
@@ -2139,12 +2208,6 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="msItem"/>
          <ref name="msItemStruct"/>
          <ref name="decoNote"/>
-      </choice>
-   </define>
-   <define name="model.settingPart">
-      <choice>
-         <ref name="locale"/>
-         <ref name="activity"/>
       </choice>
    </define>
    <define name="model.addressLike">
@@ -2330,9 +2393,7 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
    <define name="model.profileDescPart">
       <choice>
          <ref name="textClass"/>
-         <ref name="textDesc"/>
          <ref name="particDesc"/>
-         <ref name="settingDesc"/>
          <ref name="handNotes"/>
          <ref name="listTranspose"/>
       </choice>
@@ -2370,6 +2431,36 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          <ref name="sourceDoc"/>
          <ref name="standOff"/>
       </choice>
+   </define>
+   <define name="att.personal.attributes">
+      <ref name="att.naming.attributes"/>
+      <ref name="att.personal.attribute.full"/>
+      <ref name="att.personal.attribute.sort"/>
+   </define>
+   <define name="att.personal.attribute.full">
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+                    name="full"
+                    a:defaultValue="yes">
+            <a:documentation>indicates whether the name component is given in full, as an abbreviation or simply as an initial.</a:documentation>
+            <choice>
+               <value>yes</value>
+               <a:documentation>(yes) the name component is spelled out in full.</a:documentation>
+               <value>abb</value>
+               <a:documentation>(abbreviated) the name component is given in an abbreviated form.</a:documentation>
+               <value>init</value>
+               <a:documentation>(initial letter) the name component is indicated only by one initial.</a:documentation>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="att.personal.attribute.sort">
+      <optional>
+         <attribute name="sort">
+            <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(sort) specifies the sort order of the name component in relation to others within the name.</a:documentation>
+            <data type="nonNegativeInteger"/>
+         </attribute>
+      </optional>
    </define>
    <define name="model.placeLike">
       <notAllowed/>
@@ -2910,26 +3001,6 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
          <empty/>
       </element>
    </define>
-   <define name="textDesc">
-      <element name="textDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text description) provides a description of a text in terms of its situational parameters. [15.2.1. The Text Description]</a:documentation>
-         <group>
-            <ref name="channel"/>
-            <ref name="constitution"/>
-            <ref name="derivation"/>
-            <ref name="domain"/>
-            <ref name="factuality"/>
-            <ref name="interaction"/>
-            <ref name="preparedness"/>
-            <oneOrMore>
-               <ref name="purpose"/>
-            </oneOrMore>
-         </group>
-         <ref name="att.global.attributes"/>
-         <ref name="att.declarable.attributes"/>
-         <empty/>
-      </element>
-   </define>
    <define name="particDesc">
       <element name="particDesc">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(participation description) describes the identifiable speakers, voices, or other participants in any kind of text or other persons named or otherwise referred to in a text, edition, or metadata. [15.2. Contextual Information]</a:documentation>
@@ -2940,306 +3011,13 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
             <oneOrMore>
                <choice>
                   <ref name="model.personLike"/>
+                  <ref name="listPerson"/>
+                  <ref name="listOrg"/>
                </choice>
             </oneOrMore>
          </choice>
          <ref name="att.global.attributes"/>
          <ref name="att.declarable.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="settingDesc">
-      <element name="settingDesc">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(setting description) describes the setting or settings within which a language interaction takes place, or other places otherwise referred to in a text, edition, or metadata. [15.2. Contextual Information 2.4. The Profile Description]</a:documentation>
-         <choice>
-            <oneOrMore>
-               <ref name="model.pLike"/>
-            </oneOrMore>
-            <oneOrMore>
-               <choice>
-                  <ref name="setting"/>
-                  <ref name="model.placeLike"/>
-               </choice>
-            </oneOrMore>
-         </choice>
-         <ref name="att.global.attributes"/>
-         <ref name="att.declarable.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="channel">
-      <element name="channel">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(primary channel) describes the medium or channel by which a text is delivered or experienced. For a written text, this might be print, manuscript, email, etc.; for a spoken one, radio, telephone, face-to-face, etc. [15.2.1. The Text Description]</a:documentation>
-         <ref name="macro.phraseSeq.limited"/>
-         <ref name="att.global.attributes"/>
-         <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="mode"
-                       a:defaultValue="x">
-               <a:documentation>specifies the mode of this channel with respect to speech and writing.</a:documentation>
-               <choice>
-                  <value>s</value>
-                  <a:documentation>(spoken) </a:documentation>
-                  <value>w</value>
-                  <a:documentation>(written) </a:documentation>
-                  <value>sw</value>
-                  <a:documentation>(spoken to be written) e.g. dictation</a:documentation>
-                  <value>ws</value>
-                  <a:documentation>(written to be spoken) e.g. a script</a:documentation>
-                  <value>m</value>
-                  <a:documentation>(mixed) </a:documentation>
-                  <value>x</value>
-                  <a:documentation>(unknown or inapplicable) </a:documentation>
-               </choice>
-            </attribute>
-         </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="constitution">
-      <element name="constitution">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(constitution) describes the internal composition of a text or text sample, for example as fragmentary, complete, etc. [15.2.1. The Text Description]</a:documentation>
-         <ref name="macro.phraseSeq.limited"/>
-         <ref name="att.global.attributes"/>
-         <ref name="att.typed.attribute.subtype"/>
-         <optional>
-            <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
-                       name="type"
-                       a:defaultValue="single">
-               <a:documentation>specifies how the text was constituted.</a:documentation>
-               <choice>
-                  <value>single</value>
-                  <a:documentation>a single complete text</a:documentation>
-                  <value>composite</value>
-                  <a:documentation>a text made by combining several smaller items, each individually complete</a:documentation>
-                  <value>frags</value>
-                  <a:documentation>(fragments) a text made by combining several smaller, not necessarily complete, items</a:documentation>
-                  <value>unknown</value>
-                  <a:documentation>composition unknown or unspecified</a:documentation>
-               </choice>
-            </attribute>
-         </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="derivation">
-      <element name="derivation">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(derivation) describes the nature and extent of originality of this text. [15.2.1. The Text Description]</a:documentation>
-         <ref name="macro.phraseSeq.limited"/>
-         <ref name="att.global.attributes"/>
-         <ref name="att.typed.attribute.subtype"/>
-         <optional>
-            <attribute name="type">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">categorizes the derivation of the text.
-Sample values include: 1] original; 2] revision; 3] translation; 4] abridgment; 5] plagiarism; 6] traditional</a:documentation>
-               <data type="token">
-                  <param name="pattern">[^\p{C}\p{Z}]+</param>
-               </data>
-            </attribute>
-         </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="domain">
-      <element name="domain">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(domain of use) describes the most important social context in which the text was realized or for which it is intended, for example private vs. public, education, religion, etc. [15.2.1. The Text Description]</a:documentation>
-         <ref name="macro.phraseSeq.limited"/>
-         <ref name="att.global.attributes"/>
-         <ref name="att.typed.attribute.subtype"/>
-         <optional>
-            <attribute name="type">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">categorizes the domain of use.
-Sample values include: 1] art; 2] domestic; 3] religious; 4] business; 5] education; 6] govt (government); 7] public</a:documentation>
-               <data type="token">
-                  <param name="pattern">[^\p{C}\p{Z}]+</param>
-               </data>
-            </attribute>
-         </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="factuality">
-      <element name="factuality">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(factuality) describes the extent to which the text may be regarded as imaginative or non-imaginative, that is, as describing a fictional or a non-fictional world. [15.2.1. The Text Description]</a:documentation>
-         <ref name="macro.phraseSeq.limited"/>
-         <ref name="att.global.attributes"/>
-         <ref name="att.typed.attribute.subtype"/>
-         <optional>
-            <attribute name="type">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">categorizes the factuality of the text.</a:documentation>
-               <choice>
-                  <value>fiction</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the text is to be regarded as entirely imaginative</a:documentation>
-                  <value>fact</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the text is to be regarded as entirely informative or factual</a:documentation>
-                  <value>mixed</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the text contains a mixture of fact and fiction</a:documentation>
-                  <value>inapplicable</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">the fiction/fact distinction is not regarded as helpful or appropriate to this text</a:documentation>
-               </choice>
-            </attribute>
-         </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="interaction">
-      <element name="interaction">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(interaction) describes the extent, cardinality and nature of any interaction among those producing and experiencing the text, for example in the form of response or interjection, commentary, etc. [15.2.1. The Text Description]</a:documentation>
-         <ref name="macro.phraseSeq.limited"/>
-         <ref name="att.global.attributes"/>
-         <ref name="att.typed.attribute.subtype"/>
-         <optional>
-            <attribute name="type">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the degree of interaction between active and passive participants in the text.</a:documentation>
-               <choice>
-                  <value>none</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">no interaction of any kind, e.g. a monologue</a:documentation>
-                  <value>partial</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">some degree of interaction, e.g. a monologue with set responses</a:documentation>
-                  <value>complete</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">complete interaction, e.g. a face to face conversation</a:documentation>
-                  <value>inapplicable</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">this parameter is inappropriate or inapplicable in this case</a:documentation>
-               </choice>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="active">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the number of active participants (or addressors) producing parts of the text.
-Suggested values include: 1] singular; 2] plural; 3] corporate; 4] unknown</a:documentation>
-               <choice>
-                  <value>singular</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">a single addressor</a:documentation>
-                  <value>plural</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">many addressors</a:documentation>
-                  <value>corporate</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">a corporate addressor</a:documentation>
-                  <value>unknown</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">number of addressors unknown or unspecifiable</a:documentation>
-                  <data type="token">
-                     <param name="pattern">[^\p{C}\p{Z}]+</param>
-                  </data>
-               </choice>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="passive">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the number of passive participants (or addressees) to whom a text is directed or in whose presence it is created or performed.
-Suggested values include: 1] self; 2] single; 3] many; 4] group; 5] world</a:documentation>
-               <choice>
-                  <value>self</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text is addressed to the originator e.g. a diary</a:documentation>
-                  <value>single</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text is addressed to one other person e.g. a personal letter</a:documentation>
-                  <value>many</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text is addressed to a countable number of others e.g. a conversation in which all participants are identified</a:documentation>
-                  <value>group</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text is addressed to an undefined but fixed number of participants e.g. a lecture</a:documentation>
-                  <value>world</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">text is addressed to an undefined and indeterminately large number e.g. a published book</a:documentation>
-                  <data type="token">
-                     <param name="pattern">[^\p{C}\p{Z}]+</param>
-                  </data>
-               </choice>
-            </attribute>
-         </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="preparedness">
-      <element name="preparedness">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(preparedness) describes the extent to which a text may be regarded as prepared or spontaneous. [15.2.1. The Text Description]</a:documentation>
-         <ref name="macro.phraseSeq.limited"/>
-         <ref name="att.global.attributes"/>
-         <ref name="att.typed.attribute.subtype"/>
-         <optional>
-            <attribute name="type">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">a keyword characterizing the type of preparedness.
-Sample values include: 1] none; 2] scripted; 3] formulaic; 4] revised</a:documentation>
-               <data type="token">
-                  <param name="pattern">[^\p{C}\p{Z}]+</param>
-               </data>
-            </attribute>
-         </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="purpose">
-      <element name="purpose">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">characterizes a single purpose or communicative function of the text. [15.2.1. The Text Description]</a:documentation>
-         <ref name="macro.phraseSeq.limited"/>
-         <ref name="att.global.attributes"/>
-         <ref name="att.typed.attribute.subtype"/>
-         <optional>
-            <attribute name="type">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies a particular kind of purpose.
-Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</a:documentation>
-               <choice>
-                  <value>persuade</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">didactic, advertising, propaganda, etc.</a:documentation>
-                  <value>express</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">self expression, confessional, etc.</a:documentation>
-                  <value>inform</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">convey information, educate, etc.</a:documentation>
-                  <value>entertain</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">amuse, entertain, etc.</a:documentation>
-                  <data type="token">
-                     <param name="pattern">[^\p{C}\p{Z}]+</param>
-                  </data>
-               </choice>
-            </attribute>
-         </optional>
-         <optional>
-            <attribute name="degree">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the extent to which this purpose predominates.</a:documentation>
-               <choice>
-                  <value>high</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-                  <value>medium</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-                  <value>low</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-                  <value>unknown</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"/>
-               </choice>
-            </attribute>
-         </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="setting">
-      <element name="setting">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes one particular setting in which a language interaction takes place. [15.2.3. The Setting Description]</a:documentation>
-         <choice>
-            <oneOrMore>
-               <ref name="model.pLike"/>
-            </oneOrMore>
-            <zeroOrMore>
-               <choice>
-                  <ref name="model.nameLike.agent"/>
-                  <ref name="model.dateLike"/>
-                  <ref name="model.settingPart"/>
-               </choice>
-            </zeroOrMore>
-         </choice>
-         <ref name="att.global.attributes"/>
-         <ref name="att.ascribed.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="locale">
-      <element name="locale">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a brief informal description of the kind of place concerned, for example: a room, a restaurant, a park bench, etc. [15.2.3. The Setting Description]</a:documentation>
-         <ref name="macro.phraseSeq.limited"/>
-         <ref name="att.global.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="activity">
-      <element name="activity">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(activity) contains a brief informal description of what a participant in a language interaction is doing other than speaking, if anything. [15.2.3. The Setting Description]</a:documentation>
-         <ref name="macro.phraseSeq.limited"/>
-         <ref name="att.global.attributes"/>
          <empty/>
       </element>
    </define>
@@ -4786,6 +4564,30 @@ Suggested values include: 1] paper; 2] parch (parchment); 3] mixed</a:documentat
          </attribute>
       </optional>
    </define>
+   <define name="orgName">
+      <element name="orgName">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(organization name) contains an organizational name. [13.2.2. Organizational Names]</a:documentation>
+         <ref name="macro.phraseSeq"/>
+         <ref name="att.global.attributes"/>
+         <ref name="att.datable.attributes"/>
+         <ref name="att.editLike.attributes"/>
+         <ref name="att.personal.attributes"/>
+         <ref name="att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="persName">
+      <element name="persName">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(personal name) contains a proper noun or proper-noun phrase referring to a person, possibly including one or more of the person's forenames, surnames, honorifics, added names, etc. [13.2.1. Personal Names]</a:documentation>
+         <ref name="macro.phraseSeq"/>
+         <ref name="att.global.attributes"/>
+         <ref name="att.datable.attributes"/>
+         <ref name="att.editLike.attributes"/>
+         <ref name="att.personal.attributes"/>
+         <ref name="att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="event">
       <element name="event">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(event) contains data relating to any kind of significant event associated with a person, place, or organization. [13.3.1. Basic Principles]</a:documentation>
@@ -4827,6 +4629,40 @@ Suggested values include: 1] paper; 2] parch (parchment); 3] mixed</a:documentat
          <empty/>
       </element>
    </define>
+   <define name="listOrg">
+      <element name="listOrg">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(list of organizations) contains a list of elements, each of which provides information about an identifiable organization. [13.2.2. Organizational Names]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <ref name="model.headLike"/>
+            </zeroOrMore>
+            <zeroOrMore>
+               <ref name="desc"/>
+            </zeroOrMore>
+            <zeroOrMore>
+               <empty/>
+            </zeroOrMore>
+            <oneOrMore>
+               <group>
+                  <oneOrMore>
+                     <choice>
+                        <ref name="org"/>
+                        <ref name="listOrg"/>
+                     </choice>
+                  </oneOrMore>
+                  <zeroOrMore>
+                     <empty/>
+                  </zeroOrMore>
+               </group>
+            </oneOrMore>
+         </group>
+         <ref name="att.global.attributes"/>
+         <ref name="att.typed.attributes"/>
+         <ref name="att.declarable.attributes"/>
+         <ref name="att.sortable.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="listEvent">
       <element name="listEvent">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(list of events) contains a list of descriptions, each of which provides information about an identifiable event. [13.3.1. Basic Principles]</a:documentation>
@@ -4855,6 +4691,144 @@ Suggested values include: 1] paper; 2] parch (parchment); 3] mixed</a:documentat
          <ref name="att.typed.attributes"/>
          <ref name="att.declarable.attributes"/>
          <ref name="att.sortable.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="listPerson">
+      <element name="listPerson">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(list of persons) contains a list of descriptions, each of which provides information about an identifiable person or a group of people, for example the participants in a language interaction, or the people referred to in a historical source. [13.3.2. The Person Element 15.2. Contextual Information 2.4. The Profile Description 15.3.2. Declarable Elements]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <ref name="model.headLike"/>
+            </zeroOrMore>
+            <zeroOrMore>
+               <ref name="desc"/>
+            </zeroOrMore>
+            <zeroOrMore>
+               <empty/>
+            </zeroOrMore>
+            <oneOrMore>
+               <group>
+                  <oneOrMore>
+                     <choice>
+                        <ref name="model.personLike"/>
+                        <ref name="listPerson"/>
+                     </choice>
+                  </oneOrMore>
+                  <zeroOrMore>
+                     <empty/>
+                  </zeroOrMore>
+               </group>
+            </oneOrMore>
+         </group>
+         <ref name="att.global.attributes"/>
+         <ref name="att.typed.attributes"/>
+         <ref name="att.declarable.attributes"/>
+         <ref name="att.sortable.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="org">
+      <element name="org">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(organization) provides information about an identifiable organization such as a business, a tribe, or any other grouping of people. [13.3.3. Organizational Data]</a:documentation>
+         <group>
+            <zeroOrMore>
+               <ref name="model.headLike"/>
+            </zeroOrMore>
+            <choice>
+               <zeroOrMore>
+                  <ref name="model.pLike"/>
+               </zeroOrMore>
+               <zeroOrMore>
+                  <choice>
+                     <ref name="model.labelLike"/>
+                     <ref name="model.nameLike"/>
+                     <ref name="model.placeLike"/>
+                     <ref name="model.orgPart"/>
+                     <ref name="model.milestoneLike"/>
+                  </choice>
+               </zeroOrMore>
+            </choice>
+            <zeroOrMore>
+               <choice>
+                  <ref name="model.noteLike"/>
+                  <ref name="model.biblLike"/>
+                  <ref name="linkGrp"/>
+                  <ref name="link"/>
+               </choice>
+            </zeroOrMore>
+            <zeroOrMore>
+               <ref name="model.personLike"/>
+            </zeroOrMore>
+         </group>
+         <ref name="att.global.attributes"/>
+         <ref name="att.typed.attributes"/>
+         <ref name="att.editLike.attributes"/>
+         <ref name="att.sortable.attributes"/>
+         <optional>
+            <attribute name="role">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies a primary role or classification for the organization.</a:documentation>
+               <list>
+                  <oneOrMore>
+                     <data type="token">
+                        <param name="pattern">[^\p{C}\p{Z}]+</param>
+                     </data>
+                  </oneOrMore>
+               </list>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="person">
+      <element name="person">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(person) provides information about an identifiable individual, for example a participant in a language interaction, or a person referred to in a historical source. [13.3.2. The Person Element 15.2.2. The Participant Description]</a:documentation>
+         <choice>
+            <oneOrMore>
+               <ref name="model.pLike"/>
+            </oneOrMore>
+            <zeroOrMore>
+               <choice>
+                  <ref name="model.personPart"/>
+                  <ref name="model.global"/>
+               </choice>
+            </zeroOrMore>
+         </choice>
+         <ref name="att.global.attributes"/>
+         <ref name="att.editLike.attributes"/>
+         <ref name="att.sortable.attributes"/>
+         <optional>
+            <attribute name="role">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies a primary role or classification for the person.</a:documentation>
+               <list>
+                  <oneOrMore>
+                     <data type="token">
+                        <param name="pattern">[^\p{C}\p{Z}]+</param>
+                     </data>
+                  </oneOrMore>
+               </list>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="sex">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the sex of the person.</a:documentation>
+               <list>
+                  <oneOrMore>
+                     <data type="token">
+                        <param name="pattern">[^\p{C}\p{Z}]+</param>
+                     </data>
+                  </oneOrMore>
+               </list>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="age">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies an age group for the person.</a:documentation>
+               <data type="token">
+                  <param name="pattern">[^\p{C}\p{Z}]+</param>
+               </data>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>
