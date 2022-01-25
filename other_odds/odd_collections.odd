@@ -62,9 +62,9 @@
                                                                                                                                                                                                                   
           <moduleRef key="header" include="availability change classCode fileDesc idno keywords licence profileDesc publicationStmt revisionDesc sourceDesc teiHeader textClass titleStmt"/>
           <moduleRef key="core" include="desc head item list p publisher ref term title"/>
-          <moduleRef key="corpus"/>
+          <moduleRef key="corpus" include="particDesc"/>
           <moduleRef key="msdescription"/>
-          <moduleRef key="namesdates" include="event listEvent"/>
+          <moduleRef key="namesdates" include="event listEvent listOrg listPerson org orgName persName person"/>
           <moduleRef key="tei"/>
           <moduleRef key="textstructure" include="body TEI text"/>
           <moduleRef key="textcrit"/>
@@ -122,16 +122,7 @@
         <!-- element keywords -->
         <elementSpec ident="keywords" module="header" mode="change">
           <attList>
-            <attDef ident="source" mode="change" usage="req">           
-              <valList type="closed" mode="replace">
-                <valItem ident="vocabs">
-                  <desc>'neue' Keywords</desc>
-                </valItem>
-                <valItem ident="krausonline">
-                  <desc>Keywords aus Karl Kraus Online</desc>
-                </valItem>
-              </valList>
-            </attDef>
+            <attDef ident="source" mode="change" usage="opt"/>
           </attList>
         </elementSpec>
         
@@ -208,6 +199,9 @@
         <!-- element title -->
         <elementSpec ident="title" module="core" mode="change"/>
         
+        <!-- element particDesc -->
+        <elementSpec ident="particDesc" module="corpus" mode="change"/>
+        
         <!-- element event -->
         <elementSpec ident="event" module="namesdates" mode="change">
           <attList>
@@ -221,6 +215,34 @@
         
         <!-- element listEvent -->
         <elementSpec ident="listEvent" module="namesdates" mode="change"/>
+        
+        <!-- element listOrg -->
+        <elementSpec ident="listOrg" module="namesdates" mode="change"/>
+        
+        <!-- element listPerson -->
+        <elementSpec ident="listPerson" module="namesdates" mode="change"/>
+        
+        <!-- element org -->
+        <elementSpec ident="org" module="namesdates" mode="change">
+          <attList>
+            <attDef ident="role" mode="change" usage="req"/>
+            <attDef ident="ref" mode="change" usage="req"/>
+          </attList>
+        </elementSpec>
+        
+        <!-- element orgName -->
+        <elementSpec ident="orgName" module="namesdates" mode="change"/>
+        
+        <!-- element persName -->
+        <elementSpec ident="persName" module="namesdates" mode="change"/>
+        
+        <!-- element person -->
+        <elementSpec ident="person" module="namesdates" mode="change">
+          <attList>
+            <attDef ident="role" mode="change" usage="req"/>
+            <attDef ident="ref" mode="change" usage="req"/>
+          </attList>
+        </elementSpec>
         
         <!-- element body -->
         <elementSpec ident="body" module="textstructure" mode="change"/>
