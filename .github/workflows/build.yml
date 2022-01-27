@@ -1,0 +1,20 @@
+name: Publish odd
+
+on: 
+  push:
+
+jobs:
+  build_pages:
+    name: Publish Documentation as GitHub Pages
+    runs-on: ubuntu-latest
+    steps:
+    - name: Perform Checkout
+      uses: actions/checkout@v2
+    - name: rename html-file
+      run: |
+        mv ./odd/legalkraus_transcr.html ./odd/index.html
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{secrets.GITHUB_TOKEN}}
+        publish_dir: ./odd
