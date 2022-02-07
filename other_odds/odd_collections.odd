@@ -59,7 +59,6 @@
         <head>TEI-Modifikation</head>
         
         <schemaSpec ident="legalkraus_transcr_fackel" start="TEI" xml:lang="de">
-                                                                                                                                                                                                                  
           <moduleRef key="header" include="availability change classCode fileDesc idno keywords licence profileDesc publicationStmt revisionDesc sourceDesc teiHeader textClass titleStmt"/>
           <moduleRef key="core" include="desc head item list p publisher ref term title"/>
           <moduleRef key="corpus" include="particDesc"/>
@@ -89,7 +88,7 @@
         <!-- element classCode -->
         <elementSpec ident="classCode" module="header" mode="change">
           <attList>
-            <attDef ident="scheme" mode="change" usage="req"/>           
+            <attDef ident="scheme" mode="change" usage="req"/>
           </attList>
         </elementSpec>
         
@@ -99,14 +98,14 @@
         <!-- element idno -->
         <elementSpec ident="idno" module="header" mode="change">
           <attList>
-            <attDef ident="type" mode="change" usage="req">           
+            <attDef ident="type" mode="change" usage="req">
               <valList type="closed" mode="replace">
                 <valItem ident="URL">
                   <desc>URL</desc>
                 </valItem>
               </valList>
             </attDef>
-            <attDef ident="subtype" mode="change" usage="req">           
+            <attDef ident="subtype" mode="change" usage="req">
               <valList type="closed" mode="replace">
                 <valItem ident="legalkraus">
                   <desc>legalkraus</desc>
@@ -134,7 +133,7 @@
         <!-- element revisionDesc -->
         <elementSpec ident="revisionDesc" module="header" mode="change">
           <attList>
-            <attDef ident="status" mode="change" usage="req"/>           
+            <attDef ident="status" mode="change" usage="req"/>
           </attList>
         </elementSpec>
         
@@ -162,7 +161,7 @@
         <!-- element list -->
         <elementSpec ident="list" module="core" mode="change">
           <attList>
-            <attDef ident="type" mode="change" usage="req">           
+            <attDef ident="type" mode="change" usage="req">
               <valList type="closed" mode="replace">
                 <valItem ident="objects">
                   <desc>Objekte / Dokumente</desc>
