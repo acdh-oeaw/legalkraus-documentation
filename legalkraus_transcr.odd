@@ -392,7 +392,7 @@
           
           <p>Informationen zur Materialität des Dokuments sind ebenso in der <gi>physDesc</gi> im 
           Kindelement <gi>ab</gi> mit dem <att>type</att> <val>materiality</val> notiert. In 
-          <gi>objectType</gi> wird mit dem Attribut <att>ref</att> auf die <ref target="https://vocabs.acdh-dev.oeaw.ac.at/legalkraus-doctypes/v1.0/">projektspezifische Taxonomie</ref> 
+          <gi>objectType</gi> wird mit dem Attribut <att>ref</att> auf die <ref target="https://vocabs.acdh.oeaw.ac.at/legalkraus/v1.0/legalkrausScheme">projektspezifische Taxonomie</ref> 
           verwiesen, in der die zur Auswahl stehenden Materialitätstypen definiert sind. Als String sind 
           ebenso eine Prosabeschreibung des Materialitätstyps sowie die entsprechende Sigle vorhanden.
           Sind mehrere Textzeugen überliefert, werden mehrere <gi>objectType</gi>-Elemente angelegt und mit 
@@ -410,7 +410,7 @@
                 <physDesc>
                   <accMat xml:id="D_000002-002-000-acc001" source="#D_000002-002-001">1 Beilage</accMat>
                   <ab type="materiality">
-                    <objectType ref="https://vocabs.acdh.oeaw.ac.at/...">Typoskript, M.T.xxx</objectType><!-- LU: Link und Sigle müssen noch ausgebessert werden -->
+                      <objectType ref="https://vocabs.acdh.oeaw.ac.at/legalkraus/v1.0/M.T.HSN">Typoskript mit handschriftlichen Annotationen, M.T.HSN</objectType>
                   </ab>
                 </physDesc>
               </msDesc>
@@ -473,22 +473,19 @@
             <p>Auf der Dokumentebene wird in <gi>textClass</gi> der Dokumenttyp definiert. 
             Im Kindelement <gi>keywords</gi> mit dem passenden <gi>term</gi> ist eine Prosabezeichnung 
             des Dokumenttyps zu finden. Im Kindelement <gi>classCode</gi> mit dem Attribut <att>scheme</att>, 
-            welches auf den entsprechenden Datensatz in der <ref target="https://vocabs.acdh-dev.oeaw.ac.at/legalkraus-doctypes/v1.0/">projektspezifischen Taxonomie</ref> verweist, ist als String 
+            welches auf den entsprechenden Datensatz in der <ref target="https://vocabs.acdh.oeaw.ac.at/legalkraus/v1.0/legalkrausScheme">projektspezifischen Taxonomie</ref> verweist, ist als String 
             die Sigle für den Datensatz zu finden.
-            Grundsätzlich sind mehrere Dokumenttypen – im Gegensatz zu den singulären Materialitätstypen 
-            (siehe <ref target="#sourceDesc">sourceDesc</ref>) – bei einem Dokument möglich. 
+            Grundsätzlich sind mehrere Dokumenttypen bei einem Dokument möglich. 
             Sind mehrere Textzeugen vorhanden, so wird <gi>term</gi> und <gi>classCode</gi> das Attribut <att>source</att> 
             hinzugefügt, das auf den entsprechenden Textzeugen verweist.
             </p>
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <textClass>
-                <keywords>
-                  <term source="#D_000002-002-000-wit01">Brief</term>
-                  <term source="#D_000002-002-000-wit02">Brief</term>
-                </keywords>
-                <classCode scheme="https://vocabs.acdh.oeaw.ac.at/legalkraus-doctypes/v1.0/" source="#D_000002-002-000-wit01">D.K.BRF</classCode>
-                <classCode scheme="https://vocabs.acdh.oeaw.ac.at/legalkraus-doctypes/v1.0/" source="#D_000002-002-000-wit02">D.K.BRF</classCode>
+                  <keywords>
+                      <term source="#D_000002-002-000-wit01">Abhandlung</term>
+                  </keywords>
+                  <classCode scheme="https://vocabs.acdh.oeaw.ac.at/legalkraus/v1.0/D.J.ABH" source="#D_000002-002-000-wit01">D.J.ABH</classCode>
               </textClass>
             </egXML>
             
@@ -1855,11 +1852,7 @@
     <elementSpec ident="classCode" module="header" mode="change">
         <attList>
             <attDef ident="source" mode="change" usage="opt"/>
-            <attDef ident="scheme" mode="change" usage="req">
-                <valList mode="replace" type="closed">
-                    <valItem ident="https://vocabs.acdh.oeaw.ac.at/legalkraus-doctypes/v1.0/"/>
-                </valList>
-            </attDef>
+            <attDef ident="scheme" mode="change" usage="req"/>
         </attList>
     </elementSpec>
     
@@ -2088,11 +2081,7 @@
     <!-- element objectType -->
     <elementSpec ident="objectType" module="msdescription" mode="change">
         <attList>
-            <attDef ident="ref" mode="change" usage="req">
-                <valList mode="replace" type="closed">
-                    <valItem ident="https://vocabs.acdh.oeaw.ac.at/legalkraus-doctypes/v1.0/"/>
-                </valList>
-            </attDef>
+            <attDef ident="ref" mode="change" usage="req"/>
             <attDef ident="source" mode="change" usage="opt"/>
         </attList>
     </elementSpec>
