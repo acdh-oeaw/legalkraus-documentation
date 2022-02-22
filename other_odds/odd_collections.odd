@@ -68,7 +68,7 @@
           <moduleRef key="textstructure" include="body TEI text"/>
           <moduleRef key="textcrit"/>
           <moduleRef key="transcr"/>
-          <moduleRef key="linking"/>
+          <moduleRef key="linking" include="ab"/>
         </schemaSpec>
         
         <!-- element availability -->
@@ -247,6 +247,19 @@
         
         <!-- element text -->
         <elementSpec ident="text" module="textstructure" mode="change"/>
+        
+        <!-- element ab -->
+        <elementSpec ident="ab" module="linking" mode="change">
+          <attList>
+            <attDef ident="type" mode="change" usage="req">
+              <valList type="closed" mode="replace">
+                <valItem ident="keyword">
+                  <desc>Schlagwort</desc>
+                </valItem>
+              </valList>
+            </attDef>
+          </attList>
+        </elementSpec>
             
       </div>
         
