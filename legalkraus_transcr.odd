@@ -8,7 +8,7 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>Karl Kraus: Rechtsakten der Kanzlei Oskar Samek. Wissenschaftliche Edition: Kodierrichtlinien</title>
+        <title>Karl Kraus: Rechtsakten der Kanzlei Oskar Samek. Wissenschaftliche Edition. Kodierrichtlinien</title>
         <author xml:id="LU" role="main">Laura Untner</author>
         <author xml:id="IB">Ingo Börner</author>
         <author xml:id="VH">Vanessa Hannesschläger</author>
@@ -40,6 +40,9 @@
         <ref type="URL"
           target="https://gitlab.com/acdh-oeaw/legalkraus/documentation/legalkraus_transcr.odd"
           >https://gitlab.com/acdh-oeaw/legalkraus/documentation/legalkraus_transcr.odd</ref>
+          <ref type="URL"
+              target="https://github.com/acdh-oeaw/legalkraus-documentation/blob/master/odd/legalkraus_transcr.odd"
+              >https://github.com/acdh-oeaw/legalkraus-documentation/blob/master/odd/legalkraus_transcr.odd</ref>
       </publicationStmt>
       <sourceDesc>
         <p>Born digital.</p>
@@ -53,7 +56,7 @@
     <front>
       <titlePage>
         <docTitle>
-          <titlePart type="main">Karl Kraus: Rechtsakten der Kanzlei Oskar Samek. Wissenschaftliche Edition</titlePart>
+          <titlePart type="main">Karl Kraus: Rechtsakten der Kanzlei Oskar Samek. Wissenschaftliche Edition.</titlePart>
           <titlePart type="sub">Kodierrichtlinien</titlePart>
         </docTitle>
         <docAuthor>Laura Untner</docAuthor>
@@ -63,7 +66,7 @@
         <docAuthor>Isabel Langkabel</docAuthor>
         <docAuthor>Johannes Knüchel</docAuthor>
         <docAuthor>Andrea Ortner</docAuthor>
-        <docDate>Stand: Jänner 2022</docDate>
+        <docDate>Stand: Februar 2022</docDate>
       </titlePage>
     </front>
     <body>
@@ -86,9 +89,9 @@
         im Rathaus (<ref target="https://www.wienbibliothek.at"
         >https://www.wienbibliothek.at</ref>) umgesetzt. Ziel des Projekts ist es, eine digitale
         Edition der Kanzleiakten aus der Kanzlei Oskar Samek zu erstellen, welche die Fälle
-        dokumentieren, in die Karl Kraus involviert war. Diese digitale Edition soll es ihren
-        Nutzer_innen ermöglichen, den unterschiedlichen intertextuellen Bezügen in diesen Akten
-        nachzuforschen.</p><!-- LU: überarbeiten -->
+        dokumentieren, in die Karl Kraus involviert war. Die digitale Edition soll es ihren
+        Nutzer_innen mitunter ermöglichen, den unterschiedlichen intertextuellen Bezügen in diesen Akten
+        nachzuforschen.</p>
         
         <p>Als Grundlage dient dabei einerseits das Vorgängerprojekt <title>Karl Kraus
         Online</title> (<ref target="https://www.kraus.wienbibliothek.at">https://www.kraus.wienbibliothek.at</ref>), 
@@ -103,12 +106,12 @@
         1995–1997</bibl>).</p>
         
         <p>Im Rahmen des Projekts wird auf Basis der genannten Quellen für jedes
-        erhaltene Einzeldokument im Archiv ein korrespondierendes TEI/XML-Dokument erstellt, in
-        dem sich eine annotierte Transkription des Volltexts sowie alle relevanten Metadaten und
+        erhaltene Einzeldokument im Archiv ein korrespondierendes <ref target="https://tei-c.org/">TEI
+        </ref>/XML-Dokument erstellt, in dem sich eine annotierte Transkription des Volltexts sowie alle relevanten Metadaten und
         Verweise auf Digitalisate des Archivdokuments befinden. Darüber hinaus wird pro Fall ein
-        weiteres TEI/XML-Dokument angelegt, in dem die entsprechenden Metadaten festgehalten und
+        weiteres <ref target="https://tei-c.org/">TEI</ref>/XML-Dokument angelegt, in dem die entsprechenden Metadaten festgehalten und
         eine Liste der zum Fall gehörigen Einzeldokumente angelegt wird. Wie genau diese 
-        TEI/XML-Dokumente entstehen und strukturiert sind, ist im Folgenden beschrieben.</p><!-- LU: überarbeiten -->
+        <ref target="https://tei-c.org/">TEI</ref>/XML-Dokumente entstehen und strukturiert sind, ist im Folgenden beschrieben.</p>
 
       </div>
 
@@ -119,11 +122,11 @@
         
         <p>Der Workflow zur Erstellung eines Dokuments umfasst folgende Schritte:</p>
         <list>
-          <item>Auswahl des zu transkirbierenden Dokuments</item>
-          <item>Transkribus: Upload, Erstellen der Transkription</item>
+          <item>Auswahl des zu transkribierenden Dokuments</item>
+          <item>Transkribus: Upload, Erstellen der Transkription (für mehr Informationen zur Transkription s. Transkriptionsrichtlinien)</item>
           <item>Bildzuordnung</item>
-          <item>Erstellen des TEI Dokuments</item>
-          <item>Bearbeiten des TEI Dokuments</item>
+            <item>Erstellen des <ref target="https://tei-c.org/">TEI</ref>-Dokuments</item>
+            <item>Bearbeiten des <ref target="https://tei-c.org/">TEI</ref>-Dokuments</item>
         </list>
         
       </div>
@@ -133,118 +136,17 @@
 <!-- div metadata-tei-doc -->
       <div xml:id="metadata-tei-doc">
         
-        <head>Metadaten des TEI-Dokuments</head>
+        <head>Metadaten des <ref target="https://tei-c.org/">TEI</ref>-Dokuments</head>
         
-        <p>Das Element <gi>fileDesc</gi> enthält die Metadaten zum elektronischen Dokument.</p>
+        <p>Das Element <gi>fileDesc</gi> enthält die Metadaten zum elektronischen Dokument.
+        In der <gi>sourceDesc</gi>, auf die noch eingegangen werden wird, finden sich auch Informationen zum Ausgangsdokument.</p>
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
           <fileDesc>
             <titleStmt>
               <title>Brief Samek an Reichspost (verantw. Red. Karl Schiffleitner)</title>
               <editor ref="#IL">Isabel Langkabel</editor>
-              <respStmt>
-                <resp ref="http://id.loc.gov/vocabulary/relators/trc">Transkription</resp>
-                <name ref="#IL">Isabel Langkabel</name>
-              </respStmt>
             </titleStmt>
-            <publicationStmt>
-              <publisher>
-                <name>Austrian Centre for Digital Humanities and Cultural Heritage,
-                  Österreichische Akademie der Wissenschaften</name>
-                <address>
-                  <street>Sonnenfelsgasse 19</street>
-                  <postCode>1010</postCode>
-                  <settlement>Wien</settlement>
-                  <country>Österreich</country>
-                </address>
-                <ref target="https://acdh.oeaw.ac.at">https://acdh.oeaw.ac.at</ref>
-              </publisher>
-              <publisher>
-                <name>Ludwig Boltzmann Institut für Digital History</name>
-                <address>
-                  <street>Hofburg, Batthianystiege</street>
-                  <postCode>1010</postCode>
-                  <settlement>Wien</settlement>
-                  <country>Österreich</country>
-                </address>
-                <ref target="https://geschichte.lbg.ac.at">https://geschichte.lbg.ac.at</ref>
-              </publisher>
-              <publisher>
-                <name>Wienbibliothek im Rathaus</name>
-                <address>
-                  <street>Friedrich-Schmidt-Platz 1</street>
-                  <postCode>1010</postCode>
-                  <country>Wien</country>
-                  <settlement>Österreich</settlement>
-                </address>
-                <ref target="https://www.wienbibliothek.at">https://www.wienbibliothek.at</ref>
-              </publisher>
-              <pubPlace>Wien, Österreich</pubPlace>
-              <date>2021</date>
-              <availability>
-                <licence target="http://creativecommons.org/licenses/by/4.0">Creative Commons
-                  Namensnennung 4.0 International Lizenz</licence>
-              </availability>
-              <idno type="URL" subtype="legalkraus">https://id.acdh.oeaw.ac.at/legalkraus/D_000002-002-000.xml</idno>
-              <idno type="URL" subtype="krausonline">http://www.kraus.wienbibliothek.at/node/1540</idno>
-              <idno type="ID" subtype="transkribus">365566</idno>
-            </publicationStmt>
-            <seriesStmt>
-              <title type="collection" ref="https://id.acdh.oeaw.ac.at/legalkraus/C_000002">Karl Kraus ca. Reichspost</title>
-            </seriesStmt>
-            <sourceDesc>
-              <listWit>
-                <witness xml:id="D_000002-002-000-wit01" facs="#D_000002-002-000-facs001"/>
-              </listWit>
-            </sourceDesc>
-          </fileDesc>
-        </egXML>
-
-  <!-- div titleStmt -->
-        <div xml:id="titleStmt">
-          
-          <head>Titel und Herausgeber_in</head>
-          
-          <p>Das Element <gi>titleStmt</gi> in der <gi>fileDesc</gi> enthält den Titel des Dokuments
-          (<gi>title</gi>) sowie den Namen der_des Herausgebers_in (<gi>editor</gi>). 
-          Die hier über das Attribut <att>ref</att> verlinkte Person ist für die digitale Version des Dokuments hauptverantwortlich.</p>
-
-          <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <titleStmt>
-              <title>Ladung zur Berufungsverhandlung (Landesgericht für Strafsachen I Wien, G. Z. 14 Bl 920/28, Josef Schaupp)</title>
-              <editor ref="#IL"/>
-            </titleStmt>
-          </egXML>
-          
-        </div>
-
-  <!-- div publicationStmt -->
-        <div xml:id="publicationStmt">
-          
-          <head>Herausgebende Institutionen</head>
-          
-            <p>Im Element <gi>publisher</gi> im <gi>publicationStmt</gi> finden sich Informationen
-            zu den herausgebenden Institutionen des Dokuments. Im Falle des vorliegenden Projekts sind es drei Institutionen, 
-            die jeweils in einem <gi>publisher</gi>-Element mit entsprechenden Kindelementen (<gi>name</gi>, 
-            <gi>address</gi> (mit <gi>street</gi>, <gi>postCode</gi>, <gi>settlement</gi> und <gi>country</gi> sowie <gi>ref</gi>) 
-            angeführt werden.</p> 
-          
-            <p>Das Element <gi>availability</gi> enthält im Element <gi>licence</gi> einen Verweis mittels 
-            <att>target</att> auf die Creative Commons-Lizenz, unter der die Daten bereitgestellt
-            werden.</p> 
-          
-            <p>Die <gi>idno</gi> Elemente geben interne und externe Identifier an. In der Regel sind drei 
-            <gi>idno</gi>-Elemente vorhanden. Das erste verweist mit dem <att>type</att> <val>URL</val> und 
-            dem <att>subtype</att> <val>legalkraus</val> auf die ID in der digitalen Edition. Die zweite 
-            verweist mit demselben <att>type</att> und dem <att>subtype</att> <val>krausonline</val> auf die ID im
-            schon genannten Vorgängerprojekt <title>Karl Kraus Online</title> 
-            (<ref target="https://www.kraus.wienbibliothek.at">https://www.kraus.wienbibliothek.at</ref>).
-            Das dritte <gi>idno</gi>-Element ist, insofern eine Transkription des Dokuments angefertigt wurde, 
-            vom <att>type</att> <val>ID</val> und dem <att>subtype</att> <val>transkribus</val>. 
-            Dieser letzte Identifier bezieht sich auf die ID im Transkriptionsprogramm 
-            <ref target="https://readcoop.eu/de/transkribus/">Transkribus</ref>.</p>
-          
-          <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <publicationStmt>
               <publisher>
                 <name>Austrian Centre for Digital Humanities and Cultural Heritage,
@@ -280,12 +182,122 @@
               <pubPlace>Wien, Österreich</pubPlace>
               <date>2022</date>
               <availability>
-                <licence target="http://creativecommons.org/licenses/by/4.0">Creative Commons Namensnennung 4.0 International Lizenz</licence>
+                <licence target="http://creativecommons.org/licenses/by/4.0">Creative Commons
+                  Namensnennung 4.0 International Lizenz</licence>
               </availability>
-              <idno type="URL" subtype="legalkraus">https://id.acdh.oeaw.ac.at/legalkraus/D_000125-006-000.xml</idno>
-              <idno type="URL" subtype="krausonline">http://www.kraus.wienbibliothek.at/node/3371</idno>
-              <idno type="ID" subtype="transkribus">251313</idno>
+              <idno type="URL" subtype="legalkraus">https://id.acdh.oeaw.ac.at/legalkraus/D_000002-002-000.xml</idno>
+              <idno type="URL" subtype="krausonline">http://www.kraus.wienbibliothek.at/node/1540</idno>
+              <idno type="ID" subtype="transkribus">365566</idno>
             </publicationStmt>
+            <seriesStmt>
+              <title type="collection" ref="https://id.acdh.oeaw.ac.at/legalkraus/C_000002">Karl Kraus ca. Reichspost</title>
+            </seriesStmt>
+            <sourceDesc>
+              <listWit>
+                <witness xml:id="D_000002-002-000-wit01" facs="#D_000002-002-000-facs001"/>
+              </listWit>
+              <msDesc>
+                <ab type="stamp"> 
+                    <stamp xml:id="uuid_79f806a1-ab26-445f-b806-a1ab26c45fb5" source="#36793"></stamp>
+                </ab>
+                <physDesc>
+                    <accMat xml:id="D_000002-002-000-acc001" source="#D_000002-002-001">1 Beilage</accMat>
+                    <ab type="materiality">
+                        <objectType ref="https://vocabs.acdh.oeaw.ac.at/legalkraus/v1.0/M.T.HSN">Typoskript mit handschriftlichen Annotationen</objectType>
+                    </ab>
+                </physDesc>
+              </msDesc>
+            </sourceDesc>
+          </fileDesc>
+        </egXML>
+
+  <!-- div titleStmt -->
+        <div xml:id="titleStmt">
+          
+          <head>Titel und Herausgeber_in</head>
+          
+          <p>Das Element <gi>titleStmt</gi> in der <gi>fileDesc</gi> enthält den Titel des Dokuments
+          (<gi>title</gi>) sowie den Namen der_des Herausgebers_in (<gi>editor</gi>). 
+          Die hier über das Attribut <att>ref</att> verlinkte Person ist für die digitale Version des Dokuments hauptverantwortlich.</p>
+
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <titleStmt>
+                  <title>Brief Samek an Reichspost (verantw. Red. Karl Schiffleitner)</title>
+                  <editor ref="#IL">Isabel Langkabel</editor>
+              </titleStmt>
+          </egXML>
+          
+        </div>
+
+  <!-- div publicationStmt -->
+        <div xml:id="publicationStmt">
+          
+          <head>Herausgebende Institutionen</head>
+          
+            <p>Im Element <gi>publisher</gi> im <gi>publicationStmt</gi> finden sich Informationen
+            zu den herausgebenden Institutionen des Dokuments. Im Falle des vorliegenden Projekts sind es drei Institutionen, 
+            die jeweils in einem <gi>publisher</gi>-Element mit entsprechenden Kindelementen (<gi>name</gi>, 
+            <gi>address</gi> (mit <gi>street</gi>, <gi>postCode</gi>, <gi>settlement</gi> und <gi>country</gi> sowie <gi>ref</gi>) 
+            angeführt werden.</p> 
+          
+            <p>Das Element <gi>availability</gi> enthält im Element <gi>licence</gi> einen Verweis mittels 
+            <att>target</att> auf die Creative Commons-Lizenz, unter der die Daten bereitgestellt
+            werden.</p> 
+          
+            <p>Die <gi>idno</gi> Elemente geben interne und externe Identifier an. In der Regel sind drei 
+            <gi>idno</gi>-Elemente vorhanden. Das erste verweist mit dem <att>type</att> <val>URL</val> und 
+            dem <att>subtype</att> <val>legalkraus</val> auf die ID in der digitalen Edition. Die zweite 
+            verweist mit demselben <att>type</att> und dem <att>subtype</att> <val>krausonline</val> auf die ID im
+            schon genannten Vorgängerprojekt <title>Karl Kraus Online</title> 
+            (<ref target="https://www.kraus.wienbibliothek.at">https://www.kraus.wienbibliothek.at</ref>).
+            Das dritte <gi>idno</gi>-Element ist, insofern eine Transkription des Dokuments angefertigt wurde, 
+            vom <att>type</att> <val>ID</val> und dem <att>subtype</att> <val>transkribus</val>. 
+            Dieser letzte Identifier bezieht sich auf die ID in der Transkriptionssoftware 
+            <ref target="https://readcoop.eu/de/transkribus/">Transkribus</ref>.</p>
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <publicationStmt>
+                  <publisher>
+                      <name>Austrian Centre for Digital Humanities and Cultural Heritage,
+                          Österreichische Akademie der Wissenschaften</name>
+                      <address>
+                          <street>Sonnenfelsgasse 19</street>
+                          <postCode>1010</postCode>
+                          <settlement>Wien</settlement>
+                          <country>Österreich</country>
+                      </address>
+                      <ref target="https://acdh.oeaw.ac.at">https://acdh.oeaw.ac.at</ref>
+                  </publisher>
+                  <publisher>
+                      <name>Ludwig Boltzmann Institut für Digital History</name>
+                      <address>
+                          <street>Hofburg, Batthianystiege</street>
+                          <postCode>1010</postCode>
+                          <settlement>Wien</settlement>
+                          <country>Österreich</country>
+                      </address>
+                      <ref target="https://geschichte.lbg.ac.at">https://geschichte.lbg.ac.at</ref>
+                  </publisher>
+                  <publisher>
+                      <name>Wienbibliothek im Rathaus</name>
+                      <address>
+                          <street>Friedrich-Schmidt-Platz 1</street>
+                          <postCode>1010</postCode>
+                          <country>Wien</country>
+                          <settlement>Österreich</settlement>
+                      </address>
+                      <ref target="https://www.wienbibliothek.at">https://www.wienbibliothek.at</ref>
+                  </publisher>
+                  <pubPlace>Wien, Österreich</pubPlace>
+                  <date>2022</date>
+                  <availability>
+                      <licence target="http://creativecommons.org/licenses/by/4.0">Creative Commons
+                          Namensnennung 4.0 International Lizenz</licence>
+                  </availability>
+                  <idno type="URL" subtype="legalkraus">https://id.acdh.oeaw.ac.at/legalkraus/D_000002-002-000.xml</idno>
+                  <idno type="URL" subtype="krausonline">http://www.kraus.wienbibliothek.at/node/1540</idno>
+                  <idno type="ID" subtype="transkribus">365566</idno>
+              </publicationStmt>
           </egXML>
           
         </div>
@@ -300,12 +312,14 @@
           <att>ref</att> verweist dabei auf das entsprechende Falldokument in der digitalen Edition.</p>
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <seriesStmt>
-              <title type="collection" ref="https://id.acdh.oeaw.ac.at/legalkraus/C_000002">Karl Kraus ca. Reichspost</title>
-            </seriesStmt>
+              <seriesStmt>
+                  <title type="collection" ref="https://id.acdh.oeaw.ac.at/legalkraus/C_000002">Karl Kraus ca. Reichspost</title>
+              </seriesStmt>
           </egXML>
           
         </div>
+          
+          <!-- hier sourceDesc -->
 
   <!-- revisionDesc -->
         <div xml:id="revisionDesc">
@@ -330,7 +344,7 @@
           mit der Angabe des Datums der Fertigstellung des Arbeitsschrittes sowie ein <att>who</att>-Attribut, 
           das auf die Person verweist, welche diesen Arbeitsschritt durchgeführt hat.</p>
           
-          <egXML xmlns="http://www.tei-c.org/ns/Examples"><!-- LU: wäre eine Überlegung wert, changes von Ingo im Sinne der Vereinheitlichung noch zu typisieren -->
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <revisionDesc status="draft">
               <change type="intertexts" when-iso="2021-03-17" who="#JK"/>
               <change type="typography" when-iso="2021-03-17" who="#JK"/>
@@ -352,13 +366,13 @@
         
         <head>Metadaten zum historischen Dokument</head>
         
-        <p>Ebenfalls im <gi>teiHeader</gi> werden Metadaten zum historischen Dokument
+        <p>Wie bereits angesprochen, werden im <gi>teiHeader</gi> auch Metadaten zum historischen Dokument
           hinterlegt.</p>
 
   <!-- div sourceDesc -->
         <div xml:id="sourceDesc">
           
-          <head>Quelle, Textzeugen, Beilagen</head>
+          <head>Quelle, Textzeugen, Beilagen, Materialität</head>
           
           <p>Informationen zur Quelle finden sich im Element <gi>sourceDesc</gi>. 
           Im Kindelement <gi>listWit</gi> wird der Textzeuge bzw. werden die Textzeugen 
@@ -369,16 +383,8 @@
           mit dem Attribut <att>type</att> und dem Wert <val>stamp</val> notiert. Im Attribut 
           <att>source</att> des <gi>stamp</gi>-Elements wird auf die Quelle des Stempels verwiesen,
           durch die <att>xml:id</att> wird der Stempel zudem eindeutig identifizierbar.</p>
-          
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-                <msDesc>
-                  <ab type="stamp"> 
-                    <stamp xml:id="uuid_79f806a1-ab26-445f-b806-a1ab26c45fb5" source="#36793"></stamp>
-                  </ab>
-                </msDesc>  
-            </egXML>
-          
-          <p>Ist eine Beilage zu einem Dokument verhanden, wird dieses im Element <gi>physDesc</gi> 
+            
+          <p>Ist eine Beilage zu einem Dokument verhanden, wird diese im Element <gi>physDesc</gi> 
           bzw. genauer in seinem Kindelement <gi>accMat</gi> mit einer <att>xml:id</att> sowie gegebenenfalls 
           mit einer Verlinkung auf das entsprechende Beilagendokument in <att>source</att> festgehalten. 
           Im Text selbst wird die Beilage mit dem Element <gi>ab</gi> versehen. Dieses erhält das Attribut 
@@ -386,36 +392,35 @@
           entsprechende <gi>accMat</gi>-Element im Header. Ein Beispiel für die Kodierung von Beilagen 
           im <gi>body</gi>:</p> 
             
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <ab type="appendix" source="#D_000002-002-000-acc001">1 Beilage</ab>
-            </egXML>
+          </egXML>
           
           <p>Informationen zur Materialität des Dokuments sind ebenso in der <gi>physDesc</gi> im 
           Kindelement <gi>ab</gi> mit dem <att>type</att> <val>materiality</val> notiert. In 
-          <gi>objectType</gi> wird mit dem Attribut <att>ref</att> auf die <ref target="https://vocabs.acdh.oeaw.ac.at/legalkraus/v1.0/legalkrausScheme">projektspezifische Taxonomie</ref> 
-          verwiesen, in der die zur Auswahl stehenden Materialitätstypen definiert sind. Als String sind 
-          ebenso eine Prosabeschreibung des Materialitätstyps sowie die entsprechende Sigle vorhanden.
-          Sind mehrere Textzeugen überliefert, werden mehrere <gi>objectType</gi>-Elemente angelegt und mit 
-          <att>source</att>-Attributen versehen.</p>
+          <gi>objectType</gi> wird mit dem Attribut <att>ref</att> auf die <ref target="https://vocabs.acdh.oeaw.ac.at/legalkraus">projektspezifische Taxonomie</ref> 
+          verwiesen, in der unter anderem die zur Auswahl stehenden Materialitätstypen definiert sind.
+          Im Attribut <att>ref</att> wird auf den entsprechenden Datensatz in der <ref target="https://vocabs.acdh.oeaw.ac.at/legalkraus">projektspezifischen Taxonomie</ref> verwiesen.
+          Im Attribut <att>source</att> wird der Textzeuge angegeben, auf den sich die Klassifikation bezieht.</p>
           
-          <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            <sourceDesc>
-              <listWit>
-                <witness xml:id="D_000002-002-000-wit01" facs="#D_000002-002-000-facs001"/>
-              </listWit>
-              <msDesc>
-                <ab type="stamp"> 
-                  <stamp xml:id="uuid_79f806a1-ab26-445f-b806-a1ab26c45fb5" source="#36793"></stamp>
-                </ab>
-                <physDesc>
-                  <accMat xml:id="D_000002-002-000-acc001" source="#D_000002-002-001">1 Beilage</accMat>
-                  <ab type="materiality">
-                      <objectType ref="https://vocabs.acdh.oeaw.ac.at/legalkraus/v1.0/M.T.HSN">Typoskript mit handschriftlichen Annotationen, M.T.HSN</objectType>
-                  </ab>
-                </physDesc>
-              </msDesc>
-            </sourceDesc>
-          </egXML>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <sourceDesc>
+                    <listWit>
+                        <witness xml:id="D_000002-002-000-wit01" facs="#D_000002-002-000-facs001"/>
+                    </listWit>
+                    <msDesc>
+                        <ab type="stamp"> 
+                            <stamp xml:id="uuid_79f806a1-ab26-445f-b806-a1ab26c45fb5" source="#36793"></stamp>
+                        </ab>
+                        <physDesc>
+                            <accMat xml:id="D_000002-002-000-acc001" source="#D_000002-002-001">1 Beilage</accMat>
+                            <ab type="materiality">
+                                <objectType ref="https://vocabs.acdh.oeaw.ac.at/legalkraus/v1.0/M.T.HSN" source="#D_000002-002-000-wit01">Typoskript mit handschriftlichen Annotationen</objectType>
+                            </ab>
+                        </physDesc>
+                    </msDesc>
+                </sourceDesc>
+            </egXML>
           
         </div>
 
@@ -424,27 +429,42 @@
           
           <head>Kontextinformationen</head>
           
-          <p>Im Element <gi>profileDesc</gi> lassen sich Kontextinformationen zum Dokument, etwa den
-            beteiligten Personen, dem Entstehungsdatum, usw. hinterlegen.</p>
+          <p>Im Element <gi>profileDesc</gi> lassen sich Kontextinformationen zum Dokument hinterlegen.</p>
+            
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <profileDesc>
+                  <creation>
+                      <date subtype="produced" type="sortDate" when-iso="1928-09-04">4. September 1928 </date>
+                  </creation>
+                  <langUsage>
+                      <language ident="de">Deutsch</language>
+                  </langUsage>
+                  <textClass>
+                      <keywords>
+                          <term source="#D_000111-001-000-wit01">Zeitungsartikel</term>
+                      </keywords>
+                      <classCode scheme="https://vocabs.acdh.oeaw.ac.at/legalkraus/v1.0/D.P.ZTA" source="#D_000111-001-000-wit01">D.P.ZTA</classCode>
+                  </textClass>
+              </profileDesc>
+          </egXML>
      
       <!-- div creation -->
           <div xml:id="creation">
             
             <head>Datierung</head>
             
-            <p>Zur Datierung (und als Grundlage für eine Sortierung) wird innerhalb von <gi>creation</gi> 
-            ein Datum im ISO-Format (JJJJ-MM-TT) im Attribut <att>when-iso</att> angegeben. 
+            <p>Zur Datierung wird in <gi>date</gi> in <gi>creation</gi> ein Datum im ISO-Format (JJJJ-MM-TT) im Attribut <att>when-iso</att> angegeben. 
             Ist ein Dokument nicht eindeutig datierbar, so wird das Datum mit <att>notBefore-iso</att>
-            und / oder <att>notAfter-iso</att> eingeschränkt. Für die Sortierung wird <att>sortDate</att> hinzugefügt.
+            und / oder <att>notAfter-iso</att> eingeschränkt. Für die Sortierung wird das Attribut <att>type</att> mit dem Wert <val>sortDate</val> hinzugefügt.
             Wenn eine Datierung nicht möglich ist, ist weder <att>sortDate</att> noch ein ISO-Wert vorhanden.
-            Zur weiteren Klassifizierung des Datums wird <att>subtype</att> eingeführt. 
+            Zur weiteren Klassifizierung des Datums wird ein <att>subtype</att> angegeben. 
             Zur Auswahl stehen die Werte <val>produced</val> (Datum der Entstehung) und <val>received</val> 
-            (Datum des Empfangens). Der String entspricht einem normalisierten Datum im Format TT.MM.JJJJ.</p>
+            (Datum des Empfangens). Der String entspricht einem normalisierten Datum im Format TT. Monat JJJJ.</p>
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <creation>
-                <date type="sortDate" subtype="received" when-iso="1922-11-30">30.11.1922</date>
-              </creation>
+                <creation>
+                    <date subtype="produced" type="sortDate" when-iso="1928-09-04">4. September 1928</date>
+                </creation>
             </egXML>
             
           </div>
@@ -472,21 +492,18 @@
             
             <p>Auf der Dokumentebene wird in <gi>textClass</gi> der Dokumenttyp definiert. 
             Im Kindelement <gi>keywords</gi> mit dem passenden <gi>term</gi> ist eine Prosabezeichnung 
-            des Dokumenttyps zu finden. Im Kindelement <gi>classCode</gi> mit dem Attribut <att>scheme</att>, 
-            welches auf den entsprechenden Datensatz in der <ref target="https://vocabs.acdh.oeaw.ac.at/legalkraus/v1.0/legalkrausScheme">projektspezifischen Taxonomie</ref> verweist, ist als String 
-            die Sigle für den Datensatz zu finden.
-            Grundsätzlich sind mehrere Dokumenttypen bei einem Dokument möglich. 
-            Sind mehrere Textzeugen vorhanden, so wird <gi>term</gi> und <gi>classCode</gi> das Attribut <att>source</att> 
-            hinzugefügt, das auf den entsprechenden Textzeugen verweist.
-            </p>
+            des Dokumenttyps zu finden. Das Attribut <att>source</att> verweist auf den klassifizierten Textzeugen.
+            Im Kindelement <gi>classCode</gi>, das ebenso ein <att>source</att>-Attribut und darüber hinaus das Attribut <att>scheme</att> hat, 
+            das auf den entsprechenden Datensatz in der <ref target="https://vocabs.acdh.oeaw.ac.at/legalkraus">projektspezifischen Taxonomie</ref> verweist, ist als String 
+            die Sigle des Datensatzes zu finden. Grundsätzlich sind mehrere Dokumenttypen bei einem Dokument möglich.</p>
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <textClass>
-                  <keywords>
-                      <term source="#D_000002-002-000-wit01">Abhandlung</term>
-                  </keywords>
-                  <classCode scheme="https://vocabs.acdh.oeaw.ac.at/legalkraus/v1.0/D.J.ABH" source="#D_000002-002-000-wit01">D.J.ABH</classCode>
-              </textClass>
+                <textClass>
+                    <keywords>
+                        <term source="#D_000111-001-000-wit01">Zeitungsartikel</term>
+                    </keywords>
+                    <classCode scheme="https://vocabs.acdh.oeaw.ac.at/legalkraus/v1.0/D.P.ZTA" source="#D_000111-001-000-wit01">D.P.ZTA</classCode>
+                </textClass>
             </egXML>
             
           </div>
@@ -498,48 +515,51 @@
             
             <p>Metadaten zu Korrespondenzstücken werden in der <gi>correspDesc</gi> versammelt.
             Bei Dokumenten, die keine Korrespondenzstücke ausmachen, fehlt dieser Abschnitt.
-            Es gibt drei Möglichkeiten für die Struktur der <gi>correspDesc</gi>: 
+            Es gibt vier Möglichkeiten für die Struktur der <gi>correspDesc</gi>: 
             Erstens ist sowohl der_die Absender_in als auch der_die Empfänger_in eine Person.
             Zweitens ist der_die Absender_in eine Person, der_die Empfänger_in eine Institution.
             Drittens ist der_die Absender_in eine Institution, der_die Empfänger_in eine Person.
-            Entsprechend kommen die Elemente <gi>persName</gi> bzw. <gi>orgName</gi> zum Einsatz.</p>
+            Viertens ist der_die Absender_in eine Institution, der_die Empfänger_in ebenso.
+            Entsprechend kommen die Elemente <gi>persName</gi> bzw. <gi>orgName</gi> zum Einsatz, die im Attribut <att>ref</att> eine ID der <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref> erhalten.</p>
               
-            <p>Die Namen werden dem Original entnommen. Zeilenfälle werden mit einem senkrechten Strich (|) notiert. 
-            Die 'Rolle', z. B. Rechtsanwalt, wird gegebenenfalls ebenso angebeben.</p>
+            <p>Die Namen werden dem Originaldokument entnommen. Zeilenfälle werden mit einem senkrechten Strich (|) notiert. 
+            Die 'Rolle' einer Person oder Institution, z. B. Rechtsanwalt, wird gegebenenfalls ebenso angebeben.</p>
             
             <p>Der_Die Absender_in wird in <gi>correspAction</gi> mit dem Attribut <att>type</att> und dem Attributwert <val>sent</val>
             festgehalten. Der_Die Empfänger_n hingegen ist in <gi>correspAction</gi> <att>type</att> <val>received</val> zu finden.</p>
             
-            <p>In <gi>address</gi> werden die Anschriften dokumentiert. <gi>street</gi> verweist auf einen Eintrag in der 
-            <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref> und <gi>settlement</gi> ebenso. 
-            Das Datum wird sowohl im ISO-Format in <att>date</att> als auch originalgetreu im entsprechenden String wiedergegeben.</p>
+            <p>In <gi>address</gi> werden die Anschriften dokumentiert. <gi>street</gi> verweist im <att>corresp</att>-Attribut auf einen Eintrag in der 
+            <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref>, <gi>settlement</gi> in <att>ref</att> ebenso. Die Strings entsprechen den Angaben auf dem Originaldokument.</p>
+              
+            <p>Das Datum wird sowohl im ISO-Format in <att>date</att> bzw. in dem Attribut <att>when-iso</att> als auch originalgetreu im entsprechenden String wiedergegeben.</p>
             
-            <p>In <gi>noteGrp</gi> sind optional weitere Metadaten zur Korrespondenz enthalten. Mittels <gi>note</gi> und entsprechenden
+            <p>In <gi>noteGrp</gi> sind gegebenenfalls weitere Metadaten zur Korrespondenz enthalten. Mittels <gi>note</gi> und entsprechenden
             <att>type</att>-Attributen kann ein Betreff (<val>subject</val>) und eine Diktatsigle (<val>dictation</val>) verzeichnet werden.</p>
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <correspDesc>
-                <correspAction type="sent">
-                  <persName ref="#11988">Karl Kraus</persName>
-                  <address>
-                    <street corresp="#50496">Hintere Zollamtsstrasse Nr.3</street>
-                    <settlement ref="#53">Wien III.</settlement>
-                  </address>
-                  <date when-iso="1931-01-15"/>
-                </correspAction>
-                <correspAction type="received">
-                  <orgName ref="#50491">Strafbezirksgericht I</orgName>
-                  <address>
-                    <street corresp="#50664"/>
-                    <settlement ref="#53">Wien</settlement>
-                  </address>
-                  <date when-iso="1931-01-16">16. JAN. 1931</date>
-                </correspAction>
-                <noteGrp>
-                  <note type="subject">Privatanklage</note>
-                  <note type="dictation"/>
-                </noteGrp>
-              </correspDesc>              
+                <correspDesc>
+                    <correspAction type="sent">
+                        <persName ref="#38909">Dr. OSKAR SAMEK | RECHTSANWALT</persName>
+                        <address>
+                            <street corresp="#50493">Schottenring 14</street>
+                            <settlement ref="#51">Wien, I.</settlement>
+                        </address>
+                        <date when-iso="1928-09-21">21. September 1928.</date>
+                    </correspAction>
+                    <correspAction type="received">
+                        <persName ref="#51565">den | verantwortlichen Redakteur der „Grazer Tagespost“ |
+                            Herrn Alfons Castelliz </persName>
+                        <address>
+                            <street corresp="#53410">Stempfergasse Nr. 7</street>
+                            <settlement ref="#860">Graz</settlement>
+                        </address>
+                        <date/>
+                    </correspAction>
+                    <noteGrp>
+                        <note type="subject">Kraus – Grazer Tagespost.</note>
+                        <note type="dictation">Dr.S./Fa.</note>
+                    </noteGrp>
+                </correspDesc>
             </egXML>
             
           </div>
@@ -547,14 +567,15 @@
       <!-- div handNotes -->
           <div xml:id="handNotes">
             
-            <head>Schreiberhände</head>
+            <head>Schreiber_innenhände</head>
             
-            <p>Schreiberhände werden im Header innerhalb des Elements <gi>handNotes</gi> definiert.
-            Sind keine <gi>handNotes</gi> angelegt, handelt es sich standardmäßig um Typoskripte.</p>
+            <p>Schreiber_innenhände werden im Header innerhalb des Elements <gi>handNotes</gi> definiert.
+            Sind keine <gi>handNotes</gi> angelegt, handelt es sich standardmäßig um ein Typoskript. 
+            Siehe dazu auch den <ref target="#sourceDesc">Materialitätstyp</ref>.</p>
             
-            <p>Jede Schreiberhand wird in einem <gi>handNote</gi>-Element festgehalten. Dieses enhält eine 
+            <p>Jede Schreiber_innenhand wird in einem <gi>handNote</gi>-Element festgehalten. Dieses enhält eine 
             <att>xml:id</att>, einen Hinweis auf das Schreibmedium (Bleistift, Tinte ...) in <att>medium</att> 
-            sowie gegebenenfalls eine Verlinkung mit der schreibenden Person in <att>scribeRef</att>, 
+            sowie gegebenenfalls eine <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref>-Verlinkung mit der schreibenden Person in <att>scribeRef</att>, 
             dem entsprechenden Textzeugen in <att>source</att>, einer Angabe zur Sicherheit der Aussage 
             in <att>cert</att> und eine Zuschreibung der Verantwortlichkeit für die Definition der Hand 
             in <att>resp</att>.</p>
@@ -579,19 +600,20 @@
         <head>Bilddaten</head>
         
         <p>Die der digitalen Edition zugrundeliegenden Faksimiles sind in <gi>facsimile</gi> zu finden. 
-        Innerhalb von <gi>facsimile</gi> ist mindestens eine <gi>surfaceGrp</gi> enthalten. Diese beschreibt ein Blatt.
+        Innerhalb von <gi>facsimile</gi> gibt es mindestens eine <gi>surfaceGrp</gi>, die einem Blatt entspricht.
         Dieses Blatt kann in mehrere <gi>surface</gi>-Elemente unterteilt werden. Diese machen die Seiten aus, die mittels <att>type</att>
-        und <val>recto</val> bzw. <val>verso</val> (Vorder-/ Rückseite) noch näher bestimmt werden.
-        Diese <gi>surface</gi>-Elemente beinhalten wiederum ein bis drei <gi>graphic</gi>-Elemente, die mittels <att>source</att> 
-        und entsprechenden Attributwerten unterschieden werden.
-        Liegt ein Doppelblatt vor, so wird die Gruppierung der Faksimiles entsprechend angepasst.</p>
-        
-        <p>Die Faksimiles des Vorläuferprojekts "<ref target="https://www.kraus.wienbibliothek.at/">Karl Kraus Online</ref>" 
+        und <val>recto</val> bzw. <val>verso</val> (Vorder-/ Rückseite) näher bestimmt werden.
+        Die <gi>surface</gi>-Elemente beinhalten wiederum ein bis drei <gi>graphic</gi>-Elemente, die mittels <att>source</att> 
+        und entsprechenden Attributwerten unterschieden werden und in <att>url</att> auf eine digitale oder lokale Ressource verweisen. 
+        Die Faksimiles des Vorläuferprojekts "<ref target="https://www.kraus.wienbibliothek.at/">Karl Kraus Online</ref>" 
         werden mit dem Attributwert <val>krausonline</val> versehen, jene der Wienbibliothek im Rathaus mit <val>wienbibliothek</val>
-        und jene der projekteigenen Scans mit <val>scans</val>. Sowohl <gi>facsimile</gi> als auch 
-        <gi>surfaceGrp</gi> und <gi>surface</gi> erhalten eine <att>xml:id</att> zur eindeutigen Identifizierung.
+        und jene der projekteigenen Scans mit <val>scans</val>.</p>
+          
+        <p>Liegt ein Doppelblatt vor, so wird die Gruppierung der Faksimiles entsprechend angepasst.</p>
+            
+        <p>Sowohl <gi>facsimile</gi> als auch <gi>surfaceGrp</gi> und <gi>surface</gi> erhalten eine <att>xml:id</att> zur eindeutigen Identifizierung.
         Derzeit sind die Faksimiles nur für den 'Haupttextzeugen' zugeordnet. Insofern weitere Textzeugen vorhanden und verlinkt sind, 
-        werden diese in einem weiteren <gi>facsimile</gi>-Element mit dem Attribut <att>type</att> und dem Wert <val>further-witnesses</val> zur vorläufigen Differenzierung versehen.</p>
+        werden diese in einem weiteren <gi>facsimile</gi>-Element mit dem Attribut <att>ana</att> und dem Wert <val>further-witnesses</val> zur vorläufigen Differenzierung versehen.</p>
             
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <facsimile xml:id="D_000002-002-000-facs001">
@@ -627,7 +649,7 @@
             <p>Seitenwechsel werden mit <gi>pb</gi> markiert. Sie werden außerdem durch das Attribut <att>n</att>
             und dem entsprechenden Attributwert (z. B. <val>1</val> für die erste Seite) ausgezeichnet.
             Darüber hinaus werden sie mit den Bilddaten verknüpft. Dies geschieht über das Attribut 
-            <att>facs</att> und dem entsprechenden Verweis auf das <gi>surface</gi>-Element.
+            <att>facs</att> und einem entsprechenden Verweis auf das jeweilige <gi>surface</gi>-Element.
             Durch das Attribut <att>xml:id</att> erhält das Element außerdem eine eindeutige ID.</p>
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -645,48 +667,60 @@
             Dieser erhält eine <att>xml:id</att>.</p>
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <p xml:id="uuid_401e1862-85b6-4dfb-9d95-77543d6f4edf">
-                <lb xml:id="uuid_d3bfe99e-be54-4a0f-bfe9-9ebe54fa0f46"/>1.) Anberaumung einer Hauptverhandlung; 
-                <lb xml:id="uuid_bf8b41d7-0095-409d-8b41-d70095a09d1c"/>2.) Ladung des <rs type="person" ref="#51602">Beschuldigten</rs>; 
-                <lb xml:id="uuid_2f30be6b-1ca6-45fe-b0be-6b1ca615fe7d"/>3.) Verlesung des Berichtigungsschreibens und der vorgelegten 
-                <lb xml:id="uuid_7d4a1760-6919-42fb-8a17-60691902fb9c"/><rs type="work" ref="#53857">Zeitungsnummer</rs>;
-              </p>
+              <p xml:id="uuid_401e1862-85b6-4dfb-9d95-77543d6f4edf"/>
             </egXML>
             
           </div>
+            
+        <!-- div lb -->
+        <div xml:id="lb">
+            
+            <head>Zeilenfälle</head>
+            
+            <p>Zeilenfälle werden mit <gi>lb</gi> markiert. Kommt es innerhalb eines Worts zu einem 
+            Zeilenfall, so wird in der folgenden Zeile dem Element <gi>lb</gi> das Attribut <att>break</att> 
+            mit dem Wert <val>no</val> beigefügt. Insofern eine eindeutige Identifizierung von Zeilen 
+            angestrebt wird, erhält jedes <gi>lb</gi>-Element eine <att>xml:id</att>.</p>
+            
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <lb xml:id="uuid_45105d00-1bba-4ea6-905d-001bbabea608"/>Beschuldigter: <rs type="person" ref="https://pmb.acdh.oeaw.ac.at/entity/51602">Josef <hi rend="spaced">Koller</hi></rs>, verantwortlicher Redak
+                <lb xml:id="uuid_588cb55f-c706-4cc9-8cb5-5fc706dcc959" break="no"/>teur der Zeitung „<rs type="institution" ref="37568">Der Wiener Tag</rs>”
+            </egXML>
+            
+        </div>
           
         <!-- div div -->
           <div xml:id="div">
             
-            <head>Abschnitte / Divisions: mehrere Textzeugen, unterschiedliche Dokumente unter einer Signatur und Rekonstruktionen Böhms</head>
+            <head>Abschnitte / Divisions: mehrere Textzeugen, mehrere Dokumente unter einer Signatur und Rekonstruktionen Böhms</head>
             
-            <p>Sind mehrere Textzeugen eines Schriftstücks vorhanden und werden auch mehrere Textzeugen ediert (s. editorische Richtlinien), 
-            so wird nach dem 'primären' Textzeugen im <gi>body</gi> der weitere Textzeuge eingefügt und mit
-            <gi>div</gi> ausgezeichnet. Außerdem erhält er ein <att>type</att>-Attribut mit dem Wert <val>wit</val>.
+            <p>Sind mehrere Textzeugen eines Schriftstücks vorhanden und werden auch mehrere Textzeugen ediert, 
+            so wird nach dem 'primären' Textzeugen im <gi>body</gi> die Kodierung des weiteren Textzeugen eingefügt und mit
+            <gi>div</gi> ausgezeichnet, das wiederum ein <att>type</att>-Attribut mit dem Wert <val>wit</val> erhält.
             Verlinkt wird der Textzeuge in <gi>div</gi> mit einem <att>source</att>-Attribut, das auf das entsprechende 
-            <gi>witness</gi>-Element bzw. das Faksimile verweist. Der Abschnitt selbst wird, ebenso wie der folgende, mit einer 
+            <gi>witness</gi>-Element verweist. Der Abschnitt selbst wird mit einer 
             <att>xml:id</att> eindeutig identifizierbar gemacht.</p>
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <div xml:id="D_000068-044-000-wit-div-001" type="wit" source="#D_000068-044-000-wit01"/>
+              <div xml:id="D_000068-044-000-wit-div-001" type="wit" source="#D_000068-044-000-wit02"/>
             </egXML>
             
             <p>Sind mehrere Textzeugen eines Schriftstücks vorhanden, wird aber nur einer in seiner Gänze kodiert, 
-            kann Varianz unter Textzeugen trotzdem mittels eines Variantenapparats festgehalten werden. Dabei 
-            wird an der jeweiligen Stelle im <gi>body</gi> ein Apparat mit <gi>app</gi> eingefügt. In diesem wird 
+            kann Varianz unter Textzeugen mittels eines Variantenapparats festgehalten werden. Dabei 
+            wird an der jeweiligen Stelle im <gi>body</gi> ein Variantenapparat mit <gi>app</gi> eingefügt. In diesem wird 
             in <gi>lem</gi> mit den Attributen <att>wit</att> (verlinkt den betroffenen Textzeugen) und 
-            <att>hand</att> (verlinkt die betroffene Schreiberhand) ein Lemma bzw. eine präferierte Lesart 
-            festgelegt. Im folgenden <gi>rdg</gi>, mit denselben Attributen wie bei <gi>lem</gi>, wird 
+            <att>hand</att> (verlinkt gegebenenfalls die betroffene Schreiber_innenhand) ein Lemma bzw. eine präferierte Lesart 
+            festgelegt. Im folgenden <gi>rdg</gi> mit denselben Attributen wird 
             die Variante eines weiteren Textzeugen notiert.</p>
  
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <lb xml:id="uuid_55cfaeb3-0c8b-4901-8fae-b30c8b6901ee"/>Zu der Meldung, dass die Wiener
-              <app>
-                <lem wit="#D_000002-002-000-wit01" 
-                  hand="#D_000002-002-000-hand01">Renaissancebühne</lem>
-                <rdg wit="#D_000002-002-000-wit02" 
-                  hand="#D_000002-002-000-hand02">Bühne</rdg>
-              </app>
+                <lb xml:id="uuid_55cfaeb3-0c8b-4901-8fae-b30c8b6901ee"/>Zu der Meldung, dass die <rs type="institution" ref="#37126">Wiener
+                  <app>
+                    <lem wit="#D_000002-002-000-wit01" 
+                      hand="#D_000002-002-000-hand01">Renaissancebühne</lem>
+                    <rdg wit="#D_000002-002-000-wit02" 
+                      hand="#D_000002-002-000-hand02">Bühne</rdg>
+                  </app></rs>
             </egXML>
             
             <p>Wenn es zur Verwendung dieses Variantenapparats in einem Dokument kommt, muss im Header, 
@@ -704,14 +738,14 @@
             
             <p>Wenn unterschiedliche Dokumente unter einer Signatur vorhanden sind (z. B. ein Brief und ein Protokoll), 
             wird ebenfalls auf <gi>div</gi> zurückgegriffen, hier mit dem <att>type</att> <val>doc</val>.
-            Das Attribut <att>source</att> verweist gegebenenfalls auf eine weitere Signatur, die das entsprechende Schriftstück verzeichnet.</p>
+            Das Attribut <att>source</att> verweist gegebenenfalls auf ein weiteres Dokument, welches das entsprechende Schriftstück enthält.</p>
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <div xml:id="D_000068-044-000-doc-div-001" type="doc" source="#D_000068-044-001"/>
             </egXML>
             
             <p>Nicht nur für die Auszeichnung mehrerer Textzeugen und unterschiedlicher Dokumente unter einer Signatur, sondern auch für Rekonstruktionen von Dokumenten
-            durch Hermann Böhm wird <gi>div</gi> verwendet. Dies betrifft den Aktenkomplex 192, in dem einige Schriftstücke
+            durch den schon genannten Hermann Böhm wird <gi>div</gi> verwendet. Dies betrifft die Akte 192, in der einige Schriftstücke
             nicht ediert wurden, weil die entsprechenden Objekte fehlen. Stattdessen werden Rekonstruktionen dieser Texte
             von Hermann Böhm festgehalten und mit einem <att>type</att>-Attribut mit dem Wert <val>boehm-reconstruction</val> gekennzeichnet.</p>
             
@@ -729,8 +763,8 @@
             <head>Fehlende Objekte</head>
             
             <p>Ist ein Objekt nicht (mehr) vorhanden, aber dennoch mittels einer Signatur im Aktenbestand verzeichnet,
-            so wird im entsprechenden <gi>body</gi> der Dokumente in einem <gi>div</gi>-Element mit dem <att>type</att> 
-            und dem Wert <val>missing-object</val> mit dem Hinweis "Objekt fehlt." darauf aufmerksam gemacht.</p>
+            so wird im <gi>body</gi> der entsprechenden Dokumente in einem <gi>div</gi>-Element mit dem Attribut <att>type</att> 
+            und dem Wert <val>missing-object</val> mit dem Hinweis "Objekt fehlt." in <gi>ab</gi> darauf aufmerksam gemacht.</p>
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <text>
@@ -748,8 +782,8 @@
             <head>Fehlende Transkriptionen</head>
             
             <p>Wurde ein Dokument nicht transkribiert, ist aber dennoch mittels einer Signatur im Aktenbestand verzeichnet,
-              so wird im entsprechenden <gi>body</gi> der Dokumente in einem <gi>div</gi>-Element mit dem <att>type</att> 
-              und dem Wert <val>no-transcription</val> mit dem Hinweis "Keine Transkription vorhanden." darauf aufmerksam gemacht.</p>
+            so wird im entsprechenden <gi>body</gi> der Dokumente in einem <gi>div</gi>-Element mit dem Attribut <att>type</att> 
+            und dem Wert <val>no-transcription</val> mit dem Hinweis "Keine Transkription vorhanden." in <gi>ab</gi> darauf aufmerksam gemacht.</p>
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
               <text>
@@ -761,23 +795,6 @@
             
           </div>
 
-        <!-- div lb -->
-          <div xml:id="lb">
-            
-            <head>Zeilenfall</head>
-            
-            <p>Zeilenfälle werden mit <gi>lb</gi> markiert. Kommt es innerhalb eines Worts zu einem 
-            Zeilenfall, so wird in der folgenden Zeile dem Element <gi>lb</gi> das Attribut <att>break</att> 
-            mit dem Wert <val>no</val> beigefügt. Insofern eine eindeutige Identifizierung von Zeilen 
-            angestrebt wird, erhält jedes <gi>lb</gi>-Element außerdem eine <att>xml:id</att>.</p>
-            
-            <egXML xmlns="http://www.tei-c.org/ns/Examples">
-              <lb xml:id="uuid_45105d00-1bba-4ea6-905d-001bbabea608"/>Beschuldigter: <rs type="person" ref="https://pmb.acdh.oeaw.ac.at/entity/51602">Josef <hi rend="spaced">Koller</hi></rs>, verantwortlicher Redak
-              <lb xml:id="uuid_588cb55f-c706-4cc9-8cb5-5fc706dcc959" break="no"/>teur der Zeitung „<rs type="institution" ref="37568">Der Wiener Tag</rs>”
-            </egXML>
-            
-          </div>
-          
         <!-- div marginalia -->
           <div xml:id="marginalia">
             
@@ -787,7 +804,7 @@
             
             <p>Marginalien ohne Text: Kodierung mit <gi>metamark</gi>, dem Attribut <att>function</att> und 
             dem Wert <val>marginal</val>. Mittels <att>hand</att> wird auf die entsprechende 
-            Schreiberhand verwiesen, mittels <att>rend</att> auf die Position der Marginalie auf 
+            Schreiber_innenhand verwiesen, mittels <att>rend</att> auf die Position der Marginalie auf 
             dem Objekt.</p>
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -796,7 +813,7 @@
             
             <p>Marginalien mit Text: Kodierung mittels <gi>note</gi>, dem Attribut <att>type</att> 
             und dem Wert <val>marginal</val>. Mittels <att>hand</att> wird auf die entsprechende 
-            Schreiberhand verwiesen, mittels <att>rend</att> auf die Position der Marginalie 
+            Schreiber_innenhand verwiesen, mittels <att>rend</att> auf die Position der Marginalie 
             auf dem Objekt.</p>
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -814,7 +831,7 @@
           <head>Typografische Hervorhebungen</head>
           
           <p>Grundsätzlich werden typographische Auszeichnungen mit <gi>hi</gi> ausgezeichnet. 
-          Je nachdem, welche Hervorhebung vorliegt, kommen unterschiedliche Werte für <att>rend</att> 
+          Je nachdem, welche Hervorhebung vorliegt, kommen unterschiedliche Werte für das Attribut <att>rend</att> 
           zum Einsatz. Handelt es sich um eine Unterstreichung, so wird der Wert <val>underlined</val> 
           angegeben. Liegt eine Sperrung vor, bekommt <att>rend</att> den Wert <val>spaced</val>.
           Fette Stellen werden mit <val>bold</val> ausgezeichnet, kursive mit <val>italics</val>.</p>
@@ -823,7 +840,7 @@
             <hi rend="spaced">Privatanklage</hi>
           </egXML>
 
-          <p>Liegt eine handschriftliche Hervorhebung vor, so kann die entsprechende Schreiberhand im 
+          <p>Liegt eine handschriftliche Hervorhebung vor, so kann eine Schreiber_innenhand im 
           Attribut <att>hand</att> verlinkt werden.</p>
             
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -840,7 +857,7 @@
           <p>Semantisch relevante Sofort- und Spätkorrekturen werden auf unterschiedliche Weisen ausgezeichnet:</p>
           
           <p>Einfügungen werden mit <gi>add</gi> ausgezeichnet. Handelt es sich um eine handschriftliche 
-          Einfügung, so wird das Attribut <att>hand</att> mit Verweis auf die entsprechende Schreiberhand 
+          Einfügung, so wird das Attribut <att>hand</att> mit Verweis auf die entsprechende Schreiber_innenhand 
           ebenso verzeichnet.</p>
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -848,7 +865,7 @@
           </egXML>
           
           <p>Tilgungen werden mit <gi>del</gi> ausgezeichnet. Handelt es sich um eine handschriftliche 
-          Tilgung, so wird das Attribut <att>hand</att> mit Verweis auf die entsprechende Schreiberhand 
+          Tilgung, so wird das Attribut <att>hand</att> mit Verweis auf die entsprechende Schreiber_innenhand 
           ebenso verzeichnet.</p>
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -856,7 +873,7 @@
           </egXML>
           
           <p>Ersetzungen werden mit <gi>subst</gi> ausgezeichnet. Handelt es sich um eine handschriftliche 
-          Ersetzung, so wird das Attribut <att>hand</att> mit Verweis auf die entsprechende Schreiberhand 
+          Ersetzung, so wird das Attribut <att>hand</att> mit Verweis auf die entsprechende Schreiber_innenhand 
           ebenso verzeichnet.</p>
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -864,11 +881,11 @@
           </egXML>
           
           <p>Bestandteile von Umstellungen werden mit <gi>seg</gi> mit dem <att>type</att> <val>transposition</val> ausgezeichnet. 
-          Jedes <gi>seg</gi>-Element erhält dabei eine <att>xml:id</att>. Die Umstellung selbst wird mit dem Element 
+          Jedes <gi>seg</gi>-Element erhält eine <att>xml:id</att>. Die Umstellung selbst wird mit dem Element 
           <gi>metamark</gi> gekennzeichnet, welches das Attribut <att>function</att> mit dem Wert 
           <val>transposition</val> und einer Verlinkung auf das entsprechende <gi>seg</gi>-Element in 
           <att>target</att> enthält. Handelt es sich um eine handschriftliche Umstellung, so wird die 
-          entsprechende Schreiberhand mit Hilfe des Attributs <att>hand</att> angeführt.</p>
+          entsprechende Schreiber_innenhand mit Hilfe des Attributs <att>hand</att> angeführt.</p>
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <seg type="transposition" xml:id="D_000001-001-000_seg001">Der</seg><metamark function="transposition" hand="#D_000001-001-000-hand01" target="#D_000001-001-000_seg001"/>
@@ -879,7 +896,7 @@
           
           <p>Im Header wird sodann in die <gi>profileDesc</gi> <gi>listTranspose</gi> mit der betroffenen 
           Umstellung eingefügt. Im Element <gi>transpose</gi> mit einer möglichen Verlinkung auf 
-          eine Schreiberhand in <att>hand</att> befinden sich sodann <gi>ptr</gi>-Elemente, die 
+          eine Schreiber_innenhand in <att>hand</att> befinden sich <gi>ptr</gi>-Elemente, die 
           mittels des Attributs <att>target</att> auf die entsprechenden <gi>seg</gi>-Elemente im 
           <gi>body</gi> verweisen.</p>
           
@@ -894,9 +911,8 @@
             </listTranspose>
           </egXML>
           
-          <p>Getilgte bzw. zurückgenommene Überarbeitungen werden mit <gi>restore</gi> ausgezeichnet. Handelt es sich um eine 
-          handschriftliche Korrektur, so wird die entsprechende Schreiberhand über das Attribut 
-          <att>hand</att> hinzugefügt.</p>
+          <p>Getilgte bzw. zurückgenommene Überarbeitungen werden mit <gi>restore</gi> gekennzeichnet. Handelt es sich um eine 
+          handschriftliche Korrektur, so wird die entsprechende Schreiber_innenhand mittels <att>hand</att> hinzugefügt.</p>
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
             Der Antrag ist <restore hand="#D_000001-001-000-hand01"><del hand="#D_000001-001-000-hand01">sehr</del></restore> alt.
@@ -904,10 +920,10 @@
           
           <p>Sind Korrekturen innerhalb von Korrekturen vorhanden, etwa eine Tilgung in einer 
           Hinzufügung (<gi>del</gi> in <gi>add</gi>), so werden die Elemente entsprechend geschachtelt.
-          Davon ausgenommen ist die nicht TEI-konforme Schachtelung von <gi>subst</gi> in <gi>subst</gi>.</p>
+          Davon ausgenommen ist die nicht <ref target="https://tei-c.org/">TEI</ref>-konforme Schachtelung von <gi>subst</gi> in <gi>subst</gi>.</p>
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            Der Antrag <subst hand="#D_000001-001-000-hand01"><del>ist alt</del><add><subst><del> war</del><add>ist</add></subst> neu</add></subst>.
+            Der Antrag <subst hand="#D_000001-001-000-hand01"><del>ist alt</del><add><subst><del>war</del><add>ist</add></subst>neu</add></subst>.
           </egXML>
                     
           <p>Leerstellen werden mit <gi>gap</gi> gekennzeichnet. Der Grund für die Leerstelle in der digitalen Edition
@@ -915,10 +931,10 @@
           <val>deleted</val> (getilgt), <val>editorial</val> (aus editorischen Gründen nicht übertragen) und 
           <val>illegible</val> (unleserlich) zur Auswahl. Im Attribut <att>extent</att> kann das Ausmaß der Leerstelle
           dokumentiert werden. Die Werte sind in diesem Fall nicht klar definiert, da beispielsweise 
-          <val>several-characters</val> neben <val>three-words</val> oder <val>one-line</val> vorkommen kann.</p>
+          <val>several-characters</val> neben <val>three-words</val> oder <val>one-line</val> existieren kann.</p>
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
-            Dieser Antrag <gap reason="illegible" extent="1-word"/> neu.
+            Dieser Antrag <gap reason="illegible" extent="1-word"/>neu.
           </egXML>
 
           <p>Komplexe Korrekturen werden mit Hilfe eines Pointers annotiert. Haben wir beispielsweise 
@@ -939,11 +955,11 @@
               </del>
               <add hand="#A" seq="2">Stelle</add>
             </subst>
-            <ptr target="#XY" type="transposition"/> Kriegsmanifest</p>
+            <ptr target="#XY" type="transposition"/>Kriegsmanifest</p>
           </egXML>
             
           <!--<p>Stehen zwei zusammengehörende Korrekturen nicht direkt nebeneinander, 
-          kann auch <gi>substJoin</gi> in der Kodierung herangezogen werden, um die 
+          kann auch <gi>substJoin</gi> herangezogen werden, um die 
           Zusammengehörigkeit durch Pointer anzuzeigen.</p>
             
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
@@ -953,9 +969,9 @@
             </p>
           </egXML>-->
             
-          <p>Handelt es sich zwar um keine handschriftliche Korrektur, jedoch sehr wohl um eine 
+          <p>Handelt es sich zwar um keine handschriftliche Korrektur, jedoch um eine 
           handschriftliche Notiz, dann wird diese mit <gi>note</gi> und einem Verweis auf die 
-          entsprechende Schreiberhand mittels <att>hand</att> ausgezeichnet.</p>
+          entsprechende Schreiber_innenhand mittels <att>hand</att> ausgezeichnet.</p>
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <note hand="#D_000001-001-000-hand01">Der Antrag liegt nicht vor.</note>
@@ -977,24 +993,24 @@
           <att>type</att>-Attributwerten ausgezeichnet. <val>person</val> wird für die Verlinkung
           von Personen herangezogen, <val>institution</val> für jene von Institutionen. 
           Orte werden mit <val>place</val> kodiert, Werke mit <val>work</val> und Gesetzestexte mit
-          <val>law</val>. Bei <gi>rs</gi> mit dem <att>type</att> <val>work</val> gibt es ferner Untergruppen
+          <val>law</val>. Bei <gi>rs</gi> mit dem <att>type</att> <val>work</val> gibt es Untergruppen
           in Form von <att>subtype</att> mit den möglichen Werten <val>pmb</val> (für 'Werke' in der <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref>), 
           <val>fackel</val> (für 'Werke' aus der <ref target="https://fackel.oeaw.ac.at/">"Fackel"</ref>)
           und <val>legal-doc</val> (für 'Werke', die sich im Korpus der Rechtsakten-Edition befinden). 
-          Adressen erhalten sowohl <val>place</val> als auch <att>subtype</att> mit dem Wert
+          Adressen erhalten sowohl den <att>type</att> <val>place</val> als auch einen <att>subtype</att> mit dem Wert
           <val>address</val>. Schachtelungen von <gi>rs</gi> sind möglich.</p>
+            
+          <p>Durch das <att>ref</att>-Attribut wird die Entität mit dem entsprechenden 
+          Datensatz in der <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref> 
+          bzw. der <ref target="https://fackel.oeaw.ac.at/">"Fackel"</ref>, dem entsprechenden Dokument in den Rechtsakten
+          oder <ref target="https://alex.onb.ac.at/">ALEX</ref> verlinkt. Mancherorts werden noch weitere URLs zu finden sein.</p>
+            
+          <p>Personal- und Possessivpronomen werden nicht ausgezeichnet. Ausschlaggebend sind Namen
+          bzw. Substantive. Ebenso nicht näher bestimmt werden Namen literarischer Figuren.</p>
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
             <rs type="work" ref="#53851">Der Wiener Tag</rs>
           </egXML>
-          
-          <p>Durch das <att>ref</att>-Attribut wird die Entität außerdem mit dem entsprechenden 
-          Datensatz in der <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref> 
-          bzw. der <ref target="https://fackel.oeaw.ac.at/">"Fackel"</ref>, dem entsprechenden Dokument in den Rechtsakten
-          oder <ref target="https://alex.onb.ac.at/">ALEX</ref> verlinkt.</p>
-
-          <p>Personal- und Possessivpronomen werden nicht ausgezeichnet. Ausschlaggebend sind Namen
-          bzw. Substantive. Ebenso nicht näher bestimmt werden Namen literarischer Figuren.</p>
           
         </div>
         
@@ -1003,20 +1019,20 @@
         
           <head>Entitäten im <gi>back</gi></head>
           
-          <p>Im <gi>back</gi>-Element werden alle erwähnten Personen, Instutionen, Orte, Werke und erwähnte Dokumente
+          <p>Im <gi>back</gi>-Element werden alle erwähnten Personen, Instutionen, Orte, Werke und erwähnten Dokumente
           aus dem Rechtsakten-Korpus aufgelistet.</p>
             
           <p>Alle Personen, Institutionen, Orte und Werke werden mit <att>xml:id</att>s versehen, deren Werte auf den 
           entsprechenden Datensatz in der <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref> verweisen.
-          Alle erwähnten Dokumente aus dem Rechtsakten-Korpus werden außerdem mit den entsprechenden <att>xml:id</att>s 
-          der betroffenen Dokumente verlinkt.</p>
+          Alle erwähnten Dokumente aus dem Rechtsakten-Korpus werden mit den entsprechenden <att>xml:id</att>s 
+          der betroffenen Dokumente ausgezeichnet.</p>
             
           <p>Für die in einem Dokument erwähnten Personen gibt es im <gi>back</gi> eine <gi>listPerson</gi>.
           Jede erwähnte Person wird in einem eigenen <gi>person</gi>-Element dokumentiert.
           Jedes <gi>person</gi>-Element enthält wiederum diverse weitere Informationen.
           Darunter fallen der Name (in <gi>persName</gi>), ggf. eine Verlinkung mit <ref target="https://de.wikipedia.org/">Wikipedia</ref> oder 
           dem <ref target="https://www.geschichtewiki.wien.gv.at/Wien_Geschichte_Wiki">Wien Geschichte Wiki</ref>, 
-          die Geburts- und Sterbedaten sowie -ort (in <gi>birth</gi> und <gi>death</gi>), das Geschlecht (in <gi>sex</gi>), 
+          die Geburts- und Sterbedaten sowie -orte (in <gi>birth</gi> und <gi>death</gi>), das Geschlecht (in <gi>sex</gi>), 
           der Beruf (in <gi>occupation</gi>), diverse IDs (in <gi>idno</gi>) und 'Zugehörigkeiten' einer Person (in <gi>affiliation</gi>) 
           sowie verschiedene mit ihr in Verbindung stehende Ereignisse (in <gi>listEvent</gi>). 
           Ebenso verzeichnet wird die Zugehörigkeit des Datensatzes der Person zu einer Sammmlung in der 
@@ -1035,8 +1051,8 @@
           <p>Für die in einem Dokument erwähnten Institutionen gibt es im <gi>back</gi> eine <gi>listOrg</gi>.
           Jede erwähnte Institution wird mit einem eigenen <gi>org</gi>-Element dokumentiert.
           Jedes <gi>org</gi>-Element enthält wiederum diverse weitere Informationen.
-          Darunter fallen der Name und ggf. eine Verlinkung mit <ref target="https://de.wikipedia.org/">Wikipedia</ref> oder 
-          dem <ref target="https://www.geschichtewiki.wien.gv.at/Wien_Geschichte_Wiki">Wien Geschichte Wiki</ref> (in <gi>orgNameName</gi>), 
+          Darunter fallen der Name (in <gi>orgName</gi>) und ggf. eine Verlinkung mit <ref target="https://de.wikipedia.org/">Wikipedia</ref> oder 
+          dem <ref target="https://www.geschichtewiki.wien.gv.at/Wien_Geschichte_Wiki">Wien Geschichte Wiki</ref>, 
           übergeordnete Ortseinheiten (in <gi>location</gi> mit dem <att>type</att> <val>located_in_place</val>) und diverse IDs 
           (in <gi>idno</gi>). Ebenso verzeichnet wird die Zugehörigkeit des Datensatzes der Institution zu einer Sammmlung in der 
           <ref target="https://pmb.acdh.oeaw.ac.at/">PMB</ref> (in <gi>listBibl</gi>). Außerdem aufgenommen werden die Dokumente, 
@@ -1230,8 +1246,8 @@
           </egXML>
           
           <p>Handelt es sich um eine wörtliche Rede, so wird das Element <gi>q</gi> mit dem Attribut 
-          <att>type</att> und dem Wert <val>spoken</val> herangezogen. Ist der_die Sprecher_in der Aussage 
-          identifizierbar, wird sie mit dem <att>who</att>-Attribut verlinkt.</p>
+          <att>type</att> und dem Wert <val>spoken</val> herangezogen. Ist der_die Sprecher_in 
+          identifizierbar, wird er_sie im <att>who</att>-Attribut verlinkt.</p>
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples">
             „<q type="spoken" who="#38909">hineingebracht</q>“
@@ -1272,14 +1288,14 @@
         <p>Die Dokumente selbst erhalten eine ID in der Form D_xxxxxx-xxx-xxx.xml, wobei 
         die erste Ziffernkombination den Fall bezeichnet (vgl. die IDs für Fälle in 
         der Form C_xxxxx), die zweite das Dokument und die dritte gegebenenfalls eine Beilage.</p>
+          
+        <p>Als Attribute des Elements <gi>TEI</gi> werden außerdem die <att>xml:base</att>, 
+        der Namespace (<att>xmlns</att>, im Beispiel nicht vorhanden) sowie <att>prev</att> und <att>next</att> angeführt. 
+        Letztere Attribute verweisen auf das vorangehende sowie das folgende Dokument.</p>
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
           <TEI xml:base="https://id.acdh.oeaw.ac.at/legalkraus" xml:id="D_000112-029-000.xml" prev="https://id.acdh.oeaw.ac.at/legalkraus/D_000112-028-000.xml" next="https://id.acdh.oeaw.ac.at/legalkraus/D_000112-030-000.xml"/>
         </egXML>
-                
-        <p>Als Attribute des Elements <gi>TEI</gi> werden außerdem die <att>xml:base</att>, 
-        der Namespace (<att>xmlns</att>, im Beispiel nicht vorhanden) sowie <att>prev</att> und <att>next</att> angeführt. 
-        Letztere Attribute verweisen auf das vorangehende sowie das folgende Dokument.</p>
                 
         <p><gi>witness</gi>-Elemente, also Textzeugen, bekommen eine ID in der Form 
         D_xxxxxx-xxx-xxx-witxx. Der ID des Dokuments wird also "witxx" hinzugefügt.</p>
@@ -1288,11 +1304,10 @@
           <witness xml:id="D_000002-002-000-wit01" facs="#D_000002-002-000-facs001"/>
         </egXML>
         
-        <p>Die IDs der <gi>facsimile</gi>-Elemente ergibt sich ebenso aus der ID des Dokuments 
-        und einem Zusatz in der Form "facsxxx". Dieser ID wird noch ein weiterer Zusatz in der 
-        Form "lxxx" für <gi>surfaceGrp</gi>-Elemente hinzugefügt. Für die ID eines 
-        <gi>surface</gi>-Elements wird die ID der <gi>surfaceGrp</gi> noch einmal erweitert um 
-        "pxxx".</p>
+        <p>Die IDs der <gi>facsimile</gi>-Elemente ergeben sich ebenso aus der ID des Dokuments 
+        und einem Zusatz in der Form "facsxxx". Dieser ID wird ein Zusatz in der 
+        Form von "lxxx" (leaf) für <gi>surfaceGrp</gi>-Elemente hinzugefügt. Für die ID eines 
+        <gi>surface</gi>-Elements wird die ID der <gi>surfaceGrp</gi> um "pxxx" (page) erweitert.</p>
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
           <facsimile xml:id="D_000002-002-000-facs001">
@@ -1311,8 +1326,7 @@
           </facsimile>
         </egXML>
 
-        <p>Folgende Elemente erhalten UUIDs: <gi>p</gi>, <gi>pb</gi> (zusätzlich zur Seitenzählung 
-        in <att>n</att>), <gi>lb</gi>, <gi>quote</gi> und <gi>stamp</gi>.</p>
+        <p>Folgende Elemente erhalten UUIDs: <gi>p</gi>, <gi>pb</gi>, <gi>lb</gi>, <gi>quote</gi> und <gi>stamp</gi>.</p>
         
         <egXML xmlns="http://www.tei-c.org/ns/Examples">
           <p xml:id="uuid_3e3c19ee-b10e-4d0b-95fb-0ccf3db0dc3a">
@@ -1343,18 +1357,6 @@
           <moduleRef key="textcrit" include="app lem listWit rdg variantEncoding witness"/>
           <moduleRef key="transcr" include="facsimile handNotes listTranspose metamark restore subst surface surfaceGrp transpose"/><!-- substJoin -->
           <moduleRef key="linking" include="ab link linkGrp seg"/>
-          
-          <!--  contraintSpec -->
-            <!-- LU: bei entsprechenden Elementen oder hier (?) mittels constraintSpec Schematron-Regeln einfügen? 
-                Dann wäre alles an einem Ort;
-                
-                  Bsp.: 
-                  <constraintSpec ident="TEI-xmlid" scheme="schematron">
-                    <desc>Werte in <att>xml:id</att> von <gi>TEI</gi> müssen dem Muster D_000002-002-000 entsprechen.</desc>
-                    <constraint>
-                      <sch:assert test="matches(tei:TEI/@xml:id/string(),'D_[0-9]{6}-[0-9]{3}-[0-9]{3}')">Der Wert in xml:id von TEI entspricht nicht den Vorgaben.</sch:assert>
-                    </constraint>
-                  </constraintSpec>-->
 
         </schemaSpec>
     
@@ -1768,8 +1770,7 @@
     <!-- element term -->
     <elementSpec ident="term" module="core" mode="change">
         <attList>
-            <attDef ident="source" mode="change" usage="opt"/>
-            <attDef ident="key" mode="change" usage="opt"/>
+            <attDef ident="source" mode="change" usage="req"/>
         </attList>
     </elementSpec>
     
@@ -1851,7 +1852,7 @@
     <!-- element classCode -->
     <elementSpec ident="classCode" module="header" mode="change">
         <attList>
-            <attDef ident="source" mode="change" usage="opt"/>
+            <attDef ident="source" mode="change" usage="req"/>
             <attDef ident="scheme" mode="change" usage="req"/>
         </attList>
     </elementSpec>
@@ -2374,7 +2375,7 @@
                     <dataRef key="ID"/>
                 </datatype>
             </attDef>
-            <attDef ident="type" mode="change" usage="opt">
+            <attDef ident="ana" mode="change" usage="opt">
                 <valList type="closed" mode="replace">
                     <valItem ident="further-witnesses">
                         <desc>weitere Textzeugen</desc>
