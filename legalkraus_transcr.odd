@@ -98,12 +98,7 @@
         andererseits die digitalisierte Fassung der Kanzleiakten in der digitalen Wienbibliothek (<ref target="https://www.digital.wienbibliothek.at">https://www.digital.wienbibliothek.at</ref>). 
         Diese beiden Quellen bauen auf der von Katharina Prager erstellten Ordnung der Bestandsliste des Kraus-Archivs der Wienbibliothek
         im Rathaus auf und orientieren sich an den Signaturen dieser Liste. Diese Ordnungslogik
-        wird auch im vorliegenden Projekt als Ausgangsbasis übernommen. Ebenfalls eine wichtige
-        Grundlage für die Editionsarbeit stellt die von Hermann Böhm erstellte, heute vergriffene
-        Lese-Edition der Akten in vier Bänden dar (<bibl>Karl Kraus contra ...: die Prozeßakten
-        der Kanzlei Oskar Samek in der Wiener Stadt- und Landesbibliothek, bearb. und
-        kommentiert von Hermann Böhm, Wien, Wiener Stadt- u. Landesbibliothek, Bd. 1–4,
-        1995–1997</bibl>).</p>
+        wird auch im vorliegenden Projekt als Ausgangsbasis übernommen.</p>
         
         <p>Im Rahmen des Projekts wird auf Basis der genannten Quellen für jedes
         erhaltene Einzeldokument im Archiv ein korrespondierendes <ref target="https://tei-c.org/">TEI
@@ -745,7 +740,8 @@
             </egXML>
             
             <p>Nicht nur für die Auszeichnung mehrerer Textzeugen und unterschiedlicher Dokumente unter einer Signatur, sondern auch für Rekonstruktionen von Dokumenten
-            durch den schon genannten Hermann Böhm wird <gi>div</gi> verwendet. Dies betrifft die Akte 192, in der einige Schriftstücke
+            durch Hermann Böhm (in <bibl>Karl Kraus contra ...: die Prozeßakten der Kanzlei Oskar Samek in der Wiener Stadt- und Landesbibliothek, bearb. und kommentiert von Hermann Böhm, 
+            Wien, Wiener Stadt- u. Landesbibliothek, Bd. 1–4, 1995–1997</bibl>) wird <gi>div</gi> verwendet. Dies betrifft die Akte 192, in der einige Schriftstücke
             nicht ediert wurden, weil die entsprechenden Objekte fehlen. Stattdessen werden Rekonstruktionen dieser Texte
             von Hermann Böhm festgehalten und mit einem <att>type</att>-Attribut mit dem Wert <val>boehm-reconstruction</val> gekennzeichnet.</p>
             
